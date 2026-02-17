@@ -23,7 +23,36 @@ export const metadata: Metadata = {
 };
 
 async function getFeaturedTools() {
-  // 使用真实 Supabase 数据
+  // 使用新的 product_hunt_tools 表
+  try {
+    const { data } = await supabase
+      .from('product_hunt_tools')
+      .select('*')
+      .eq('featured', true)
+      .order('votes_count', { ascending: false })
+      .limit(4);
+    
+    if (data && data.length > 0) {
+      // 转换数据格式以兼容现有UI
+      return data.map(tool => ({
+        id: tool.id,
+        name: tool.name,
+        description: tool.tagline || tool.description,
+        category_name: tool.category || 'Productivity',
+        rating: (tool.rating || 0) / 20 * 5, // Convert to 5-star scale
+        reviews_count: tool.reviews_count || tool.votes_count,
+        logo_url: tool.thumbnail_url || `https://placehold.co/64x64/3c3cf6/ffffff?text=${tool.name[0]}`,
+        deal: null,
+        has_free_trial: false,
+        featured: tool.featured,
+        website_url: tool.url,
+      }));
+    }
+  } catch (e) {
+    console.error('Supabase error:', e);
+  }
+  
+  // Fallback to old tools table
   try {
     const { data } = await supabase
       .from('tools')
