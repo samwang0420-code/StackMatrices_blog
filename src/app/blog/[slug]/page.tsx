@@ -12,7 +12,23 @@ interface BlogPostPageProps {
   };
 }
 
-async function getArticleBySlug(slug: string) {
+interface Article {
+  id: string;
+  title: string;
+  slug: string;
+  excerpt: string;
+  content: string;
+  author_name: string;
+  author_role?: string;
+  date: string;
+  read_time?: string;
+  category?: string;
+  tags?: string[];
+  image_url?: string;
+  updated_at?: string;
+}
+
+async function getArticleBySlug(slug: string): Promise<Article | null> {
   const { data, error } = await supabase
     .from('articles')
     .select('*')
@@ -24,10 +40,10 @@ async function getArticleBySlug(slug: string) {
     return null;
   }
   
-  return data;
+  return data as Article;
 }
 
-async function getAllArticleSlugs() {
+async function getAllArticleSlugs(): Promise<{ slug: string }[]> {
   const { data, error } = await supabase
     .from('articles')
     .select('slug')
@@ -37,7 +53,7 @@ async function getAllArticleSlugs() {
     return [];
   }
   
-  return data.map((article) => ({ slug: article.slug }));
+  return data.map((article: { slug: string }) => ({ slug: article.slug }));
 }
 
 export async function generateStaticParams() {
@@ -119,83 +135,83 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       />
       
       <div className="bg-white min-h-screen">
-      {/* Hero Section */}
-      <div className="relative h-[400px] w-full">
-        <img
-          src={article.image_url || 'https://placehold.co/1200x400/3c3cf6/ffffff?text=Article'}
-          alt={article.title}
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 p-8 max-w-4xl mx-auto">
-          <div className="flex items-center gap-2 mb-4">
-            <span className="px-3 py-1 bg-primary text-white text-xs font-bold uppercase tracking-wider rounded">
-              {article.category}
-            </span>
-            <span className="text-white/80 text-sm">{article.date}</span>
-            <span className="text-white/60 text-sm">•</span>
-            <span className="text-white/80 text-sm">{article.read_time}</span>
-          </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight">
-            {article.title}
-          </h1>
-        </div>
-      </div>
-
-      {/* Content */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Author */}
-        <div className="flex items-center gap-4 mb-8 pb-8 border-b border-slate-200">
-          <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-primary" viewBox="0 0 20 20" fill="currentColor">
-              <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
-            </svg>
-          </div>
-          <div>
-            <p className="font-bold text-slate-900">{article.author_name}</p>
-            <p className="text-sm text-slate-500">{article.author_role}</p>
+        {/* Hero Section */}
+        <div className="relative h-[400px] w-full">
+          <img
+            src={article.image_url || 'https://placehold.co/1200x400/3c3cf6/ffffff?text=Article'}
+            alt={article.title}
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 p-8 max-w-4xl mx-auto">
+            <div className="flex items-center gap-2 mb-4">
+              <span className="px-3 py-1 bg-primary text-white text-xs font-bold uppercase tracking-wider rounded">
+                {article.category}
+              </span>
+              <span className="text-white/80 text-sm">{article.date}</span>
+              <span className="text-white/60 text-sm">•</span>
+              <span className="text-white/80 text-sm">{article.read_time}</span>
+            </div>
+            <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+              {article.title}
+            </h1>
           </div>
         </div>
 
-        {/* Excerpt */}
-        <p className="text-xl text-slate-600 mb-8 italic border-l-4 border-primary pl-4">
-          {article.excerpt}
-        </p>
-
-        {/* Main Content */}
-        <div 
-          className="prose prose-lg max-w-none text-slate-700"
-          dangerouslySetInnerHTML={{ __html: formattedContent }}
-        />
-
-        {/* Tags */}
-        {article.tags && article.tags.length > 0 && (
-          <div className="mt-12 pt-8 border-t border-slate-200">
-            <h3 className="text-sm font-bold text-slate-500 uppercase tracking-wider mb-4">Tags</h3>
-            <div className="flex flex-wrap gap-2">
-              {article.tags.map((tag: string) => (
-                <span key={tag} className="px-3 py-1 bg-slate-100 text-slate-600 text-sm rounded-full">
-                  {tag}
-                </span>
-              ))}
+        {/* Content */}
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          {/* Author */}
+          <div className="flex items-center gap-4 mb-8 pb-8 border-b border-slate-200">
+            <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-primary" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
+              </svg>
+            </div>
+            <div>
+              <p className="font-bold text-slate-900">{article.author_name}</p>
+              <p className="text-sm text-slate-500">{article.author_role}</p>
             </div>
           </div>
-        )}
 
-        {/* Back to Blog */}
-        <div className="mt-12 pt-8 border-t border-slate-200">
-          <Link 
-            href="/blog"
-            className="inline-flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-              <path fillRule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clipRule="evenodd" />
-            </svg>
-            Back to Blog
-          </Link>
+          {/* Excerpt */}
+          <p className="text-xl text-slate-600 mb-8 italic border-l-4 border-primary pl-4">
+            {article.excerpt}
+          </p>
+
+          {/* Main Content */}
+          <div 
+            className="prose prose-lg max-w-none text-slate-700"
+            dangerouslySetInnerHTML={{ __html: formattedContent }}
+          />
+
+          {/* Tags */}
+          {article.tags && article.tags.length > 0 && (
+            <div className="mt-12 pt-8 border-t border-slate-200">
+              <h3 className="text-sm font-bold text-slate-500 uppercase tracking-wider mb-4">Tags</h3>
+              <div className="flex flex-wrap gap-2">
+                {article.tags.map((tag: string) => (
+                  <span key={tag} className="px-3 py-1 bg-slate-100 text-slate-600 text-sm rounded-full">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Back to Blog */}
+          <div className="mt-12 pt-8 border-t border-slate-200">
+            <Link 
+              href="/blog"
+              className="inline-flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clipRule="evenodd" />
+              </svg>
+              Back to Blog
+            </Link>
+          </div>
         </div>
       </div>
-    </div>
     </>
   );
 }

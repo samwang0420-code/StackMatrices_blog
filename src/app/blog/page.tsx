@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Link from "next/link";
 import { SITE_CONFIG } from "@/lib/constants";
 import { supabase } from "@/lib/supabase";
 
@@ -20,7 +21,24 @@ export const metadata: Metadata = {
   },
 };
 
-async function getArticles() {
+interface Article {
+  id: string;
+  title: string;
+  slug: string;
+  excerpt: string;
+  content: string;
+  author_name: string;
+  author_role?: string;
+  date: string;
+  read_time?: string;
+  category?: string;
+  tags?: string[];
+  image_url?: string;
+  featured?: boolean;
+  updated_at?: string;
+}
+
+async function getArticles(): Promise<Article[]> {
   const { data, error } = await supabase
     .from('articles')
     .select('*')
@@ -32,7 +50,7 @@ async function getArticles() {
     return [];
   }
   
-  return data || [];
+  return (data as Article[]) || [];
 }
 
 export default async function BlogPage() {
