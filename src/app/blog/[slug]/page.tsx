@@ -30,9 +30,15 @@ interface Article {
 }
 
 async function getArticleBySlug(slug: string): Promise<Article | null> {
-  // 首先尝试从 Supabase 获取
+  // 首先检查备用数据（不依赖网络）
+  const fallbackArticle = fallbackArticles.find(a => a.slug === slug);
+  if (fallbackArticle) {
+    return fallbackArticle;
+  }
+  
+  // 如果备用数据中没有，尝试从 Supabase 获取
   try {
-    const { data, error } = await supabase
+    const { data } = await supabase
       .from('articles')
       .select('*')
       .eq('slug', slug)
@@ -46,9 +52,7 @@ async function getArticleBySlug(slug: string): Promise<Article | null> {
     console.log('Supabase error, using fallback');
   }
   
-  // 如果 Supabase 失败，使用备用数据
-  const fallbackArticle = fallbackArticles.find(a => a.slug === slug);
-  return fallbackArticle || null;
+  return null;
 }
 
 async function getAllArticleSlugs(): Promise<{ slug: string }[]> {

@@ -40,6 +40,12 @@ interface Article {
 }
 
 async function getArticles(): Promise<Article[]> {
+  // 优先使用备用数据
+  if (fallbackArticles && fallbackArticles.length > 0) {
+    return fallbackArticles;
+  }
+  
+  // 备用数据不可用时尝试 Supabase
   try {
     const { data, error } = await supabase
       .from('articles')

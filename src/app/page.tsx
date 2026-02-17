@@ -23,8 +23,14 @@ export const metadata: Metadata = {
 };
 
 async function getFeaturedTools() {
+  // 优先使用备用数据
+  if (fallbackTools && fallbackTools.length > 0) {
+    return fallbackTools.slice(0, 4);
+  }
+  
+  // 备用数据不可用时尝试 Supabase
   try {
-    const { data, error } = await supabase
+    const { data } = await supabase
       .from('tools')
       .select('*')
       .eq('featured', true)
@@ -36,15 +42,21 @@ async function getFeaturedTools() {
       return data;
     }
   } catch (e) {
-    console.log('Supabase error, using fallback tools');
+    console.log('Supabase error');
   }
   
-  return fallbackTools.slice(0, 4);
+  return [];
 }
 
 async function getFeaturedArticles() {
+  // 优先使用备用数据
+  if (fallbackArticles && fallbackArticles.length > 0) {
+    return fallbackArticles.slice(0, 3);
+  }
+  
+  // 备用数据不可用时尝试 Supabase
   try {
-    const { data, error } = await supabase
+    const { data } = await supabase
       .from('articles')
       .select('*')
       .eq('published', true)
@@ -55,10 +67,10 @@ async function getFeaturedArticles() {
       return data;
     }
   } catch (e) {
-    console.log('Supabase error, using fallback articles');
+    console.log('Supabase error');
   }
   
-  return fallbackArticles.slice(0, 3);
+  return [];
 }
 
 export default async function Home() {
