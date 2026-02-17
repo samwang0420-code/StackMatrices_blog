@@ -30,13 +30,7 @@ interface Article {
 }
 
 async function getArticleBySlug(slug: string): Promise<Article | null> {
-  // 首先检查备用数据（不依赖网络）
-  const fallbackArticle = fallbackArticles.find(a => a.slug === slug);
-  if (fallbackArticle) {
-    return fallbackArticle;
-  }
-  
-  // 如果备用数据中没有，尝试从 Supabase 获取
+  // 首先尝试从 Supabase 获取真实数据
   try {
     const { data } = await supabase
       .from('articles')
@@ -49,16 +43,18 @@ async function getArticleBySlug(slug: string): Promise<Article | null> {
       return data as Article;
     }
   } catch (e) {
-    console.log('Supabase error, using fallback');
+    console.error('Supabase error:', e);
   }
   
-  return null;
+  // 如果 Supabase 没有，检查 fallback
+  const fallbackArticle = fallbackArticles.find(a => a.slug === slug);
+  return fallbackArticle || null;
 }
 
-async function getAllArticleSlugs(): Promise<{ slug: string }[]> {
-  // 尝试从 Supabase 获取
+export async function generateStaticParams() {
+  // 首先尝试从 Supabase 获取所有 slug
   try {
-    const { data, error } = await supabase
+    const { data } = await supabase
       .from('articles')
       .select('slug')
       .eq('published', true);
@@ -67,15 +63,11 @@ async function getAllArticleSlugs(): Promise<{ slug: string }[]> {
       return data.map((article: { slug: string }) => ({ slug: article.slug }));
     }
   } catch (e) {
-    console.log('Supabase error, using fallback slugs');
+    console.error('Supabase error in generateStaticParams:', e);
   }
   
-  // 返回备用数据的 slug
-  return fallbackArticles.map(a => ({ slug: a.slug }));
-}
-
-export async function generateStaticParams() {
-  // 使用备用数据生成静态页面
+  // 如果 Supabase 失败或返回空，使用 fallback
+  console.log('Using fallback articles for generateStaticParams');
   return fallbackArticles.map(a => ({ slug: a.slug }));
 }
 

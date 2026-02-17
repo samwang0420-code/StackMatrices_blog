@@ -40,29 +40,24 @@ interface Article {
 }
 
 async function getArticles(): Promise<Article[]> {
-  // 优先使用备用数据
-  if (fallbackArticles && fallbackArticles.length > 0) {
-    return fallbackArticles;
-  }
-  
-  // 备用数据不可用时尝试 Supabase
+  // 首先尝试从 Supabase 获取真实数据
   try {
-    const { data, error } = await supabase
+    const { data } = await supabase
       .from('articles')
       .select('*')
       .eq('published', true)
       .order('date', { ascending: false });
     
-    if (error || !data || data.length === 0) {
-      console.log('Using fallback articles data');
-      return fallbackArticles;
+    if (data && data.length > 0) {
+      return data as Article[];
     }
-    
-    return (data as Article[]) || [];
   } catch (e) {
-    console.log('Supabase error, using fallback:', e);
-    return fallbackArticles;
+    console.error('Supabase error:', e);
   }
+  
+  // 只有当 Supabase 返回空时才使用 fallback
+  console.log('Using fallback articles');
+  return fallbackArticles;
 }
 
 export default async function BlogPage() {

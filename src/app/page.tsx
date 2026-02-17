@@ -23,12 +23,7 @@ export const metadata: Metadata = {
 };
 
 async function getFeaturedTools() {
-  // 优先使用备用数据
-  if (fallbackTools && fallbackTools.length > 0) {
-    return fallbackTools.slice(0, 4);
-  }
-  
-  // 备用数据不可用时尝试 Supabase
+  // 使用真实 Supabase 数据
   try {
     const { data } = await supabase
       .from('tools')
@@ -42,19 +37,16 @@ async function getFeaturedTools() {
       return data;
     }
   } catch (e) {
-    console.log('Supabase error');
+    console.error('Supabase error:', e);
   }
   
-  return [];
+  // 只有当 Supabase 返回空时才使用 fallback
+  console.log('Using fallback tools');
+  return fallbackTools.slice(0, 4);
 }
 
 async function getFeaturedArticles() {
-  // 优先使用备用数据
-  if (fallbackArticles && fallbackArticles.length > 0) {
-    return fallbackArticles.slice(0, 3);
-  }
-  
-  // 备用数据不可用时尝试 Supabase
+  // 使用真实 Supabase 数据
   try {
     const { data } = await supabase
       .from('articles')
@@ -67,10 +59,12 @@ async function getFeaturedArticles() {
       return data;
     }
   } catch (e) {
-    console.log('Supabase error');
+    console.error('Supabase error:', e);
   }
   
-  return [];
+  // 只有当 Supabase 返回空时才使用 fallback
+  console.log('Using fallback articles');
+  return fallbackArticles.slice(0, 3);
 }
 
 export default async function Home() {
