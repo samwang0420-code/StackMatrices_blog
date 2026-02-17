@@ -164,16 +164,18 @@ export default async function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {featuredArticles.map((article) => (
               <article key={article.id} className="flex flex-col h-full bg-white rounded-xl overflow-hidden shadow-sm border border-slate-100 hover:-translate-y-2 transition-transform duration-300 group">
-                <div className="aspect-video relative overflow-hidden">
-                  <img 
-                    src={article.image_url || 'https://placehold.co/800x400/3c3cf6/ffffff?text=Article'} 
-                    alt={article.title} 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
-                  />
-                  <div className="absolute top-4 left-4 bg-primary text-white text-[10px] font-black px-2 py-1 rounded tracking-wider uppercase">
-                    {article.category}
+                <Link href={`/blog/${article.slug}`} className="block">
+                  <div className="aspect-video relative overflow-hidden">
+                    <img 
+                      src={article.image_url || 'https://placehold.co/800x400/3c3cf6/ffffff?text=Article'} 
+                      alt={article.title} 
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                    />
+                    <div className="absolute top-4 left-4 bg-primary text-white text-[10px] font-black px-2 py-1 rounded tracking-wider uppercase">
+                      {article.category}
+                    </div>
                   </div>
-                </div>
+                </Link>
                 <div className="p-6 flex flex-col flex-1">
                   <div className="flex items-center gap-2 text-slate-400 text-xs mb-3 font-medium uppercase tracking-wider">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -181,9 +183,11 @@ export default async function Home() {
                     </svg>
                     {article.read_time}
                   </div>
-                  <h3 className="text-xl font-bold mb-3 leading-snug group-hover:text-primary transition-colors">
-                    {article.title}
-                  </h3>
+                  <Link href={`/blog/${article.slug}`}>
+                    <h3 className="text-xl font-bold mb-3 leading-snug group-hover:text-primary transition-colors">
+                      {article.title}
+                    </h3>
+                  </Link>
                   <p className="text-slate-500 text-sm mb-6 line-clamp-3">
                     {article.excerpt}
                   </p>
