@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { SITE_CONFIG } from "@/lib/constants";
@@ -37,14 +37,15 @@ export const metadata: Metadata = {
     creator: SITE_CONFIG.twitter,
     images: [SITE_CONFIG.image],
   },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-  },
-  themeColor: '#3c3cf6',
   icons: {
     icon: '/favicon.ico',
   },
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#3c3cf6',
 };
 
 export default function RootLayout({
