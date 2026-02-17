@@ -5,6 +5,7 @@ import { supabase } from "@/lib/supabase";
 import { SITE_CONFIG } from "@/lib/constants";
 import { generateArticleJsonLd, generateBreadcrumbJsonLd } from "@/lib/jsonld";
 import { fallbackArticles } from "@/lib/fallback-data";
+import ArticleContentRenderer from "@/components/ArticleContentRenderer";
 import Link from "next/link";
 
 interface BlogPostPageProps {
@@ -98,30 +99,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     notFound();
   }
 
-  // 将换行符转换为 HTML
-  const formattedContent = article.content
-    .split('\n')
-    .map((line: string) => {
-      if (line.startsWith('# ')) {
-        return `<h1 class="text-4xl font-bold mb-6 mt-8">${line.replace('# ', '')}</h1>`;
-      } else if (line.startsWith('## ')) {
-        return `<h2 class="text-2xl font-bold mb-4 mt-6">${line.replace('## ', '')}</h2>`;
-      } else if (line.startsWith('### ')) {
-        return `<h3 class="text-xl font-bold mb-3 mt-4">${line.replace('### ', '')}</h3>`;
-      } else if (line.startsWith('- ')) {
-        return `<li class="ml-6 mb-2">${line.replace('- ', '')}</li>`;
-      } else if (line.match(/^\d+\./)) {
-        return `<li class="ml-6 mb-2">${line.replace(/^\d+\.\s*/, '')}</li>`;
-      } else if (line.startsWith('---')) {
-        return '<hr class="my-8 border-slate-200" />';
-      } else if (line.trim() === '') {
-        return '<br />';
-      } else {
-        return `<p class="mb-4 leading-relaxed">${line}</p>`;
-      }
-    })
-    .join('');
-
   // 生成 JSON-LD 结构化数据
   const articleJsonLd = generateArticleJsonLd(article);
   const breadcrumbJsonLd = generateBreadcrumbJsonLd([
@@ -188,11 +165,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             {article.excerpt}
           </p>
 
-          {/* Main Content */}
-          <div 
-            className="prose prose-lg max-w-none text-slate-700"
-            dangerouslySetInnerHTML={{ __html: formattedContent }}
-          />
+          {/* Main Content - 使用 ECharts 渲染器 */}
+          <ArticleContentRenderer content={article.content} />
 
           {/* Tags */}
           {article.tags && article.tags.length > 0 && (
