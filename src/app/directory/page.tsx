@@ -24,8 +24,40 @@ export const metadata: Metadata = {
 };
 
 async function getTools() {
+  // 优先使用新的 product_hunt_tools 表
   try {
     const { data, error } = await supabase
+      .from('product_hunt_tools')
+      .select('*')
+      .order('votes_count', { ascending: false });
+    
+    if (data && data.length > 0) {
+      // 转换数据格式以兼容现有UI
+      return data.map(tool => ({
+        id: tool.id,
+        name: tool.name,
+        description: tool.tagline || tool.description,
+        category_name: tool.category || 'Productivity',
+        category_id: null,
+        rating: tool.rating ? (tool.rating / 20 * 5) : (tool.votes_count / 100),
+        reviews_count: tool.reviews_count || tool.votes_count,
+        logo_url: tool.thumbnail_url || `https://placehold.co/64x64/3c3cf6/ffffff?text=${tool.name.charAt(0)}`,
+        website_url: tool.url,
+        deal: null,
+        has_free_trial: false,
+        featured: tool.featured,
+        is_active: true,
+        pricing_start: null,
+        pricing_unit: null,
+      }));
+    }
+  } catch (e) {
+    console.log('Supabase error:', e);
+  }
+  
+  // Fallback to old tools table
+  try {
+    const { data } = await supabase
       .from('tools')
       .select('*')
       .eq('is_active', true)
@@ -35,7 +67,7 @@ async function getTools() {
       return data;
     }
   } catch (e) {
-    console.log('Supabase error, using fallback tools');
+    console.log('Fallback error:', e);
   }
   
   return fallbackTools;
