@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { SITE_CONFIG } from "@/lib/constants";
 import { supabase } from "@/lib/supabase";
+import { fallbackTools } from "@/lib/fallback-data";
 import { Category } from "@/lib/types";
 import Link from "next/link";
 
@@ -23,18 +24,21 @@ export const metadata: Metadata = {
 };
 
 async function getTools() {
-  const { data, error } = await supabase
-    .from('tools')
-    .select('*')
-    .eq('is_active', true)
-    .order('rating', { ascending: false });
-  
-  if (error) {
-    console.error('Error fetching tools:', error);
-    return [];
+  try {
+    const { data, error } = await supabase
+      .from('tools')
+      .select('*')
+      .eq('is_active', true)
+      .order('rating', { ascending: false });
+    
+    if (data && data.length > 0) {
+      return data;
+    }
+  } catch (e) {
+    console.log('Supabase error, using fallback tools');
   }
   
-  return data || [];
+  return fallbackTools;
 }
 
 async function getCategories() {

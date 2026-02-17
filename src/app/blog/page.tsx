@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { SITE_CONFIG } from "@/lib/constants";
 import { supabase } from "@/lib/supabase";
+import { fallbackArticles } from "@/lib/fallback-data";
 
 export const metadata: Metadata = {
   title: "Blog - SaaS Reviews & Guides",
@@ -39,18 +40,23 @@ interface Article {
 }
 
 async function getArticles(): Promise<Article[]> {
-  const { data, error } = await supabase
-    .from('articles')
-    .select('*')
-    .eq('published', true)
-    .order('date', { ascending: false });
-  
-  if (error) {
-    console.error('Error fetching articles:', error);
-    return [];
+  try {
+    const { data, error } = await supabase
+      .from('articles')
+      .select('*')
+      .eq('published', true)
+      .order('date', { ascending: false });
+    
+    if (error || !data || data.length === 0) {
+      console.log('Using fallback articles data');
+      return fallbackArticles;
+    }
+    
+    return (data as Article[]) || [];
+  } catch (e) {
+    console.log('Supabase error, using fallback:', e);
+    return fallbackArticles;
   }
-  
-  return (data as Article[]) || [];
 }
 
 export default async function BlogPage() {

@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { SITE_CONFIG } from "@/lib/constants";
 import { supabase } from "@/lib/supabase";
+import { fallbackArticles, fallbackTools } from "@/lib/fallback-data";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -22,36 +23,42 @@ export const metadata: Metadata = {
 };
 
 async function getFeaturedTools() {
-  const { data, error } = await supabase
-    .from('tools')
-    .select('*')
-    .eq('featured', true)
-    .eq('is_active', true)
-    .order('rating', { ascending: false })
-    .limit(4);
-  
-  if (error) {
-    console.error('Error fetching tools:', error);
-    return [];
+  try {
+    const { data, error } = await supabase
+      .from('tools')
+      .select('*')
+      .eq('featured', true)
+      .eq('is_active', true)
+      .order('rating', { ascending: false })
+      .limit(4);
+    
+    if (data && data.length > 0) {
+      return data;
+    }
+  } catch (e) {
+    console.log('Supabase error, using fallback tools');
   }
   
-  return data || [];
+  return fallbackTools.slice(0, 4);
 }
 
 async function getFeaturedArticles() {
-  const { data, error } = await supabase
-    .from('articles')
-    .select('*')
-    .eq('published', true)
-    .order('date', { ascending: false })
-    .limit(3);
-  
-  if (error) {
-    console.error('Error fetching articles:', error);
-    return [];
+  try {
+    const { data, error } = await supabase
+      .from('articles')
+      .select('*')
+      .eq('published', true)
+      .order('date', { ascending: false })
+      .limit(3);
+    
+    if (data && data.length > 0) {
+      return data;
+    }
+  } catch (e) {
+    console.log('Supabase error, using fallback articles');
   }
   
-  return data || [];
+  return fallbackArticles.slice(0, 3);
 }
 
 export default async function Home() {

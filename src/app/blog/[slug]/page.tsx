@@ -4,6 +4,7 @@ import Script from "next/script";
 import { supabase } from "@/lib/supabase";
 import { SITE_CONFIG } from "@/lib/constants";
 import { generateArticleJsonLd, generateBreadcrumbJsonLd } from "@/lib/jsonld";
+import { fallbackArticles } from "@/lib/fallback-data";
 import Link from "next/link";
 
 interface BlogPostPageProps {
@@ -29,36 +30,49 @@ interface Article {
 }
 
 async function getArticleBySlug(slug: string): Promise<Article | null> {
-  const { data, error } = await supabase
-    .from('articles')
-    .select('*')
-    .eq('slug', slug)
-    .eq('published', true)
-    .single();
-  
-  if (error || !data) {
-    return null;
+  // 首先尝试从 Supabase 获取
+  try {
+    const { data, error } = await supabase
+      .from('articles')
+      .select('*')
+      .eq('slug', slug)
+      .eq('published', true)
+      .single();
+    
+    if (data) {
+      return data as Article;
+    }
+  } catch (e) {
+    console.log('Supabase error, using fallback');
   }
   
-  return data as Article;
+  // 如果 Supabase 失败，使用备用数据
+  const fallbackArticle = fallbackArticles.find(a => a.slug === slug);
+  return fallbackArticle || null;
 }
 
 async function getAllArticleSlugs(): Promise<{ slug: string }[]> {
-  const { data, error } = await supabase
-    .from('articles')
-    .select('slug')
-    .eq('published', true);
-  
-  if (error || !data) {
-    return [];
+  // 尝试从 Supabase 获取
+  try {
+    const { data, error } = await supabase
+      .from('articles')
+      .select('slug')
+      .eq('published', true);
+    
+    if (data && data.length > 0) {
+      return data.map((article: { slug: string }) => ({ slug: article.slug }));
+    }
+  } catch (e) {
+    console.log('Supabase error, using fallback slugs');
   }
   
-  return data.map((article: { slug: string }) => ({ slug: article.slug }));
+  // 返回备用数据的 slug
+  return fallbackArticles.map(a => ({ slug: a.slug }));
 }
 
 export async function generateStaticParams() {
-  const slugs = await getAllArticleSlugs();
-  return slugs;
+  // 使用备用数据生成静态页面
+  return fallbackArticles.map(a => ({ slug: a.slug }));
 }
 
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
