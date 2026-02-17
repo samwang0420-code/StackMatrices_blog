@@ -10,6 +10,23 @@ interface ArticleContentProps {
   content: string;
 }
 
+// 解析加粗语法 **text**
+function parseBoldText(text: string): JSX.Element {
+  if (!text.includes('**')) return <>{text}</>;
+  
+  const parts = text.split(/(\*\*.*?\*\*)/g);
+  return (
+    <>
+      {parts.map((part, index) => {
+        if (part.startsWith('**') && part.endsWith('**')) {
+          return <strong key={index} className="font-bold text-slate-900">{part.slice(2, -2)}</strong>;
+        }
+        return <span key={index}>{part}</span>;
+      })}
+    </>
+  );
+}
+
 // 解析 Markdown 表格为图表数据
 function parseTableToChartData(lines: string[]): { headers: string[]; rows: string[][] } | null {
   const tableLines = lines.filter(line => line.startsWith('|') || line.startsWith('|-'));
@@ -49,7 +66,7 @@ function generateRadarOption(title: string, data: { name: string; value: number 
     tooltip: { trigger: 'item' },
     legend: {
       bottom: 10,
-      data: ['评分']
+      data: ['Score']
     },
     radar: {
       indicator: indicators,
@@ -72,11 +89,11 @@ function generateRadarOption(title: string, data: { name: string; value: number 
       }
     },
     series: [{
-      name: '评分',
+      name: 'Score',
       type: 'radar',
       data: [{
         value: data.map(item => item.value),
-        name: '评分',
+        name: 'Score',
         areaStyle: {
           color: 'rgba(60, 60, 246, 0.3)'
         },
@@ -125,10 +142,17 @@ function generateBarOption(title: string, categories: string[], values: number[]
       data: values,
       type: 'bar',
       itemStyle: {
-        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-          { offset: 0, color: '#3c3cf6' },
-          { offset: 1, color: '#6366f1' }
-        ]),
+        color: {
+          type: 'linear',
+          x: 0,
+          y: 0,
+          x2: 0,
+          y2: 1,
+          colorStops: [
+            { offset: 0, color: '#3c3cf6' },
+            { offset: 1, color: '#6366f1' }
+          ]
+        },
         borderRadius: [8, 8, 0, 0]
       },
       label: {
@@ -158,7 +182,7 @@ export default function ArticleContentRenderer({ content }: ArticleContentProps)
       if (line.startsWith('# ')) {
         result.push(
           <h1 key={key++} className="text-4xl font-bold mb-6 mt-8 text-slate-900">
-            {line.replace('# ', '')}
+            {parseBoldText(line.replace('# ', ''))}
           </h1>
         );
         i++;
@@ -168,7 +192,7 @@ export default function ArticleContentRenderer({ content }: ArticleContentProps)
       if (line.startsWith('## ')) {
         result.push(
           <h2 key={key++} className="text-2xl font-bold mb-4 mt-6 text-slate-900">
-            {line.replace('## ', '')}
+            {parseBoldText(line.replace('## ', ''))}
           </h2>
         );
         i++;
@@ -178,7 +202,7 @@ export default function ArticleContentRenderer({ content }: ArticleContentProps)
       if (line.startsWith('### ')) {
         result.push(
           <h3 key={key++} className="text-xl font-bold mb-3 mt-4 text-slate-900">
-            {line.replace('### ', '')}
+            {parseBoldText(line.replace('### ', ''))}
           </h3>
         );
         i++;
@@ -233,7 +257,7 @@ export default function ArticleContentRenderer({ content }: ArticleContentProps)
           const parsed = parseTableToChartData(tableLines);
           if (parsed && parsed.rows.length > 0) {
             const categories = parsed.rows.map(r => r[0]);
-            const values = parsed.rows.map(r => parseFloat(r[2]) || 0); // 假设第3列是数值
+            const values = parsed.rows.map(r => parseFloat(r[2]) || 0);
 
             result.push(
               <EChartComponent 
@@ -265,7 +289,7 @@ export default function ArticleContentRenderer({ content }: ArticleContentProps)
                   <tr>
                     {parsed.headers.map((h, idx) => (
                       <th key={idx} className="border border-slate-200 px-4 py-3 text-left font-semibold text-slate-700">
-                        {h}
+                        {parseBoldText(h)}
                       </th>
                     ))}
                   </tr>
@@ -275,7 +299,7 @@ export default function ArticleContentRenderer({ content }: ArticleContentProps)
                     <tr key={ridx} className={ridx % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
                       {row.map((cell, cidx) => (
                         <td key={cidx} className="border border-slate-200 px-4 py-3 text-slate-600">
-                          {cell}
+                          {parseBoldText(cell)}
                         </td>
                       ))}
                     </tr>
@@ -298,7 +322,7 @@ export default function ArticleContentRenderer({ content }: ArticleContentProps)
         result.push(
           <ul key={key++} className="list-disc ml-6 mb-4 space-y-2">
             {items.map((item, idx) => (
-              <li key={idx} className="text-slate-700 leading-relaxed">{item}</li>
+              <li key={idx} className="text-slate-700 leading-relaxed">{parseBoldText(item)}</li>
             ))}
           </ul>
         );
@@ -315,7 +339,7 @@ export default function ArticleContentRenderer({ content }: ArticleContentProps)
         result.push(
           <ol key={key++} className="list-decimal ml-6 mb-4 space-y-2">
             {items.map((item, idx) => (
-              <li key={idx} className="text-slate-700 leading-relaxed">{item}</li>
+              <li key={idx} className="text-slate-700 leading-relaxed">{parseBoldText(item)}</li>
             ))}
           </ol>
         );
@@ -338,7 +362,7 @@ export default function ArticleContentRenderer({ content }: ArticleContentProps)
 
       // 处理段落
       result.push(
-        <p key={key++} className="mb-4 leading-relaxed text-slate-700">{line}</p>
+        <p key={key++} className="mb-4 leading-relaxed text-slate-700">{parseBoldText(line)}</p>
       );
       i++;
     }
