@@ -1,5 +1,6 @@
 import { Metadata } from "next";
-import { MOCK_ARTICLES, SITE_CONFIG } from "@/lib/constants";
+import { SITE_CONFIG } from "@/lib/constants";
+import { supabase } from "@/lib/supabase";
 
 export const metadata: Metadata = {
   title: "Blog - SaaS Reviews & Guides",
@@ -19,9 +20,29 @@ export const metadata: Metadata = {
   },
 };
 
-export default function BlogPage() {
-  const featuredArticle = MOCK_ARTICLES.find(a => a.featured) || MOCK_ARTICLES[0];
-  const listArticles = MOCK_ARTICLES.filter(a => a.id !== featuredArticle.id);
+async function getArticles() {
+  const { data, error } = await supabase
+    .from('articles')
+    .select('*')
+    .eq('published', true)
+    .order('date', { ascending: false });
+  
+  if (error) {
+    console.error('Error fetching articles:', error);
+    return [];
+  }
+  
+  return data || [];
+}
+
+export default async function BlogPage() {
+  const articles = await getArticles();
+  const featuredArticle = articles.find(a => a.featured) || articles[0];
+  const listArticles = articles.filter(a => a.id !== featuredArticle?.id);
+
+  if (!featuredArticle) {
+    return <div className="py-20 text-center">No articles found</div>;
+  }
 
   return (
     <div className="bg-background-light py-10 min-h-screen">
@@ -31,7 +52,7 @@ export default function BlogPage() {
           <div className="relative group overflow-hidden rounded-2xl bg-white shadow-xl border border-slate-200 flex flex-col lg:flex-row">
             <div className="lg:w-3/5 overflow-hidden">
               <img
-                src={featuredArticle.imageUrl}
+                src={featuredArticle.image_url || 'https://placehold.co/800x400/3c3cf6/ffffff?text=Featured'}
                 alt={featuredArticle.title}
                 className="w-full h-full min-h-[400px] object-cover transform transition-transform duration-500 group-hover:scale-105"
               />
@@ -51,16 +72,19 @@ export default function BlogPage() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-sm font-bold text-slate-900">{featuredArticle.author.name}</p>
-                    <p className="text-xs text-slate-500">{featuredArticle.author.role}</p>
+                    <p className="text-sm font-bold text-slate-900">{featuredArticle.author_name}</p>
+                    <p className="text-xs text-slate-500">{featuredArticle.author_role}</p>
                   </div>
                 </div>
-                <button className="flex items-center gap-2 text-primary font-bold text-sm group/btn">
+                <a 
+                  href={`/blog/${featuredArticle.slug}`}
+                  className="flex items-center gap-2 text-primary font-bold text-sm group/btn"
+                >
                   Read More
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -90,7 +114,7 @@ export default function BlogPage() {
             <article key={article.id} className="group bg-white rounded-xl overflow-hidden border border-slate-200 hover:shadow-xl transition-all duration-300">
               <div className="aspect-video overflow-hidden">
                 <img
-                  src={article.imageUrl}
+                  src={article.image_url || 'https://placehold.co/800x400/3c3cf6/ffffff?text=Article'}
                   alt={article.title}
                   className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
                 />
@@ -102,7 +126,7 @@ export default function BlogPage() {
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
-                    {article.readTime}
+                    {article.read_time}
                   </span>
                 </div>
                 <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors text-slate-900">{article.title}</h3>
@@ -113,7 +137,7 @@ export default function BlogPage() {
                       <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
                     </svg>
                   </div>
-                  <span className="text-xs font-medium text-slate-900">{article.author.name}</span>
+                  <span className="text-xs font-medium text-slate-900">{article.author_name}</span>
                 </div>
               </div>
             </article>

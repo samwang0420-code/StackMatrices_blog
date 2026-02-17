@@ -1,5 +1,6 @@
 import { Metadata } from "next";
-import { MOCK_TOOLS, SITE_CONFIG } from "@/lib/constants";
+import { SITE_CONFIG } from "@/lib/constants";
+import { supabase } from "@/lib/supabase";
 import { Category } from "@/lib/types";
 import Link from "next/link";
 
@@ -21,7 +22,39 @@ export const metadata: Metadata = {
   },
 };
 
-export default function DirectoryPage() {
+async function getTools() {
+  const { data, error } = await supabase
+    .from('tools')
+    .select('*')
+    .eq('is_active', true)
+    .order('rating', { ascending: false });
+  
+  if (error) {
+    console.error('Error fetching tools:', error);
+    return [];
+  }
+  
+  return data || [];
+}
+
+async function getCategories() {
+  const { data, error } = await supabase
+    .from('categories')
+    .select('*')
+    .order('sort_order', { ascending: true });
+  
+  if (error) {
+    console.error('Error fetching categories:', error);
+    return [];
+  }
+  
+  return data || [];
+}
+
+export default async function DirectoryPage() {
+  const tools = await getTools();
+  const categories = await getCategories();
+
   return (
     <div className="bg-background-light py-10 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -31,11 +64,15 @@ export default function DirectoryPage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {MOCK_TOOLS.map((tool) => (
+          {tools.map((tool) => (
             <div key={tool.id} className="group bg-white rounded-xl border border-slate-200 p-5 shadow-sm hover:shadow-md hover:border-primary/30 transition-all flex flex-col">
               <div className="flex justify-between items-start mb-4">
                 <div className="size-12 rounded-lg bg-slate-50 flex items-center justify-center overflow-hidden p-2">
-                  <img src={tool.logoUrl} alt={tool.name} className="w-full h-full object-contain rounded" />
+                  <img 
+                    src={tool.logo_url || `https://placehold.co/64x64/3c3cf6/ffffff?text=${tool.name.charAt(0)}`} 
+                    alt={tool.name} 
+                    className="w-full h-full object-contain rounded" 
+                  />
                 </div>
                 {tool.deal && (
                   <span className="bg-primary/10 text-primary text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wider">
@@ -74,13 +111,13 @@ export default function DirectoryPage() {
         <section className="mt-16">
           <h2 className="text-2xl font-bold text-slate-900 mb-6">Browse by Category</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {Object.values(Category).map((category) => (
+            {categories.map((category) => (
               <Link
-                key={category}
-                href="#"
+                key={category.id}
+                href={`/directory?category=${category.slug}`}
                 className="bg-white rounded-lg border border-slate-200 p-4 text-center hover:border-primary/50 hover:shadow-md transition-all"
               >
-                <span className="font-medium text-slate-700">{category}</span>
+                <span className="font-medium text-slate-700">{category.name}</span>
               </Link>
             ))}
           </div>

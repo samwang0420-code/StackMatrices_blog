@@ -1,5 +1,6 @@
 import { Metadata } from "next";
-import { MOCK_TOOLS, MOCK_ARTICLES, SITE_CONFIG } from "@/lib/constants";
+import { SITE_CONFIG } from "@/lib/constants";
+import { supabase } from "@/lib/supabase";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -20,9 +21,42 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Home() {
-  const featuredTools = MOCK_TOOLS.slice(0, 4);
-  const featuredArticles = MOCK_ARTICLES.slice(0, 3);
+async function getFeaturedTools() {
+  const { data, error } = await supabase
+    .from('tools')
+    .select('*')
+    .eq('featured', true)
+    .eq('is_active', true)
+    .order('rating', { ascending: false })
+    .limit(4);
+  
+  if (error) {
+    console.error('Error fetching tools:', error);
+    return [];
+  }
+  
+  return data || [];
+}
+
+async function getFeaturedArticles() {
+  const { data, error } = await supabase
+    .from('articles')
+    .select('*')
+    .eq('published', true)
+    .order('date', { ascending: false })
+    .limit(3);
+  
+  if (error) {
+    console.error('Error fetching articles:', error);
+    return [];
+  }
+  
+  return data || [];
+}
+
+export default async function Home() {
+  const featuredTools = await getFeaturedTools();
+  const featuredArticles = await getFeaturedArticles();
 
   return (
     <div className="bg-white">
@@ -81,7 +115,11 @@ export default function Home() {
           {featuredTools.map((tool) => (
             <div key={tool.id} className="group bg-white p-6 rounded-xl border border-slate-200 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5 transition-all">
               <div className="w-16 h-16 bg-primary/10 rounded-xl mb-6 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-                <img src={tool.logoUrl} alt={tool.name} className="w-8 h-8 object-contain rounded" />
+                <img 
+                  src={tool.logo_url || `https://placehold.co/64x64/3c3cf6/ffffff?text=${tool.name.charAt(0)}`} 
+                  alt={tool.name} 
+                  className="w-8 h-8 object-contain rounded" 
+                />
               </div>
               <div className="flex items-center gap-1 mb-2">
                 {[...Array(5)].map((_, i) => (
@@ -97,7 +135,7 @@ export default function Home() {
                 ))}
               </div>
               <h3 className="text-xl font-bold mb-1">{tool.name}</h3>
-              <p className="text-sm text-slate-500 mb-4">{tool.category}</p>
+              <p className="text-sm text-slate-500 mb-4">{tool.category_name}</p>
               {tool.deal && (
                 <div className="bg-primary/5 border border-primary/20 rounded px-3 py-2 mb-6">
                   <p className="text-xs font-bold text-primary uppercase mb-1">Exclusive Deal</p>
@@ -127,7 +165,11 @@ export default function Home() {
             {featuredArticles.map((article) => (
               <article key={article.id} className="flex flex-col h-full bg-white rounded-xl overflow-hidden shadow-sm border border-slate-100 hover:-translate-y-2 transition-transform duration-300 group">
                 <div className="aspect-video relative overflow-hidden">
-                  <img src={article.imageUrl} alt={article.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <img 
+                    src={article.image_url || 'https://placehold.co/800x400/3c3cf6/ffffff?text=Article'} 
+                    alt={article.title} 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                  />
                   <div className="absolute top-4 left-4 bg-primary text-white text-[10px] font-black px-2 py-1 rounded tracking-wider uppercase">
                     {article.category}
                   </div>
@@ -137,7 +179,7 @@ export default function Home() {
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
-                    {article.readTime}
+                    {article.read_time}
                   </div>
                   <h3 className="text-xl font-bold mb-3 leading-snug group-hover:text-primary transition-colors">
                     {article.title}
@@ -145,7 +187,7 @@ export default function Home() {
                   <p className="text-slate-500 text-sm mb-6 line-clamp-3">
                     {article.excerpt}
                   </p>
-                  <Link href="/blog" className="mt-auto font-bold text-sm text-primary flex items-center gap-1 group/btn">
+                  <Link href={`/blog/${article.slug}`} className="mt-auto font-bold text-sm text-primary flex items-center gap-1 group/btn">
                     Read Full Review
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
