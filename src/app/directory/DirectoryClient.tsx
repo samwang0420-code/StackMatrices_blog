@@ -7,7 +7,6 @@ interface Tool {
   id: string;
   name: string;
   description: string;
-  category: string;
   topics: string[];
   rating: number;
   reviews_count: number;
@@ -22,35 +21,39 @@ interface DirectoryClientProps {
 }
 
 export default function DirectoryClient({ tools }: DirectoryClientProps) {
-  // 从工具数据中提取所有分类
+  // 从所有工具的 topics 中提取分类（更精细）
   const categories = useMemo(() => {
-    const categorySet = new Set<string>();
+    const topicSet = new Set<string>();
     tools.forEach(tool => {
-      if (tool.category) {
-        categorySet.add(tool.category);
+      if (tool.topics && Array.isArray(tool.topics)) {
+        tool.topics.forEach(topic => topicSet.add(topic));
       }
     });
+    
     // 按工具数量排序
-    const sortedCats = Array.from(categorySet).sort((a, b) => {
-      const countA = tools.filter(t => t.category === a).length;
-      const countB = tools.filter(t => t.category === b).length;
+    const sortedTopics = Array.from(topicSet).sort((a, b) => {
+      const countA = tools.filter(t => t.topics?.includes(a)).length;
+      const countB = tools.filter(t => t.topics?.includes(b)).length;
       return countB - countA;
     });
-    return ['All', ...sortedCats];
+    
+    return ['All', ...sortedTopics];
   }, [tools]);
 
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
 
-  // 按分类筛选并按评分排序
+  // 按 topic 筛选并按投票数排序
   const filteredTools = useMemo(() => {
     let filtered = tools;
     
-    // 筛选分类
+    // 筛选包含选中 topic 的工具
     if (selectedCategory !== 'All') {
-      filtered = tools.filter(tool => tool.category === selectedCategory);
+      filtered = tools.filter(tool => 
+        tool.topics?.includes(selectedCategory)
+      );
     }
     
-    // 按投票数降序排序（Product Hunt ranking）
+    // 按投票数降序排序
     return filtered.sort((a, b) => b.votes_count - a.votes_count);
   }, [tools, selectedCategory]);
 
@@ -59,7 +62,7 @@ export default function DirectoryClient({ tools }: DirectoryClientProps) {
     const counts: Record<string, number> = { All: tools.length };
     categories.forEach(cat => {
       if (cat !== 'All') {
-        counts[cat] = tools.filter(tool => tool.category === cat).length;
+        counts[cat] = tools.filter(tool => tool.topics?.includes(cat)).length;
       }
     });
     return counts;
@@ -82,7 +85,9 @@ export default function DirectoryClient({ tools }: DirectoryClientProps) {
           {/* Sidebar - Categories */}
           <aside className="lg:w-64 flex-shrink-0">
             <div className="bg-white rounded-xl border border-slate-200 p-4 sticky top-4">
-              <h2 className="font-bold text-slate-900 mb-4 px-2">Categories</h2>
+              <h2 className="font-bold text-slate-900 mb-4 px-2">
+                Categories ({categories.length - 1})
+              </h2>
               <nav className="space-y-1 max-h-[calc(100vh-200px)] overflow-y-auto">
                 {categories.map((category) => (
                   <button
@@ -143,33 +148,30 @@ export default function DirectoryClient({ tools }: DirectoryClientProps) {
                     {tool.name}
                   </h3>
                   
-                  {tool.rating > 0 && (
-                    <div className="flex items-center gap-1 mb-2">
-                      <div className="flex text-yellow-400 text-sm">
-                        {[...Array(5)].map((_, i) => (
-                          <svg
-                            key={i}
-                            xmlns="http://www.w3.org/2000/svg"
-                            className={`h-4 w-4 ${i < Math.floor(tool.rating) ? 'fill-current' : 'text-slate-200'}`}
-                            viewBox="0 0 20 20"
-                          >
-                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                          </svg>
-                        ))}
-                      </div>
-                      <span className="text-xs font-semibold text-slate-500">
-                        {tool.rating.toFixed(1)}
-                      </span>
-                    </div>
-                  )}
-                  
                   <p className="text-sm text-slate-600 line-clamp-2 mb-4 flex-grow">
                     {tool.description}
                   </p>
                   
-                  <span className="inline-block text-xs text-slate-500 bg-slate-100 px-2 py-1 rounded-full mb-4 self-start">
-                    {tool.category}
-                  </span>
+                  {/* Topics */}
+                  <div className="flex flex-wrap gap-1 mb-4">
+                    {tool.topics?.slice(0, 3).map((topic) => (
+                      <span
+                        key={topic}
+                        className={`text-xs px-2 py-1 rounded-full ${
+                          topic === selectedCategory
+                            ? 'bg-primary text-white'
+                            : 'bg-slate-100 text-slate-600'
+                        }`}
+                      >
+                        {topic}
+                      </span>
+                    ))}
+                    {tool.topics?.length > 3 && (
+                      <span className="text-xs text-slate-400 px-1">
+                        +{tool.topics.length - 3}
+                      </span>
+                    )}
+                  </div>
                   
                   <Link
                     href={tool.website_url || '#'}
