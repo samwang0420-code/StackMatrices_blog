@@ -40,7 +40,6 @@ export function Navbar() {
               >
                 Blog
               </Link>
-              <a href="#" className="text-sm font-medium text-slate-500 hover:text-primary transition-colors">Pricing</a>
             </nav>
           </div>
           <div className="flex items-center gap-4">
@@ -54,8 +53,6 @@ export function Navbar() {
                 type="text"
               />
             </div>
-            <button className="px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-100 rounded-lg transition-colors">Log In</button>
-            <button className="px-4 py-2 text-sm font-semibold text-white bg-primary hover:bg-primary-hover rounded-lg transition-all shadow-lg shadow-primary/20">Sign Up Free</button>
           </div>
         </div>
       </div>
