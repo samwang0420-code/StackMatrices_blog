@@ -1,7 +1,9 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+import Script from "next/script";
 import { supabase } from "@/lib/supabase";
 import { SITE_CONFIG } from "@/lib/constants";
+import { generateArticleJsonLd, generateBreadcrumbJsonLd } from "@/lib/jsonld";
 import Link from "next/link";
 
 interface BlogPostPageProps {
@@ -94,8 +96,29 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     })
     .join('');
 
+  // 生成 JSON-LD 结构化数据
+  const articleJsonLd = generateArticleJsonLd(article);
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd([
+    { name: 'Home', url: SITE_CONFIG.url },
+    { name: 'Blog', url: `${SITE_CONFIG.url}/blog` },
+    { name: article.title, url: `${SITE_CONFIG.url}/blog/${article.slug}` },
+  ]);
+
   return (
-    <div className="bg-white min-h-screen">
+    <>
+      {/* JSON-LD Structured Data */}
+      <Script
+        id="article-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      <Script
+        id="breadcrumb-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      
+      <div className="bg-white min-h-screen">
       {/* Hero Section */}
       <div className="relative h-[400px] w-full">
         <img
@@ -173,5 +196,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         </div>
       </div>
     </div>
+    </>
   );
 }
