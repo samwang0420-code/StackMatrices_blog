@@ -25,6 +25,24 @@ async function getArticleBySlug(slug: string) {
   return data;
 }
 
+async function getAllArticleSlugs() {
+  const { data, error } = await supabase
+    .from('articles')
+    .select('slug')
+    .eq('published', true);
+  
+  if (error || !data) {
+    return [];
+  }
+  
+  return data.map((article) => ({ slug: article.slug }));
+}
+
+export async function generateStaticParams() {
+  const slugs = await getAllArticleSlugs();
+  return slugs;
+}
+
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
   const article = await getArticleBySlug(params.slug);
   
