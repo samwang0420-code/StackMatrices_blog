@@ -21,6 +21,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  other: {
+    'impact-site-verification': '1cc042f8-9429-4ced-9822-5eb8a53de347',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
