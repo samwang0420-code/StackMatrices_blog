@@ -370,5 +370,5 @@ export default function ArticleContentRenderer({ content }: ArticleContentProps)
     setSections(result);
   }, [content]);
 
-  return <div className="prose prose-lg max-w-none">{sections}</div>;
+  return <div className="blog-content">{sections}</div>;
 }
