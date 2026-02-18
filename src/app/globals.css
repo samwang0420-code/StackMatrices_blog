@@ -37,8 +37,8 @@ body {
    BLOG CONTENT STYLES - Auto formatting
    ============================================ */
 
-/* Blog content container */
-.blog-content {
+/* Blog content container - higher specificity to override Tailwind */
+.blog-content.blog-content {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
   line-height: 1.7;
@@ -49,7 +49,7 @@ body {
 }
 
 /* Images - centered, responsive, with rounded corners */
-.blog-content img {
+.blog-content.blog-content img {
   display: block;
   max-width: 100%;
   height: auto;
@@ -58,150 +58,152 @@ body {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
-/* Headings */
-.blog-content h1 {
-  font-size: 32px;
-  font-weight: 700;
-  margin-top: 40px;
-  margin-bottom: 20px;
-  color: #1a1a1a;
-  line-height: 1.3;
+/* Headings - override Tailwind */
+.blog-content.blog-content h1 {
+  font-size: 32px !important;
+  font-weight: 700 !important;
+  margin-top: 40px !important;
+  margin-bottom: 20px !important;
+  color: #1a1a1a !important;
+  line-height: 1.3 !important;
 }
 
-.blog-content h2 {
-  font-size: 24px;
-  font-weight: 600;
-  margin-top: 35px;
-  margin-bottom: 15px;
-  color: #1a1a1a;
-  line-height: 1.4;
+.blog-content.blog-content h2 {
+  font-size: 24px !important;
+  font-weight: 600 !important;
+  margin-top: 35px !important;
+  margin-bottom: 15px !important;
+  color: #1a1a1a !important;
+  line-height: 1.4 !important;
 }
 
-.blog-content h3 {
-  font-size: 20px;
-  font-weight: 600;
-  margin-top: 25px;
-  margin-bottom: 12px;
-  color: #2a2a2a;
-  line-height: 1.4;
+.blog-content.blog-content h3 {
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  margin-top: 25px !important;
+  margin-bottom: 12px !important;
+  color: #2a2a2a !important;
+  line-height: 1.4 !important;
 }
 
 /* Paragraphs */
-.blog-content p {
-  margin-bottom: 16px;
-  color: #333;
+.blog-content.blog-content p {
+  margin-bottom: 16px !important;
+  color: #333 !important;
+  font-size: 16px !important;
+  line-height: 1.7 !important;
 }
 
 /* Lists */
-.blog-content ul,
-.blog-content ol {
-  margin-bottom: 16px;
-  padding-left: 24px;
+.blog-content.blog-content ul,
+.blog-content.blog-content ol {
+  margin-bottom: 16px !important;
+  padding-left: 24px !important;
 }
 
-.blog-content li {
-  margin-bottom: 8px;
-  color: #333;
+.blog-content.blog-content li {
+  margin-bottom: 8px !important;
+  color: #333 !important;
 }
 
 /* Bold text */
-.blog-content strong {
-  font-weight: 700;
-  color: #1a1a1a;
+.blog-content.blog-content strong {
+  font-weight: 700 !important;
+  color: #1a1a1a !important;
 }
 
 /* Tables */
-.blog-content table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 25px 0;
-  font-size: 15px;
+.blog-content.blog-content table {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  margin: 25px 0 !important;
+  font-size: 15px !important;
 }
 
-.blog-content th,
-.blog-content td {
-  padding: 12px 16px;
-  text-align: left;
-  border: 1px solid #e2e8f0;
+.blog-content.blog-content th,
+.blog-content.blog-content td {
+  padding: 12px 16px !important;
+  text-align: left !important;
+  border: 1px solid #e2e8f0 !important;
 }
 
-.blog-content th {
-  background-color: #f8fafc;
-  font-weight: 600;
-  color: #1e293b;
+.blog-content.blog-content th {
+  background-color: #f8fafc !important;
+  font-weight: 600 !important;
+  color: #1e293b !important;
 }
 
-.blog-content tr:nth-child(even) {
-  background-color: #f8fafc;
+.blog-content.blog-content tr:nth-child(even) {
+  background-color: #f8fafc !important;
 }
 
 /* Horizontal rule */
-.blog-content hr {
-  margin: 32px 0;
-  border: none;
-  border-top: 1px solid #e2e8f0;
+.blog-content.blog-content hr {
+  margin: 32px 0 !important;
+  border: none !important;
+  border-top: 1px solid #e2e8f0 !important;
 }
 
 /* Links */
-.blog-content a {
-  color: #3c3cf6;
-  text-decoration: none;
-  border-bottom: 1px solid #3c3cf6;
-  transition: all 0.2s;
+.blog-content.blog-content a {
+  color: #3c3cf6 !important;
+  text-decoration: none !important;
+  border-bottom: 1px solid #3c3cf6 !important;
+  transition: all 0.2s !important;
 }
 
-.blog-content a:hover {
-  background-color: #ececfc;
+.blog-content.blog-content a:hover {
+  background-color: #ececfc !important;
 }
 
 /* Blockquote */
-.blog-content blockquote {
-  border-left: 4px solid #3c3cf6;
-  margin: 20px 0;
-  padding: 10px 20px;
-  background-color: #f8fafc;
-  font-style: italic;
-  color: #475569;
+.blog-content.blog-content blockquote {
+  border-left: 4px solid #3c3cf6 !important;
+  margin: 20px 0 !important;
+  padding: 10px 20px !important;
+  background-color: #f8fafc !important;
+  font-style: italic !important;
+  color: #475569 !important;
 }
 
 /* CTA Button - for affiliate links */
-.blog-content .cta-btn {
-  display: inline-block;
-  padding: 14px 28px;
-  background-color: #3c3cf6;
+.blog-content.blog-content .cta-btn {
+  display: inline-block !important;
+  padding: 14px 28px !important;
+  background-color: #3c3cf6 !important;
   color: white !important;
-  font-weight: 600;
-  font-size: 16px;
-  border-radius: 8px;
-  text-decoration: none;
-  margin: 20px 0;
-  transition: all 0.2s;
-  border: none;
-  cursor: pointer;
+  font-weight: 600 !important;
+  font-size: 16px !important;
+  border-radius: 8px !important;
+  text-decoration: none !important;
+  margin: 20px 0 !important;
+  transition: all 0.2s !important;
+  border: none !important;
+  cursor: pointer !important;
 }
 
-.blog-content .cta-btn:hover {
-  background-color: #2a2acc;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(60, 60, 246, 0.3);
+.blog-content.blog-content .cta-btn:hover {
+  background-color: #2a2acc !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(60, 60, 246, 0.3) !important;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .blog-content {
-    padding: 0 16px;
+  .blog-content.blog-content {
+    padding: 0 16px !important;
   }
   
-  .blog-content h1 {
-    font-size: 26px;
+  .blog-content.blog-content h1 {
+    font-size: 26px !important;
   }
   
-  .blog-content h2 {
-    font-size: 20px;
+  .blog-content.blog-content h2 {
+    font-size: 20px !important;
   }
   
-  .blog-content img {
-    margin: 20px auto;
-    border-radius: 4px;
+  .blog-content.blog-content img {
+    margin: 20px auto !important;
+    border-radius: 4px !important;
   }
 }
