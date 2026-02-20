@@ -10,9 +10,17 @@ interface ArticleContentProps {
   content: string;
 }
 
+// 安全地检查字符串
+function safeString(value: any): string {
+  if (typeof value === 'string') return value;
+  if (value === null || value === undefined) return '';
+  return String(value);
+}
+
 // 解析 Markdown 链接 [text](url)
-function parseMarkdownLinks(text: string): JSX.Element {
-  if (!text.includes('[') || !text.includes('](')) return <>{text}</>;
+function parseMarkdownLinks(text: any): JSX.Element {
+  const str = safeString(text);
+  if (!str.includes('[') || !str.includes('](')) return <>{text}</>;
 
   const linkRegex = /\[([^\]]+)\]\(([^\)]+)\)/g;
   const parts: (string | { type: 'link'; text: string; url: string })[] = [];
@@ -20,19 +28,16 @@ function parseMarkdownLinks(text: string): JSX.Element {
   let lastIndex = 0;
   let match;
 
-  while ((match = linkRegex.exec(text)) !== null) {
-    // Add text before the link
+  while ((match = linkRegex.exec(str)) !== null) {
     if (match.index > lastIndex) {
-      parts.push(text.slice(lastIndex, match.index));
+      parts.push(str.slice(lastIndex, match.index));
     }
-    // Add the link
     parts.push({ type: 'link', text: match[1], url: match[2] });
     lastIndex = match.index + match[0].length;
   }
 
-  // Add remaining text
-  if (lastIndex < text.length) {
-    parts.push(text.slice(lastIndex));
+  if (lastIndex < str.length) {
+    parts.push(str.slice(lastIndex));
   }
 
   return (
@@ -58,8 +63,9 @@ function parseMarkdownLinks(text: string): JSX.Element {
 }
 
 // 解析 Markdown 图片 ![alt](url)
-function parseMarkdownImages(text: string): JSX.Element {
-  if (!text.includes('![')) return <>{text}</>;
+function parseMarkdownImages(text: any): JSX.Element {
+  const str = safeString(text);
+  if (!str.includes('![')) return <>{text}</>;
 
   const imageRegex = /!\[([^\]]*)\]\(([^\)]+)\)/g;
   const parts: (string | { type: 'image'; alt: string; url: string })[] = [];
@@ -67,19 +73,16 @@ function parseMarkdownImages(text: string): JSX.Element {
   let lastIndex = 0;
   let match;
 
-  while ((match = imageRegex.exec(text)) !== null) {
-    // Add text before the image
+  while ((match = imageRegex.exec(str)) !== null) {
     if (match.index > lastIndex) {
-      parts.push(text.slice(lastIndex, match.index));
+      parts.push(str.slice(lastIndex, match.index));
     }
-    // Add the image
     parts.push({ type: 'image', alt: match[1], url: match[2] });
     lastIndex = match.index + match[0].length;
   }
 
-  // Add remaining text
-  if (lastIndex < text.length) {
-    parts.push(text.slice(lastIndex));
+  if (lastIndex < str.length) {
+    parts.push(str.slice(lastIndex));
   }
 
   return (
@@ -103,17 +106,19 @@ function parseMarkdownImages(text: string): JSX.Element {
 }
 
 // 解析加粗语法 **text**
-function parseBoldText(text: string): JSX.Element {
-  if (!text.includes('**')) return <>{parseMarkdownLinks(parseMarkdownImages(text))}</>;
+function parseBoldText(text: any): JSX.Element {
+  const str = safeString(text);
+  if (!str.includes('**')) {
+    return <>{parseMarkdownLinks(parseMarkdownImages(str))}</>;
+  }
 
-  const parts = text.split(/(\*\*.*?\*\*)/g);
+  const parts = str.split(/(\*\*.*?\*\*)/g);
   return (
     <>
       {parts.map((part, index) => {
         if (part.startsWith('**') && part.endsWith('**')) {
           return <strong key={index} className="font-bold text-slate-900">{part.slice(2, -2)}</strong>;
         }
-        // Also parse links and images within non-bold text
         return <span key={index}>{parseMarkdownLinks(parseMarkdownImages(part))}</span>;
       })}
     </>
@@ -307,7 +312,6 @@ export default function ArticleContentRenderer({ content }: ArticleContentProps)
         const match = line.match(/\[RADAR:([^\]]+)\]/);
         if (match) {
           const chartTitle = match[1];
-          // 收集接下来的数据行
           const dataLines: string[] = [];
           i++;
           while (i < lines.length && lines[i].startsWith('- ')) {
@@ -339,7 +343,6 @@ export default function ArticleContentRenderer({ content }: ArticleContentProps)
         const match = line.match(/\[BAR:([^\]]+)\]/);
         if (match) {
           const chartTitle = match[1];
-          // 收集表格数据
           i++;
           const tableLines: string[] = [];
           while (i < lines.length && (lines[i].startsWith('|') || lines[i].startsWith('|-'))) {
@@ -405,6 +408,24 @@ export default function ArticleContentRenderer({ content }: ArticleContentProps)
         continue;
       }
 
+      // 处理图片行（独立成行）
+      if (line.trim().startsWith('![')) {
+        const imageMatch = line.match(/!\[([^\]]*)\]\(([^\)]+)\)/);
+        if (imageMatch) {
+          result.push(
+            <img
+              key={key++}
+              src={imageMatch[2]}
+              alt={imageMatch[1]}
+              className="w-full max-w-3xl mx-auto my-6 rounded-lg shadow-md"
+              loading="lazy"
+            />
+          );
+          i++;
+          continue;
+        }
+      }
+
       // 处理列表
       if (line.startsWith('- ')) {
         const items: string[] = [];
@@ -439,23 +460,7 @@ export default function ArticleContentRenderer({ content }: ArticleContentProps)
         continue;
       }
 
-      // 处理图片行（独立成行）
-      if (line.trim().startsWith('![')) {
-        const imageMatch = line.match(/!\[([^\]]*)\]\(([^\)]+)\)/);
-        if (imageMatch) {
-          result.push(
-            <img
-              key={key++}
-              src={imageMatch[2]}
-              alt={imageMatch[1]}
-              className="w-full max-w-3xl mx-auto my-6 rounded-lg shadow-md"
-              loading="lazy"
-            />
-          );
-          i++;
-          continue;
-        }
-      }
+      // 处理分隔线
       if (line.startsWith('---')) {
         result.push(<hr key={key++} className="my-8 border-slate-200" />);
         i++;
