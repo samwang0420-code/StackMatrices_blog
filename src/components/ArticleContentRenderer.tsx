@@ -263,6 +263,24 @@ function generateBarOption(title: string, categories: string[], values: number[]
   };
 }
 
+// 语法高亮 - Monokai 主题
+function highlightCode(code: string, language: string = ''): string {
+  // 简单的语法高亮
+  let highlighted = code
+    // 字符串
+    .replace(/(".*?"|'.*?'|`.*?`)/g, '<span class="text-[#ce9178]">$1</span>')
+    // 关键字
+    .replace(/\b(const|let|var|function|return|if|else|for|while|class|import|export|from|async|await|try|catch)\b/g, '<span class="text-[#569cd6]">$1</span>')
+    // 数字
+    .replace(/\b(\d+)\b/g, '<span class="text-[#b5cea8]">$1</span>')
+    // 函数调用
+    .replace(/(\w+)(?=\()/g, '<span class="text-[#dcdcaa]">$1</span>')
+    // 注释
+    .replace(/(\/\/.*$|#.*$)/gm, '<span class="text-[#6a9955]">$1</span>');
+  
+  return highlighted;
+}
+
 // 主渲染组件
 export default function ArticleContentRenderer({ content }: ArticleContentProps) {
   const [sections, setSections] = useState<JSX.Element[]>([]);
@@ -276,10 +294,10 @@ export default function ArticleContentRenderer({ content }: ArticleContentProps)
     while (i < lines.length) {
       const line = lines[i];
 
-      // 处理标题
+      // 处理标题 - 使用 Display 字体
       if (line.startsWith('# ')) {
         result.push(
-          <h1 key={key++} className="text-4xl font-bold mb-6 mt-8 text-slate-900">
+          <h1 key={key++} className="text-4xl md:text-5xl font-bold mb-6 mt-8 text-slate-900 font-display leading-tight">
             {parseBoldText(line.replace('# ', ''))}
           </h1>
         );
@@ -289,7 +307,7 @@ export default function ArticleContentRenderer({ content }: ArticleContentProps)
 
       if (line.startsWith('## ')) {
         result.push(
-          <h2 key={key++} className="text-2xl font-bold mb-4 mt-6 text-slate-900">
+          <h2 key={key++} className="text-2xl md:text-3xl font-bold mb-4 mt-8 text-slate-900 font-display leading-tight">
             {parseBoldText(line.replace('## ', ''))}
           </h2>
         );
@@ -299,7 +317,7 @@ export default function ArticleContentRenderer({ content }: ArticleContentProps)
 
       if (line.startsWith('### ')) {
         result.push(
-          <h3 key={key++} className="text-xl font-bold mb-3 mt-4 text-slate-900">
+          <h3 key={key++} className="text-xl md:text-2xl font-bold mb-3 mt-6 text-slate-900 font-display leading-tight">
             {parseBoldText(line.replace('### ', ''))}
           </h3>
         );
@@ -367,6 +385,85 @@ export default function ArticleContentRenderer({ content }: ArticleContentProps)
         }
       }
 
+      // 处理代码块 ```language
+      if (line.startsWith('```')) {
+        const language = line.replace('```', '').trim();
+        const codeLines: string[] = [];
+        i++;
+        while (i < lines.length && !lines[i].startsWith('```')) {
+          codeLines.push(lines[i]);
+          i++;
+        }
+        const code = codeLines.join('\n');
+        const highlightedCode = highlightCode(code, language);
+        
+        result.push(
+          <div key={key++} className="my-6 rounded-lg overflow-hidden bg-[#1e1e1e] border border-slate-700">
+            {language && (
+              <div className="px-4 py-2 bg-[#2d2d2d] border-b border-slate-700">
+                <span className="text-xs text-slate-400 font-mono uppercase">{language}</span>
+              </div>
+            )}
+            <pre className="p-4 overflow-x-auto">
+              <code 
+                className="font-mono text-sm text-[#d4d4d4] leading-relaxed"
+                dangerouslySetInnerHTML={{ __html: highlightedCode }}
+              />
+            </pre>
+          </div>
+        );
+        i++; // skip the closing ```
+        continue;
+      }
+
+      // 处理行内代码 `code`
+      if (line.includes('`')) {
+        const parts = line.split(/(`[^`]+`)/g);
+        const processedParts = parts.map((part, idx) => {
+          if (part.startsWith('`') && part.endsWith('`')) {
+            return (
+              <code 
+                key={idx} 
+                className="px-1.5 py-0.5 bg-slate-100 text-slate-800 rounded font-mono text-sm"
+              >
+                {part.slice(1, -1)}
+              </code>
+            );
+          }
+          return <span key={idx}>{parseBoldText(part)}</span>;
+        });
+        
+        result.push(
+          <p key={key++} className="mb-4 leading-relaxed text-slate-700">
+            {processedParts}
+          </p>
+        );
+        i++;
+        continue;
+      }
+
+      // 处理引用块 > text (Notion-style callout)
+      if (line.startsWith('> ')) {
+        const quoteLines: string[] = [];
+        while (i < lines.length && lines[i].startsWith('> ')) {
+          quoteLines.push(lines[i].replace('> ', ''));
+          i++;
+        }
+        const quoteContent = quoteLines.join('\n');
+        
+        result.push(
+          <blockquote 
+            key={key++} 
+            className="my-6 pl-6 py-4 border-l-4 border-primary bg-[#f8f9fa] rounded-r-lg"
+          >
+            <div className="text-slate-800 leading-relaxed">
+              {parseBoldText(quoteContent)}
+            </div>
+          </blockquote>
+        );
+        continue;
+      }
+
       // 处理表格
       if (line.startsWith('|') && !line.includes('[BAR:')) {
         const tableLines: string[] = [line];
@@ -417,7 +514,7 @@ export default function ArticleContentRenderer({ content }: ArticleContentProps)
               key={key++}
               src={imageMatch[2]}
               alt={imageMatch[1]}
-              className="w-full max-w-3xl mx-auto my-6 rounded-lg shadow-md"
+              className="w-full max-w-3xl mx-auto my-8 rounded-lg shadow-lg"
               loading="lazy"
             />
           );
@@ -474,9 +571,11 @@ export default function ArticleContentRenderer({ content }: ArticleContentProps)
         continue;
       }
 
-      // 处理段落
+      // 处理段落 - 使用 Merriweather 字体
       result.push(
-        <p key={key++} className="mb-4 leading-relaxed text-slate-700">{parseBoldText(line)}</p>
+        <p key={key++} className="mb-4 leading-relaxed text-slate-700 text-base">
+          {parseBoldText(line)}
+        </p>
       );
       i++;
     }
@@ -484,5 +583,5 @@ export default function ArticleContentRenderer({ content }: ArticleContentProps)
     setSections(result);
   }, [content]);
 
-  return <div className="blog-content">{sections}</div>;
+  return <article className="blog-content max-w-none">{sections}</article>;
 }

@@ -146,7 +146,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         </div>
 
         {/* Content */}
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="max-w-[70ch] mx-auto px-4 sm:px-6 lg:px-8 py-12 font-body">
           {/* Author */}
           <div className="flex items-center gap-4 mb-8 pb-8 border-b border-slate-200">
             <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
@@ -155,13 +155,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               </svg>
             </div>
             <div>
-              <p className="font-bold text-slate-900">{article.author_name}</p>
-              <p className="text-sm text-slate-500">{article.author_role}</p>
+              <p className="font-bold text-slate-900 font-sans">{article.author_name}</p>
+              <p className="text-sm text-slate-500 font-sans">{article.author_role}</p>
             </div>
           </div>
 
           {/* Excerpt */}
-          <p className="text-xl text-slate-600 mb-8 italic border-l-4 border-primary pl-4">
+          <p className="text-xl text-slate-600 mb-8 italic border-l-4 border-primary pl-4 leading-relaxed">
             {article.excerpt}
           </p>
 
