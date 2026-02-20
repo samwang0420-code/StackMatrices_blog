@@ -63,7 +63,7 @@ export function Footer() {
           </div>
         </div>
         <div className="border-t border-slate-100 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-xs text-slate-400">© 2024 Stackmatrices. All rights reserved.</p>
+          <p className="text-xs text-slate-400">© 2026 Stackmatrices. All rights reserved.</p>
           <p className="text-[10px] md:text-xs text-slate-400 max-w-lg text-center md:text-right uppercase tracking-wider leading-relaxed">
             Trust Statement: I may earn a commission if you sign up through these links, at no extra cost to you.
           </p>
