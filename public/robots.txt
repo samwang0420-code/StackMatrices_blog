@@ -1,0 +1,16 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /api
+Disallow: /_next
+
+# Googlebot
+User-agent: Googlebot
+Allow: /
+Disallow: /api
+
+# Host
+Host: https://stackmatrices-blog.pages.dev
+
+# Sitemaps
+Sitemap: https://stackmatrices-blog.pages.dev/sitemap.xml

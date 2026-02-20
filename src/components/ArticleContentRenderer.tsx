@@ -10,10 +10,57 @@ interface ArticleContentProps {
   content: string;
 }
 
+// 解析 Markdown 链接 [text](url)
+function parseMarkdownLinks(text: string): JSX.Element {
+  if (!text.includes('[') || !text.includes('](')) return <>{text}</>;
+
+  const linkRegex = /\[([^\]]+)\]\(([^\)]+)\)/g;
+  const parts: (string | { type: 'link'; text: string; url: string })[] = [];
+
+  let lastIndex = 0;
+  let match;
+
+  while ((match = linkRegex.exec(text)) !== null) {
+    // Add text before the link
+    if (match.index > lastIndex) {
+      parts.push(text.slice(lastIndex, match.index));
+    }
+    // Add the link
+    parts.push({ type: 'link', text: match[1], url: match[2] });
+    lastIndex = match.index + match[0].length;
+  }
+
+  // Add remaining text
+  if (lastIndex < text.length) {
+    parts.push(text.slice(lastIndex));
+  }
+
+  return (
+    <>
+      {parts.map((part, index) => {
+        if (typeof part === 'object' && part.type === 'link') {
+          return (
+            <a
+              key={index}
+              href={part.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:underline font-medium"
+            >
+              {part.text}
+            </a>
+          );
+        }
+        return <span key={index}>{part}</span>;
+      })}
+    </>
+  );
+}
+
 // 解析加粗语法 **text**
 function parseBoldText(text: string): JSX.Element {
-  if (!text.includes('**')) return <>{text}</>;
-  
+  if (!text.includes('**')) return <>{parseMarkdownLinks(text)}</>;
+
   const parts = text.split(/(\*\*.*?\*\*)/g);
   return (
     <>
@@ -21,7 +68,8 @@ function parseBoldText(text: string): JSX.Element {
         if (part.startsWith('**') && part.endsWith('**')) {
           return <strong key={index} className="font-bold text-slate-900">{part.slice(2, -2)}</strong>;
         }
-        return <span key={index}>{part}</span>;
+        // Also parse links within non-bold text
+        return <span key={index}>{parseMarkdownLinks(part)}</span>;
       })}
     </>
   );
