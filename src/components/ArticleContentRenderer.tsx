@@ -57,9 +57,54 @@ function parseMarkdownLinks(text: string): JSX.Element {
   );
 }
 
+// 解析 Markdown 图片 ![alt](url)
+function parseMarkdownImages(text: string): JSX.Element {
+  if (!text.includes('![')) return <>{text}</>;
+
+  const imageRegex = /!\[([^\]]*)\]\(([^\)]+)\)/g;
+  const parts: (string | { type: 'image'; alt: string; url: string })[] = [];
+
+  let lastIndex = 0;
+  let match;
+
+  while ((match = imageRegex.exec(text)) !== null) {
+    // Add text before the image
+    if (match.index > lastIndex) {
+      parts.push(text.slice(lastIndex, match.index));
+    }
+    // Add the image
+    parts.push({ type: 'image', alt: match[1], url: match[2] });
+    lastIndex = match.index + match[0].length;
+  }
+
+  // Add remaining text
+  if (lastIndex < text.length) {
+    parts.push(text.slice(lastIndex));
+  }
+
+  return (
+    <>
+      {parts.map((part, index) => {
+        if (typeof part === 'object' && part.type === 'image') {
+          return (
+            <img
+              key={index}
+              src={part.url}
+              alt={part.alt}
+              className="w-full max-w-3xl mx-auto my-6 rounded-lg shadow-md"
+              loading="lazy"
+            />
+          );
+        }
+        return <span key={index}>{part}</span>;
+      })}
+    </>
+  );
+}
+
 // 解析加粗语法 **text**
 function parseBoldText(text: string): JSX.Element {
-  if (!text.includes('**')) return <>{parseMarkdownLinks(text)}</>;
+  if (!text.includes('**')) return <>{parseMarkdownLinks(parseMarkdownImages(text))}</>;
 
   const parts = text.split(/(\*\*.*?\*\*)/g);
   return (
@@ -68,8 +113,8 @@ function parseBoldText(text: string): JSX.Element {
         if (part.startsWith('**') && part.endsWith('**')) {
           return <strong key={index} className="font-bold text-slate-900">{part.slice(2, -2)}</strong>;
         }
-        // Also parse links within non-bold text
-        return <span key={index}>{parseMarkdownLinks(part)}</span>;
+        // Also parse links and images within non-bold text
+        return <span key={index}>{parseMarkdownLinks(parseMarkdownImages(part))}</span>;
       })}
     </>
   );
@@ -394,7 +439,23 @@ export default function ArticleContentRenderer({ content }: ArticleContentProps)
         continue;
       }
 
-      // 处理分隔线
+      // 处理图片行（独立成行）
+      if (line.trim().startsWith('![')) {
+        const imageMatch = line.match(/!\[([^\]]*)\]\(([^\)]+)\)/);
+        if (imageMatch) {
+          result.push(
+            <img
+              key={key++}
+              src={imageMatch[2]}
+              alt={imageMatch[1]}
+              className="w-full max-w-3xl mx-auto my-6 rounded-lg shadow-md"
+              loading="lazy"
+            />
+          );
+          i++;
+          continue;
+        }
+      }
       if (line.startsWith('---')) {
         result.push(<hr key={key++} className="my-8 border-slate-200" />);
         i++;
