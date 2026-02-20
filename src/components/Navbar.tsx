@@ -40,6 +40,12 @@ export function Navbar() {
               >
                 Blog
               </Link>
+              <Link 
+                href="/tools" 
+                className={`text-sm font-medium transition-colors ${isActive('/tools') ? 'text-primary' : 'text-slate-500 hover:text-primary'}`}
+              >
+                Quick Tools
+              </Link>
             </nav>
           </div>
           <div className="flex items-center gap-4">

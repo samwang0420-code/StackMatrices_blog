@@ -1,5 +1,18 @@
 import Link from 'next/link';
 import { Calculator, BarChart3, FileText, TrendingUp, CheckSquare, ArrowRight } from 'lucide-react';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Free SaaS Tools & Calculators | Stackmatrices',
+  description: 'Free SaaS ROI calculators, TCO analysis tools, buying checklists, and industry benchmarks. Make smarter software purchasing decisions with our free tools.',
+  keywords: 'SaaS calculator, ROI calculator, TCO calculator, software buying guide, SaaS benchmarks, free tools',
+  openGraph: {
+    title: 'Free SaaS Tools & Calculators',
+    description: 'Calculate ROI, compare TCO, and make smarter SaaS buying decisions with our free tools.',
+    url: 'https://stackmatrices.com/tools',
+    type: 'website',
+  },
+};
 
 const tools = [
   {
