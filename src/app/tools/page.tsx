@@ -134,6 +134,24 @@ export default function ToolsPage() {
         </div>
       </div>
 
+      {/* Affiliate Banner */}
+      <div className="bg-slate-100 py-12 px-4 border-y border-slate-200">
+        <div className="max-w-4xl mx-auto text-center">
+          <h3 className="text-lg font-semibold text-slate-700 mb-4">
+            Recommended SEO Tool
+          </h3>
+          <div 
+            className="inline-block"
+            dangerouslySetInnerHTML={{
+              __html: '<iframe src="https://mangools.com/affil-banners/kwfinder-ad.html?title=default&theme=default&size=300x250#a6999f04c6aee089276eea91f" width="300" height="250" style="border: 0;"></iframe>'
+            }}
+          />
+          <p className="text-xs text-slate-500 mt-2">
+            Affiliate link - We may earn a commission at no extra cost to you
+          </p>
+        </div>
+      </div>
+
       {/* CTA */}
       <div className="bg-white border-t border-slate-200 py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
