@@ -77,7 +77,7 @@ const toolDatabase: Record<string, ToolRecommendation> = {
     description: "Purpose-built for data synchronization. Supports bidirectional real-time sync, conflict resolution, and version control. Ideal for teams that need multiple systems to stay in sync.",
     bestFor: ["Data Sync", "Two-way Integration", "Team Collaboration"],
     pricing: "$8-20/user/month",
-    affiliateLink: "",
+    affiliateLink: "https://boost.space/?fpr=stackmatrices",
     score: 0,
   },
   make: {
@@ -87,7 +87,7 @@ const toolDatabase: Record<string, ToolRecommendation> = {
     description: "Powerful visual workflow builder with complex logic, loops, and conditional branches. More affordable than Zapier, easier than n8n.",
     bestFor: ["Complex Workflows", "Visual Building", "Mid-range Budget"],
     pricing: "$9-16/month (per operations)",
-    affiliateLink: "",
+    affiliateLink: "https://www.make.com/en/register?pc=stackmatrices",
     score: 0,
   },
   zapier: {
@@ -232,9 +232,17 @@ export default function AutomationFinder() {
                 </div>
 
                 <div className="flex gap-4">
+                  <a
+                    href={tool.affiliateLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 text-center py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors"
+                  >
+                    Start Free Trial
+                  </a>
                   <Link
                     href={`/blog/${tool.id}-review`}
-                    className="w-full text-center py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors"
+                    className="flex-1 text-center py-3 border border-slate-300 rounded-lg font-medium text-slate-700 hover:bg-slate-50 transition-colors"
                   >
                     Read Full Review
                   </Link>

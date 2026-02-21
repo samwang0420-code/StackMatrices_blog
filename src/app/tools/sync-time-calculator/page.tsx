@@ -24,13 +24,13 @@ const tools = [
     name: "Boost.space",
     monthlyPrice: 15,
     setupHours: 4,
-    affiliateLink: "",
+    affiliateLink: "https://boost.space/?fpr=stackmatrices",
   },
   {
     name: "Make (Integromat)",
     monthlyPrice: 12,
     setupHours: 6,
-    affiliateLink: "",
+    affiliateLink: "https://www.make.com/en/register?pc=stackmatrices",
   },
   {
     name: "Zapier",
@@ -155,12 +155,23 @@ export default function SyncTimeCalculator() {
                     </div>
                   </div>
 
-                  <Link
-                    href={`/blog/${tool.name.toLowerCase().replace(/[^a-z0-9]/g, '-')}-review`}
-                    className="w-full py-2 bg-blue-600 text-white rounded-lg font-medium text-center block hover:bg-blue-700 transition-colors"
-                  >
-                    Read Full Review
-                  </Link>
+                  {tool.affiliateLink ? (
+                    <a
+                      href={tool.affiliateLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full py-2 bg-blue-600 text-white rounded-lg font-medium text-center block hover:bg-blue-700 transition-colors"
+                    >
+                      Start Automating
+                    </a>
+                  ) : (
+                    <Link
+                      href={`/blog/${tool.name.toLowerCase().replace(/[^a-z0-9]/g, '-')}-review`}
+                      className="w-full py-2 bg-blue-600 text-white rounded-lg font-medium text-center block hover:bg-blue-700 transition-colors"
+                    >
+                      Read Full Review
+                    </Link>
+                  )}
                 </div>
               ))}
             </div>
