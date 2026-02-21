@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.SITE_URL || 'https://stackmatrices-blog.pages.dev',
+  siteUrl: 'https://stackmatrices.com',
   generateRobotsTxt: true,
   generateIndexSitemap: false,
   changefreq: 'daily',

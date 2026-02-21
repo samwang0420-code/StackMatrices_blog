@@ -10,7 +10,7 @@ Allow: /
 Disallow: /api
 
 # Host
-Host: https://stackmatrices-blog.pages.dev
+Host: https://stackmatrices.com
 
 # Sitemaps
-Sitemap: https://stackmatrices-blog.pages.dev/sitemap.xml
+Sitemap: https://stackmatrices.com/sitemap.xml
