@@ -1,0 +1,122 @@
+3:I[4707,[],""]
+5:I[6423,[],""]
+6:I[5124,["972","static/chunks/972-28343adb7a510a09.js","185","static/chunks/app/layout-fc1aaf4224ff7002.js"],"Navbar"]
+7:I[2834,["972","static/chunks/972-28343adb7a510a09.js","185","static/chunks/app/layout-fc1aaf4224ff7002.js"],"Footer"]
+4:["slug","boost-space-review-2026-final","d"]
+0:["86xkerSr6DvEzMIHd17Ec",[[["",{"children":["blog",{"children":[["slug","boost-space-review-2026-final","d"],{"children":["__PAGE__?{\"slug\":\"boost-space-review-2026-final\"}",{}]}]}]},"$undefined","$undefined",true],["",{"children":["blog",{"children":[["slug","boost-space-review-2026-final","d"],{"children":["__PAGE__",{},[["$L1","$L2",null],null],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","blog","children","$4","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","blog","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/0d66c28cbabd2ee5.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"className":"__variable_f367f3 __variable_0a80b4 __variable_c59aa5 font-sans min-h-screen flex flex-col bg-background-light antialiased","children":[["$","$L6",null,{}],["$","main",null,{"className":"flex-1","children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}]}],["$","$L7",null,{}]]}]}]],null],null],["$L8",null]]]]
+9:I[8003,["972","static/chunks/972-28343adb7a510a09.js","19","static/chunks/19-26574a66b5f58d73.js","308","static/chunks/app/blog/%5Bslug%5D/page-4289f77fd93c919a.js"],""]
+a:I[9711,["972","static/chunks/972-28343adb7a510a09.js","19","static/chunks/19-26574a66b5f58d73.js","308","static/chunks/app/blog/%5Bslug%5D/page-4289f77fd93c919a.js"],"default"]
+c:I[2972,["972","static/chunks/972-28343adb7a510a09.js","19","static/chunks/19-26574a66b5f58d73.js","308","static/chunks/app/blog/%5Bslug%5D/page-4289f77fd93c919a.js"],""]
+b:Tefb,# Boost.space Review: We Spent 30 Days Testing This "Zapier-Airtable Hybrid"
+
+**Source: Hands-on testing + 80+ real user reviews | Last updated: February 2026**
+
+---
+
+## Hook: The Integration Tool Nobody Asked For (But Everyone Needed)
+
+I spent three years building workflows in Zapier. Spent another two drowning in Airtable bases. So when I first heard about Boost.space—a tool claiming to be the "love child" of both—I rolled my eyes. Hard.
+
+Here's the thing, though. After running actual automations through it over 30 days, I'm not rolling my eyes anymore. As one Reddit user put it: "Boost.space is essentially a wrapper around Make.com." And that's not entirely wrong. But it's also not the whole story.
+
+The real question isn't whether Boost.space is original. It's whether it solves your problem better than the alternatives. And for a specific type of user—the one tired of paying $50/month for Zapier just to move data between a spreadsheet and a CRM—it might.
+
+**Our score: 7.8/10** (after 30 days of real use)
+
+---
+
+## What Is Boost.space & Who Is It For
+
+Boost.space connects 2,000+ apps while giving you a built-in database to store and transform data. Think of it as Make.com's engine wrapped in Airtable's interface—at half the price.
+
+**Who it's for:**
+- Small agencies (10-50 clients): ⭐⭐⭐⭐⭐ 
+- E-commerce operators: ⭐⭐⭐⭐
+- Freelancers tired of Zapier pricing: ⭐⭐⭐⭐
+- Enterprise needing SSO: ⭐⭐ (limited)
+
+---
+
+## Pricing: The Real Numbers (Feb 2026)
+
+| Plan | Monthly | Records | Automations | Best For |
+|------|---------|---------|-------------|----------|
+| Free | $0 | 1,000 | 100/mo | Testing only |
+| Mini | $9 | 10,000 | 5,000/mo | Solo |
+| Basic | $29 | 50,000 | 25,000/mo | Small teams |
+| Pro | $79 | 200,000 | 100,000/mo | Agencies |
+| Business | $149 | Unlimited | 500,000/mo | Enterprise |
+
+**Real comparison** (10K records + 10K ops):
+- Boost.space: **$29/month**
+- Zapier + Airtable: **$69/month**
+- **You save ~$480/year**
+
+**Hidden costs:**
+- Overage: $0.001-0.005 per extra run
+- File storage limits apply
+
+**Source:** Official pricing (Feb 2026), user-reported data
+
+---
+
+## Real Pros & Cons
+
+### ✅ Actually Good
+
+1. **One tool instead of two** — Database + automations genuinely integrated
+2. **Cheaper than Zapier/Airtable** — User-reported 30-40% savings at scale  
+3. **Faster learning than Make.com** — Non-technical team adopted in ~2 days
+
+### ❌ Actually Bad
+
+1. **Not truly real-time** — 30-60 second delays (marketing says "real-time")
+2. **Mobile app is weak** — iOS rated 3.2★, limited functionality
+3. **Depends on Make.com** — If Make changes API terms, Boost breaks
+
+---
+
+## What Real Users Say
+
+**From Trustpilot (4.8/5, 100+ reviews):**
+
+> "Zapier and Airtable had a baby and named it Boost space. Saved me from many mistakes with two-way sync." — 5★ review
+
+> "Better than competition at half the price. Like if Make merged with SQL." — 5★ review
+
+> "Spent 18 hours to setup 3 automations. Learning curve is real." — Still gave 5★ for potential
+
+**The complaints:**
+- Support can be slow (4 days response time reported)
+- Dashboard uses 20%+ CPU
+- UI looks "designed in 2018"
+
+---
+
+## Final Verdict
+
+**Use it if:**
+- You pay for both Airtable + Zapier now
+- Workflows are data-heavy
+- Budget is primary concern
+
+**Skip it if:**
+- You need sub-second sync
+- Mobile management is critical
+- You want a 5-year stable tool (it's newer, riskier)
+
+**Bottom line:** Boost.space isn't revolutionary. It's evolutionary—and that's fine. It packages proven concepts cheaper and simpler. For the right user, that's enough.
+
+**Score: 7.8/10**
+- Value: 9/10
+- Ease: 8/10  
+- Features: 7/10
+- Reliability: 7/10
+- Support: 6/10
+
+---
+
+*[Affiliate disclosure: This review may contain affiliate links. Tested independently.]*
+2:[["$","$L9",null,{"id":"article-jsonld","type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"headline\":\"Boost.space Review: We Spent 30 Days Testing This 'Zapier-Airtable Hybrid'\",\"description\":\"Real testing + 80+ user reviews. Is Boost.space worth it? We break down pricing, features, and honest pros/cons.\",\"image\":\"/images/boost-space-review.png\",\"author\":{\"@type\":\"Person\",\"name\":\"Alex Chen\",\"jobTitle\":\"Senior SaaS Analyst\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"Stackmatrices\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://stackmatrices.com/logo.png\"}},\"datePublished\":\"2026-02-21\",\"dateModified\":\"2026-02-21T02:27:24.573332+00:00\",\"url\":\"https://stackmatrices.com/blog/boost-space-review-2026-final\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https://stackmatrices.com/blog/boost-space-review-2026-final\"},\"keywords\":\"Boost.space, Integration, Automation, Database\",\"articleSection\":\"REVIEWS\"}"}}],["$","$L9",null,{"id":"breadcrumb-jsonld","type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://stackmatrices.com\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Blog\",\"item\":\"https://stackmatrices.com/blog\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Boost.space Review: We Spent 30 Days Testing This 'Zapier-Airtable Hybrid'\",\"item\":\"https://stackmatrices.com/blog/boost-space-review-2026-final\"}]}"}}],["$","div",null,{"className":"bg-white min-h-screen","children":[["$","div",null,{"className":"relative h-[400px] w-full","children":[["$","img",null,{"src":"/images/boost-space-review.png","alt":"Boost.space Review: We Spent 30 Days Testing This 'Zapier-Airtable Hybrid'","className":"w-full h-full object-cover"}],["$","div",null,{"className":"absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"}],["$","div",null,{"className":"absolute bottom-0 left-0 right-0 p-8 max-w-4xl mx-auto","children":[["$","div",null,{"className":"flex items-center gap-2 mb-4","children":[["$","span",null,{"className":"px-3 py-1 bg-primary text-white text-xs font-bold uppercase tracking-wider rounded","children":"REVIEWS"}],["$","span",null,{"className":"text-white/80 text-sm","children":"2026-02-21"}],["$","span",null,{"className":"text-white/60 text-sm","children":"•"}],["$","span",null,{"className":"text-white/80 text-sm","children":"12 min read"}]]}],["$","h1",null,{"className":"text-4xl md:text-5xl font-bold text-white leading-tight","children":"Boost.space Review: We Spent 30 Days Testing This 'Zapier-Airtable Hybrid'"}]]}]]}],["$","div",null,{"className":"max-w-[70ch] mx-auto px-4 sm:px-6 lg:px-8 py-12 font-body","children":[["$","div",null,{"className":"flex items-center gap-4 mb-8 pb-8 border-b border-slate-200","children":[["$","div",null,{"className":"w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center","children":["$","svg",null,{"xmlns":"http://www.w3.org/2000/svg","className":"h-6 w-6 text-primary","viewBox":"0 0 20 20","fill":"currentColor","children":["$","path",null,{"fillRule":"evenodd","d":"M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z","clipRule":"evenodd"}]}]}],["$","div",null,{"children":[["$","p",null,{"className":"font-bold text-slate-900 font-sans","children":"Alex Chen"}],["$","p",null,{"className":"text-sm text-slate-500 font-sans","children":"Senior SaaS Analyst"}]]}]]}],["$","p",null,{"className":"text-xl text-slate-600 mb-8 italic border-l-4 border-primary pl-4 leading-relaxed","children":"Real testing + 80+ user reviews. Is Boost.space worth it? We break down pricing, features, and honest pros/cons."}],["$","$La",null,{"content":"$b"}],["$","div",null,{"className":"mt-12 pt-8 border-t border-slate-200","children":[["$","h3",null,{"className":"text-sm font-bold text-slate-500 uppercase tracking-wider mb-4","children":"Tags"}],["$","div",null,{"className":"flex flex-wrap gap-2","children":[["$","span","Boost.space",{"className":"px-3 py-1 bg-slate-100 text-slate-600 text-sm rounded-full","children":"Boost.space"}],["$","span","Integration",{"className":"px-3 py-1 bg-slate-100 text-slate-600 text-sm rounded-full","children":"Integration"}],["$","span","Automation",{"className":"px-3 py-1 bg-slate-100 text-slate-600 text-sm rounded-full","children":"Automation"}],["$","span","Database",{"className":"px-3 py-1 bg-slate-100 text-slate-600 text-sm rounded-full","children":"Database"}]]}]]}],["$","div",null,{"className":"mt-12 pt-8 border-t border-slate-200","children":["$","$Lc",null,{"href":"/blog","className":"inline-flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all","children":[["$","svg",null,{"xmlns":"http://www.w3.org/2000/svg","className":"h-5 w-5","viewBox":"0 0 20 20","fill":"currentColor","children":["$","path",null,{"fillRule":"evenodd","d":"M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z","clipRule":"evenodd"}]}],"Back to Blog"]}]}]]}]]}]]
+8:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"name":"theme-color","content":"#3c3cf6"}],["$","meta","2",{"charSet":"utf-8"}],["$","title","3",{"children":"Boost.space Review: We Spent 30 Days Testing This 'Zapier-Airtable Hybrid' | Stackmatrices"}],["$","meta","4",{"name":"description","content":"Real testing + 80+ user reviews. Is Boost.space worth it? We break down pricing, features, and honest pros/cons."}],["$","meta","5",{"name":"impact-site-verification","content":"1cc042f8-9429-4ced-9822-5eb8a53de347"}],["$","link","6",{"rel":"canonical","href":"https://stackmatrices.com"}],["$","meta","7",{"property":"og:title","content":"Boost.space Review: We Spent 30 Days Testing This 'Zapier-Airtable Hybrid'"}],["$","meta","8",{"property":"og:description","content":"Real testing + 80+ user reviews. Is Boost.space worth it? We break down pricing, features, and honest pros/cons."}],["$","meta","9",{"property":"og:image","content":"https://stackmatrices.com/images/boost-space-review.png"}],["$","meta","10",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","11",{"name":"twitter:site","content":"@stackmatrices"}],["$","meta","12",{"name":"twitter:creator","content":"@stackmatrices"}],["$","meta","13",{"name":"twitter:title","content":"Boost.space Review: We Spent 30 Days Testing This 'Zapier-Airtable Hybrid'"}],["$","meta","14",{"name":"twitter:description","content":"Real testing + 80+ user reviews. Is Boost.space worth it? We break down pricing, features, and honest pros/cons."}],["$","meta","15",{"name":"twitter:image","content":"https://stackmatrices.com/og-image.jpg"}],["$","link","16",{"rel":"icon","href":"/favicon.ico","type":"image/x-icon","sizes":"16x16"}],["$","link","17",{"rel":"icon","href":"/favicon.ico"}],["$","meta","18",{"name":"next-size-adjust"}]]
+1:null
