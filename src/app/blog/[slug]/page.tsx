@@ -81,13 +81,35 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     };
   }
   
+  // 从标题和分类生成关键词
+  const keywords = [
+    article.title.toLowerCase().replace(/[^a-z0-9\s]/g, ''),
+    article.category?.toLowerCase(),
+    'saas review',
+    'software comparison',
+    'tool review',
+    ...(article.tags || []),
+  ].filter(Boolean).join(', ');
+
   return {
     title: article.title,
     description: article.excerpt,
+    keywords,
     openGraph: {
       title: article.title,
       description: article.excerpt,
-      images: article.image_url ? [article.image_url] : undefined,
+      images: article.image_url ? [article.image_url] : [`${SITE_CONFIG.url}/og-image.jpg`],
+      type: 'article',
+      publishedTime: article.date,
+      modifiedTime: article.updated_at || article.date,
+      authors: [article.author_name],
+      tags: article.tags,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: article.title,
+      description: article.excerpt,
+      images: article.image_url ? [article.image_url] : [`${SITE_CONFIG.url}/og-image.jpg`],
     },
   };
 }
