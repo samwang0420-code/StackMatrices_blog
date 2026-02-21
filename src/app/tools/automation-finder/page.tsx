@@ -232,21 +232,9 @@ export default function AutomationFinder() {
                 </div>
 
                 <div className="flex gap-4">
-                  <a
-                    href={tool.affiliateLink || `#`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`flex-1 text-center py-3 rounded-lg font-medium transition-colors ${
-                      tool.affiliateLink
-                        ? 'bg-blue-600 text-white hover:bg-blue-700'
-                        : 'bg-slate-200 text-slate-400 cursor-not-allowed'
-                    }`}
-                  >
-                    {tool.affiliateLink ? 'Start Free Trial' : 'Link Pending'}
-                  </a>
                   <Link
                     href={`/blog/${tool.id}-review`}
-                    className="flex-1 text-center py-3 border border-slate-300 rounded-lg font-medium text-slate-700 hover:bg-slate-50 transition-colors"
+                    className="w-full text-center py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors"
                   >
                     Read Full Review
                   </Link>

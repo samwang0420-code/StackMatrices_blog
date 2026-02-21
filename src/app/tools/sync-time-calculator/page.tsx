@@ -155,18 +155,12 @@ export default function SyncTimeCalculator() {
                     </div>
                   </div>
 
-                  <a
-                    href={tool.affiliateLink || `#`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`w-full py-2 rounded-lg font-medium text-center block transition-colors ${
-                      tool.affiliateLink
-                        ? 'bg-blue-600 text-white hover:bg-blue-700'
-                        : 'bg-slate-200 text-slate-400 cursor-not-allowed'
-                    }`}
+                  <Link
+                    href={`/blog/${tool.name.toLowerCase().replace(/[^a-z0-9]/g, '-')}-review`}
+                    className="w-full py-2 bg-blue-600 text-white rounded-lg font-medium text-center block hover:bg-blue-700 transition-colors"
                   >
-                    {tool.affiliateLink ? 'Start Automating' : 'Link Pending'}
-                  </a>
+                    Read Full Review
+                  </Link>
                 </div>
               ))}
             </div>
