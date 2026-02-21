@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Calculator, BarChart3, FileText, TrendingUp, CheckSquare, ArrowRight } from 'lucide-react';
+import { Calculator, BarChart3, FileText, TrendingUp, CheckSquare, ArrowRight, Gauge } from 'lucide-react';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -15,6 +15,13 @@ export const metadata: Metadata = {
 };
 
 const tools = [
+  {
+    icon: Gauge,
+    title: 'Website Speed Analyzer',
+    description: 'Analyze any website\'s performance with Core Web Vitals, waterfall charts, and smart optimization recommendations.',
+    href: '/tools/website-speed-analyzer',
+    color: 'bg-cyan-500',
+  },
   {
     icon: Calculator,
     title: 'ROI Calculator',
