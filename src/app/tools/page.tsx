@@ -134,20 +134,34 @@ export default function ToolsPage() {
         </div>
       </div>
 
-      {/* Affiliate Banner */}
+      {/* Affiliate Banners */}
       <div className="bg-slate-100 py-12 px-4 border-y border-slate-200">
-        <div className="max-w-4xl mx-auto text-center">
-          <h3 className="text-lg font-semibold text-slate-700 mb-4">
-            Recommended SEO Tool
+        <div className="max-w-6xl mx-auto">
+          <h3 className="text-lg font-semibold text-slate-700 mb-6 text-center">
+            Recommended SEO Tools
           </h3>
-          <div 
-            className="inline-block"
-            dangerouslySetInnerHTML={{
-              __html: '<iframe src="https://mangools.com/affil-banners/kwfinder-ad.html?title=default&theme=default&size=300x250#a6999f04c6aee089276eea91f" width="300" height="250" style="border: 0;"></iframe>'
-            }}
-          />
-          <p className="text-xs text-slate-500 mt-2">
-            Affiliate link - We may earn a commission at no extra cost to you
+          <div className="flex flex-wrap justify-center gap-6">
+            {/* KWFinder */}
+            <div 
+              dangerouslySetInnerHTML={{
+                __html: '<iframe src="https://mangools.com/affil-banners/kwfinder-ad.html?title=default&theme=default&version=domain&size=300x250#a6999f04c6aee089276eea91f" width="300" height="250" style="border: 0;"></iframe>'
+              }}
+            />
+            {/* SERPChecker */}
+            <div 
+              dangerouslySetInnerHTML={{
+                __html: '<iframe src="https://mangools.com/affil-banners/serpchecker-ad.html?title=default&theme=default&size=300x250#a6999f04c6aee089276eea91f" width="300" height="250" style="border: 0;"></iframe>'
+              }}
+            />
+            {/* SERPWatcher */}
+            <div 
+              dangerouslySetInnerHTML={{
+                __html: '<iframe src="https://mangools.com/affil-banners/serpwatcher-ad.html?title=default&theme=default&size=300x250#a6999f04c6aee089276eea91f" width="300" height="250" style="border: 0;"></iframe>'
+              }}
+            />
+          </div>
+          <p className="text-xs text-slate-500 mt-4 text-center">
+            Affiliate links - We may earn a commission at no extra cost to you
           </p>
         </div>
       </div>
