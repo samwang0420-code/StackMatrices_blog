@@ -23,48 +23,48 @@ interface ToolRecommendation {
   description: string;
   bestFor: string[];
   pricing: string;
-  affiliateLink: string; // 留空待填
+  affiliateLink: string;
   score: number;
 }
 
 const questions: Question[] = [
   {
     id: 1,
-    text: "你的团队规模？",
+    text: "What's your team size?",
     options: [
-      { value: "solo", label: "个人/自由职业", icon: <Users className="w-5 h-5" />, tools: ["make", "n8n"] },
-      { value: "small", label: "小团队 (2-10人)", icon: <Users className="w-5 h-5" />, tools: ["boost", "make", "zapier"] },
-      { value: "medium", label: "中型团队 (11-50人)", icon: <Users className="w-5 h-5" />, tools: ["boost", "make"] },
-      { value: "large", label: "大型企业 (50+人)", icon: <Users className="w-5 h-5" />, tools: ["boost", "zapier"] },
+      { value: "solo", label: "Solo / Freelancer", icon: <Users className="w-5 h-5" />, tools: ["make", "n8n"] },
+      { value: "small", label: "Small Team (2-10)", icon: <Users className="w-5 h-5" />, tools: ["boost", "make", "zapier"] },
+      { value: "medium", label: "Medium Team (11-50)", icon: <Users className="w-5 h-5" />, tools: ["boost", "make"] },
+      { value: "large", label: "Enterprise (50+)", icon: <Users className="w-5 h-5" />, tools: ["boost", "zapier"] },
     ],
   },
   {
     id: 2,
-    text: "你的技术能力？",
+    text: "What's your technical level?",
     options: [
-      { value: "nocode", label: "完全无代码 - 只想点选配置", icon: <Zap className="w-5 h-5" />, tools: ["zapier", "boost"] },
-      { value: "basic", label: "基础技术 - 能看懂API文档", icon: <Zap className="w-5 h-5" />, tools: ["make", "boost"] },
-      { value: "advanced", label: "技术流 - 能写代码/自建", icon: <Zap className="w-5 h-5" />, tools: ["n8n", "make"] },
+      { value: "nocode", label: "No-code only - Point and click", icon: <Zap className="w-5 h-5" />, tools: ["zapier", "boost"] },
+      { value: "basic", label: "Basic tech - Can read API docs", icon: <Zap className="w-5 h-5" />, tools: ["make", "boost"] },
+      { value: "advanced", label: "Technical - Can write code", icon: <Zap className="w-5 h-5" />, tools: ["n8n", "make"] },
     ],
   },
   {
     id: 3,
-    text: "预算范围？",
+    text: "What's your budget range?",
     options: [
-      { value: "free", label: "免费/开源优先", icon: <DollarSign className="w-5 h-5" />, tools: ["n8n"] },
-      { value: "low", label: "低预算 ($10-50/月)", icon: <DollarSign className="w-5 h-5" />, tools: ["make", "boost"] },
-      { value: "medium", label: "中等预算 ($50-200/月)", icon: <DollarSign className="w-5 h-5" />, tools: ["boost", "make", "zapier"] },
-      { value: "high", label: "预算充足 ($200+/月)", icon: <DollarSign className="w-5 h-5" />, tools: ["zapier", "boost"] },
+      { value: "free", label: "Free / Open source", icon: <DollarSign className="w-5 h-5" />, tools: ["n8n"] },
+      { value: "low", label: "Low budget ($10-50/mo)", icon: <DollarSign className="w-5 h-5" />, tools: ["make", "boost"] },
+      { value: "medium", label: "Medium budget ($50-200/mo)", icon: <DollarSign className="w-5 h-5" />, tools: ["boost", "make", "zapier"] },
+      { value: "high", label: "Budget flexible ($200+/mo)", icon: <DollarSign className="w-5 h-5" />, tools: ["zapier", "boost"] },
     ],
   },
   {
     id: 4,
-    text: "主要集成需求？",
+    text: "What's your main integration need?",
     options: [
-      { value: "database", label: "数据库/表格同步 (Airtable/Notion)", icon: <Puzzle className="w-5 h-5" />, tools: ["boost", "make"] },
-      { value: "crm", label: "CRM/营销自动化 (HubSpot/Salesforce)", icon: <Puzzle className="w-5 h-5" />, tools: ["zapier", "boost", "make"] },
-      { value: "ecommerce", label: "电商/支付 (Shopify/Stripe)", icon: <Puzzle className="w-5 h-5" />, tools: ["make", "zapier"] },
-      { value: "custom", label: "自定义API/内部系统", icon: <Puzzle className="w-5 h-5" />, tools: ["n8n", "make"] },
+      { value: "database", label: "Database sync (Airtable/Notion)", icon: <Puzzle className="w-5 h-5" />, tools: ["boost", "make"] },
+      { value: "crm", label: "CRM automation (HubSpot/Salesforce)", icon: <Puzzle className="w-5 h-5" />, tools: ["zapier", "boost", "make"] },
+      { value: "ecommerce", label: "E-commerce (Shopify/Stripe)", icon: <Puzzle className="w-5 h-5" />, tools: ["make", "zapier"] },
+      { value: "custom", label: "Custom API / Internal systems", icon: <Puzzle className="w-5 h-5" />, tools: ["n8n", "make"] },
     ],
   },
 ];
@@ -73,41 +73,41 @@ const toolDatabase: Record<string, ToolRecommendation> = {
   boost: {
     id: "boost",
     name: "Boost.space",
-    tagline: "数据同步专用，双向实时同步首选",
-    description: "专为数据同步设计，支持双向实时同步、冲突解决、版本控制。特别适合需要保持多个系统数据一致的团队。",
-    bestFor: ["数据同步", "双向集成", "团队协作"],
-    pricing: "$8-20/用户/月",
-    affiliateLink: "", // TODO: 用户补充 affiliate 链接
+    tagline: "Two-way sync specialist - Best for real-time data sync",
+    description: "Purpose-built for data synchronization. Supports bidirectional real-time sync, conflict resolution, and version control. Ideal for teams that need multiple systems to stay in sync.",
+    bestFor: ["Data Sync", "Two-way Integration", "Team Collaboration"],
+    pricing: "$8-20/user/month",
+    affiliateLink: "",
     score: 0,
   },
   make: {
     id: "make",
     name: "Make (Integromat)",
-    tagline: "可视化工作流，性价比之选",
-    description: "强大的可视化工作流构建器，支持复杂逻辑、循环、条件分支。比Zapier便宜，比n8n易用。",
-    bestFor: ["复杂工作流", "可视化编排", "中等预算"],
-    pricing: "$9-16/月 (按操作数)",
-    affiliateLink: "", // TODO: 用户补充 affiliate 链接
+    tagline: "Visual workflow builder - Best value for complex automation",
+    description: "Powerful visual workflow builder with complex logic, loops, and conditional branches. More affordable than Zapier, easier than n8n.",
+    bestFor: ["Complex Workflows", "Visual Building", "Mid-range Budget"],
+    pricing: "$9-16/month (per operations)",
+    affiliateLink: "",
     score: 0,
   },
   zapier: {
     id: "zapier",
     name: "Zapier",
-    tagline: "生态最全，适合非技术团队",
-    description: "最大的集成平台，5000+应用支持。界面友好，但价格较高，适合追求稳定和全面集成的团队。",
-    bestFor: ["非技术用户", "应用生态", "稳定性优先"],
-    pricing: "$19-69/月",
-    affiliateLink: "", // TODO: 用户补充 affiliate 链接
+    tagline: "Largest ecosystem - Best for non-technical teams",
+    description: "The biggest integration platform with 5000+ apps. User-friendly interface but higher price. Best for teams prioritizing ease-of-use and stability.",
+    bestFor: ["Non-technical Users", "App Ecosystem", "Stability"],
+    pricing: "$19-69/month",
+    affiliateLink: "",
     score: 0,
   },
   n8n: {
     id: "n8n",
     name: "n8n",
-    tagline: "开源免费，技术团队首选",
-    description: "开源工作流自动化，可自托管完全免费。功能强大但需要技术能力，适合有开发资源的团队。",
-    bestFor: ["开源免费", "自托管", "技术团队"],
-    pricing: "免费 (自托管) / $20/月 (云版)",
-    affiliateLink: "", // TODO: 用户补充 affiliate 链接
+    tagline: "Open source - Best for technical teams",
+    description: "Open-source workflow automation. Fully free if self-hosted. Powerful but requires technical skills. Ideal for teams with development resources.",
+    bestFor: ["Open Source", "Self-hosted", "Technical Teams"],
+    pricing: "Free (self-hosted) / $20/month (cloud)",
+    affiliateLink: "",
     score: 0,
   },
 };
@@ -133,12 +133,10 @@ export default function AutomationFinder() {
   const calculateRecommendations = (finalAnswers: Record<number, string>) => {
     const toolScores: Record<string, number> = {};
 
-    // 初始化分数
     Object.keys(toolDatabase).forEach((tool) => {
       toolScores[tool] = 0;
     });
 
-    // 根据答案计算分数
     Object.entries(finalAnswers).forEach(([questionId, answerValue]) => {
       const question = questions.find((q) => q.id === parseInt(questionId));
       if (question) {
@@ -151,7 +149,6 @@ export default function AutomationFinder() {
       }
     });
 
-    // 排序并生成推荐
     const sortedTools = Object.entries(toolScores)
       .sort(([, a], [, b]) => b - a)
       .slice(0, 3)
@@ -180,8 +177,8 @@ export default function AutomationFinder() {
     return (
       <div className="min-h-screen bg-slate-50">
         <Head>
-          <title>你的自动化工具推荐 | Stackmatrices</title>
-          <meta name="description" content="基于你的需求，推荐最适合的自动化工具" />
+          <title>Your Automation Tool Recommendation | Stackmatrices</title>
+          <meta name="description" content="Get personalized automation tool recommendations based on your needs" />
         </Head>
 
         <div className="max-w-4xl mx-auto px-4 py-12">
@@ -190,10 +187,10 @@ export default function AutomationFinder() {
               <CheckCircle className="w-8 h-8 text-white" />
             </div>
             <h1 className="text-3xl font-bold text-slate-900 mb-2">
-              为你推荐的最佳工具
+              Best Tools for You
             </h1>
             <p className="text-slate-600">
-              基于你的团队规模、技术能力和预算，这些工具最适合你
+              Based on your team size, technical skills, and budget
             </p>
           </div>
 
@@ -207,7 +204,7 @@ export default function AutomationFinder() {
               >
                 {index === 0 && (
                   <div className="inline-block px-3 py-1 bg-blue-500 text-white text-sm font-medium rounded-full mb-3">
-                    🏆 最佳推荐
+                    🏆 Best Match
                   </div>
                 )}
                 <div className="flex justify-between items-start mb-4">
@@ -217,7 +214,7 @@ export default function AutomationFinder() {
                   </div>
                   <div className="text-right">
                     <div className="text-2xl font-bold text-slate-900">{tool.pricing}</div>
-                    <div className="text-sm text-slate-500">起价</div>
+                    <div className="text-sm text-slate-500">starting</div>
                   </div>
                 </div>
 
@@ -245,13 +242,13 @@ export default function AutomationFinder() {
                         : 'bg-slate-200 text-slate-400 cursor-not-allowed'
                     }`}
                   >
-                    {tool.affiliateLink ? '免费试用' : '链接待补充'}
+                    {tool.affiliateLink ? 'Start Free Trial' : 'Link Pending'}
                   </a>
                   <Link
                     href={`/blog/${tool.id}-review`}
                     className="flex-1 text-center py-3 border border-slate-300 rounded-lg font-medium text-slate-700 hover:bg-slate-50 transition-colors"
                   >
-                    查看详细测评
+                    Read Full Review
                   </Link>
                 </div>
               </div>
@@ -259,15 +256,15 @@ export default function AutomationFinder() {
           </div>
 
           <div className="bg-blue-50 rounded-xl p-6 mb-8">
-            <h3 className="font-bold text-slate-900 mb-2">💡 专业建议</h3>
+            <h3 className="font-bold text-slate-900 mb-2">💡 Pro Tip</h3>
             <p className="text-slate-600 text-sm">
-              选择工具时，除了功能和价格，还要考虑长期的数据迁移成本。
-              建议先试用免费版，确认能满足核心需求后再付费。
-              查看我们的
+              Consider long-term migration costs when choosing tools.
+              Test with free trials before committing.
+              Check our{' '}
               <Link href="/blog/migration-cost-guide" className="text-blue-600 hover:underline">
-                迁移成本指南
-              </Link>
-              了解详情。
+                Migration Cost Guide
+              </Link>{' '}
+              for details.
             </p>
           </div>
 
@@ -276,7 +273,7 @@ export default function AutomationFinder() {
             className="w-full py-3 border border-slate-300 rounded-lg font-medium text-slate-700 hover:bg-slate-50 transition-colors flex items-center justify-center gap-2"
           >
             <RefreshCcw className="w-4 h-4" />
-            重新测试
+            Retake Quiz
           </button>
         </div>
       </div>
@@ -289,15 +286,15 @@ export default function AutomationFinder() {
   return (
     <div className="min-h-screen bg-slate-50">
       <Head>
-        <title>自动化工具选型助手 | Stackmatrices</title>
-        <meta name="description" content="3分钟找到最适合你团队的自动化工具" />
+        <title>Automation Tool Finder | Stackmatrices</title>
+        <meta name="description" content="Find the best automation tool for your team in 3 minutes" />
       </Head>
 
       <div className="max-w-2xl mx-auto px-4 py-12">
         <div className="mb-8">
           <div className="flex justify-between items-center mb-2">
             <span className="text-sm font-medium text-slate-600">
-              问题 {currentQuestion + 1} / {questions.length}
+              Question {currentQuestion + 1} of {questions.length}
             </span>
             <span className="text-sm text-slate-500">{Math.round(progress)}%</span>
           </div>
@@ -316,7 +313,7 @@ export default function AutomationFinder() {
               className="mb-4 text-slate-500 hover:text-slate-700 flex items-center gap-1 text-sm"
             >
               <ArrowLeft className="w-4 h-4" />
-              返回上一题
+              Back
             </button>
           )}
 
@@ -342,7 +339,7 @@ export default function AutomationFinder() {
         </div>
 
         <p className="text-center text-slate-500 text-sm mt-6">
-          基于 Stackmatrices 团队实测数据推荐
+          Powered by Stackmatrices real user data
         </p>
       </div>
     </div>

@@ -15,7 +15,7 @@ interface CalculationResult {
     setupHours: number;
     roi: number;
     paybackMonths: number;
-    affiliateLink: string; // 留空待填
+    affiliateLink: string;
   }[];
 }
 
@@ -24,25 +24,25 @@ const tools = [
     name: "Boost.space",
     monthlyPrice: 15,
     setupHours: 4,
-    affiliateLink: "", // TODO: 用户补充
+    affiliateLink: "",
   },
   {
     name: "Make (Integromat)",
     monthlyPrice: 12,
     setupHours: 6,
-    affiliateLink: "", // TODO: 用户补充
+    affiliateLink: "",
   },
   {
     name: "Zapier",
     monthlyPrice: 30,
     setupHours: 2,
-    affiliateLink: "", // TODO: 用户补充
+    affiliateLink: "",
   },
   {
-    name: "n8n (自托管)",
+    name: "n8n (Self-hosted)",
     monthlyPrice: 0,
     setupHours: 15,
-    affiliateLink: "", // TODO: 用户补充
+    affiliateLink: "",
   },
 ];
 
@@ -94,8 +94,8 @@ export default function SyncTimeCalculator() {
     return (
       <div className="min-h-screen bg-slate-50">
         <Head>
-          <title>数据同步成本分析结果 | Stackmatrices</title>
-          <meta name="description" content="计算手动数据同步的真实成本" />
+          <title>Data Sync Cost Analysis | Stackmatrices</title>
+          <meta name="description" content="Calculate the real cost of manual data synchronization" />
         </Head>
 
         <div className="max-w-4xl mx-auto px-4 py-12">
@@ -104,16 +104,15 @@ export default function SyncTimeCalculator() {
               <AlertTriangle className="w-8 h-8 text-white" />
             </div>
             <h1 className="text-3xl font-bold text-slate-900 mb-2">
-              你正在浪费 {result.hoursPerYear} 小时/年
+              You're Losing {result.hoursPerYear} Hours/Year
             </h1>
             <p className="text-xl text-red-600 font-bold">
-              = ${result.costPerYear.toLocaleString()} 年成本
+              = ${result.costPerYear.toLocaleString()} Annual Cost
             </p>
           </div>
 
-          {/* 成本对比 */}
           <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6 mb-8">
-            <h2 className="text-xl font-bold text-slate-900 mb-6">自动化工具 ROI 对比</h2>
+            <h2 className="text-xl font-bold text-slate-900 mb-6">Automation Tool ROI Comparison</h2>
             
             <div className="space-y-4">
               {result.toolComparisons.map((tool, index) => (
@@ -127,19 +126,19 @@ export default function SyncTimeCalculator() {
                     <div>
                       <h3 className="font-bold text-slate-900">{tool.name}</h3>
                       <p className="text-sm text-slate-600">
-                        ${tool.monthlyPrice}/月 · 初始设置 {tool.setupHours} 小时
+                        ${tool.monthlyPrice}/mo · {tool.setupHours}h setup
                       </p>
                     </div>
                     {index === 0 && (
                       <span className="px-2 py-1 bg-green-500 text-white text-xs font-bold rounded">
-                        最佳ROI
+                        Best ROI
                       </span>
                     )}
                   </div>
 
                   <div className="grid grid-cols-3 gap-4 mb-4">
                     <div>
-                      <div className="text-sm text-slate-500">年费用</div>
+                      <div className="text-sm text-slate-500">Yearly Cost</div>
                       <div className="font-bold text-slate-900">${tool.yearlyPrice}</div>
                     </div>
                     <div>
@@ -149,9 +148,9 @@ export default function SyncTimeCalculator() {
                       </div>
                     </div>
                     <div>
-                      <div className="text-sm text-slate-500">回本周期</div>
+                      <div className="text-sm text-slate-500">Payback</div>
                       <div className="font-bold text-slate-900">
-                        {tool.paybackMonths > 100 ? '首月' : `${tool.paybackMonths} 个月`}
+                        {tool.paybackMonths > 100 ? 'First month' : `${tool.paybackMonths} months`}
                       </div>
                     </div>
                   </div>
@@ -166,38 +165,36 @@ export default function SyncTimeCalculator() {
                         : 'bg-slate-200 text-slate-400 cursor-not-allowed'
                     }`}
                   >
-                    {tool.affiliateLink ? '开始自动化' : '链接待补充'}
+                    {tool.affiliateLink ? 'Start Automating' : 'Link Pending'}
                   </a>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* 隐藏成本提醒 */}
           <div className="bg-amber-50 border border-amber-200 rounded-xl p-6 mb-8">
             <h3 className="font-bold text-amber-900 mb-2 flex items-center gap-2">
               <AlertTriangle className="w-5 h-5" />
-              手动同步的隐藏成本
+              Hidden Costs of Manual Sync
             </h3>
             <ul className="text-amber-800 text-sm space-y-2">
-              <li>• 数据不一致导致的决策失误</li>
-              <li>• 员工因重复工作产生的倦怠</li>
-              <li>• 手动操作出错后的返工时间</li>
-              <li>• 无法实时同步导致的业务延迟</li>
+              <li>• Decision errors from inconsistent data</li>
+              <li>• Employee burnout from repetitive work</li>
+              <li>• Rework time from manual errors</li>
+              <li>• Business delays from non-real-time sync</li>
             </ul>
           </div>
 
-          {/* CTA */}
           <div className="bg-blue-600 rounded-xl p-6 text-center text-white mb-8">
-            <h3 className="text-xl font-bold mb-2">不确定选哪个工具？</h3>
+            <h3 className="text-xl font-bold mb-2">Not sure which tool to choose?</h3>
             <p className="text-blue-100 mb-4">
-              使用我们的选型助手，3分钟找到最适合你的工具
+              Use our tool finder to get personalized recommendations
             </p>
             <Link
               href="/tools/automation-finder"
               className="inline-flex items-center px-6 py-3 bg-white text-blue-600 rounded-lg font-bold hover:bg-blue-50 transition-colors"
             >
-              工具选型助手
+              Tool Finder
               <ArrowRight className="w-4 h-4 ml-2" />
             </Link>
           </div>
@@ -206,7 +203,7 @@ export default function SyncTimeCalculator() {
             onClick={reset}
             className="w-full py-3 border border-slate-300 rounded-lg font-medium text-slate-700 hover:bg-slate-50 transition-colors"
           >
-            重新计算
+            Recalculate
           </button>
         </div>
       </div>
@@ -216,8 +213,8 @@ export default function SyncTimeCalculator() {
   return (
     <div className="min-h-screen bg-slate-50">
       <Head>
-        <title>数据同步时间成本计算器 | Stackmatrices</title>
-        <meta name="description" content="计算手动数据同步浪费的时间和金钱" />
+        <title>Data Sync Time Cost Calculator | Stackmatrices</title>
+        <meta name="description" content="Calculate time and money wasted on manual data sync" />
       </Head>
 
       <div className="max-w-2xl mx-auto px-4 py-12">
@@ -226,10 +223,10 @@ export default function SyncTimeCalculator() {
             <Calculator className="w-8 h-8 text-white" />
           </div>
           <h1 className="text-3xl font-bold text-slate-900 mb-2">
-            手动数据同步成本计算器
+            Manual Data Sync Cost Calculator
           </h1>
           <p className="text-slate-600">
-            输入你的时间成本，看看自动化能帮你省多少钱
+            Calculate how much time and money manual data entry costs you
           </p>
         </div>
 
@@ -238,34 +235,34 @@ export default function SyncTimeCalculator() {
             <div>
               <label className="block text-sm font-medium text-slate-700 mb-2">
                 <Clock className="w-4 h-4 inline mr-1" />
-                每周手动同步数据花费几小时？
+                Hours per week on manual data sync?
               </label>
               <input
                 type="number"
                 value={hoursPerWeek}
                 onChange={(e) => setHoursPerWeek(e.target.value)}
-                placeholder="例如：5"
+                placeholder="e.g., 5"
                 className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               />
               <p className="text-sm text-slate-500 mt-1">
-                包括：复制粘贴、核对数据、处理错误、沟通确认
+                Include: copy-paste, data checking, error handling, communication
               </p>
             </div>
 
             <div>
               <label className="block text-sm font-medium text-slate-700 mb-2">
                 <DollarSign className="w-4 h-4 inline mr-1" />
-                你的时薪是多少？（美元）
+                Your hourly rate? (USD)
               </label>
               <input
                 type="number"
                 value={hourlyRate}
                 onChange={(e) => setHourlyRate(e.target.value)}
-                placeholder="例如：50"
+                placeholder="e.g., 50"
                 className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               />
               <p className="text-sm text-slate-500 mt-1">
-                如果算团队成本，用平均工资；如果算机会成本，用你自己的费率
+                Use team average for opportunity cost, or your personal rate
               </p>
             </div>
 
@@ -275,24 +272,23 @@ export default function SyncTimeCalculator() {
               className="w-full py-4 bg-blue-600 text-white rounded-lg font-bold text-lg hover:bg-blue-700 disabled:bg-slate-300 disabled:cursor-not-allowed transition-colors flex items-center justify-center gap-2"
             >
               <TrendingUp className="w-5 h-5" />
-              计算浪费成本
+              Calculate Wasted Cost
             </button>
           </div>
         </div>
 
-        {/* 示例数据 */}
         <div className="mt-8 grid grid-cols-3 gap-4 text-center">
           <div className="bg-white rounded-lg p-4 border border-slate-200">
-            <div className="text-2xl font-bold text-slate-900">5小时</div>
-            <div className="text-sm text-slate-500">每周平均浪费</div>
+            <div className="text-2xl font-bold text-slate-900">5 hrs</div>
+            <div className="text-sm text-slate-500">Avg wasted/week</div>
           </div>
           <div className="bg-white rounded-lg p-4 border border-slate-200">
-            <div className="text-2xl font-bold text-slate-900">260小时</div>
-            <div className="text-sm text-slate-500">每年浪费</div>
+            <div className="text-2xl font-bold text-slate-900">260 hrs</div>
+            <div className="text-sm text-slate-500">Per year</div>
           </div>
           <div className="bg-white rounded-lg p-4 border border-slate-200">
             <div className="text-2xl font-bold text-slate-900">$13,000</div>
-            <div className="text-sm text-slate-500">年成本 ($50/时)</div>
+            <div className="text-sm text-slate-500">Annual cost ($50/hr)</div>
           </div>
         </div>
       </div>
