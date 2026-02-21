@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Calculator, BarChart3, FileText, TrendingUp, CheckSquare, ArrowRight, Gauge } from 'lucide-react';
+import { Calculator, BarChart3, FileText, TrendingUp, CheckSquare, ArrowRight, Gauge, HelpCircle, Clock } from 'lucide-react';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -15,6 +15,22 @@ export const metadata: Metadata = {
 };
 
 const tools = [
+  {
+    icon: HelpCircle,
+    title: 'Automation Tool Finder',
+    description: 'Answer 4 simple questions and get personalized automation tool recommendations based on your team size, budget, and technical skills.',
+    href: '/tools/automation-finder',
+    color: 'bg-purple-500',
+    badge: 'New',
+  },
+  {
+    icon: Clock,
+    title: 'Sync Time Calculator',
+    description: 'Calculate how much time and money you waste on manual data sync. Compare ROI of automation tools with real numbers.',
+    href: '/tools/sync-time-calculator',
+    color: 'bg-orange-500',
+    badge: 'New',
+  },
   {
     icon: Gauge,
     title: 'Website Speed Analyzer',
@@ -91,8 +107,13 @@ export default function ToolsPage() {
             <Link
               key={tool.title}
               href={tool.href}
-              className="group bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-200 hover:-translate-y-1 border border-slate-200 overflow-hidden"
+              className="group bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-200 hover:-translate-y-1 border border-slate-200 overflow-hidden relative"
             >
+              {tool.badge && (
+                <span className="absolute top-4 right-4 px-2 py-1 bg-green-500 text-white text-xs font-bold rounded">
+                  {tool.badge}
+                </span>
+              )}
               <div className="p-6">
                 <div className={`w-12 h-12 ${tool.color} rounded-lg flex items-center justify-center mb-4`}>
                   <tool.icon className="w-6 h-6 text-white" />
