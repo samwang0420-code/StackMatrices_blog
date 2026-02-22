@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Calculator, BarChart3, FileText, TrendingUp, CheckSquare, ArrowRight, HelpCircle, Clock } from 'lucide-react';
+import { Calculator, BarChart3, FileText, TrendingUp, CheckSquare, ArrowRight, HelpCircle, Clock, FileArchive } from 'lucide-react';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -15,6 +15,15 @@ export const metadata: Metadata = {
 };
 
 const tools = [
+  {
+    icon: FileArchive,
+    title: 'PDF Toolkit',
+    description: '90+ free PDF tools: merge, split, compress, convert, edit. 100% browser-based, no uploads, maximum privacy.',
+    href: 'https://pdfcraft.devtoolcafe.com/en/',
+    color: 'bg-red-600',
+    badge: 'New',
+    external: true,
+  },
   {
     icon: HelpCircle,
     title: 'Automation Tool Finder',
@@ -96,34 +105,40 @@ export default function ToolsPage() {
       {/* Tools Grid */}
       <div className="max-w-6xl mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {tools.map((tool) => (
-            <Link
-              key={tool.title}
-              href={tool.href}
-              className="group bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-200 hover:-translate-y-1 border border-slate-200 overflow-hidden relative"
-            >
-              {tool.badge && (
-                <span className="absolute top-4 right-4 px-2 py-1 bg-green-500 text-white text-xs font-bold rounded">
-                  {tool.badge}
-                </span>
-              )}
-              <div className="p-6">
-                <div className={`w-12 h-12 ${tool.color} rounded-lg flex items-center justify-center mb-4`}>
-                  <tool.icon className="w-6 h-6 text-white" />
+          {tools.map((tool) => {
+            const LinkComponent = tool.external ? 'a' : Link;
+            const linkProps = tool.external ? { target: '_blank', rel: 'noopener noreferrer' } : {};
+            
+            return (
+              <LinkComponent
+                key={tool.title}
+                href={tool.href}
+                {...linkProps}
+                className="group bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-200 hover:-translate-y-1 border border-slate-200 overflow-hidden relative"
+              >
+                {tool.badge && (
+                  <span className="absolute top-4 right-4 px-2 py-1 bg-green-500 text-white text-xs font-bold rounded">
+                    {tool.badge}
+                  </span>
+                )}
+                <div className="p-6">
+                  <div className={`w-12 h-12 ${tool.color} rounded-lg flex items-center justify-center mb-4`}>
+                    <tool.icon className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
+                    {tool.title}
+                  </h3>
+                  <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                    {tool.description}
+                  </p>
+                  <div className="flex items-center text-blue-600 font-medium text-sm">
+                    {tool.external ? 'Open Tool' : 'Use Tool'}
+                    <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
-                  {tool.title}
-                </h3>
-                <p className="text-slate-600 text-sm leading-relaxed mb-4">
-                  {tool.description}
-                </p>
-                <div className="flex items-center text-blue-600 font-medium text-sm">
-                  Use Tool
-                  <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                </div>
-              </div>
-            </Link>
-          ))}
+              </LinkComponent>
+            );
+          })}
         </div>
       </div>
 
