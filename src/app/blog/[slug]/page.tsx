@@ -53,23 +53,28 @@ async function getArticleBySlug(slug: string): Promise<Article | null> {
 }
 
 export async function generateStaticParams() {
-  // 首先尝试从 Supabase 获取所有 slug
+  // 收集所有文章 slug（Supabase + fallback 合并）
+  const allSlugs = new Set<string>();
+  
+  // 从 Supabase 获取
   try {
     const { data } = await supabase
       .from('articles')
       .select('slug')
       .eq('published', true);
     
-    if (data && data.length > 0) {
-      return data.map((article: { slug: string }) => ({ slug: article.slug }));
+    if (data) {
+      data.forEach((article: { slug: string }) => allSlugs.add(article.slug));
     }
   } catch (e) {
     console.error('Supabase error in generateStaticParams:', e);
   }
   
-  // 如果 Supabase 失败或返回空，使用 fallback
-  console.log('Using fallback articles for generateStaticParams');
-  return fallbackArticles.map(a => ({ slug: a.slug }));
+  // 添加 fallback 文章
+  fallbackArticles.forEach(a => allSlugs.add(a.slug));
+  
+  console.log(`Generating static params for ${allSlugs.size} articles`);
+  return Array.from(allSlugs).map(slug => ({ slug }));
 }
 
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
