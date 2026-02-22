@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Calculator, BarChart3, FileText, TrendingUp, CheckSquare, ArrowRight, Gauge, HelpCircle, Clock } from 'lucide-react';
+import { Calculator, BarChart3, FileText, TrendingUp, CheckSquare, ArrowRight, HelpCircle, Clock } from 'lucide-react';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -30,13 +30,6 @@ const tools = [
     href: '/tools/sync-time-calculator',
     color: 'bg-orange-500',
     badge: 'New',
-  },
-  {
-    icon: Gauge,
-    title: 'Website Speed Analyzer',
-    description: 'Analyze any website\'s performance with Core Web Vitals, waterfall charts, and smart optimization recommendations.',
-    href: '/tools/website-speed-analyzer',
-    color: 'bg-cyan-500',
   },
   {
     icon: Calculator,
