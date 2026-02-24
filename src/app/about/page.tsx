@@ -1,154 +1,156 @@
-// About Us page
-export const metadata = {
-  title: 'About Us | StackMatrices',
-  description: 'Learn about StackMatrices - The AI-powered SaaS comparison platform built for teams who ship'
+import { Metadata } from "next";
+import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "About | StackMatrices - OpenClaw Skill Registry",
+  description: "StackMatrices is the premier OpenClaw Skill Registry. We design high-performance intelligence engines for the OpenClaw ecosystem.",
 };
 
-export default function AboutUsPage() {
+export default function AboutPage() {
   return (
-    <div className="max-w-4xl mx-auto px-4 py-12">
-      <h1 className="text-4xl font-bold mb-8">About StackMatrices</h1>
-      
-      <div className="prose prose-lg max-w-none">
-        <section className="mb-12">
-          <h2 className="text-2xl font-semibold mb-4">Our Mission</h2>
-          <p className="mb-4 text-lg leading-relaxed">
-            StackMatrices was built on a simple realization: most teams are overpaying for software 
-            that doesn't actually help them ship work. We've spent thousands of dollars and countless 
-            hours testing tools that promised productivity but delivered only complexity.
+    <div className="min-h-screen bg-slate-950 text-white">
+      {/* Hero */}
+      <section className="bg-gradient-to-br from-slate-900 to-slate-800 py-24">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-mono mb-6">
+            ABOUT_STACKMATRICES
+          </div>
+          
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            The Architect of{" "}
+            <span className="text-emerald-400">Intelligence</span>
+          </h1>
+          
+          <p className="text-xl text-slate-400 max-w-2xl mx-auto">
+            We don't build AI agents. We build the skills that make them intelligent.
           </p>
-          <p className="text-lg leading-relaxed">
-            Our mission is to cut through the marketing noise and give teams the real data they need 
-            to make informed decisions about their tech stack.
-          </p>
-        </section>
+        </div>
+      </section>
 
-        <section className="mb-12">
-          <h2 className="text-2xl font-semibold mb-4">What We Do</h2>
+      {/* Mission */}
+      <section className="max-w-4xl mx-auto px-6 py-20">
+        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-8 md:p-12">
+          <h2 className="text-2xl font-bold mb-6">Our Mission</h2>
+          <div className="space-y-4 text-slate-300 leading-relaxed">
+            <p>
+              StackMatrices was founded on a simple belief: AI agents are only as smart as the skills they possess. 
+              While others focus on building better agents, we focus on building better skills.
+            </p>
+            <p>
+              As the premier OpenClaw Skill Registry, we design high-performance, ready-to-deploy intelligence 
+              engines for the OpenClaw ecosystem. Each skill is a battle-tested module that transforms raw 
+              AI capabilities into strategic business outcomes.
+            </p>
+            <p>
+              We don't sell tools. We deliver automated intelligence infrastructure. From competitor monitoring 
+              to profit analysis, from inventory sync to market forecasting—our skills turn data into decisions.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* What We Do */}
+      <section className="py-20 px-6 border-y border-slate-800/50">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-12">What We Build</h2>
           
-          <p className="mb-6">
-            StackMatrices is an AI-powered SaaS comparison platform that combines:
-          </p>
-          
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
-            <div className="bg-gray-50 p-6 rounded-lg">
-              <h3 className="font-semibold text-lg mb-2">🔍 Multi-Source Reviews</h3>
-              <p className="text-gray-700">
-                We aggregate real user experiences from Reddit, G2, Hacker News, and Quora 
-                to give you the unfiltered truth about each tool.
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-slate-900 border border-slate-800 rounded-xl p-6">
+              <div className="w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center mb-4 border border-emerald-500/20">
+                <svg className="w-6 h-6 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3">Intelligence Skills</h3>
+              <p className="text-slate-400">
+                Market spying, competitor tracking, sentiment analysis. 
+                Know what your competitors know—before they know it.
               </p>
             </div>
             
-            <div className="bg-gray-50 p-6 rounded-lg">
-              <h3 className="font-semibold text-lg mb-2">📊 Data-Driven Analysis</h3>
-              <p className="text-gray-700">
-                8-axis battlecards, TCO calculations, and ROI projections—no fluff, just 
-                numbers that matter for your decision.
+            <div className="bg-slate-900 border border-slate-800 rounded-xl p-6">
+              <div className="w-12 h-12 bg-cyan-500/10 rounded-lg flex items-center justify-center mb-4 border border-cyan-500/20">
+                <svg className="w-6 h-6 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3">Operational Skills</h3>
+              <p className="text-slate-400">
+                Workflow automation, data synchronization, inventory management. 
+                Automate the boring so you can focus on the strategic.
               </p>
             </div>
             
-            <div className="bg-gray-50 p-6 rounded-lg">
-              <h3 className="font-semibold text-lg mb-2">✍️ Honest Reviews</h3>
-              <p className="text-gray-700">
-                Every comparison is written by AI trained on thousands of real reviews, 
-                with full disclosure of affiliate relationships.
+            <div className="bg-slate-900 border border-slate-800 rounded-xl p-6">
+              <div className="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center mb-4 border border-purple-500/20">
+                <svg className="w-6 h-6 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3">Decision Skills</h3>
+              <p className="text-slate-400">
+                AI-driven reporting, profit analysis, trend forecasting. 
+                Get conclusions, not just data.
               </p>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="mb-12">
-          <h2 className="text-2xl font-semibold mb-4">Our Process</h2>
+      {/* Why OpenClaw */}
+      <section className="max-w-4xl mx-auto px-6 py-20">
+        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-8 md:p-12">
+          <h2 className="text-2xl font-bold mb-6">The OpenClaw Ecosystem</h2>
           
-          <ol className="list-decimal pl-6 space-y-4">
-            <li>
-              <strong>Data Collection:</strong> We pull pricing, features, and real user 
-              reviews from multiple sources to build a comprehensive picture.
-            </li>
-            <li>
-              <strong>Analysis:</strong> Our AI engine processes this data to identify 
-              patterns, pain points, and hidden costs that most reviews miss.
-            </li>
-            <li>
-              <strong>Content Generation:</strong> We create detailed comparisons with 
-              8-axis battlecards, TCO breakdowns, and ROI projections.
-            </li>
-            <li>
-              <strong>Human Review:</strong> Every piece of content is reviewed to ensure 
-              accuracy and honesty before publication.
-            </li>
-          </ol>
-        </section>
-
-        <section className="mb-12">
-          <h2 className="text-2xl font-semibold mb-4">Affiliate Disclosure</h2>
-          
-          <p className="mb-4">
-            StackMatrices participates in affiliate marketing programs. When you click on 
-            links to products we recommend and make a purchase, we may earn a commission. 
-            This comes at no additional cost to you.
-          </p>
-          
-          <p className="mb-4">
-            However, this does not influence our reviews or comparisons. Our AI and editorial 
-            team evaluate products based on:
-          </p>
-          
-          <ul className="list-disc pl-6 mb-4">
-            <li>Actual feature comparisons</li>
-            <li>Real user experiences and pain points</li>
-            <li>Total cost of ownership analysis</li>
-            <li>Workflow impact for different team sizes</li>
-          </ul>
-          
-          <p>
-            We only recommend products we've analyzed extensively and believe provide genuine value.
-          </p>
-        </section>
-
-        <section className="mb-12">
-          <h2 className="text-2xl font-semibold mb-4">Our Story</h2>
-          
-          <p className="mb-4">
-            StackMatrices started as a side project born out of frustration. Our founder 
-            spent $5,000 over two years on a project management tool that promised to 
-            "revolutionize team productivity" but actually made things slower. The kicker? 
-            The real cost was closer to $12,000 when you factored in hidden fees, training, 
-            and time wasted on workarounds.
-          </p>
-          
-          <p className="mb-4">
-            We built StackMatrices to solve this problem: give teams the real data they need 
-            to choose tools that actually help them ship work, not just argue about it.
-          </p>
-          
-          <p>
-            Today, StackMatrices processes reviews from thousands of real users and helps 
-            teams make informed decisions about their tech stack—saving time, money, and 
-            frustration in the process.
-          </p>
-        </section>
-
-        <section className="mb-12">
-          <h2 className="text-2xl font-semibold mb-4">Contact Us</h2>
-          
-          <p className="mb-4">
-            Have questions, suggestions, or want to partner with us? We'd love to hear from you.
-          </p>
-          
-          <div className="bg-gray-50 p-6 rounded-lg">
+          <div className="space-y-4 text-slate-300 leading-relaxed">
             <p>
-              <strong>Email:</strong>{' '}
-              <a href="mailto:hello@stackmatrices.com" className="text-blue-600 hover:underline">
-                hello@stackmatrices.com
-              </a>
+              OpenClaw is revolutionizing how AI agents are built and deployed. As an Official Skill Provider, 
+              StackMatrices extends the OpenClaw ecosystem with production-ready intelligence modules.
             </p>
             <p>
-              <strong>Twitter/X:</strong> @StackMatrices
+              Our skills integrate seamlessly via the MCP (Model Context Protocol) Server, enabling zero-code 
+              deployment into any OpenClaw agent. One configuration, instant intelligence.
+            </p>
+            <p>
+              Whether you're monitoring Amazon competitors, syncing Shopify inventory, or analyzing market trends—
+              our skills provide the intelligence layer that separates amateur agents from strategic assets.
             </p>
           </div>
-        </section>
-      </div>
+          
+          <div className="mt-8 flex items-center gap-4">
+            <div className="px-4 py-2 bg-emerald-500/10 border border-emerald-500/20 rounded-lg">
+              <span className="text-emerald-400 font-mono text-sm">Official Skill Provider</span>
+            </div>
+            <Link 
+              href="/how-it-works"
+              className="text-emerald-400 hover:text-emerald-300"
+003e
+              Learn about deployment →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-20 px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Ready to Upgrade Your Agent?
+          </h2>
+          <p className="text-slate-400 text-lg mb-8">
+            Browse our skill registry and deploy your first intelligence module in minutes.
+          </p>
+          <Link
+            href="/skills"
+            className="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-4 rounded-xl font-semibold transition-colors"
+          >
+            Explore Skills
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }
