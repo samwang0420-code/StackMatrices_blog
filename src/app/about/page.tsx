@@ -124,7 +124,7 @@ export default function AboutPage() {
             <Link 
               href="/how-it-works"
               className="text-emerald-400 hover:text-emerald-300"
-003e
+            >
               Learn about deployment →
             </Link>
           </div>
