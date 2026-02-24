@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "数据服务市场",
-  description: "跳过数据收集的繁琐工作，获取经过验证的用户洞察",
+  title: "OpenClaw 技能市场",
+  description: "发现各种 AI Agent 扩展技能，一键安装即刻使用",
 };
 
 // 随机作者生成器

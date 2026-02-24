@@ -116,7 +116,7 @@ export default function Home() {
 
             <div className="flex flex-wrap justify-center gap-4">
               <Link
-                href="/pricing"
+                href="/skills"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-emerald-500 text-white font-semibold rounded-xl hover:bg-emerald-600 transition-colors"
               >
                 浏览技能市场
@@ -159,7 +159,7 @@ export default function Home() {
             <p className="text-slate-600">精选最受欢迎的 Agent 扩展能力</p>
           </div>
           <Link 
-            href="/pricing" 
+            href="/skills" 
             className="text-emerald-600 font-medium hover:text-emerald-700 flex items-center gap-1"
           >
             查看全部
@@ -338,7 +338,7 @@ export default function Home() {
           </p>
           
           <Link
-            href="/pricing"
+            href="/skills"
             className="inline-flex items-center gap-2 px-8 py-4 bg-emerald-500 text-white font-semibold rounded-xl hover:bg-emerald-600 transition-colors"
           >
             探索技能市场
