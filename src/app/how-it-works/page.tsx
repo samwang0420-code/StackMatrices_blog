@@ -2,104 +2,112 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "OpenClaw 如何工作 | AI Agent 技能安装指南",
-  description: "了解 OpenClaw 技能市场的完整使用流程：浏览技能、购买授权、安装配置到使用激活。三步即可扩展你的 AI Agent 能力。",
-  keywords: "OpenClaw,AI Agent,技能安装,使用指南,Agent扩展,License Key",
+  title: "How It Works | StackMatrices",
+  description: "Deploy enterprise-grade intelligence workflows in three simple steps. From skill selection to automated outcomes.",
 };
 
 const steps = [
   {
     number: "01",
-    title: "浏览并选择技能",
-    description: "在 OpenClaw 技能市场浏览各种 AI Agent 扩展能力。每个技能都有详细的功能介绍、使用场景和用户评价，帮助你找到最适合的工具。",
+    title: "Select Your Intelligence Skill",
+    description: "Browse our arsenal of intelligence capabilities. Each skill is designed for specific business outcomes—competitor shadowing, review mining, inventory sentinel, and more.",
     details: [
-      "查看技能详细介绍和功能列表",
-      "了解适用场景和使用案例",
-      "对比不同技能的特点和价格",
-      "阅读其他用户的评价和反馈"
+      "Review detailed capability descriptions",
+      "Understand use cases and business impact",
+      "Compare features and pricing",
+      "Read user testimonials"
     ]
   },
   {
     number: "02",
-    title: "购买并获取授权",
-    description: "选择所需的技能后，通过安全的支付流程完成购买。我们支持支付宝、微信等主流支付方式，购买后立即获得 License Key。",
+    title: "Connect Your Workflow",
+    description: "One-click integration with your existing stack. No engineers required. Our skills plug directly into OpenClaw, Make, or your custom infrastructure.",
     details: [
-      "选择适合的服务套餐（按次或按月）",
-      "使用支付宝或微信完成支付",
-      "上传付款截图进行验证",
-      "审核通过后获得 License Key"
+      "Get your License Key instantly",
+      "Configure environment variables",
+      "Connect to your communication channels (Slack, Email)",
+      "Test the integration"
     ]
   },
   {
     number: "03",
-    title: "安装并配置技能",
-    description: "在 OpenClaw 中配置 License Key，激活技能。每个技能都有详细的安装文档和配置说明，确保你能快速上手。",
+    title: "Receive Automated Outcomes",
+    description: "Stop staring at raw data. Get AI-processed conclusions delivered directly to your workflows. Competitor moves, market shifts, opportunities—captured while you sleep.",
     details: [
-      "在 OpenClaw 配置中添加 License Key",
-      "根据文档配置环境变量",
-      "测试技能是否正常工作",
-      "开始使用新能力处理任务"
+      "Automated intelligence feeds",
+      "Processed insights, not raw data",
+      "Actionable recommendations",
+      "Continuous optimization"
     ]
   }
 ];
 
 const features = [
   {
-    title: "无需订阅",
-    description: "按需购买，用多少付多少。没有月度订阅费，没有隐藏费用。",
+    title: "No Subscription Required",
+    description: "Pay only for what you use. No monthly fees, no hidden costs, no lock-in contracts.",
     icon: "💰"
   },
   {
-    title: "即买即用",
-    description: "购买后立即获得 License Key，无需等待，即刻激活使用。",
+    title: "Deploy Instantly",
+    description: "Get your License Key immediately after payment verification. Start deploying within minutes.",
     icon: "⚡"
   },
   {
-    title: "安全可靠",
-    description: "所有技能经过审核，数据传输加密，保障你的隐私和安全。",
+    title: "Enterprise Security",
+    description: "All skills are security-audited. Data is encrypted in transit and at rest.",
     icon: "🔒"
   },
   {
-    title: "持续更新",
-    description: "技能由开发者社区维护，持续优化和更新，不断增加新功能。",
+    title: "Continuous Updates",
+    description: "Our architecture team maintains and improves skills continuously based on market changes.",
     icon: "🔄"
   }
 ];
 
 export default function HowItWorksPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-slate-950 text-white">
       {/* Hero */}
-      <section className="bg-slate-900 text-white py-20">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            OpenClaw 如何工作
+      <section className="bg-gradient-to-br from-slate-900 to-slate-800 py-24">
+        <div className="max-w-5xl mx-auto px-6 text-center">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            From Intelligence to{" "}
+            <span className="text-emerald-400">Outcomes</span>
           </h1>
-          <p className="text-xl text-slate-300 max-w-2xl mx-auto">
-            三步即可扩展你的 AI Agent 能力，从浏览到使用只需几分钟
+          <p className="text-xl text-slate-400 max-w-2xl mx-auto">
+            Three steps to deploy enterprise-grade intelligence workflows
           </p>
         </div>
       </section>
 
       {/* Steps */}
-      <section className="max-w-5xl mx-auto px-6 py-20">
-        <div className="space-y-16">
+      <section className="max-w-6xl mx-auto px-6 py-24">
+        <div className="space-y-20">
           {steps.map((step, index) => (
-            <div key={index} className="flex gap-8">
-              <div className="flex-shrink-0 w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center">
-                <span className="text-2xl font-bold text-emerald-600">{step.number}</span>
-              </div>
-              <div className="flex-1">
-                <h2 className="text-2xl font-bold text-slate-900 mb-4">{step.title}</h2>
-                <p className="text-slate-600 mb-6 leading-relaxed">{step.description}</p>
+            <div key={index} className="grid md:grid-cols-2 gap-12 items-center">
+              <div className={`${index % 2 === 1 ? 'md:order-2' : ''}`}>
+                <div className="w-20 h-20 bg-emerald-500/20 rounded-2xl flex items-center justify-center mb-6"
+003e
+                  <span className="text-3xl font-bold text-emerald-400">{step.number}</span>
+                </div>
+                <h2 className="text-3xl font-bold mb-4">{step.title}</h2>
+                <p className="text-slate-400 text-lg mb-6">{step.description}</p>
                 <ul className="space-y-3">
                   {step.details.map((detail, idx) => (
                     <li key={idx} className="flex items-start gap-3">
-                      <span className="text-emerald-500 mt-1">✓</span>
-                      <span className="text-slate-700">{detail}</span>
+                      <span className="text-emerald-400 mt-1">→</span>
+                      <span className="text-slate-300">{detail}</span>
                     </li>
                   ))}
                 </ul>
+              </div>
+              
+              <div className={`bg-slate-900/50 border border-slate-800 rounded-2xl p-8 h-64 flex items-center justify-center ${index % 2 === 1 ? 'md:order-1' : ''}`}>
+                <div className="text-center">
+                  <div className="text-6xl mb-4">{index === 0 ? '🎯' : index === 1 ? '⚡' : '📊'}</div>
+                  <p className="text-slate-500">Step {step.number}</p>
+                </div>
               </div>
             </div>
           ))}
@@ -107,18 +115,18 @@ export default function HowItWorksPage() {
       </section>
 
       {/* Features */}
-      <section className="bg-slate-50 py-20">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-slate-900 mb-12 text-center">
-            为什么选择 OpenClaw
+      <section className="py-24 px-6 border-y border-slate-800/50">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-16">
+            Why StackMatrices
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
-              <div key={index} className="bg-white rounded-xl p-6 border border-slate-200">
-                <div className="text-3xl mb-4">{feature.icon}</div>
-                <h3 className="font-bold text-slate-900 mb-2">{feature.title}</h3>
-                <p className="text-sm text-slate-600">{feature.description}</p>
+              <div key={index} className="text-center">
+                <div className="text-4xl mb-4">{feature.icon}</div>
+                <h3 className="font-bold text-lg mb-2">{feature.title}</h3>
+                <p className="text-slate-400 text-sm">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -126,28 +134,23 @@ export default function HowItWorksPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold text-slate-900 mb-6">
-            准备好开始了吗？
+      <section className="py-24 px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Ready to Deploy Your First Skill?
           </h2>
-          <p className="text-slate-600 mb-8">
-            浏览技能市场，发现适合你的 AI Agent 扩展能力
+          <p className="text-slate-400 text-lg mb-8">
+            Join thousands of sellers using automated intelligence to outmaneuver competitors.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link
-              href="/skills"
-              className="px-8 py-4 bg-slate-900 text-white font-semibold rounded-xl hover:bg-slate-800 transition-colors"
-            >
-              浏览技能市场
-            </Link>
-            <Link
-              href="/faq"
-              className="px-8 py-4 border border-slate-300 text-slate-700 font-semibold rounded-xl hover:bg-slate-50 transition-colors"
-            >
-              查看常见问题
-            </Link>
-          </div>
+          <Link
+            href="/skills"
+            className="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-4 rounded-xl font-semibold transition-colors"
+003e
+            Browse Intelligence Skills
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </Link>
         </div>
       </section>
     </div>
