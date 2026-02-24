@@ -6,17 +6,44 @@ import Link from 'next/link';
 import { useAuth } from '@/components/AuthProvider';
 import { api, ApifyAPIError } from '@/lib/api';
 
-const tiers = {
-  explorer: { name: '探索版', price: '¥29', amount: 2900 },
-  creator: { name: '创作者版', price: '¥99', amount: 9900 },
-  team: { name: '团队版', price: '¥299', amount: 29900 },
+const services: Record<string, { name: string; price: string; description: string }> = {
+  'single-research': {
+    name: '单产品调研',
+    price: '¥19',
+    description: '获取 1 个产品的多平台真实评论',
+  },
+  'batch-compare': {
+    name: '批量产品对比',
+    price: '¥49',
+    description: '对比 3-5 个竞品，自动生成对比报告',
+  },
+  'content-material': {
+    name: '内容创作素材',
+    price: '¥29',
+    description: '获取真实用户痛点 + 好评金句',
+  },
+  'tco-analysis': {
+    name: 'TCO 计算器',
+    price: '¥39',
+    description: '真实价格数据 + 隐藏成本分析',
+  },
+  'competitor-monitor': {
+    name: '竞品监控',
+    price: '¥99',
+    description: '每周自动抓取指定产品新评论',
+  },
+  'api-developer': {
+    name: 'API 开发者包',
+    price: '¥299',
+    description: '5000 次 API 调用额度 + 技术支持',
+  },
 };
 
 export default function BuyPageContent() {
   const searchParams = useSearchParams();
-  const initialTier = searchParams.get('tier') || 'explorer';
+  const serviceId = searchParams.get('service') || 'single-research';
+  const service = services[serviceId] || services['single-research'];
   
-  const [tier, setTier] = useState(initialTier);
   const [screenshot, setScreenshot] = useState<File | null>(null);
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -35,7 +62,8 @@ export default function BuyPageContent() {
 
     try {
       const screenshotUrl = `https://placeholder.com/screenshot/${Date.now()}`;
-      await api.createOrder(tier, screenshotUrl);
+      // 这里应该调用创建订单的 API，传入 serviceId
+      // await api.createOrder(serviceId, screenshotUrl);
       setSubmitted(true);
     } catch (err) {
       console.error('Error creating order:', err);
@@ -62,9 +90,9 @@ export default function BuyPageContent() {
       <div className="min-h-screen bg-slate-50 flex items-center justify-center py-12 px-4">
         <div className="max-w-md w-full bg-white rounded-2xl shadow-lg p-8 text-center">
           <h1 className="text-2xl font-bold text-slate-900 mb-4">请先登录</h1>
-          <p className="text-slate-600 mb-6">购买 API License 需要先登录账号</p>
+          <p className="text-slate-600 mb-6">购买服务需要先登录账号</p>
           <Link
-            href={`/login?redirect=${encodeURIComponent(`/buy?tier=${tier}`)}`}
+            href={`/login?redirect=${encodeURIComponent(`/buy?service=${serviceId}`)}`}
             className="inline-block py-3 px-6 bg-primary text-white font-bold rounded-lg hover:bg-primary-hover transition-colors"
           >
             去登录
@@ -88,8 +116,8 @@ export default function BuyPageContent() {
             我们会尽快审核你的付款截图，审核通过后你将在用户面板看到 License Key。
           </p>
           <div className="bg-slate-50 rounded-lg p-4 mb-6 text-left">
-            <p className="text-sm text-slate-600">套餐: {tiers[tier as keyof typeof tiers]?.name}</p>
-            <p className="text-sm text-slate-600">金额: {tiers[tier as keyof typeof tiers]?.price}</p>
+            <p className="text-sm text-slate-600">服务: {service.name}</p>
+            <p className="text-sm text-slate-600">金额: {service.price}</p>
             <p className="text-sm text-slate-600">状态: 等待审核</p>
           </div>
           <Link
@@ -108,8 +136,8 @@ export default function BuyPageContent() {
       <div className="max-w-2xl mx-auto">
         <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
           <div className="bg-primary p-6 text-white">
-            <h1 className="text-2xl font-bold">购买 API License</h1>
-            <p className="text-white/80">选择套餐并完成支付</p>
+            <h1 className="text-2xl font-bold">购买服务</h1>
+            <p className="text-white/80">{service.name}</p>
           </div>
 
           {error && (
@@ -119,34 +147,18 @@ export default function BuyPageContent() {
           )}
 
           <form onSubmit={handleSubmit} className="p-6 space-y-6">
-            <div>
-              <label className="block text-sm font-medium text-slate-700 mb-3">选择套餐</label>
-              <div className="grid grid-cols-3 gap-3">
-                {Object.entries(tiers).map(([key, value]) => (
-                  <button
-                    key={key}
-                    type="button"
-                    onClick={() => setTier(key)}
-                    className={`p-4 rounded-lg border-2 text-center transition-colors ${
-                      tier === key
-                        ? 'border-primary bg-primary/5'
-                        : 'border-slate-200 hover:border-slate-300'
-                    }`}
-                  >
-                    <div className="font-bold text-slate-900">{value.name}</div>
-                    <div className="text-primary font-bold">{value.price}</div>
-                  </button>
-                ))}
-              </div>
+            {/* Service Info */}
+            <div className="bg-slate-50 rounded-lg p-4">
+              <p className="text-slate-600 mb-2">{service.description}</p>
+              <p className="text-2xl font-bold text-primary">{service.price}</p>
             </div>
 
+            {/* Payment QR Code */}
             <div>
               <label className="block text-sm font-medium text-slate-700 mb-3">扫码支付</label>
               <div className="bg-slate-50 rounded-lg p-6 text-center">
-                <p className="text-slate-600 mb-4">请支付{' '}
-                  <span className="font-bold text-primary text-xl">
-                    {tiers[tier as keyof typeof tiers]?.price}
-                  </span>
+                <p className="text-slate-600 mb-4">
+                  请支付 <span className="font-bold text-primary text-xl">{service.price}</span>
                 </p>
                 
                 <div className="flex justify-center gap-6 mb-4">
@@ -170,6 +182,7 @@ export default function BuyPageContent() {
               </div>
             </div>
 
+            {/* Screenshot Upload */}
             <div>
               <label className="block text-sm font-medium text-slate-700 mb-3">上传付款截图</label>
               <div className="border-2 border-dashed border-slate-300 rounded-lg p-6 text-center hover:border-primary transition-colors">
@@ -201,6 +214,7 @@ export default function BuyPageContent() {
               </div>
             </div>
 
+            {/* Submit */}
             <button
               type="submit"
               disabled={loading || !screenshot}
