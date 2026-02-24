@@ -2,129 +2,220 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Intelligence Arsenal | StackMatrices",
-  description: "Outcome-driven intelligence skills for Amazon and Shopify operations. Deploy enterprise-grade automation workflows.",
+  title: "Skill Registry | StackMatrices",
+  description: "Ready-to-deploy OpenClaw skills. Pre-built integrations for Amazon, Shopify, Slack, and more.",
 };
 
-const categories = [
+// Integration icons as SVG components
+const AmazonIcon = () => (
+  <svg viewBox="0 0 24 24" className="w-full h-full" fill="#FF9900">
+    <path d="M15.93 17.09c-.18.22-.48.4-.8.4-.92 0-1.58-.84-1.58-1.85 0-1.01.66-1.85 1.58-1.85.32 0 .62.18.8.4v2.9zm2.07-2.9c0-1.7-.83-3.15-2.73-3.15-1.04 0-1.83.52-2.25 1.1V8.27h-1.7v9.47h1.7v-.82c.42.58 1.21 1.1 2.25 1.1 1.9 0 2.73-1.45 2.73-3.15v-.68zm-8.95 3.15c-1.57 0-2.65-1.18-2.65-2.88 0-1.7 1.08-2.88 2.65-2.88 1.57 0 2.65 1.18 2.65 2.88 0 1.7-1.08 2.88-2.65 2.88zm0-6.91c-2.5 0-4.35 1.85-4.35 4.03 0 2.18 1.85 4.03 4.35 4.03 2.5 0 4.35-1.85 4.35-4.03 0-2.18-1.85-4.03-4.35-4.03zM22 17.2c-.42.5-1.17.78-1.92.78-1.1 0-1.92-.73-1.92-1.68 0-.95.82-1.68 1.92-1.68.75 0 1.5.28 1.92.78v1.8zM22 12.3h-1.8v.85c-.45-.6-1.28-1.13-2.38-1.13-2.04 0-3.52 1.55-3.52 3.53 0 1.98 1.48 3.53 3.52 3.53 1.1 0 1.93-.53 2.38-1.13v.85H22v-6.5z" />
+  </svg>
+);
+
+const OpenAIIcon = () => (
+  <svg viewBox="0 0 24 24" className="w-full h-full" fill="#10A37F">
+    <path d="M22.282 9.821a5.985 5.985 0 0 0-.516-4.91 6.046 6.046 0 0 0-6.51-2.9A6.065 6.065 0 0 0 4.981 4.18a5.985 5.985 0 0 0-3.998 2.9 6.046 6.046 0 0 0 .743 7.097 5.98 5.98 0 0 0 .51 4.911 6.051 6.051 0 0 0 6.515 2.9A5.985 5.985 0 0 0 13.26 24a6.056 6.056 0 0 0 5.772-4.206 5.99 5.99 0 0 0 3.997-2.9 6.056 6.056 0 0 0-.747-7.073zM13.26 22.43a4.476 4.476 0 0 1-2.876-1.04l.141-.081 4.779-2.758a.795.795 0 0 0 .392-.681v-6.737l2.02 1.168a.071.071 0 0 1 .038.052v5.583a4.504 4.504 0 0 1-4.494 4.494zM3.6 18.304a4.47 4.47 0 0 1-.535-3.014l.142.085 4.783 2.759a.771.771 0 0 0 .78 0l5.843-3.369v2.332a.08.08 0 0 1-.033.062L9.74 19.95a4.5 4.5 0 0 1-6.14-1.646zM2.34 7.896a4.485 4.485 0 0 1 2.366-1.973V11.6a.766.766 0 0 0 .388.676l5.815 3.355-2.02 1.168a.076.076 0 0 1-.071 0l-4.83-2.786A4.504 4.504 0 0 1 2.34 7.896zm16.597 3.855-5.833-3.387L15.119 7.2a.076.076 0 0 1 .071 0l4.83 2.791a4.494 4.494 0 0 1-.676 8.105v-5.678a.79.79 0 0 0-.407-.667zm2.01-3.023-.141-.085-4.774-2.782a.776.776 0 0 0-.785 0L9.409 9.23V6.897a.066.066 0 0 1 .028-.061l4.83-2.787a4.5 4.5 0 0 1 6.68 4.66zm-6.02 4.173-2.02-1.164a.08.08 0 0 1-.038-.057V6.075l-2.513 1.45a.782.782 0 0 0-.389.68v6.933a.773.773 0 0 0 .385.678l5.82 3.354v-2.332a.08.08 0 0 0-.035-.06z" />
+  </svg>
+);
+
+const SlackIcon = () => (
+  <svg viewBox="0 0 24 24" className="w-full h-full">
+    <path fill="#E01E5A" d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zM6.313 15.165a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zM8.834 6.313a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zM18.956 8.834a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zM17.688 8.834a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zM15.165 18.956a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zM15.165 17.688a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z" />
+  </svg>
+);
+
+const ShopifyIcon = () => (
+  <svg viewBox="0 0 24 24" className="w-full h-full" fill="#96BF48">
+    <path d="M15.337 23.979l7.216-1.561s-2.604-17.613-2.625-17.73c-.018-.116-.114-.192-.211-.192s-1.929-.136-1.929-.136-1.275-1.274-1.439-1.411c-.045-.037-.075-.058-.121-.074l-.914 21.104h.023zM11.71 11.305s-.81-.424-1.787-.424c-1.452 0-1.519.911-1.519 1.139 0 1.252 3.25 1.733 3.25 4.683 0 2.315-1.472 3.806-3.456 3.806-2.382 0-3.592-1.484-3.592-1.484l.636-2.116s1.252 1.073 2.31 1.073c.692 0 .975-.543.975-.938 0-1.649-2.67-1.729-2.67-4.48 0-2.274 1.634-4.484 4.938-4.484 1.268 0 1.896.365 1.896.365l-.971 2.86zM12.415 4.93l-1.067-.036s-.098-.659-.445-.659c-.375 0-.465.333-.465.545 0 .56.988.778 1.647 1.646.519.682.459 1.5.459 1.541 0 .024-.045.042-.09.042-.045 0-.546-.042-1.003-.042-.465 0-.878.036-.878.036l-.084-3.163c0-.024.021-.06.06-.06.135 0 1.095-.114 1.095-1.239 0-.26-.063-.327-.315-.327-.204 0-.277.183-.277.348 0 .222.135.276.135.276l.067.06c.09.075.078.213-.021.258-.021.012-.048.018-.075.018-.093 0-.315-.066-.471-.246-.234-.27-.273-.684-.273-.891 0-.75.549-1.29 1.269-1.29.765 0 1.428.624 1.428 1.623 0 .759-.327 1.311-.393 1.386z" />
+  </svg>
+);
+
+const GoogleSheetsIcon = () => (
+  <svg viewBox="0 0 24 24" className="w-full h-full">
+    <path fill="#34A853" d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+  </svg>
+);
+
+const ApifyIcon = () => (
+  <svg viewBox="0 0 24 24" className="w-full h-full" fill="#FF6B6B">
+    <circle cx="12" cy="12" r="10" />
+    <path fill="white" d="M8 12l4-4 4 4-4 4z" />
+  </svg>
+);
+
+// Integration Badge Component
+function IntegrationBadge({ icon: Icon, color }: { icon: React.FC; color: string }) {
+  return (
+    <div 
+      className={`w-10 h-10 rounded-full flex items-center justify-center border-2 border-slate-800 shadow-lg ${color}`}
+    >
+      <div className="w-6 h-6">
+        <Icon />
+      </div>
+    </div>
+  );
+}
+
+// Skill Card Component
+function SkillCard({ 
+  skill, 
+  integrations,
+  actionTitle,
+  outcome,
+  usedCount 
+}: { 
+  skill: typeof skills[0];
+  integrations: { icon: React.FC; color: string }[];
+  actionTitle: string;
+  outcome: string;
+  usedCount: string;
+}) {
+  return (
+    <div className="group bg-slate-800 rounded-xl p-5 border border-slate-700 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10">
+      {/* Integration Icons */}
+      <div className="flex items-center mb-4">
+        <div className="flex -space-x-2">
+          {integrations.map((integration, idx) => (
+            <div key={idx} className="relative z-10 hover:z-20 transition-transform hover:scale-110">
+              <IntegrationBadge icon={integration.icon} color={integration.color} />
+            </div>
+          ))}
+        </div>
+        <div className="ml-auto">
+          <span className="text-[10px] font-mono text-slate-500 bg-slate-900/50 px-2 py-1 rounded">
+            {usedCount}
+          </span>
+        </div>
+      </div>
+
+      {/* Action Title */}
+      <h3 className="text-lg font-bold text-white mb-2 leading-tight">
+        {actionTitle}
+      </h3>
+
+      {/* Outcome Tag */}
+      <div className="mb-4">
+        <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+          <svg className="w-3 h-3 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+          </svg>
+          {outcome}
+        </span>
+      </div>
+
+      {/* Description */}
+      <p className="text-slate-400 text-sm mb-4 line-clamp-2">
+        {skill.description}
+      </p>
+
+      {/* Price & Deploy */}
+      <div className="flex items-center justify-between pt-4 border-t border-slate-700/50">
+        <div>
+          <span className="text-2xl font-bold text-white">{skill.price}</span>
+          <span className="text-slate-500 text-sm">/{skill.period}</span>
+        </div>
+        
+        <Link
+          href={`/buy?skill=${skill.id}`}
+          className="px-4 py-2 border border-slate-600 text-slate-300 text-sm font-medium rounded-lg hover:bg-emerald-500 hover:border-emerald-500 hover:text-white transition-all duration-200"
+        >
+          Deploy
+        </Link>
+      </div>
+    </div>
+  );
+}
+
+const skills = [
   {
-    name: "Market Intelligence",
-    description: "Know your competitors better than they know themselves",
-    skills: [
-      {
-        id: "shadow-monitor",
-        name: "Shadow Monitor",
-        tagline: "Amazon Edition",
-        description: "24/7 surveillance of competitor BSR, pricing, and Buybox movements across all major categories.",
-        outcome: "First-mover pricing alerts. Never miss a competitor price drop.",
-        price: "$99",
-        period: "month",
-        popular: true,
-      },
-      {
-        id: "review-pulse",
-        name: "Review Pulse Analyst",
-        tagline: "Competitor Weakness Scanner",
-        description: "AI-synthesized insights from competitor's last 100 negative reviews. Automatically categorized by pain point.",
-        outcome: "Exploit competitor weaknesses. Their failure is your roadmap.",
-        price: "$49",
-        period: "analysis",
-      },
-      {
-        id: "listing-hawk",
-        name: "Listing Hawk",
-        tagline: "SEO Change Tracker",
-        description: "Monitor competitor listing changes—title, bullets, images, backend keywords. Track SEO evolution over time.",
-        outcome: "Reverse-engineer winning listing strategies.",
-        price: "$79",
-        period: "month",
-      },
-      {
-        id: "market-mapper",
-        name: "Market Mapper",
-        tagline: "Category Landscape Analysis",
-        description: "Complete category overview—top sellers, price distribution, review velocity, and saturation metrics.",
-        outcome: "Enter markets with data-backed confidence.",
-        price: "$149",
-        period: "report",
-      },
-    ],
+    id: "shadow-monitor",
+    name: "Shadow Monitor",
+    description: "24/7 surveillance of competitor BSR, pricing, and Buybox movements across all major categories.",
+    price: "$99",
+    period: "month",
+    actionTitle: "Sync Amazon Competitor Price Drops to Google Sheets",
+    outcome: "First-mover pricing alerts",
+    usedCount: "2.4k deployments",
+    integrations: [
+      { icon: AmazonIcon, color: "bg-white" },
+      { icon: ApifyIcon, color: "bg-slate-700" },
+      { icon: GoogleSheetsIcon, color: "bg-white" },
+    ]
   },
   {
-    name: "Operational Efficiency",
-    description: "Automate the operations that drain your time",
-    skills: [
-      {
-        id: "inventory-watchdog",
-        name: "Inventory Watchdog",
-        tagline: "Cross-Store Reconciliation",
-        description: "Automated inventory sync across Amazon, Shopify, and warehouses. Low-stock alerts before you hit zero.",
-        outcome: "Zero OOS disasters. Protect your Best Seller Rank.",
-        price: "$129",
-        period: "month",
-        popular: true,
-      },
-      {
-        id: "margin-guardian",
-        name: "Margin Guardian",
-        tagline: "Real-Time Profit Calculator",
-        description: "Live profit calculations across all SKUs, factoring in Amazon fees, COGS, shipping, and PPC spend.",
-        outcome: "Hidden cost detection. Know true profitability per SKU.",
-        price: "$89",
-        period: "month",
-      },
-      {
-        id: "replenishment-ai",
-        name: "Replenishment AI",
-        tagline: "Smart Restock Forecasting",
-        description: "ML-powered demand forecasting based on velocity trends, seasonality, and lead times.",
-        outcome: "Optimal inventory levels. No more overstock or stockouts.",
-        price: "$199",
-        period: "month",
-      },
-      {
-        id: "fee-auditor",
-        name: "Fee Auditor",
-        tagline: "Amazon Fee Reconciliation",
-        description: "Automated detection of incorrect Amazon fees—FBA, storage, and referral fee errors.",
-        outcome: "Recover 2-5% of revenue lost to fee errors.",
-        price: "$149",
-        period: "month",
-      },
-    ],
+    id: "review-pulse",
+    name: "Review Pulse Analyst",
+    description: "AI-synthesized insights from competitor's last 100 negative reviews. Automatically categorized by pain point.",
+    price: "$49",
+    period: "analysis",
+    actionTitle: "Extract Competitor Weaknesses from Reviews via AI",
+    outcome: "Exploit product defects",
+    usedCount: "1.8k deployments",
+    integrations: [
+      { icon: AmazonIcon, color: "bg-white" },
+      { icon: OpenAIIcon, color: "bg-slate-700" },
+      { icon: SlackIcon, color: "bg-white" },
+    ]
   },
   {
-    name: "Content Intelligence",
-    description: "Words and images that convert",
-    skills: [
-      {
-        id: "copy-commander",
-        name: "Copy Commander",
-        tagline: "AI Listing Optimizer",
-        description: "Generate SEO-optimized listings using top-performing competitor analysis + buyer psychology triggers.",
-        outcome: "Higher CTR and CVR. Index for keywords that sell.",
-        price: "$39",
-        period: "listing",
-      },
-      {
-        id: "review-responder",
-        name: "Review Responder",
-        tagline: "AI-Powered Review Management",
-        description: "Auto-generate professional responses to negative reviews. Sentiment analysis across your review base.",
-        outcome: "Improved seller rating. Turn critics into advocates.",
-        price: "$59",
-        period: "month",
-      },
-      {
-        id: "image-analyst",
-        name: "Image Analyst",
-        tagline: "Visual Conversion Optimizer",
-        description: "Analyze top-performing listing images in your category. Get specific recommendations for your hero shots.",
-        outcome: "Image A/B testing strategy that converts.",
-        price: "$79",
-        period: "analysis",
-      },
-    ],
+    id: "inventory-watchdog",
+    name: "Inventory Watchdog",
+    description: "Automated inventory sync across Amazon, Shopify, and warehouses. Low-stock alerts before you hit zero.",
+    price: "$129",
+    period: "month",
+    actionTitle: "Sync Multi-Channel Inventory Levels in Real-Time",
+    outcome: "Zero OOS disasters",
+    usedCount: "3.1k deployments",
+    integrations: [
+      { icon: AmazonIcon, color: "bg-white" },
+      { icon: ShopifyIcon, color: "bg-white" },
+      { icon: SlackIcon, color: "bg-white" },
+    ]
+  },
+  {
+    id: "margin-guardian",
+    name: "Margin Guardian",
+    description: "Live profit calculations across all SKUs, factoring in Amazon fees, COGS, shipping, and PPC spend.",
+    price: "$89",
+    period: "month",
+    actionTitle: "Calculate True Profit Margins Across All SKUs",
+    outcome: "Hidden cost detection",
+    usedCount: "1.5k deployments",
+    integrations: [
+      { icon: AmazonIcon, color: "bg-white" },
+      { icon: OpenAIIcon, color: "bg-slate-700" },
+      { icon: GoogleSheetsIcon, color: "bg-white" },
+    ]
+  },
+  {
+    id: "copy-commander",
+    name: "Copy Commander",
+    description: "Generate SEO-optimized listings using top-performing competitor analysis + buyer psychology triggers.",
+    price: "$39",
+    period: "listing",
+    actionTitle: "Generate AI-Optimized Listings from Competitor Data",
+    outcome: "Higher CTR & CVR",
+    usedCount: "4.2k deployments",
+    integrations: [
+      { icon: AmazonIcon, color: "bg-white" },
+      { icon: OpenAIIcon, color: "bg-slate-700" },
+    ]
+  },
+  {
+    id: "listing-hawk",
+    name: "Listing Hawk",
+    description: "Monitor competitor listing changes—title, bullets, images, backend keywords. Track SEO evolution over time.",
+    price: "$79",
+    period: "month",
+    actionTitle: "Track Competitor Listing Changes Automatically",
+    outcome: "Reverse-engineer winners",
+    usedCount: "980 deployments",
+    integrations: [
+      { icon: AmazonIcon, color: "bg-white" },
+      { icon: ApifyIcon, color: "bg-slate-700" },
+      { icon: SlackIcon, color: "bg-white" },
+    ]
   },
 ];
 
@@ -151,106 +242,61 @@ export default function SkillsPage() {
       {/* Hero */}
       <section className="pt-32 pb-16 px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Intelligence <span className="text-emerald-400">Arsenal</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono mb-4">
+            PRE-BUILT INTEGRATIONS
+          </div>
+          
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            Ready-to-Deploy{" "}
+            <span className="text-emerald-400">Skills</span>
           </h1>
-          <p className="text-xl text-slate-400">
-            Outcome-driven skills. Not technical toys.
+          
+          <p className="text-lg text-slate-400 max-w-2xl mx-auto">
+            Pre-built integrations for Amazon, Shopify, Slack, OpenAI, and more. 
+            Connect your tools. Automate your workflow.
           </p>
         </div>
       </section>
 
-      {/* Skills by Category */}
+      {/* Skills Grid */}
       <section className="pb-20 px-6">
-        <div className="max-w-6xl mx-auto space-y-20">
-          {categories.map((category) => (
-            <div key={category.name}>
-              <div className="mb-8">
-                <h2 className="text-2xl font-bold mb-2">{category.name}</h2>
-                <p className="text-slate-400">{category.description}</p>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-6">
-                {category.skills.map((skill) => (
-                  <div
-                    key={skill.id}
-                    className={`bg-slate-900 border rounded-2xl p-6 hover:border-emerald-500/50 transition-all ${
-                      skill.popular ? 'border-emerald-500/30' : 'border-slate-800'
-                    }`}
-                  >
-                    <div className="flex justify-between items-start mb-4">
-                      <div>
-                        <div className="flex items-center gap-2 mb-1">
-                          <h3 className="text-xl font-bold">{skill.name}</h3>
-                          {skill.popular && (
-                            <span className="bg-emerald-500/20 text-emerald-400 text-xs px-2 py-1 rounded-full">POPULAR</span>
-                          )}
-                        </div>
-                        <span className="text-emerald-400 text-sm">{skill.tagline}</span>
-                      </div>
-                      <div className="text-right">
-                        <div className="text-2xl font-bold text-emerald-400">{skill.price}</div>
-                        <div className="text-xs text-slate-500">/{skill.period}</div>
-                      </div>
-                    </div>
-
-                    <p className="text-slate-400 mb-4 leading-relaxed">{skill.description}</p>
-
-                    <div className="bg-slate-950/50 rounded-lg p-4 mb-6">
-                      <span className="text-emerald-400 text-sm font-medium">Outcome: </span>
-                      <span className="text-slate-300 text-sm">{skill.outcome}</span>
-                    </div>
-
-                    <Link
-                      href={`/buy?skill=${skill.id}`}
-                      className="block w-full bg-slate-800 hover:bg-emerald-600 border border-slate-700 hover:border-emerald-500 text-white text-center py-3 rounded-xl font-medium transition-all"
-                    >
-                      Deploy This Skill
-                    </Link>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {skills.map((skill) => (
+              <SkillCard
+                key={skill.id}
+                skill={skill}
+                integrations={skill.integrations}
+                actionTitle={skill.actionTitle}
+                outcome={skill.outcome}
+                usedCount={skill.usedCount}
+              />
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Custom Architecture CTA */}
+      {/* CTA */}
       <section className="py-20 px-6 border-t border-slate-800/50">
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900 border border-slate-800 text-emerald-400 text-sm mb-6">
-            Enterprise Grade
+            Custom Development
           </div>
           
-          <h2 className="text-3xl font-bold mb-4">Need a Private Arsenal?</h2>
+          <h2 className="text-3xl font-bold mb-4">Need a Custom Integration?</h2>
           <p className="text-slate-400 text-lg mb-8 max-w-2xl mx-auto">
-            Our architects build custom, end-to-end automation systems for 7-figure sellers. 
-            If you need something that doesn't exist yet—we'll build it.
+            Our architects can build custom skills connecting your specific tools and workflows.
           </p>
           
-          <div className="grid md:grid-cols-3 gap-6 text-left max-w-3xl mx-auto mb-10">
-            <div className="bg-slate-900/50 rounded-lg p-4">
-              <div className="text-emerald-400 font-bold text-2xl mb-1">Custom</div>
-              <div className="text-slate-500 text-sm">Built for your exact workflow</div>
-            </div>
-            <div className="bg-slate-900/50 rounded-lg p-4">
-              <div className="text-emerald-400 font-bold text-2xl mb-1">Dedicated</div>
-              <div className="text-slate-500 text-sm">Personal architect assignment</div>
-            </div>
-            <div className="bg-slate-900/50 rounded-lg p-4">
-              <div className="text-emerald-400 font-bold text-2xl mb-1">Scalable</div>
-              <div className="text-slate-500 text-sm">Grows with your operation</div>
-            </div>
-          </div>
-          
-          <Link href="/contact" className="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-4 rounded-xl font-semibold transition-all">
-            Book a Strategy Session
+          <Link 
+            href="/contact" 
+            className="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-4 rounded-xl font-semibold transition-all"
+          >
+            Book Custom Build
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </Link>
-          
-          <p className="text-slate-500 text-sm mt-6">Starting at $2,000. ROI-focused architecture for serious sellers.</p>
         </div>
       </section>
 
@@ -258,7 +304,7 @@ export default function SkillsPage() {
       <footer className="border-t border-slate-800/50 py-12 px-6">
         <div className="max-w-7xl mx-auto text-center">
           <p className="text-slate-500 text-sm">
-            "Don't work for your tools. Make your tools work for your bank account."
+            "Connect your stack. Automate your growth."
           </p>
           <p className="text-slate-600 text-xs mt-4">© 2026 StackMatrices. Strategic Intelligence & Automation Architecture.</p>
         </div>
