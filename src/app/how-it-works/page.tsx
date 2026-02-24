@@ -87,8 +87,7 @@ export default function HowItWorksPage() {
           {steps.map((step, index) => (
             <div key={index} className="grid md:grid-cols-2 gap-12 items-center">
               <div className={`${index % 2 === 1 ? 'md:order-2' : ''}`}>
-                <div className="w-20 h-20 bg-emerald-500/20 rounded-2xl flex items-center justify-center mb-6"
-003e
+                <div className="w-20 h-20 bg-emerald-500/20 rounded-2xl flex items-center justify-center mb-6">
                   <span className="text-3xl font-bold text-emerald-400">{step.number}</span>
                 </div>
                 <h2 className="text-3xl font-bold mb-4">{step.title}</h2>
@@ -144,8 +143,7 @@ export default function HowItWorksPage() {
           </p>
           <Link
             href="/skills"
-            className="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-4 rounded-xl font-semibold transition-colors"
-003e
+            className="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-4 rounded-xl font-semibold transition-colors">
             Browse Intelligence Skills
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
