@@ -8,8 +8,10 @@
     "period": "mo",
     "deployments": "2.4k",
     "featured": true,
-    "sourceIcon": "logos:amazon",
-    "targetIcon": "simple-icons:deepseek"
+    "inputIcon": "logos:amazon",
+    "outputIcon": "logos:google-sheets",
+    "outputType": "sheet",
+    "aiPowered": true
   },
   {
     "id": "extract-review-insights",
@@ -20,8 +22,10 @@
     "period": "analysis",
     "deployments": "1.8k",
     "featured": true,
-    "sourceIcon": "logos:amazon",
-    "targetIcon": "logos:openai-icon"
+    "inputIcon": "logos:amazon",
+    "outputIcon": "sparkles",
+    "outputType": "ai",
+    "aiPowered": true
   },
   {
     "id": "track-listing-changes",
@@ -32,8 +36,10 @@
     "period": "mo",
     "deployments": "980",
     "featured": true,
-    "sourceIcon": "logos:amazon",
-    "targetIcon": "logos:slack-icon"
+    "inputIcon": "logos:amazon",
+    "outputIcon": "logos:slack-icon",
+    "outputType": "message",
+    "aiPowered": false
   },
   {
     "id": "sync-multi-inventory",
@@ -44,8 +50,10 @@
     "period": "mo",
     "deployments": "3.1k",
     "featured": true,
-    "sourceIcon": "logos:shopify",
-    "targetIcon": "logos:wechat"
+    "inputIcon": "logos:shopify",
+    "outputIcon": "logos:slack-icon",
+    "outputType": "message",
+    "aiPowered": false
   },
   {
     "id": "calculate-true-margins",
@@ -56,8 +64,10 @@
     "period": "mo",
     "deployments": "1.5k",
     "featured": false,
-    "sourceIcon": "logos:alipay",
-    "targetIcon": "logos:google-sheets"
+    "inputIcon": "logos:amazon",
+    "outputIcon": "logos:google-sheets",
+    "outputType": "sheet",
+    "aiPowered": true
   },
   {
     "id": "generate-ai-listings",
@@ -68,8 +78,10 @@
     "period": "listing",
     "deployments": "4.2k",
     "featured": false,
-    "sourceIcon": "logos:amazon",
-    "targetIcon": "logos:openai-icon"
+    "inputIcon": "logos:amazon",
+    "outputIcon": "sparkles",
+    "outputType": "ai",
+    "aiPowered": true
   },
   {
     "id": "tiktok-domestic",
@@ -80,8 +92,10 @@
     "period": "mo",
     "deployments": "620",
     "featured": false,
-    "sourceIcon": "logos:tiktok-icon",
-    "targetIcon": "logos:lark"
+    "inputIcon": "logos:tiktok-icon",
+    "outputIcon": "logos:lark",
+    "outputType": "message",
+    "aiPowered": false
   },
   {
     "id": "enterprise-referral",
@@ -92,7 +106,9 @@
     "period": "mo",
     "deployments": "340",
     "featured": false,
-    "sourceIcon": "logos:wechat",
-    "targetIcon": "logos:openai-icon"
+    "inputIcon": "logos:wechat",
+    "outputIcon": "brain-circuit",
+    "outputType": "ai",
+    "aiPowered": true
   }
 ]
