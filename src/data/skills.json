@@ -1,0 +1,120 @@
+[
+  {
+    "id": "sync-amazon-prices",
+    "actionTitle": "Sync Amazon Competitor Price Drops to Google Sheets",
+    "outcome": "First-mover alerts",
+    "description": "Monitor competitor pricing 24/7 and auto-sync drops to your spreadsheet for immediate action.",
+    "price": "$99",
+    "period": "mo",
+    "deployments": "2.4k",
+    "featured": true,
+    "integrations": [
+      { "name": "amazon", "color": "white" },
+      { "name": "apify", "color": "white" },
+      { "name": "googlesheets", "color": "white" }
+    ]
+  },
+  {
+    "id": "extract-review-insights",
+    "actionTitle": "Extract Competitor Weaknesses from Reviews via AI",
+    "outcome": "Exploit defects",
+    "description": "AI analyzes last 100 competitor reviews, categorizes complaints, identifies product gaps.",
+    "price": "$49",
+    "period": "analysis",
+    "deployments": "1.8k",
+    "featured": true,
+    "integrations": [
+      { "name": "amazon", "color": "white" },
+      { "name": "openai", "color": "white" },
+      { "name": "slack", "color": "white" }
+    ]
+  },
+  {
+    "id": "track-listing-changes",
+    "actionTitle": "Track Amazon Listing Changes & Alert via Slack",
+    "outcome": "SEO intelligence",
+    "description": "Monitors title, bullets, images, backend keywords. Alerts on any competitor SEO changes.",
+    "price": "$79",
+    "period": "mo",
+    "deployments": "980",
+    "featured": true,
+    "integrations": [
+      { "name": "amazon", "color": "white" },
+      { "name": "apify", "color": "white" },
+      { "name": "slack", "color": "white" }
+    ]
+  },
+  {
+    "id": "sync-multi-inventory",
+    "actionTitle": "Sync Multi-Channel Inventory Levels in Real-Time",
+    "outcome": "Zero stockouts",
+    "description": "Unifies Amazon, Shopify, warehouse stock. Alerts before you hit zero inventory.",
+    "price": "$129",
+    "period": "mo",
+    "deployments": "3.1k",
+    "featured": true,
+    "integrations": [
+      { "name": "amazon", "color": "white" },
+      { "name": "shopify", "color": "white" },
+      { "name": "slack", "color": "white" }
+    ]
+  },
+  {
+    "id": "calculate-true-margins",
+    "actionTitle": "Calculate True Profit Margins Across All SKUs",
+    "outcome": "Hidden cost detection",
+    "description": "Factors in Amazon fees, COGS, shipping, PPC. Real profitability per SKU.",
+    "price": "$89",
+    "period": "mo",
+    "deployments": "1.5k",
+    "featured": false,
+    "integrations": [
+      { "name": "amazon", "color": "white" },
+      { "name": "openai", "color": "white" },
+      { "name": "googlesheets", "color": "white" }
+    ]
+  },
+  {
+    "id": "generate-ai-listings",
+    "actionTitle": "Generate AI-Optimized Listings from Competitor Data",
+    "outcome": "Higher CTR & CVR",
+    "description": "Analyzes top performers + buyer psychology. Creates SEO-optimized listings.",
+    "price": "$39",
+    "period": "listing",
+    "deployments": "4.2k",
+    "featured": false,
+    "integrations": [
+      { "name": "amazon", "color": "white" },
+      { "name": "openai", "color": "white" }
+    ]
+  },
+  {
+    "id": "forecast-replenishment",
+    "actionTitle": "Forecast Replenishment Needs with ML Models",
+    "outcome": "Optimal stock levels",
+    "description": "ML-powered demand forecasting based on velocity, seasonality, lead times.",
+    "price": "$199",
+    "period": "mo",
+    "deployments": "720",
+    "featured": false,
+    "integrations": [
+      { "name": "amazon", "color": "white" },
+      { "name": "shopify", "color": "white" },
+      { "name": "openai", "color": "white" }
+    ]
+  },
+  {
+    "id": "audit-amazon-fees",
+    "actionTitle": "Audit Amazon FBA & Storage Fee Errors",
+    "outcome": "Recover 2-5% revenue",
+    "description": "Automated detection of incorrect FBA, storage, referral fee charges.",
+    "price": "$149",
+    "period": "mo",
+    "deployments": "890",
+    "featured": false,
+    "integrations": [
+      { "name": "amazon", "color": "white" },
+      { "name": "googlesheets", "color": "white" }
+    ]
+  }
+]

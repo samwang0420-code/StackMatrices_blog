@@ -1,12 +1,14 @@
 import Link from "next/link";
 import { Metadata } from "next";
+import { SkillCard } from "@/components/SkillCard";
+import skillsData from "@/data/skills.json";
 
 export const metadata: Metadata = {
   title: "StackMatrices | Premier OpenClaw Skill Registry",
-  description: "High-performance, ready-to-deploy Skills for the OpenClaw ecosystem. Transform your AI agent into a strategic business asset with our Intelligence, Operational, and Decision Skills.",
+  description: "High-performance, ready-to-deploy Skills for the OpenClaw ecosystem. Transform your AI agent into a strategic business asset.",
 };
 
-// Skill Block SVG Component
+// Skill Block for Categories (simpler version)
 function SkillBlock({ icon, title, category }: { icon: string; title: string; category: string }) {
   return (
     <div className="bg-slate-900 border border-slate-800 rounded-xl p-6 hover:border-emerald-500/50 transition-all group">
@@ -23,6 +25,9 @@ function SkillBlock({ icon, title, category }: { icon: string; title: string; ca
 }
 
 export default function HomePage() {
+  // Get featured skills from centralized data
+  const featuredSkills = skillsData.filter(skill => skill.featured).slice(0, 4);
+
   return (
     <div className="min-h-screen bg-slate-950 text-white">
       {/* Hero */}
@@ -177,7 +182,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Skill Blocks Grid */}
+      {/* Featured Skills - Using centralized data */}
       <section className="py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
@@ -186,14 +191,9 @@ export default function HomePage() {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-            <SkillBlock icon="🎯" title="Shadow Monitor" category="INTELLIGENCE" />
-            <SkillBlock icon="💬" title="Review Pulse" category="INTELLIGENCE" />
-            <SkillBlock icon="📦" title="Inventory Watch" category="OPERATIONAL" />
-            <SkillBlock icon="💰" title="Margin Guard" category="DECISION" />
-            <SkillBlock icon="📝" title="Copy Commander" category="INTELLIGENCE" />
-            <SkillBlock icon="🔗" title="Sync Bridge" category="OPERATIONAL" />
-            <SkillBlock icon="📊" title="Profit Lens" category="DECISION" />
-            <SkillBlock icon="🔍" title="Listing Hawk" category="INTELLIGENCE" />
+            {featuredSkills.map((skill) => (
+              <SkillCard key={skill.id} skill={skill} compact />
+            ))}
           </div>
           
           <div className="mt-12 text-center">
