@@ -4,6 +4,13 @@ import { useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { useAuth } from '@/components/AuthProvider';
+import { createClient } from '@supabase/supabase-js';
+
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
+const supabase = createClient(supabaseUrl, supabaseAnonKey);
+
+const API_BASE_URL = 'https://api.stackmatrices.com';
 
 const skills: Record<string, { name: string; price: string; description: string; period: string }> = {
   'shadow-monitor': {
@@ -61,16 +68,67 @@ export default function BuyPageContent() {
       setError('Please upload payment screenshot');
       return;
     }
+    if (!user) {
+      setError('Please login first');
+      return;
+    }
 
     setLoading(true);
     setError('');
 
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      // 1. Get current session for auth token
+      const { data: { session } } = await supabase.auth.getSession();
+      if (!session) {
+        throw new Error('Not authenticated');
+      }
+
+      // 2. Upload screenshot to Supabase Storage
+      const fileExt = screenshot.name.split('.').pop();
+      const fileName = `${user.id}/${Date.now()}.${fileExt}`;
+      const { error: uploadError, data: uploadData } = await supabase.storage
+        .from('payment-screenshots')
+        .upload(fileName, screenshot);
+
+      if (uploadError) {
+        throw new Error('Failed to upload screenshot: ' + uploadError.message);
+      }
+
+      // Get public URL
+      const { data: { publicUrl } } = supabase.storage
+        .from('payment-screenshots')
+        .getPublicUrl(fileName);
+
+      // 3. Create order via API
+      const orderData = {
+        skill_id: skillId,
+        skill_name: skill.name,
+        amount: parseFloat(skill.price.replace('$', '')),
+        currency: 'USD',
+        payment_method: 'manual',
+        payment_screenshot: publicUrl,
+      };
+
+      const response = await fetch(`${API_BASE_URL}/orders/create`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${session.access_token}`,
+        },
+        body: JSON.stringify(orderData),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.detail || 'Failed to create order');
+      }
+
+      const result = await response.json();
+      console.log('Order created:', result);
       setSubmitted(true);
-    } catch (err) {
-      setError('Failed to submit order. Please try again.');
+    } catch (err: any) {
+      console.error('Order error:', err);
+      setError(err.message || 'Failed to submit order. Please try again.');
     } finally {
       setLoading(false);
     }
