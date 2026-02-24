@@ -2,9 +2,9 @@ import Link from 'next/link';
 
 export function Footer() {
   return (
-    <footer className="bg-slate-950 border-t border-slate-800/50">
-      <div className="max-w-7xl mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+    <footer className="bg-slate-950">
+      <div className="max-w-7xl mx-auto px-6 py-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center gap-2 mb-4">
@@ -46,9 +46,9 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-slate-800/50 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-slate-600 text-sm">
-            © 2026 StackMatrices. All rights reserved.
+            © 2026 StackMatrices. Strategic Intelligence & Automation Architecture.
           </p>
           <p className="text-slate-600 text-xs">
             Powered by Strategic Intelligence. Data is the new oil. We are the refinery.
