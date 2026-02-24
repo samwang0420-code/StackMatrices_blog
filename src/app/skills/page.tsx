@@ -22,9 +22,7 @@ export default function SkillsPage() {
             </div>
             <span className="font-bold text-xl tracking-tight">StackMatrices</span>
           </Link>
-          <Link href="/" className="text-slate-400 hover:text-white transition-colors text-sm">
-            ← Back to Home
-          </Link>
+
         </div>
       </nav>
 
