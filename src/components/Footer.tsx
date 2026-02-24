@@ -24,7 +24,7 @@ export function Footer() {
             </p>
           </div>
 
-          {/* Links */}
+          {/* Product */}
           <div>
             <h4 className="font-semibold text-white mb-4">Product</h4>
             <ul className="space-y-2">
@@ -35,12 +35,14 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Support */}
+          {/* Company */}
           <div>
-            <h4 className="font-semibold text-white mb-4">Support</h4>
+            <h4 className="font-semibold text-white mb-4">Company</h4>
             <ul className="space-y-2">
+              <li><Link href="/about" className="text-slate-400 hover:text-emerald-400 text-sm transition-colors">About</Link></li>
               <li><Link href="/faq" className="text-slate-400 hover:text-emerald-400 text-sm transition-colors">FAQ</Link></li>
-              <li><Link href="/docs" className="text-slate-400 hover:text-emerald-400 text-sm transition-colors">Documentation</Link></li>
+              <li><Link href="/privacy" className="text-slate-400 hover:text-emerald-400 text-sm transition-colors">Privacy Policy</Link></li>
+              <li><Link href="/terms" className="text-slate-400 hover:text-emerald-400 text-sm transition-colors">Terms of Service</Link></li>
               <li><a href="mailto:sam.wang01@icloud.com" className="text-slate-400 hover:text-emerald-400 text-sm transition-colors">Contact</a></li>
             </ul>
           </div>
