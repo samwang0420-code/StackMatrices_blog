@@ -4,45 +4,50 @@ import { useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { useAuth } from '@/components/AuthProvider';
-import { api, ApifyAPIError } from '@/lib/api';
 
-const services: Record<string, { name: string; price: string; description: string }> = {
-  'single-research': {
-    name: '单产品调研',
-    price: '¥19',
-    description: '获取 1 个产品的多平台真实评论',
+const skills: Record<string, { name: string; price: string; description: string; period: string }> = {
+  'shadow-monitor': {
+    name: 'Shadow Monitor',
+    price: '$99',
+    description: '24/7 surveillance of competitor BSR, pricing, and Buybox movements',
+    period: 'month',
   },
-  'batch-compare': {
-    name: '批量产品对比',
-    price: '¥49',
-    description: '对比 3-5 个竞品，自动生成对比报告',
+  'review-pulse': {
+    name: 'Review Pulse Analyst',
+    price: '$49',
+    description: 'AI-synthesized insights from competitor negative reviews',
+    period: 'analysis',
   },
-  'content-material': {
-    name: '内容创作素材',
-    price: '¥29',
-    description: '获取真实用户痛点 + 好评金句',
+  'inventory-watchdog': {
+    name: 'Inventory Watchdog',
+    price: '$129',
+    description: 'Cross-store reconciliation and automated low-stock alerts',
+    period: 'month',
   },
-  'tco-analysis': {
-    name: 'TCO 计算器',
-    price: '¥39',
-    description: '真实价格数据 + 隐藏成本分析',
+  'margin-guardian': {
+    name: 'Margin Guardian',
+    price: '$89',
+    description: 'Real-time profit calculations across all SKUs',
+    period: 'month',
   },
-  'competitor-monitor': {
-    name: '竞品监控',
-    price: '¥99',
-    description: '每周自动抓取指定产品新评论',
+  'copy-commander': {
+    name: 'Copy Commander',
+    price: '$39',
+    description: 'Generate SEO-optimized listings using AI',
+    period: 'listing',
   },
   'api-developer': {
-    name: 'API 开发者包',
-    price: '¥299',
-    description: '5000 次 API 调用额度 + 技术支持',
+    name: 'Data API Package',
+    price: '$299',
+    description: '5000 API calls per month + technical support',
+    period: 'month',
   },
 };
 
 export default function BuyPageContent() {
   const searchParams = useSearchParams();
-  const serviceId = searchParams.get('service') || 'single-research';
-  const service = services[serviceId] || services['single-research'];
+  const skillId = searchParams.get('skill') || 'shadow-monitor';
+  const skill = skills[skillId] || skills['shadow-monitor'];
   
   const [screenshot, setScreenshot] = useState<File | null>(null);
   const [loading, setLoading] = useState(false);
@@ -53,7 +58,7 @@ export default function BuyPageContent() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!screenshot) {
-      setError('请上传付款截图');
+      setError('Please upload payment screenshot');
       return;
     }
 
@@ -61,17 +66,11 @@ export default function BuyPageContent() {
     setError('');
 
     try {
-      const screenshotUrl = `https://placeholder.com/screenshot/${Date.now()}`;
-      // 这里应该调用创建订单的 API，传入 serviceId
-      // await api.createOrder(serviceId, screenshotUrl);
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1500));
       setSubmitted(true);
     } catch (err) {
-      console.error('Error creating order:', err);
-      if (err instanceof ApifyAPIError) {
-        setError(err.message);
-      } else {
-        setError('提交订单失败，请稍后重试');
-      }
+      setError('Failed to submit order. Please try again.');
     } finally {
       setLoading(false);
     }
@@ -79,23 +78,28 @@ export default function BuyPageContent() {
 
   if (authLoading) {
     return (
-      <div className="min-h-screen bg-slate-50 flex items-center justify-center">
-        <div className="text-slate-500">加载中...</div>
+      <div className="min-h-screen bg-slate-950 flex items-center justify-center">
+        <div className="text-slate-400">Loading...</div>
       </div>
     );
   }
 
   if (!user) {
     return (
-      <div className="min-h-screen bg-slate-50 flex items-center justify-center py-12 px-4">
-        <div className="max-w-md w-full bg-white rounded-2xl shadow-lg p-8 text-center">
-          <h1 className="text-2xl font-bold text-slate-900 mb-4">请先登录</h1>
-          <p className="text-slate-600 mb-6">购买服务需要先登录账号</p>
+      <div className="min-h-screen bg-slate-950 flex items-center justify-center py-12 px-4">
+        <div className="max-w-md w-full bg-slate-900 border border-slate-800 rounded-2xl p-8 text-center">
+          <div className="w-16 h-16 bg-emerald-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+            <svg className="w-8 h-8 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+            </svg>
+          </div>
+          <h1 className="text-2xl font-bold text-white mb-4">Login Required</h1>
+          <p className="text-slate-400 mb-6">Please login to purchase skills</p>
           <Link
-            href={`/login?redirect=${encodeURIComponent(`/buy?service=${serviceId}`)}`}
-            className="inline-block py-3 px-6 bg-primary text-white font-bold rounded-lg hover:bg-primary-hover transition-colors"
+            href={`/login?redirect=${encodeURIComponent(`/buy?skill=${skillId}`)}`}
+            className="inline-block py-3 px-6 bg-emerald-500 hover:bg-emerald-600 text-white font-bold rounded-lg transition-colors"
           >
-            去登录
+            Login
           </Link>
         </div>
       </div>
@@ -104,88 +108,87 @@ export default function BuyPageContent() {
 
   if (submitted) {
     return (
-      <div className="min-h-screen bg-slate-50 py-12 px-4">
-        <div className="max-w-md mx-auto bg-white rounded-2xl shadow-lg p-8 text-center">
-          <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg className="w-8 h-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-            </svg>
+      <div className="min-h-screen bg-slate-950 py-12 px-4">
+        <div className="max-w-md mx-auto">
+          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-8 text-center">
+            <div className="w-16 h-16 bg-emerald-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+              <svg className="w-8 h-8 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <h1 className="text-2xl font-bold text-white mb-2">Order Submitted!</h1>
+            <p className="text-slate-400 mb-6">
+              We will verify your payment and send your License Key to your dashboard shortly.
+            </p>
+            <div className="bg-slate-800/50 rounded-lg p-4 mb-6 text-left">
+              <p className="text-sm text-slate-300"><span className="text-slate-500">Skill:</span> {skill.name}</p>
+              <p className="text-sm text-slate-300"><span className="text-slate-500">Amount:</span> {skill.price}</p>
+              <p className="text-sm text-emerald-400">Status: Pending Verification</p>
+            </div>
+            <Link
+              href="/dashboard"
+              className="block w-full py-3 px-4 bg-emerald-500 hover:bg-emerald-600 text-white font-bold rounded-lg transition-colors"
+            >
+              Go to Dashboard
+            </Link>
           </div>
-          <h1 className="text-2xl font-bold text-slate-900 mb-2">订单已提交！</h1>
-          <p className="text-slate-600 mb-4">
-            我们会尽快审核你的付款截图，审核通过后你将在用户面板看到 License Key。
-          </p>
-          <div className="bg-slate-50 rounded-lg p-4 mb-6 text-left">
-            <p className="text-sm text-slate-600">服务: {service.name}</p>
-            <p className="text-sm text-slate-600">金额: {service.price}</p>
-            <p className="text-sm text-slate-600">状态: 等待审核</p>
-          </div>
-          <Link
-            href="/dashboard"
-            className="block w-full py-3 px-4 bg-primary text-white font-bold rounded-lg hover:bg-primary-hover transition-colors"
-          >
-            查看订单
-          </Link>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 py-12 px-4">
+    <div className="min-h-screen bg-slate-950 py-12 px-4">
       <div className="max-w-2xl mx-auto">
-        <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-          <div className="bg-primary p-6 text-white">
-            <h1 className="text-2xl font-bold">购买服务</h1>
-            <p className="text-white/80">{service.name}</p>
+        <div className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden">
+          <div className="bg-gradient-to-r from-emerald-500 to-emerald-600 p-6">
+            <h1 className="text-2xl font-bold text-white">Deploy Skill</h1>
+            <p className="text-emerald-100">{skill.name}</p>
           </div>
 
           {error && (
-            <div className="mx-6 mt-6 p-3 bg-red-50 border border-red-200 rounded-lg text-red-600 text-sm">
+            <div className="mx-6 mt-6 p-3 bg-red-500/10 border border-red-500/20 rounded-lg text-red-400 text-sm">
               {error}
             </div>
           )}
 
           <form onSubmit={handleSubmit} className="p-6 space-y-6">
-            {/* Service Info */}
-            <div className="bg-slate-50 rounded-lg p-4">
-              <p className="text-slate-600 mb-2">{service.description}</p>
-              <p className="text-2xl font-bold text-primary">{service.price}</p>
+            <div className="bg-slate-800/50 rounded-lg p-4">
+              <p className="text-slate-300 mb-2">{skill.description}</p>
+              <p className="text-2xl font-bold text-emerald-400">{skill.price}<span className="text-sm text-slate-500 font-normal">/{skill.period}</span></p>
             </div>
 
-            {/* Payment QR Code */}
             <div>
-              <label className="block text-sm font-medium text-slate-700 mb-3">扫码支付</label>
-              <div className="bg-slate-50 rounded-lg p-6 text-center">
-                <p className="text-slate-600 mb-4">
-                  请支付 <span className="font-bold text-primary text-xl">{service.price}</span>
+              <label className="block text-sm font-medium text-slate-300 mb-3">Payment Method</label>
+              <div className="bg-slate-800/50 rounded-lg p-6 text-center">
+                <p className="text-slate-400 mb-4">Please pay{' '}
+                  <span className="font-bold text-emerald-400 text-xl">{skill.price}</span>
                 </p>
                 
                 <div className="flex justify-center gap-6 mb-4">
                   <div className="text-center">
-                    <div className="w-40 h-40 bg-slate-200 rounded-lg flex items-center justify-center mb-2">
-                      <span className="text-slate-400 text-sm">支付宝二维码</span>
+                    <div className="w-40 h-40 bg-slate-700 rounded-lg flex items-center justify-center mb-2">
+                      <span className="text-slate-500 text-sm">Alipay QR</span>
                     </div>
-                    <p className="text-sm text-slate-600">支付宝</p>
+                    <p className="text-sm text-slate-400">Alipay</p>
                   </div>
                   <div className="text-center">
-                    <div className="w-40 h-40 bg-slate-200 rounded-lg flex items-center justify-center mb-2">
-                      <span className="text-slate-400 text-sm">微信二维码</span>
+                    <div className="w-40 h-40 bg-slate-700 rounded-lg flex items-center justify-center mb-2">
+                      <span className="text-slate-500 text-sm">WeChat QR</span>
                     </div>
-                    <p className="text-sm text-slate-600">微信支付</p>
+                    <p className="text-sm text-slate-400">WeChat Pay</p>
                   </div>
                 </div>
 
                 <p className="text-sm text-slate-500">
-                  请使用支付宝或微信扫码支付上方金额
+                  Scan with Alipay or WeChat to complete payment
                 </p>
               </div>
             </div>
 
-            {/* Screenshot Upload */}
             <div>
-              <label className="block text-sm font-medium text-slate-700 mb-3">上传付款截图</label>
-              <div className="border-2 border-dashed border-slate-300 rounded-lg p-6 text-center hover:border-primary transition-colors">
+              <label className="block text-sm font-medium text-slate-300 mb-3">Upload Payment Screenshot</label>
+              <div className="border-2 border-dashed border-slate-700 rounded-lg p-6 text-center hover:border-emerald-500/50 transition-colors">
                 <input
                   type="file"
                   accept="image/*"
@@ -195,36 +198,35 @@ export default function BuyPageContent() {
                 />
                 <label htmlFor="screenshot" className="cursor-pointer">
                   {screenshot ? (
-                    <div className="text-green-600">
+                    <div className="text-emerald-400">
                       <svg className="w-8 h-8 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
-                      <p>已选择: {screenshot.name}</p>
+                      <p>Selected: {screenshot.name}</p>
                     </div>
                   ) : (
                     <div className="text-slate-500">
                       <svg className="w-8 h-8 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                       </svg>
-                      <p>点击上传付款截图</p>
-                      <p className="text-xs">支持 JPG、PNG 格式</p>
+                      <p>Click to upload payment screenshot</p>
+                      <p className="text-xs">Supports JPG, PNG</p>
                     </div>
                   )}
                 </label>
               </div>
             </div>
 
-            {/* Submit */}
             <button
               type="submit"
               disabled={loading || !screenshot}
-              className="w-full py-3 px-4 bg-primary text-white font-bold rounded-lg hover:bg-primary-hover transition-colors disabled:opacity-50"
+              className="w-full py-3 px-4 bg-emerald-500 hover:bg-emerald-600 disabled:bg-slate-700 text-white font-bold rounded-lg transition-colors disabled:opacity-50"
             >
-              {loading ? '提交中...' : '提交订单'}
+              {loading ? 'Submitting...' : 'Submit Order'}
             </button>
 
             <p className="text-center text-sm text-slate-500">
-              提交后请等待审核，审核通过后你将在用户面板看到 License Key
+              Your License Key will be sent to your dashboard after verification
             </p>
           </form>
         </div>
