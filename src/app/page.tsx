@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Metadata } from "next";
 import { SkillCard } from "@/components/SkillCard";
+import { HeroSection } from "@/components/HeroSection";
 import skillsData from "@/data/skills.json";
 
 export const metadata: Metadata = {
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
   description: "High-performance, ready-to-deploy Skills for the OpenClaw ecosystem. Transform your AI agent into a strategic business asset.",
 };
 
-// Skill Block for Categories (simpler version)
+// Skill Block for Categories
 function SkillBlock({ icon, title, category }: { icon: string; title: string; category: string }) {
   return (
     <div className="bg-slate-900 border border-slate-800 rounded-xl p-6 hover:border-emerald-500/50 transition-all group">
@@ -25,80 +26,14 @@ function SkillBlock({ icon, title, category }: { icon: string; title: string; ca
 }
 
 export default function HomePage() {
-  // Get featured skills from centralized data
   const featuredSkills = skillsData.filter(skill => skill.featured).slice(0, 4);
 
   return (
     <div className="min-h-screen bg-slate-950 text-white">
-      {/* Hero */}
-      <section className="relative bg-gradient-to-br from-slate-900 via-slate-900 to-slate-800 pt-32 pb-24 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-0 w-full h-full" 
-            style={{
-              backgroundImage: 'radial-gradient(circle at 25% 25%, #10b981 0%, transparent 50%), radial-gradient(circle at 75% 75%, #10b981 0%, transparent 50%)'
-            }}
-          />
-        </div>
-        
-        <div className="max-w-7xl mx-auto px-6 relative">
-          <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-mono mb-6">
-              <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
-              OPENCLAW_SKILL_REGISTRY
-            </div>
-            
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-              The Premier{" "}
-              <span className="text-emerald-400">OpenClaw Skill</span>
-              <br />
-              Registry for Global Intelligence
-            </h1>
-            
-            <p className="text-xl md:text-2xl text-slate-400 mb-8 max-w-2xl leading-relaxed">
-              We design high-performance, ready-to-deploy Skills for the OpenClaw ecosystem. 
-              Transform your AI agent into a strategic business asset.
-            </p>
-            
-            <div className="flex flex-wrap gap-4">
-              <Link 
-                href="/skills" 
-                className="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-4 rounded-xl font-semibold transition-all"
-              >
-                Browse Skill Registry
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </Link>
-              <Link 
-                href="/how-it-works" 
-                className="inline-flex items-center gap-2 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white px-8 py-4 rounded-xl font-semibold transition-all"
-            >
-                Deployment Guide
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
-              </Link>
-            </div>
-            
-            <div className="mt-12 flex flex-wrap gap-8 text-sm text-slate-500">
-              <div className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
-                Zero-Code Deployment
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
-                MCP Server Integration
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
-                24/7 Autonomous Operation
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/*  Hero with Animation  */}
+      <HeroSection />
 
-      {/* Skill Categories */}
+      {/*  Skill Categories  */}
       <section className="py-24 px-6 border-y border-slate-800/50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -182,7 +117,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Featured Skills - Using centralized data */}
+      {/*  Featured Skills  */}
       <section className="py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
@@ -210,7 +145,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/*  CTA  */}
       <section className="py-24 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
