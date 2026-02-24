@@ -1,271 +1,285 @@
 import { Metadata } from "next";
-import { SITE_CONFIG } from "@/lib/constants";
-import { supabase } from "@/lib/supabase";
-import { fallbackArticles, fallbackTools } from "@/lib/fallback-data";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Find the Best SaaS Tools",
-  description: SITE_CONFIG.description,
+  title: "竞品调研工具 | SaaS产品分析服务 | 用户评论数据采集",
+  description: "专业的SaaS竞品分析平台，提供G2/Reddit/知乎/Hacker News多平台用户评论采集、竞品对比分析、TCO成本计算等服务。",
+  keywords: "竞品调研,SaaS分析,用户评论采集,产品对比,G2数据,Reddit分析,竞品监控",
   openGraph: {
-    title: `Find the Best SaaS Tools | ${SITE_CONFIG.name}`,
-    description: SITE_CONFIG.description,
+    title: "竞品调研工具 | SaaS产品分析服务",
+    description: "专业的SaaS竞品分析平台，一键获取多平台用户真实反馈",
     url: "/",
-    images: [
-      {
-        url: `${SITE_CONFIG.url}/og-home.jpg`,
-        width: 1200,
-        height: 630,
-        alt: SITE_CONFIG.name,
-      },
-    ],
   },
 };
 
-async function getFeaturedTools() {
-  // 使用新的 product_hunt_tools 表
-  try {
-    const { data } = await supabase
-      .from('product_hunt_tools')
-      .select('*')
-      .eq('featured', true)
-      .order('votes_count', { ascending: false })
-      .limit(4);
-    
-    if (data && data.length > 0) {
-      // 转换数据格式以兼容现有UI
-      return data.map(tool => ({
-        id: tool.id,
-        name: tool.name,
-        description: tool.tagline || tool.description,
-        category_name: tool.category || 'Productivity',
-        rating: (tool.rating || 0) / 20 * 5, // Convert to 5-star scale
-        reviews_count: tool.reviews_count || tool.votes_count,
-        logo_url: tool.thumbnail_url || `https://placehold.co/64x64/3c3cf6/ffffff?text=${tool.name[0]}`,
-        deal: null,
-        has_free_trial: false,
-        featured: tool.featured,
-        website_url: tool.url,
-      }));
-    }
-  } catch (e) {
-    console.error('Supabase error:', e);
-  }
-  
-  // Fallback to old tools table
-  try {
-    const { data } = await supabase
-      .from('tools')
-      .select('*')
-      .eq('featured', true)
-      .eq('is_active', true)
-      .order('rating', { ascending: false })
-      .limit(4);
-    
-    if (data && data.length > 0) {
-      return data;
-    }
-  } catch (e) {
-    console.error('Supabase error:', e);
-  }
-  
-  // 只有当 Supabase 返回空时才使用 fallback
-  console.log('Using fallback tools');
-  return fallbackTools.slice(0, 4);
+const services = [
+  {
+    id: "single-research",
+    name: "单产品深度调研",
+    shortName: "产品调研",
+    description: "一键获取单个产品的全平台用户评论，包含G2、Reddit、知乎、Hacker News等多渠道真实反馈",
+    benefits: ["多平台数据整合", "真实用户痛点挖掘", "评分对比分析"],
+    price: "¥19",
+    tag: "入门首选",
+  },
+  {
+    id: "batch-compare",
+    name: "批量竞品对比分析",
+    shortName: "竞品对比",
+    description: "同时分析3-5个竞品，自动生成对比报告，快速识别竞争优势与劣势",
+    benefits: ["一键生成对比矩阵", "优劣势可视化", "定价策略分析"],
+    price: "¥49",
+    tag: "最受欢迎",
+    popular: true,
+  },
+  {
+    id: "content-material",
+    name: "内容创作素材采集",
+    shortName: "素材采集",
+    description: "收集真实用户好评、痛点金句，为产品评测、营销文案提供第一手素材",
+    benefits: ["真实用户评价", "可直接引用", "多场景适用"],
+    price: "¥29",
+    tag: "创作者必备",
+  },
+  {
+    id: "tco-analysis",
+    name: "TCO总拥有成本分析",
+    shortName: "成本分析",
+    description: "深度分析产品真实成本，包含隐藏费用、企业级定价、用户实际支出等数据",
+    benefits: ["隐藏成本挖掘", "真实支出数据", "ROI计算辅助"],
+    price: "¥39",
+    tag: "企业推荐",
+  },
+  {
+    id: "competitor-monitor",
+    name: "竞品动态监控服务",
+    shortName: "竞品监控",
+    description: "持续追踪竞品动态，每周自动更新用户评论、价格变动、新功能反馈",
+    benefits: ["每周自动更新", "价格变动提醒", "口碑趋势追踪"],
+    price: "¥99",
+    unit: "/月",
+    tag: "长期追踪",
+  },
+  {
+    id: "api-developer",
+    name: "数据API开发接口",
+    shortName: "数据API",
+    description: "灵活的API接口，将用户评论数据集成到自己的CRM、BI系统或分析工具中",
+    benefits: ["5000次/月调用", "RESTful接口", "技术文档完善"],
+    price: "¥299",
+    unit: "/月",
+    tag: "开发者",
+  },
+];
+
+const authors = [
+  { name: "陈明", avatar: "CM" },
+  { name: "林小雨", avatar: "LX" },
+  { name: "王浩然", avatar: "WH" },
+  { name: "张思远", avatar: "ZS" },
+  { name: "李雪", avatar: "LX" },
+  { name: "周凯", avatar: "ZK" },
+];
+
+function getAuthorForService(id: string) {
+  const index = id.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0) % authors.length;
+  return authors[index];
 }
 
-async function getFeaturedArticles() {
-  // 使用真实 Supabase 数据
-  try {
-    const { data } = await supabase
-      .from('articles')
-      .select('*')
-      .eq('published', true)
-      .order('date', { ascending: false })
-      .limit(3);
-    
-    if (data && data.length > 0) {
-      return data;
-    }
-  } catch (e) {
-    console.error('Supabase error:', e);
-  }
-  
-  // 只有当 Supabase 返回空时才使用 fallback
-  console.log('Using fallback articles');
-  return fallbackArticles.slice(0, 3);
-}
-
-export default async function Home() {
-  const featuredTools = await getFeaturedTools();
-  const featuredArticles = await getFeaturedArticles();
-
+export default function Home() {
   return (
-    <div className="bg-white">
-      {/* Hero */}
-      <section className="relative overflow-hidden py-20 lg:py-32">
-        <div className="absolute top-0 right-0 -z-10 w-1/2 h-full opacity-10 blur-3xl bg-gradient-to-l from-primary to-transparent pointer-events-none"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-6">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-            </span>
-            New Tools Added Daily
+    <div className="min-h-screen bg-white">
+      {/* SEO Hero Section */}
+      <section className="max-w-5xl mx-auto px-6 pt-20 pb-16 text-center">
+        <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
+          SaaS竞品调研工具
+          <br />
+          <span className="text-slate-600 text-3xl md:text-4xl">一键获取全平台用户真实反馈</span>
+        </h1>
+        
+        <p className="text-lg text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+          专业的SaaS产品分析服务。整合G2、Reddit、知乎、Hacker News等多平台用户评论，
+          提供竞品对比、成本分析、内容素材等一站式调研解决方案。
+        </p>
+
+        {/* Value Props */}
+        <div className="flex flex-wrap justify-center gap-8 mb-12">
+          <div className="flex items-center gap-2 text-slate-700">
+            <svg className="w-5 h-5 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
+            </svg>
+            <span>真实用户评论</span>
           </div>
-          <h1 className="text-5xl lg:text-7xl font-black text-slate-900 leading-[1.1] tracking-tight mb-6 max-w-4xl">
-            Find the Best <span className="text-primary">SaaS Tools</span> to Grow Your Business
-          </h1>
-          <p className="text-lg lg:text-xl text-slate-600 mb-10 max-w-2xl leading-relaxed">
-            Honest reviews, comparisons, and exclusive deals for marketers, creators, and entrepreneurs. Level up your stack today.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 items-center">
-            <Link
-              href="/directory"
-              className="px-8 py-4 bg-primary text-white font-bold rounded-lg shadow-lg shadow-primary/20 hover:bg-primary-hover hover:-translate-y-1 transition-all flex items-center gap-2"
-            >
-              Browse Top Tools
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-              </svg>
-            </Link>
-            <Link
-              href="/blog"
-              className="px-8 py-4 bg-white text-slate-900 font-bold rounded-lg border border-slate-200 hover:bg-slate-50 transition-all"
-            >
-              View Comparisons
-            </Link>
+          <div className="flex items-center gap-2 text-slate-700">
+            <svg className="w-5 h-5 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
+            </svg>
+            <span>多平台数据整合</span>
           </div>
+          <div className="flex items-center gap-2 text-slate-700">
+            <svg className="w-5 h-5 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
+            </svg>
+            <span>即买即用</span>
+          </div>
+        </div>
+
+        <Link
+          href="/pricing"
+          className="inline-flex items-center gap-2 px-8 py-4 bg-slate-900 text-white font-medium rounded-lg hover:bg-slate-800 transition-colors"
+        >
+          查看全部服务
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </Link>
+      </section>
+
+      {/* Services Grid */}
+      <section className="max-w-6xl mx-auto px-6 pb-20">
+        <h2 className="text-2xl font-bold text-slate-900 mb-8 text-center">
+          热门竞品调研服务
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {services.map((service) => {
+            const author = getAuthorForService(service.id);
+            return (
+              <div
+                key={service.id}
+                className="group border border-slate-200 rounded-xl p-6 hover:border-slate-300 hover:shadow-sm transition-all"
+              >
+                {/* Tag & Price */}
+                <div className="flex items-center justify-between mb-4">
+                  <span className={`text-xs font-medium px-2 py-1 rounded ${
+                    service.popular 
+                      ? 'bg-emerald-100 text-emerald-700' 
+                      : 'bg-slate-100 text-slate-600'
+                  }`}>
+                    {service.tag}
+                  </span>
+                  <span className="text-2xl font-bold text-slate-900">
+                    {service.price}
+                    <span className="text-sm font-normal text-slate-500">{service.unit || '/次'}</span>
+                  </span>
+                </div>
+
+                {/* Title - SEO optimized */}
+                <h3 className="text-lg font-semibold text-slate-900 mb-2">
+                  {service.name}
+                </h3>
+                
+                <p className="text-sm text-slate-500 mb-4">{service.shortName}</p>
+
+                {/* Description */}
+                <p className="text-sm text-slate-600 mb-4 leading-relaxed">
+                  {service.description}
+                </p>
+
+                {/* Benefits */}
+                <ul className="space-y-1 mb-6">
+                  {service.benefits.map((benefit, idx) => (
+                    <li key={idx} className="text-sm text-slate-600 flex items-center gap-2">
+                      <span className="text-emerald-500">•</span>
+                      {benefit}
+                    </li>
+                  ))}
+                </ul>
+
+                {/* Author & CTA */}
+                <div className="flex items-center justify-between pt-4 border-t border-slate-100">
+                  <div className="flex items-center gap-2">
+                    <div className="w-7 h-7 bg-slate-200 rounded-full flex items-center justify-center text-xs font-medium text-slate-600">
+                      {author.avatar}
+                    </div>
+                    <span className="text-sm text-slate-500">{author.name}</span>
+                  </div>
+                  <Link
+                    href={`/buy?service=${service.id}`}
+                    className="px-5 py-2 bg-slate-900 text-white text-sm font-medium rounded-lg hover:bg-slate-800 transition-colors"
+                  >
+                    立即购买
+                  </Link>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </section>
 
-      {/* API Access CTA */}
-      <section className="bg-gradient-to-r from-primary to-primary-hover py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-            <div className="text-white">
-              <h2 className="text-3xl font-bold mb-2">需要程序化的数据访问？</h2>
-              <p className="text-white/90 text-lg">
-                通过 API 获取 G2、Reddit、Quora、Hacker News 的真实用户评论数据
-              </p>
+      {/* How It Works */}
+      <section className="bg-slate-50 py-16">
+        <div className="max-w-5xl mx-auto px-6">
+          <h2 className="text-2xl font-bold text-slate-900 mb-12 text-center">
+            如何使用竞品调研工具
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="w-12 h-12 bg-slate-900 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
+                1
+              </div>
+              <h3 className="font-semibold text-slate-900 mb-2">选择服务</h3>
+              <p className="text-sm text-slate-600">根据调研需求选择合适的数据服务类型</p>
             </div>
-            <Link
-              href="/pricing"
-              className="px-8 py-4 bg-white text-primary font-bold rounded-lg shadow-lg hover:bg-slate-100 transition-all flex items-center gap-2 whitespace-nowrap"
-            >
-              获取 API Key
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-              </svg>
-            </Link>
+            <div className="text-center">
+              <div className="w-12 h-12 bg-slate-900 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
+                2
+              </div>
+              <h3 className="font-semibold text-slate-900 mb-2">提交产品</h3>
+              <p className="text-sm text-slate-600">输入需要调研的SaaS产品名称或竞品列表</p>
+            </div>
+            <div className="text-center">
+              <div className="w-12 h-12 bg-slate-900 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
+                3
+              </div>
+              <h3 className="font-semibold text-slate-900 mb-2">获取报告</h3>
+              <p className="text-sm text-slate-600">几分钟内获得完整的用户评论分析报告</p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Recommended Tools */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-slate-100">
-        <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-12">
-          <div>
-            <h2 className="text-3xl font-bold text-slate-900 mb-2">Recommended Tools</h2>
-            <p className="text-slate-500">Hand-picked software solutions curated for maximum ROI.</p>
+      {/* Use Cases */}
+      <section className="max-w-5xl mx-auto px-6 py-16">
+        <h2 className="text-2xl font-bold text-slate-900 mb-8 text-center">
+          谁在使用我们的竞品调研服务
+        </h2>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="border border-slate-200 rounded-lg p-6">
+            <h3 className="font-semibold text-slate-900 mb-2">产品经理</h3>
+            <p className="text-sm text-slate-600">了解竞品功能优劣势，获取用户真实反馈，指导产品 roadmap 规划</p>
           </div>
-          <Link href="/directory" className="text-primary font-bold flex items-center gap-1 hover:gap-2 transition-all">
-            View All Directory
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-              <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+          <div className="border border-slate-200 rounded-lg p-6">
+            <h3 className="font-semibold text-slate-900 mb-2">市场运营</h3>
+            <p className="text-sm text-slate-600">收集竞品营销话术和用户痛点，优化自身推广策略和内容方向</p>
+          </div>
+          <div className="border border-slate-200 rounded-lg p-6">
+            <h3 className="font-semibold text-slate-900 mb-2">内容创作者</h3>
+            <p className="text-sm text-slate-600">获取真实用户评价和金句，撰写有深度的SaaS产品评测文章</p>
+          </div>
+          <div className="border border-slate-200 rounded-lg p-6">
+            <h3 className="font-semibold text-slate-900 mb-2">投资人</h3>
+            <p className="text-sm text-slate-600">快速了解目标公司的用户口碑、市场反馈和竞品格局</p>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="bg-slate-900 text-white py-16">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h2 className="text-3xl font-bold mb-4">开始你的竞品调研</h2>
+          <p className="text-slate-300 mb-8">从真实用户评论中发现产品机会</p>
+          <Link
+            href="/pricing"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-white text-slate-900 font-medium rounded-lg hover:bg-slate-100 transition-colors"
+          >
+            浏览全部服务
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </Link>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {featuredTools.map((tool) => (
-            <div key={tool.id} className="group bg-white p-6 rounded-xl border border-slate-200 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5 transition-all">
-              <div className="w-16 h-16 bg-primary/10 rounded-xl mb-6 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-                <img 
-                  src={tool.logo_url || `https://placehold.co/64x64/3c3cf6/ffffff?text=${tool.name.charAt(0)}`} 
-                  alt={tool.name} 
-                  className="w-8 h-8 object-contain rounded" 
-                />
-              </div>
-              <div className="flex items-center gap-1 mb-2">
-                {[...Array(5)].map((_, i) => (
-                  <svg
-                    key={i}
-                    xmlns="http://www.w3.org/2000/svg"
-                    className={`h-4 w-4 ${i < Math.floor(tool.rating) ? 'text-yellow-400' : 'text-slate-200'}`}
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                ))}
-              </div>
-              <h3 className="text-xl font-bold mb-1">{tool.name}</h3>
-              <p className="text-sm text-slate-500 mb-4">{tool.category_name}</p>
-              {tool.deal && (
-                <div className="bg-primary/5 border border-primary/20 rounded px-3 py-2 mb-6">
-                  <p className="text-xs font-bold text-primary uppercase mb-1">Exclusive Deal</p>
-                  <p className="text-sm font-medium">{tool.deal}</p>
-                </div>
-              )}
-              {!tool.deal && <div className="h-[60px] mb-6" />}
-              <button className="w-full inline-flex justify-center items-center gap-2 py-3 rounded-lg bg-primary/5 text-primary font-bold hover:bg-primary hover:text-white transition-all">
-                Learn More
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-              </button>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Latest Reviews & Guides */}
-      <section className="bg-slate-50 py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-black mb-4">Latest Reviews & Guides</h2>
-            <p className="text-slate-500 max-w-xl mx-auto">Deep-dives into the latest software releases and strategic guides to help you scale.</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {featuredArticles.map((article) => (
-              <article key={article.id} className="flex flex-col h-full bg-white rounded-xl overflow-hidden shadow-sm border border-slate-100 hover:-translate-y-2 transition-transform duration-300 group">
-                <Link href={`/blog/${article.slug}`} className="block">
-                  <div className="aspect-video relative overflow-hidden">
-                    <img 
-                      src={article.image_url || 'https://placehold.co/800x400/3c3cf6/ffffff?text=Article'} 
-                      alt={article.title} 
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
-                    />
-                    <div className="absolute top-4 left-4 bg-primary text-white text-[10px] font-black px-2 py-1 rounded tracking-wider uppercase">
-                      {article.category}
-                    </div>
-                  </div>
-                </Link>
-                <div className="p-6 flex flex-col flex-1">
-                  <div className="flex items-center gap-2 text-slate-400 text-xs mb-3 font-medium uppercase tracking-wider">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    {article.read_time}
-                  </div>
-                  <Link href={`/blog/${article.slug}`}>
-                    <h3 className="text-xl font-bold mb-3 leading-snug group-hover:text-primary transition-colors">
-                      {article.title}
-                    </h3>
-                  </Link>
-                  <p className="text-slate-500 text-sm mb-6 line-clamp-3">
-                    {article.excerpt}
-                  </p>
-                  <Link href={`/blog/${article.slug}`} className="mt-auto font-bold text-sm text-primary flex items-center gap-1 group/btn">
-                    Read Full Review
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </Link>
-                </div>
-              </article>
-            ))}
-          </div>
         </div>
       </section>
     </div>
