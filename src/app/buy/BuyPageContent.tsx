@@ -12,6 +12,16 @@ const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 const API_BASE_URL = 'https://api.stackmatrices.com';
 
+// Convert file to base64
+const fileToBase64 = (file: File): Promise<string> => {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => resolve(reader.result as string);
+    reader.onerror = (error) => reject(error);
+  });
+};
+
 const skills: Record<string, { name: string; price: string; description: string; period: string }> = {
   'shadow-monitor': {
     name: 'Shadow Monitor',
@@ -83,30 +93,26 @@ export default function BuyPageContent() {
         throw new Error('Not authenticated');
       }
 
-      // 2. Upload screenshot to Supabase Storage
-      const fileExt = screenshot.name.split('.').pop();
-      const fileName = `${user.id}/${Date.now()}.${fileExt}`;
-      const { error: uploadError, data: uploadData } = await supabase.storage
-        .from('payment-screenshots')
-        .upload(fileName, screenshot);
-
-      if (uploadError) {
-        throw new Error('Failed to upload screenshot: ' + uploadError.message);
+      // 2. Convert screenshot to base64
+      let screenshotBase64 = '';
+      try {
+        screenshotBase64 = await fileToBase64(screenshot);
+        // Limit size to avoid request too large
+        if (screenshotBase64.length > 2 * 1024 * 1024) {
+          throw new Error('Screenshot too large. Please use an image under 2MB.');
+        }
+      } catch (err) {
+        throw new Error('Failed to process screenshot. Please try again.');
       }
 
-      // Get public URL
-      const { data: { publicUrl } } = supabase.storage
-        .from('payment-screenshots')
-        .getPublicUrl(fileName);
-
-      // 3. Create order via API
+      // 3. Create order via API with base64 screenshot
       const orderData = {
         skill_id: skillId,
         skill_name: skill.name,
         amount: parseFloat(skill.price.replace('$', '')),
         currency: 'USD',
         payment_method: 'manual',
-        payment_screenshot: publicUrl,
+        payment_screenshot: screenshotBase64,
       };
 
       const response = await fetch(`${API_BASE_URL}/orders/create`, {
