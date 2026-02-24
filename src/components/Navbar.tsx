@@ -10,22 +10,6 @@ export function Navbar() {
   
   const isActive = (path: string) => pathname === path || pathname?.startsWith(`${path}/`);
 
-  // 切换语言
-  const switchLocale = () => {
-    const currentLocale = pathname?.startsWith('/en') ? 'en' : 'zh';
-    const newLocale = currentLocale === 'zh' ? 'en' : 'zh';
-    
-    if (newLocale === 'zh') {
-      // 切换到中文，移除 /en 前缀
-      window.location.href = pathname?.replace('/en', '') || '/';
-    } else {
-      // 切换到英文，添加 /en 前缀
-      window.location.href = `/en${pathname}`;
-    }
-  };
-
-  const isEnglish = pathname?.startsWith('/en');
-
   return (
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -70,14 +54,6 @@ export function Navbar() {
           </div>
           
           <div className="flex items-center gap-4">
-            {/* Language Switcher */}
-            <button
-              onClick={switchLocale}
-              className="text-sm font-medium text-slate-500 hover:text-emerald-600 transition-colors px-3 py-1 rounded-lg border border-slate-200 hover:border-emerald-200"
-            >
-              {isEnglish ? '中文' : 'EN'}
-            </button>
-
             {/* Auth Buttons */}
             {user ? (
               <div className="flex items-center gap-3">
