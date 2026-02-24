@@ -8,10 +8,8 @@
     "period": "mo",
     "deployments": "2.4k",
     "featured": true,
-    "integrations": [
-      { "name": "amazon", "iconifySlug": "logos:amazon" },
-      { "name": "googlesheets", "iconifySlug": "logos:google-sheets" }
-    ]
+    "sourceIcon": "logos:amazon",
+    "targetIcon": "simple-icons:deepseek"
   },
   {
     "id": "extract-review-insights",
@@ -22,10 +20,8 @@
     "period": "analysis",
     "deployments": "1.8k",
     "featured": true,
-    "integrations": [
-      { "name": "amazon", "iconifySlug": "logos:amazon" },
-      { "name": "openai", "iconifySlug": "logos:openai-icon" }
-    ]
+    "sourceIcon": "logos:amazon",
+    "targetIcon": "logos:openai-icon"
   },
   {
     "id": "track-listing-changes",
@@ -36,10 +32,8 @@
     "period": "mo",
     "deployments": "980",
     "featured": true,
-    "integrations": [
-      { "name": "amazon", "iconifySlug": "logos:amazon" },
-      { "name": "slack", "iconifySlug": "logos:slack-icon" }
-    ]
+    "sourceIcon": "logos:amazon",
+    "targetIcon": "logos:slack-icon"
   },
   {
     "id": "sync-multi-inventory",
@@ -50,10 +44,8 @@
     "period": "mo",
     "deployments": "3.1k",
     "featured": true,
-    "integrations": [
-      { "name": "amazon", "iconifySlug": "logos:amazon" },
-      { "name": "shopify", "iconifySlug": "logos:shopify" }
-    ]
+    "sourceIcon": "logos:shopify",
+    "targetIcon": "logos:wechat"
   },
   {
     "id": "calculate-true-margins",
@@ -64,10 +56,8 @@
     "period": "mo",
     "deployments": "1.5k",
     "featured": false,
-    "integrations": [
-      { "name": "amazon", "iconifySlug": "logos:amazon" },
-      { "name": "googlesheets", "iconifySlug": "logos:google-sheets" }
-    ]
+    "sourceIcon": "logos:alipay",
+    "targetIcon": "logos:google-sheets"
   },
   {
     "id": "generate-ai-listings",
@@ -78,37 +68,31 @@
     "period": "listing",
     "deployments": "4.2k",
     "featured": false,
-    "integrations": [
-      { "name": "amazon", "iconifySlug": "logos:amazon" },
-      { "name": "openai", "iconifySlug": "logos:openai-icon" }
-    ]
+    "sourceIcon": "logos:amazon",
+    "targetIcon": "logos:openai-icon"
   },
   {
-    "id": "forecast-replenishment",
-    "actionTitle": "Forecast Replenishment Needs with ML Models",
-    "outcome": "Optimal stock levels",
-    "description": "ML-powered demand forecasting based on velocity, seasonality, lead times.",
-    "price": "$199",
-    "period": "mo",
-    "deployments": "720",
-    "featured": false,
-    "integrations": [
-      { "name": "amazon", "iconifySlug": "logos:amazon" },
-      { "name": "shopify", "iconifySlug": "logos:shopify" }
-    ]
-  },
-  {
-    "id": "audit-amazon-fees",
-    "actionTitle": "Audit Amazon FBA & Storage Fee Errors",
-    "outcome": "Recover 2-5% revenue",
-    "description": "Automated detection of incorrect FBA, storage, referral fee charges.",
+    "id": "tiktok-domestic",
+    "actionTitle": "Sync TikTok Leads to Feishu CRM Automatically",
+    "outcome": "Zero lead loss",
+    "description": "Capture TikTok leads in real-time and push to Feishu for immediate follow-up.",
     "price": "$149",
     "period": "mo",
-    "deployments": "890",
+    "deployments": "620",
     "featured": false,
-    "integrations": [
-      { "name": "amazon", "iconifySlug": "logos:amazon" },
-      { "name": "googlesheets", "iconifySlug": "logos:google-sheets" }
-    ]
+    "sourceIcon": "logos:tiktok-icon",
+    "targetIcon": "logos:lark"
+  },
+  {
+    "id": "enterprise-referral",
+    "actionTitle": "Auto-Process Employee Referrals via WeCom",
+    "outcome": "Streamlined hiring",
+    "description": "Parse referral submissions, route to hiring managers, track bonuses in WeCom.",
+    "price": "$199",
+    "period": "mo",
+    "deployments": "340",
+    "featured": false,
+    "sourceIcon": "logos:wechat",
+    "targetIcon": "logos:openai-icon"
   }
 ]

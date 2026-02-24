@@ -3,11 +3,6 @@
 import Link from 'next/link';
 import { useState } from 'react';
 
-interface Integration {
-  name: string;
-  iconifySlug: string;
-}
-
 interface Skill {
   id: string;
   actionTitle: string;
@@ -16,7 +11,8 @@ interface Skill {
   price: string;
   period: string;
   deployments: string;
-  integrations: Integration[];
+  sourceIcon: string;
+  targetIcon: string;
 }
 
 interface SkillCardProps {
@@ -24,21 +20,8 @@ interface SkillCardProps {
   compact?: boolean;
 }
 
-// Icon mapping to verified Iconify slugs
-const iconifyMapping: Record<string, string> = {
-  'amazon': 'logos:amazon',
-  'openai': 'logos:openai-icon',
-  'deepseek': 'simple-icons:deepseek',
-  'googlesheets': 'logos:google-sheets',
-  'shopify': 'logos:shopify',
-  'slack': 'logos:slack-icon',
-  'wechat': 'logos:wechat',
-  'tiktok': 'logos:tiktok-icon',
-  'apify': 'simple-icons:apify',
-};
-
 // Fallback Lucide Zap icon as SVG
-const FallbackIcon = () => (
+const ZapIcon = () => (
   <svg 
     xmlns="http://www.w3.org/2000/svg" 
     width="20" 
@@ -49,20 +32,20 @@ const FallbackIcon = () => (
     strokeWidth="2" 
     strokeLinecap="round" 
     strokeLinejoin="round"
-    className="text-white"
+    className="text-emerald-400"
   >
     <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
   </svg>
 );
 
-// Individual Icon with fallback
-function IconBadge({ iconifySlug }: { iconifySlug: string }) {
+// Source Icon (White - Raw Data)
+function SourceIconBadge({ slug }: { slug: string }) {
   const [failed, setFailed] = useState(false);
   
   if (failed) {
     return (
-      <div className="w-10 h-10 rounded-full bg-zinc-800 border-2 border-black flex items-center justify-center p-2">
-        <FallbackIcon />
+      <div className="w-10 h-10 rounded-full bg-zinc-800 border-2 border-black flex items-center justify-center">
+        <ZapIcon />
       </div>
     );
   }
@@ -70,7 +53,7 @@ function IconBadge({ iconifySlug }: { iconifySlug: string }) {
   return (
     <div className="w-10 h-10 rounded-full bg-zinc-800 border-2 border-black flex items-center justify-center p-2 overflow-hidden">
       <img 
-        src={`https://api.iconify.design/${iconifySlug}.svg?color=white`}
+        src={`https://api.iconify.design/${slug}.svg?color=white`}
         alt=""
         className="w-full h-full object-contain filter brightness-0 invert"
         onError={() => setFailed(true)}
@@ -80,17 +63,46 @@ function IconBadge({ iconifySlug }: { iconifySlug: string }) {
   );
 }
 
-// Duo Icons Container (Make-style overlapping)
-function DuoIcons({ integrations }: { integrations: Integration[] }) {
-  const displayIntegrations = integrations.slice(0, 2);
+// Target Icon (Colorful - AI Brain)
+function TargetIconBadge({ slug }: { slug: string }) {
+  const [failed, setFailed] = useState(false);
   
+  if (failed) {
+    return (
+      <div className="w-10 h-10 rounded-full bg-emerald-900/50 border-2 border-emerald-500/30 flex items-center justify-center">
+        <ZapIcon />
+      </div>
+    );
+  }
+
+  // Keep original brand color - no filter
   return (
-    <div className="flex -space-x-2">
-      {displayIntegrations.map((integration, idx) => (
-        <div key={idx} className="relative z-10 hover:z-20 transition-transform hover:scale-110">
-          <IconBadge iconifySlug={integration.iconifySlug} />
-        </div>
-      ))}
+    <div className="w-10 h-10 rounded-full bg-zinc-800 border-2 border-black flex items-center justify-center p-2 overflow-hidden shadow-lg shadow-emerald-500/20">
+      <img 
+        src={`https://api.iconify.design/${slug}.svg`}
+        alt=""
+        className="w-full h-full object-contain"
+        onError={() => setFailed(true)}
+        loading="lazy"
+      />
+    </div>
+  );
+}
+
+// Duo Icons with Connection Effect
+function DuoIcons({ sourceSlug, targetSlug }: { sourceSlug: string; targetSlug: string }) {
+  return (
+    <div className="flex items-center">
+      <div className="relative z-10 hover:z-20 transition-transform hover:scale-110">
+        <SourceIconBadge slug={sourceSlug} />
+      </div>
+      
+      {/* Connection indicator */}
+      <div className="w-4 h-px bg-gradient-to-r from-slate-600 to-emerald-500/50 mx-[-2px] z-0"></div>
+      
+      <div className="relative z-10 hover:z-20 transition-transform hover:scale-110">
+        <TargetIconBadge slug={targetSlug} />
+      </div>
     </div>
   );
 }
@@ -102,9 +114,9 @@ export function SkillCard({ skill, compact = false }: SkillCardProps) {
         href={`/buy?skill=${skill.id}`}
         className="group block bg-slate-900 border border-slate-800 rounded-xl p-5 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10"
       >
-        {/* Duo Icons */}
+        {/* Duo Icons - Source to Target */}
         <div className="mb-4">
-          <DuoIcons integrations={skill.integrations} />
+          <DuoIcons sourceSlug={skill.sourceIcon} targetSlug={skill.targetIcon} />
         </div>
 
         {/* Action Title */}
@@ -132,7 +144,7 @@ export function SkillCard({ skill, compact = false }: SkillCardProps) {
     <div className="group bg-slate-800/80 rounded-lg p-4 border border-slate-700 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10 hover:bg-slate-800">
       {/* Duo Icons + Deployments */}
       <div className="flex items-center justify-between mb-3">
-        <DuoIcons integrations={skill.integrations} />
+        <DuoIcons sourceSlug={skill.sourceIcon} targetSlug={skill.targetIcon} />
         <div className="text-[10px] font-mono text-slate-500">
           {skill.deployments}
         </div>
