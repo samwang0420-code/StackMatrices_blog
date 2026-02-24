@@ -2,69 +2,84 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { useState } from 'react';
+import { 
+  Globe, 
+  ShoppingCart, 
+  Table, 
+  MessageSquare, 
+  Cpu,
+  Zap
+} from 'lucide-react';
 
-// OpenClaw Lobster Icon
-const LobsterIcon = () => (
-  <svg viewBox="0 0 48 48" className="w-10 h-10" fill="currentColor">
-    <path d="M24 8C20 8 17 11 17 15C17 19 20 22 24 22C28 22 31 19 31 15C31 11 28 8 24 8Z" opacity="0.9" />
-    <path d="M20 22L18 30L24 34L30 30L28 22" opacity="0.8" />
-    <path d="M18 30L16 38L24 42L32 38L30 30" opacity="0.7" />
-    <path d="M17 14C12 12 8 15 6 20C4 25 7 30 12 32C15 33 18 31 19 28" stroke="currentColor" strokeWidth="2.5" fill="none" />
-    <path d="M31 14C36 12 40 15 42 20C44 25 41 30 36 32C33 33 30 31 29 28" stroke="currentColor" strokeWidth="2.5" fill="none" />
-  </svg>
-);
-
-// Simple Icons CDN
-const getIconUrl = (name: string) => `https://api.iconify.design/${name}.svg?color=white`;
-
-// Source Node Component
-function SourceNode({ icon, name, delay }: { icon: string; name: string; delay: number }) {
+// Source Node with Lucide Icon
+function SourceNode({ 
+  icon: Icon, 
+  name, 
+  delay,
+  position
+}: { 
+  icon: React.ElementType;
+  name: string; 
+  delay: number;
+  position: { left: string; top: string };
+}) {
   return (
     <motion.div
       className="absolute flex flex-col items-center"
+      style={position}
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ delay, duration: 0.5 }}
     >
       <motion.div
-        className="w-12 h-12 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center p-2 overflow-hidden"
-        animate={{ y: [0, -5, 0] }}
-        transition={{ duration: 3, repeat: Infinity, delay }}
+        className="w-12 h-12 rounded-full bg-zinc-800/80 border border-zinc-600 flex items-center justify-center shadow-lg shadow-black/20"
+        animate={{ y: [0, -6, 0] }}
+        transition={{ duration: 4, repeat: Infinity, delay, ease: "easeInOut" }}
       >
-        <img src={getIconUrl(icon)} alt={name} className="w-full h-full object-contain filter brightness-0 invert" />
+        <Icon className="w-6 h-6 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]" strokeWidth={1.5} />
       </motion.div>
-      <span className="text-[10px] text-slate-500 mt-1">{name}</span>
+      <span className="text-[10px] text-slate-400 mt-2 font-mono uppercase tracking-wider">{name}</span>
     </motion.div>
   );
 }
 
-// Delivery Node Component
-function DeliveryNode({ icon, name, delay }: { icon: string; name: string; delay: number }) {
+// Delivery Node with Lucide Icon
+function DeliveryNode({ 
+  icon: Icon, 
+  name, 
+  delay,
+  position
+}: { 
+  icon: React.ElementType;
+  name: string; 
+  delay: number;
+  position: { right: string; top: string };
+}) {
   return (
     <motion.div
       className="absolute flex flex-col items-center"
+      style={position}
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ delay, duration: 0.5 }}
     >
       <motion.div
-        className="w-12 h-12 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center p-2 overflow-hidden"
-        animate={{ y: [0, -5, 0] }}
-        transition={{ duration: 3, repeat: Infinity, delay: delay + 0.5 }}
+        className="w-12 h-12 rounded-full bg-zinc-800/80 border border-zinc-600 flex items-center justify-center shadow-lg shadow-black/20"
+        animate={{ y: [0, -6, 0] }}
+        transition={{ duration: 4, repeat: Infinity, delay: delay + 1, ease: "easeInOut" }}
       >
-        <img src={getIconUrl(icon)} alt={name} className="w-full h-full object-contain filter brightness-0 invert" />
+        <Icon className="w-6 h-6 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]" strokeWidth={1.5} />
       </motion.div>
-      <span className="text-[10px] text-slate-500 mt-1">{name}</span>
+      <span className="text-[10px] text-slate-400 mt-2 font-mono uppercase tracking-wider">{name}</span>
     </motion.div>
   );
 }
 
-// Engine Core Component
+// Engine Core with CPU/Lobster Icon
 function EngineCore() {
   return (
     <motion.div
-      className="relative w-24 h-24 flex items-center justify-center"
+      className="relative w-28 h-28 flex items-center justify-center"
       initial={{ scale: 0.8, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ delay: 0.3, duration: 0.5 }}
@@ -72,8 +87,8 @@ function EngineCore() {
       {/* Outer glow ring */}
       <motion.div
         className="absolute inset-0 rounded-full border-2 border-emerald-500/30"
-        animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.6, 0.3] }}
-        transition={{ duration: 2, repeat: Infinity }}
+        animate={{ scale: [1, 1.15, 1], opacity: [0.3, 0.6, 0.3] }}
+        transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
       />
       
       {/* Rotating scanning ring */}
@@ -81,69 +96,27 @@ function EngineCore() {
         className="absolute inset-2 rounded-full border border-emerald-500/20"
         style={{ borderStyle: 'dashed' }}
         animate={{ rotate: 360 }}
-        transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+        transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
       />
       
       {/* Core with glow */}
       <motion.div
-        className="relative w-16 h-16 rounded-full bg-gradient-to-br from-emerald-500/20 to-emerald-900/40 border border-emerald-500/50 flex items-center justify-center"
-        style={{ boxShadow: '0 0 30px rgba(16, 185, 129, 0.3)' }}
+        className="relative w-16 h-16 rounded-full bg-gradient-to-br from-emerald-500/30 to-emerald-900/50 border border-emerald-400/50 flex items-center justify-center"
+        style={{ boxShadow: '0 0 40px rgba(16, 185, 129, 0.4), inset 0 0 20px rgba(16, 185, 129, 0.2)' }}
         whileHover={{ scale: 1.05 }}
+        transition={{ type: "spring", stiffness: 300 }}
       >
-        <div className="text-emerald-400">
-          <LobsterIcon />
-        </div>
+        <Cpu className="w-8 h-8 text-emerald-300 drop-shadow-[0_0_10px_rgba(16,185,129,0.8)]" strokeWidth={1.5} />
       </motion.div>
       
-      <div className="absolute -bottom-6 text-[10px] text-emerald-400 font-mono">
+      <div className="absolute -bottom-7 text-[10px] text-emerald-400 font-mono tracking-widest uppercase">
         ENGINE
       </div>
     </motion.div>
   );
 }
 
-// Data Packet Component
-function DataPacket({ path, delay, onReachEngine }: { path: string; delay: number; onReachEngine?: boolean }) {
-  const [hasReached, setHasReached] = useState(false);
-  
-  return (
-    <motion.div
-      className="absolute w-1.5 h-1.5 rounded-full"
-      style={{
-        background: hasReached ? '#10b981' : '#ffffff',
-        boxShadow: hasReached ? '0 0 8px #10b981' : '0 0 4px rgba(255,255,255,0.5)'
-      }}
-      initial={{ offsetDistance: '0%' }}
-      animate={{ offsetDistance: '100%' }}
-      transition={{ 
-        duration: 2.5, 
-        repeat: Infinity, 
-        delay, 
-        ease: "easeInOut" 
-      }}
-      onUpdate={(latest: any) => {
-        if (latest.offsetDistance > 45 && latest.offsetDistance < 55 && !hasReached) {
-          setHasReached(true);
-        }
-        if (latest.offsetDistance > 90 && hasReached) {
-          setHasReached(false);
-        }
-      }}>
-      <svg className="absolute w-0 h-0">
-        <defs>
-          <path id={`path-${delay}`} d={path} fill="none" />
-        </defs>
-      </svg>
-      <style jsx>{`
-        div {
-          offset-path: path('${path}');
-        }
-      `}</style>
-    </motion.div>
-  );
-}
-
-// Connection Line SVG
+// Connection Lines SVG
 function ConnectionLines() {
   return (
     <svg className="absolute inset-0 w-full h-full pointer-events-none"
@@ -152,51 +125,112 @@ function ConnectionLines() {
     >
       {/* Source to Engine paths */}
       <path
-        d="M 80 80 Q 150 100 180 150"
+        d="M 70 90 Q 130 120 160 150"
         fill="none"
-        stroke="rgba(63, 63, 70, 0.5)"
-        strokeWidth="1"
-        strokeDasharray="4 4"
+        stroke="url(#gradient-left)"
+        strokeWidth="1.5"
+        strokeDasharray="5 5"
+        opacity="0.4"
       />
       <path
-        d="M 80 220 Q 150 200 180 150"
+        d="M 70 210 Q 130 180 160 150"
         fill="none"
-        stroke="rgba(63, 63, 70, 0.5)"
-        strokeWidth="1"
-        strokeDasharray="4 4"
+        stroke="url(#gradient-left)"
+        strokeWidth="1.5"
+        strokeDasharray="5 5"
+        opacity="0.4"
       />
       
       {/* Engine to Delivery paths */}
       <path
-        d="M 220 150 Q 250 100 320 80"
+        d="M 240 150 Q 270 120 330 90"
         fill="none"
-        stroke="rgba(63, 63, 70, 0.5)"
-        strokeWidth="1"
-        strokeDasharray="4 4"
+        stroke="url(#gradient-right)"
+        strokeWidth="1.5"
+        strokeDasharray="5 5"
+        opacity="0.4"
       />
       <path
-        d="M 220 150 Q 250 200 320 220"
+        d="M 240 150 Q 270 180 330 210"
         fill="none"
-        stroke="rgba(63, 63, 70, 0.5)"
-        strokeWidth="1"
-        strokeDasharray="4 4"
+        stroke="url(#gradient-right)"
+        strokeWidth="1.5"
+        strokeDasharray="5 5"
+        opacity="0.4"
       />
+      
+      <defs>
+        <linearGradient id="gradient-left" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="#52525b" />
+          <stop offset="100%" stopColor="#10b981" />
+        </linearGradient>
+        <linearGradient id="gradient-right" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="#10b981" />
+          <stop offset="100%" stopColor="#52525b" />
+        </linearGradient>
+      </defs>
     </svg>
+  );
+}
+
+// Data Particle
+function DataParticle({ 
+  startPos, 
+  viaPos, 
+  endPos, 
+  delay 
+}: { 
+  startPos: { x: string; y: string };
+  viaPos: { x: string; y: string };
+  endPos: { x: string; y: string };
+  delay: number;
+}) {
+  return (
+    <motion.div
+      className="absolute w-2 h-2 rounded-full"
+      style={{
+        left: startPos.x,
+        top: startPos.y,
+        background: 'radial-gradient(circle, #10b981 0%, #059669 100%)',
+        boxShadow: '0 0 10px #10b981, 0 0 20px #10b981'
+      }}
+      animate={{
+        left: [startPos.x, viaPos.x, endPos.x],
+        top: [startPos.y, viaPos.y, endPos.y],
+        scale: [0.8, 1.2, 0.8],
+        opacity: [0.6, 1, 0.6]
+      }}
+      transition={{
+        duration: 3,
+        repeat: Infinity,
+        delay,
+        ease: "easeInOut"
+      }}
+    />
   );
 }
 
 // Intelligence Pipeline Animation
 function IntelligencePipeline() {
   return (
-    <div className="relative w-full h-[300px] hidden lg:block">
+    <div className="relative w-full h-[320px]">
       <ConnectionLines />
       
       
       {/* Source Zone - Left */}
-      <SourceNode icon="logos:amazon" name="Amazon" delay={0} />
-      <div className="absolute left-[15%] top-[65%]">
-        <SourceNode icon="logos:shopify" name="Shopify" delay={0.2} />
-      </div>
+      <SourceNode 
+        icon={Globe} 
+        name="Source" 
+        delay={0} 
+        position={{ left: '12%', top: '22%' }}
+      />
+      
+      <SourceNode 
+        icon={ShoppingCart} 
+        name="Store" 
+        delay={0.2} 
+        position={{ left: '12%', top: '62%' }}
+      />
       
       
       {/* Engine Zone - Center */}
@@ -206,108 +240,60 @@ function IntelligencePipeline() {
       
       
       {/* Delivery Zone - Right */}
-      <div className="absolute right-[15%] top-[20%]">
-        <DeliveryNode icon="logos:google-sheets" name="Sheets" delay={0.4} />
-      </div>
+      <DeliveryNode 
+        icon={Table} 
+        name="Sheets" 
+        delay={0.4} 
+        position={{ right: '12%', top: '22%' }}
+      />
       
-      <div className="absolute right-[15%] top-[65%]">
-        <DeliveryNode icon="logos:slack-icon" name="Slack" delay={0.6} />
-      </div>
+      <DeliveryNode 
+        icon={MessageSquare} 
+        name="Alerts" 
+        delay={0.6} 
+        position={{ right: '12%', top: '62%' }}
+      />
       
       
-      {/* Animated Data Packets */}
-      <div className="absolute inset-0">
-        <motion.div
-          className="absolute w-1.5 h-1.5 rounded-full bg-white"
-          style={{ 
-            left: '20%', 
-            top: '27%',
-            boxShadow: '0 0 6px rgba(255,255,255,0.8)'
-          }}
-          animate={{
-            left: ['20%', '50%', '80%'],
-            top: ['27%', '50%', '27%'],
-            backgroundColor: ['#ffffff', '#10b981', '#10b981'],
-            scale: [1, 1.2, 1]
-          }}
-          transition={{
-            duration: 3,
-            repeat: Infinity,
-            delay: 0,
-            ease: "easeInOut"
-          }}
-        />
-        
-        <motion.div
-          className="absolute w-1.5 h-1.5 rounded-full bg-white"
-          style={{ 
-            left: '20%', 
-            top: '73%',
-            boxShadow: '0 0 6px rgba(255,255,255,0.8)'
-          }}
-          animate={{
-            left: ['20%', '50%', '80%'],
-            top: ['73%', '50%', '73%'],
-            backgroundColor: ['#ffffff', '#10b981', '#10b981'],
-            scale: [1, 1.2, 1]
-          }}
-          transition={{
-            duration: 3,
-            repeat: Infinity,
-            delay: 1.5,
-            ease: "easeInOut"
-          }}
-        />
-        
-        <motion.div
-          className="absolute w-1.5 h-1.5 rounded-full bg-emerald-400"
-          style={{ 
-            left: '50%', 
-            top: '50%',
-            boxShadow: '0 0 8px #10b981'
-          }}
-          animate={{
-            left: ['50%', '80%', '50%'],
-            top: ['50%', '27%', '50%']
-          }}
-          transition={{
-            duration: 3,
-            repeat: Infinity,
-            delay: 0.75,
-            ease: "easeInOut"
-          }}
-        />
-        
-        <motion.div
-          className="absolute w-1.5 h-1.5 rounded-full bg-emerald-400"
-          style={{ 
-            left: '50%', 
-            top: '50%',
-            boxShadow: '0 0 8px #10b981'
-          }}
-          animate={{
-            left: ['50%', '80%', '50%'],
-            top: ['50%', '73%', '50%']
-          }}
-          transition={{
-            duration: 3,
-            repeat: Infinity,
-            delay: 2.25,
-            ease: "easeInOut"
-          }}
-        />
-      </div>
+      {/* Data Particles - Flow Animation */}
+      <DataParticle 
+        startPos={{ x: '18%', y: '30%' }}
+        viaPos={{ x: '50%', y: '50%' }}
+        endPos={{ x: '82%', y: '30%' }}
+        delay={0}
+      />
+      
+      <DataParticle 
+        startPos={{ x: '18%', y: '70%' }}
+        viaPos={{ x: '50%', y: '50%' }}
+        endPos={{ x: '82%', y: '70%' }}
+        delay={1.5}
+      />
+      
+      <DataParticle 
+        startPos={{ x: '18%', y: '30%' }}
+        viaPos={{ x: '50%', y: '50%' }}
+        endPos={{ x: '82%', y: '70%' }}
+        delay={0.75}
+      />
+      
+      <DataParticle 
+        startPos={{ x: '18%', y: '70%' }}
+        viaPos={{ x: '50%', y: '50%' }}
+        endPos={{ x: '82%', y: '30%' }}
+        delay={2.25}
+      />
       
       
       {/* Labels */}
-      <div className="absolute left-[10%] bottom-4 text-[10px] text-slate-600 font-mono">
-        SOURCE
+      <div className="absolute left-[8%] bottom-2 text-[9px] text-slate-500 font-mono uppercase tracking-widest">
+        INPUT
       </div>
-      <div className="absolute left-1/2 -translate-x-1/2 bottom-4 text-[10px] text-emerald-500/70 font-mono">
-        ENGINE
+      <div className="absolute left-1/2 -translate-x-1/2 bottom-2 text-[9px] text-emerald-500/60 font-mono uppercase tracking-widest">
+        PROCESS
       </div>
-      <div className="absolute right-[10%] bottom-4 text-[10px] text-slate-600 font-mono">
-        DELIVERY
+      <div className="absolute right-[8%] bottom-2 text-[9px] text-slate-500 font-mono uppercase tracking-widest">
+        OUTPUT
       </div>
     </div>
   );
