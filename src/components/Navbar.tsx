@@ -2,9 +2,11 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useAuth } from './AuthProvider';
 
 export function Navbar() {
   const pathname = usePathname();
+  const { user, signOut } = useAuth();
   
   const isActive = (path: string) => pathname === path;
 
@@ -46,6 +48,12 @@ export function Navbar() {
               >
                 Quick Tools
               </Link>
+              <Link 
+                href="/pricing" 
+                className={`text-sm font-medium transition-colors ${isActive('/pricing') ? 'text-primary' : 'text-slate-500 hover:text-primary'}`}
+              >
+                API Pricing
+              </Link>
             </nav>
           </div>
           <div className="flex items-center gap-4">
@@ -59,6 +67,39 @@ export function Navbar() {
                 type="text"
               />
             </div>
+            
+            {/* Auth Buttons */}
+            {user ? (
+              <div className="flex items-center gap-3">
+                <Link 
+                  href="/dashboard"
+                  className="text-sm font-medium text-slate-600 hover:text-primary"
+                >
+                  {user.email}
+                </Link>
+                <button
+                  onClick={() => signOut()}
+                  className="text-sm font-medium text-slate-500 hover:text-red-600"
+                >
+                  Logout
+                </button>
+              </div>
+            ) : (
+              <div className="flex items-center gap-3">
+                <Link 
+                  href="/login"
+                  className="text-sm font-medium text-slate-600 hover:text-primary"
+                >
+                  Login
+                </Link>
+                <Link 
+                  href="/register"
+                  className="px-4 py-2 bg-primary text-white text-sm font-medium rounded-lg hover:bg-primary-hover transition-colors"
+                >
+                  Get API Key
+                </Link>
+              </div>
+            )}
           </div>
         </div>
       </div>

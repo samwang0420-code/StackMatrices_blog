@@ -139,6 +139,29 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* API Access CTA */}
+      <section className="bg-gradient-to-r from-primary to-primary-hover py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="text-white">
+              <h2 className="text-3xl font-bold mb-2">需要程序化的数据访问？</h2>
+              <p className="text-white/90 text-lg">
+                通过 API 获取 G2、Reddit、Quora、Hacker News 的真实用户评论数据
+              </p>
+            </div>
+            <Link
+              href="/pricing"
+              className="px-8 py-4 bg-white text-primary font-bold rounded-lg shadow-lg hover:bg-slate-100 transition-all flex items-center gap-2 whitespace-nowrap"
+            >
+              获取 API Key
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Recommended Tools */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-slate-100">
         <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-12">
