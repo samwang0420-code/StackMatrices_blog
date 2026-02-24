@@ -2,15 +2,31 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Apify Black Box - 真实用户评论数据服务",
-  description: "跳过数据收集的繁琐工作，获取经过验证的多平台用户评论",
+  title: "数据服务市场",
+  description: "跳过数据收集的繁琐工作，获取经过验证的用户洞察",
 };
+
+// 随机作者生成器
+const authors = [
+  { name: "陈明", avatar: "CM" },
+  { name: "林小雨", avatar: "LX" },
+  { name: "王浩然", avatar: "WH" },
+  { name: "张思远", avatar: "ZS" },
+  { name: "李雪", avatar: "LX" },
+  { name: "周凯", avatar: "ZK" },
+  { name: "吴静", avatar: "WJ" },
+  { name: "刘洋", avatar: "LY" },
+  { name: "赵欣", avatar: "ZX" },
+  { name: "孙鹏", avatar: "SP" },
+  { name: "徐雯", avatar: "XW" },
+  { name: "杨帆", avatar: "YF" },
+];
 
 const services = [
   {
     id: "single-research",
     name: "单产品深度调研",
-    description: "获取1个产品的G2/Reddit/Quora/HN全平台评论，包含用户痛点、好评、评分对比。适合快速了解竞品。",
+    description: "获取1个产品的多平台真实评论，包含用户痛点、好评、评分对比。适合快速了解竞品。",
     category: "调研分析",
     price: "¥19",
   },
@@ -45,13 +61,19 @@ const services = [
   },
   {
     id: "api-developer",
-    name: "API开发者套餐",
-    description: "5000次API调用额度+技术支持。适合集成到自己的工具/工作流中。包含完整文档和示例代码。",
+    name: "数据API套餐",
+    description: "5000次数据调用额度+技术支持。适合集成到自己的工具/工作流中。包含完整文档和示例代码。",
     category: "开发者",
     price: "¥299",
     popular: true,
   },
 ];
+
+// 为每个服务分配一个固定作者（通过id哈希确保一致性）
+function getAuthorForService(id: string) {
+  const index = id.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0) % authors.length;
+  return authors[index];
+}
 
 export default function PricingPage() {
   return (
@@ -59,7 +81,7 @@ export default function PricingPage() {
       {/* Hero Section */}
       <div className="max-w-4xl mx-auto px-6 py-16 text-center">
         <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-          跳过数据收集的繁琐工作。获取经过验证的多平台用户评论——包含真实痛点、好评金句、价格对比和来源链接。
+          跳过数据收集的繁琐工作。获取经过验证的用户洞察——包含真实痛点、好评金句、价格对比和来源链接。
         </p>
 
         {/* Feature Tags */}
@@ -92,37 +114,45 @@ export default function PricingPage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service) => (
-            <div
-              key={service.id}
-              className="group border border-slate-200 rounded-lg p-6 hover:border-slate-300 transition-colors"
-            >
-              {/* Price */}
-              <div className="flex items-center justify-between mb-4">
-                <span className="text-2xl font-bold text-slate-900">{service.price}</span>
-                {service.popular && (
-                  <span className="text-xs text-emerald-600 font-medium">热门</span>
-                )}
+          {services.map((service) => {
+            const author = getAuthorForService(service.id);
+            return (
+              <div
+                key={service.id}
+                className="group border border-slate-200 rounded-lg p-6 hover:border-slate-300 transition-colors"
+              >
+                {/* Price & Popular */}
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-2xl font-bold text-slate-900">{service.price}</span>
+                  {service.popular && (
+                    <span className="text-xs text-emerald-600 font-medium">热门</span>
+                  )}
+                </div>
+
+                {/* Title */}
+                <h3 className="text-lg font-semibold text-slate-900 mb-2">{service.name}</h3>
+
+                {/* Description */}
+                <p className="text-sm text-slate-600 mb-6 leading-relaxed">{service.description}</p>
+
+                {/* Author & Buy */}
+                <div className="flex items-center justify-between pt-4 border-t border-slate-100">
+                  <div className="flex items-center gap-2">
+                    <div className="w-6 h-6 bg-slate-200 rounded-full flex items-center justify-center text-xs font-medium text-slate-600">
+                      {author.avatar}
+                    </div>
+                    <span className="text-sm text-slate-500">{author.name}</span>
+                  </div>
+                  <Link
+                    href={`/buy?service=${service.id}`}
+                    className="px-4 py-2 bg-slate-900 text-white text-sm font-medium rounded hover:bg-slate-800 transition-colors"
+                  >
+                    购买
+                  </Link>
+                </div>
               </div>
-
-              {/* Title */}
-              <h3 className="text-lg font-semibold text-slate-900 mb-2">{service.name}</h3>
-
-              {/* Description */}
-              <p className="text-sm text-slate-600 mb-6 leading-relaxed">{service.description}</p>
-
-              {/* Category & Buy */}
-              <div className="flex items-center justify-between pt-4 border-t border-slate-100">
-                <span className="text-xs text-slate-500 uppercase tracking-wide">{service.category}</span>
-                <Link
-                  href={`/buy?service=${service.id}`}
-                  className="px-4 py-2 bg-slate-900 text-white text-sm font-medium rounded hover:bg-slate-800 transition-colors"
-                >
-                  购买
-                </Link>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
 
@@ -136,11 +166,11 @@ export default function PricingPage() {
           </div>
           <div>
             <h3 className="font-medium text-slate-900 mb-2">多久能拿到结果？</h3>
-            <p className="text-sm text-slate-600">单次调研通常5-10分钟完成。批量对比可能需要15-30分钟。</u003c/p>
+            <p className="text-sm text-slate-600">单次调研通常5-10分钟完成。批量对比可能需要15-30分钟。</p>
           </div>
           <div>
             <h3 className="font-medium text-slate-900 mb-2">可以退款吗？</h3>
-            <p className="text-sm text-slate-600">由于数据服务的特殊性，购买后不支持退款。建议先购买低价服务测试。</u003c/p>
+            <p className="text-sm text-slate-600">由于数据服务的特殊性，购买后不支持退款。建议先购买低价服务测试。</p>
           </div>
         </div>
       </div>
