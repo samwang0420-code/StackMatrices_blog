@@ -1,10 +1,11 @@
 'use client';
 
 import Link from 'next/link';
+import { useState } from 'react';
 
 interface Integration {
   name: string;
-  color: string;
+  iconifySlug: string;
 }
 
 interface Skill {
@@ -23,24 +24,73 @@ interface SkillCardProps {
   compact?: boolean;
 }
 
-// Simple Icons CDN URL builder
-function getSimpleIconUrl(name: string, color: string = 'white'): string {
-  return `https://cdn.simpleicons.org/${name.toLowerCase()}/${color}`;
+// Icon mapping to verified Iconify slugs
+const iconifyMapping: Record<string, string> = {
+  'amazon': 'logos:amazon',
+  'openai': 'logos:openai-icon',
+  'deepseek': 'simple-icons:deepseek',
+  'googlesheets': 'logos:google-sheets',
+  'shopify': 'logos:shopify',
+  'slack': 'logos:slack-icon',
+  'wechat': 'logos:wechat',
+  'tiktok': 'logos:tiktok-icon',
+  'apify': 'simple-icons:apify',
+};
+
+// Fallback Lucide Zap icon as SVG
+const FallbackIcon = () => (
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    width="20" 
+    height="20" 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    strokeWidth="2" 
+    strokeLinecap="round" 
+    strokeLinejoin="round"
+    className="text-white"
+  >
+    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+  </svg>
+);
+
+// Individual Icon with fallback
+function IconBadge({ iconifySlug }: { iconifySlug: string }) {
+  const [failed, setFailed] = useState(false);
+  
+  if (failed) {
+    return (
+      <div className="w-10 h-10 rounded-full bg-zinc-800 border-2 border-black flex items-center justify-center p-2">
+        <FallbackIcon />
+      </div>
+    );
+  }
+
+  return (
+    <div className="w-10 h-10 rounded-full bg-zinc-800 border-2 border-black flex items-center justify-center p-2 overflow-hidden">
+      <img 
+        src={`https://api.iconify.design/${iconifySlug}.svg?color=white`}
+        alt=""
+        className="w-full h-full object-contain filter brightness-0 invert"
+        onError={() => setFailed(true)}
+        loading="lazy"
+      />
+    </div>
+  );
 }
 
-// Integration Badge with Simple Icons
-function IntegrationBadge({ name, color }: { name: string; color: string }) {
+// Duo Icons Container (Make-style overlapping)
+function DuoIcons({ integrations }: { integrations: Integration[] }) {
+  const displayIntegrations = integrations.slice(0, 2);
+  
   return (
-    <div className="w-8 h-8 rounded-full bg-slate-700 border-2 border-slate-800 overflow-hidden flex-shrink-0 shadow-md hover:scale-110 transition-transform">
-      <img 
-        src={getSimpleIconUrl(name, color)} 
-        alt={name}
-        className="w-full h-full object-contain p-1"
-        onError={(e) => {
-          // Fallback to placeholder if icon fails to load
-          (e.target as HTMLImageElement).src = `https://cdn.simpleicons.org/${name.toLowerCase()}/10b981`;
-        }}
-      />
+    <div className="flex -space-x-2">
+      {displayIntegrations.map((integration, idx) => (
+        <div key={idx} className="relative z-10 hover:z-20 transition-transform hover:scale-110">
+          <IconBadge iconifySlug={integration.iconifySlug} />
+        </div>
+      ))}
     </div>
   );
 }
@@ -52,15 +102,9 @@ export function SkillCard({ skill, compact = false }: SkillCardProps) {
         href={`/buy?skill=${skill.id}`}
         className="group block bg-slate-900 border border-slate-800 rounded-xl p-5 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10"
       >
-        {/* Integration Icons */}
-        <div className="flex items-center mb-3">
-          <div className="flex -space-x-2">
-            {skill.integrations.slice(0, 3).map((integration, idx) => (
-              <div key={idx} className="relative z-10 hover:z-20">
-                <IntegrationBadge name={integration.name} color={integration.color} />
-              </div>
-            ))}
-          </div>
+        {/* Duo Icons */}
+        <div className="mb-4">
+          <DuoIcons integrations={skill.integrations} />
         </div>
 
         {/* Action Title */}
@@ -86,15 +130,9 @@ export function SkillCard({ skill, compact = false }: SkillCardProps) {
 
   return (
     <div className="group bg-slate-800/80 rounded-lg p-4 border border-slate-700 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10 hover:bg-slate-800">
-      {/* Integration Icons Row */}
+      {/* Duo Icons + Deployments */}
       <div className="flex items-center justify-between mb-3">
-        <div className="flex -space-x-1.5">
-          {skill.integrations.map((integration, idx) => (
-            <div key={idx} className="relative z-10 hover:z-20">
-              <IntegrationBadge name={integration.name} color={integration.color} />
-            </div>
-          ))}
-        </div>
+        <DuoIcons integrations={skill.integrations} />
         <div className="text-[10px] font-mono text-slate-500">
           {skill.deployments}
         </div>

@@ -9,9 +9,8 @@
     "deployments": "2.4k",
     "featured": true,
     "integrations": [
-      { "name": "amazon", "color": "white" },
-      { "name": "apify", "color": "white" },
-      { "name": "googlesheets", "color": "white" }
+      { "name": "amazon", "iconifySlug": "logos:amazon" },
+      { "name": "googlesheets", "iconifySlug": "logos:google-sheets" }
     ]
   },
   {
@@ -24,9 +23,8 @@
     "deployments": "1.8k",
     "featured": true,
     "integrations": [
-      { "name": "amazon", "color": "white" },
-      { "name": "openai", "color": "white" },
-      { "name": "slack", "color": "white" }
+      { "name": "amazon", "iconifySlug": "logos:amazon" },
+      { "name": "openai", "iconifySlug": "logos:openai-icon" }
     ]
   },
   {
@@ -39,9 +37,8 @@
     "deployments": "980",
     "featured": true,
     "integrations": [
-      { "name": "amazon", "color": "white" },
-      { "name": "apify", "color": "white" },
-      { "name": "slack", "color": "white" }
+      { "name": "amazon", "iconifySlug": "logos:amazon" },
+      { "name": "slack", "iconifySlug": "logos:slack-icon" }
     ]
   },
   {
@@ -54,9 +51,8 @@
     "deployments": "3.1k",
     "featured": true,
     "integrations": [
-      { "name": "amazon", "color": "white" },
-      { "name": "shopify", "color": "white" },
-      { "name": "slack", "color": "white" }
+      { "name": "amazon", "iconifySlug": "logos:amazon" },
+      { "name": "shopify", "iconifySlug": "logos:shopify" }
     ]
   },
   {
@@ -69,9 +65,8 @@
     "deployments": "1.5k",
     "featured": false,
     "integrations": [
-      { "name": "amazon", "color": "white" },
-      { "name": "openai", "color": "white" },
-      { "name": "googlesheets", "color": "white" }
+      { "name": "amazon", "iconifySlug": "logos:amazon" },
+      { "name": "googlesheets", "iconifySlug": "logos:google-sheets" }
     ]
   },
   {
@@ -84,8 +79,8 @@
     "deployments": "4.2k",
     "featured": false,
     "integrations": [
-      { "name": "amazon", "color": "white" },
-      { "name": "openai", "color": "white" }
+      { "name": "amazon", "iconifySlug": "logos:amazon" },
+      { "name": "openai", "iconifySlug": "logos:openai-icon" }
     ]
   },
   {
@@ -98,9 +93,8 @@
     "deployments": "720",
     "featured": false,
     "integrations": [
-      { "name": "amazon", "color": "white" },
-      { "name": "shopify", "color": "white" },
-      { "name": "openai", "color": "white" }
+      { "name": "amazon", "iconifySlug": "logos:amazon" },
+      { "name": "shopify", "iconifySlug": "logos:shopify" }
     ]
   },
   {
@@ -113,8 +107,8 @@
     "deployments": "890",
     "featured": false,
     "integrations": [
-      { "name": "amazon", "color": "white" },
-      { "name": "googlesheets", "color": "white" }
+      { "name": "amazon", "iconifySlug": "logos:amazon" },
+      { "name": "googlesheets", "iconifySlug": "logos:google-sheets" }
     ]
   }
 ]
