@@ -8,72 +8,82 @@ export function Navbar() {
   const pathname = usePathname();
   const { user, signOut } = useAuth();
   
-  const isActive = (path: string) => pathname === path;
+  const isActive = (path: string) => pathname === path || pathname?.startsWith(`${path}/`);
+
+  // 切换语言
+  const switchLocale = () => {
+    const currentLocale = pathname?.startsWith('/en') ? 'en' : 'zh';
+    const newLocale = currentLocale === 'zh' ? 'en' : 'zh';
+    
+    if (newLocale === 'zh') {
+      // 切换到中文，移除 /en 前缀
+      window.location.href = pathname?.replace('/en', '') || '/';
+    } else {
+      // 切换到英文，添加 /en 前缀
+      window.location.href = `/en${pathname}`;
+    }
+  };
+
+  const isEnglish = pathname?.startsWith('/en');
 
   return (
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
+          {/* Logo */}
           <div className="flex items-center gap-8">
             <Link href="/" className="flex items-center gap-2 group">
-              <div className="bg-primary p-1.5 rounded-lg text-white">
+              <div className="bg-emerald-500 p-1.5 rounded-lg text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M3 5a2 2 0 012-2h10a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5zm11 1H6v8l4-2 4 2V6z" clipRule="evenodd" />
+                  <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
                 </svg>
               </div>
-              <span className="text-xl font-bold tracking-tight text-slate-900">Stackmatrices</span>
+              <span className="text-xl font-bold tracking-tight text-slate-900">OpenClaw</span>
             </Link>
+            
             <nav className="hidden md:flex items-center gap-6">
               <Link 
                 href="/" 
-                className={`text-sm font-medium transition-colors ${isActive('/') ? 'text-primary' : 'text-slate-500 hover:text-primary'}`}
+                className={`text-sm font-medium transition-colors ${isActive('/') ? 'text-emerald-600' : 'text-slate-600 hover:text-emerald-600'}`}
               >
-                Home
+                首页
               </Link>
               <Link 
-                href="/directory" 
-                className={`text-sm font-medium transition-colors ${isActive('/directory') ? 'text-primary' : 'text-slate-500 hover:text-primary'}`}
+                href="/skills" 
+                className={`text-sm font-medium transition-colors ${isActive('/skills') ? 'text-emerald-600' : 'text-slate-600 hover:text-emerald-600'}`}
               >
-                Directory
+                技能市场
               </Link>
               <Link 
-                href="/blog" 
-                className={`text-sm font-medium transition-colors ${isActive('/blog') ? 'text-primary' : 'text-slate-500 hover:text-primary'}`}
+                href="/how-it-works" 
+                className={`text-sm font-medium transition-colors ${isActive('/how-it-works') ? 'text-emerald-600' : 'text-slate-600 hover:text-emerald-600'}`}
               >
-                Blog
+                使用指南
               </Link>
               <Link 
-                href="/tools" 
-                className={`text-sm font-medium transition-colors ${isActive('/tools') ? 'text-primary' : 'text-slate-500 hover:text-primary'}`}
+                href="/faq" 
+                className={`text-sm font-medium transition-colors ${isActive('/faq') ? 'text-emerald-600' : 'text-slate-600 hover:text-emerald-600'}`}
               >
-                Quick Tools
-              </Link>
-              <Link 
-                href="/pricing" 
-                className={`text-sm font-medium transition-colors ${isActive('/pricing') ? 'text-primary' : 'text-slate-500 hover:text-primary'}`}
-              >
-                API Pricing
+                帮助
               </Link>
             </nav>
           </div>
+          
           <div className="flex items-center gap-4">
-            <div className="hidden lg:flex relative">
-              <svg xmlns="http://www.w3.org/2000/svg" className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-              <input 
-                className="pl-10 pr-4 py-1.5 bg-slate-100 border-none rounded-lg text-sm focus:ring-2 focus:ring-primary/50 w-64" 
-                placeholder="Search tools..." 
-                type="text"
-              />
-            </div>
-            
+            {/* Language Switcher */}
+            <button
+              onClick={switchLocale}
+              className="text-sm font-medium text-slate-500 hover:text-emerald-600 transition-colors px-3 py-1 rounded-lg border border-slate-200 hover:border-emerald-200"
+            >
+              {isEnglish ? '中文' : 'EN'}
+            </button>
+
             {/* Auth Buttons */}
             {user ? (
               <div className="flex items-center gap-3">
                 <Link 
                   href="/dashboard"
-                  className="text-sm font-medium text-slate-600 hover:text-primary"
+                  className="text-sm font-medium text-slate-600 hover:text-emerald-600"
                 >
                   {user.email}
                 </Link>
@@ -81,22 +91,22 @@ export function Navbar() {
                   onClick={() => signOut()}
                   className="text-sm font-medium text-slate-500 hover:text-red-600"
                 >
-                  Logout
+                  退出
                 </button>
               </div>
             ) : (
               <div className="flex items-center gap-3">
                 <Link 
                   href="/login"
-                  className="text-sm font-medium text-slate-600 hover:text-primary"
+                  className="text-sm font-medium text-slate-600 hover:text-emerald-600"
                 >
-                  Login
+                  登录
                 </Link>
                 <Link 
                   href="/register"
-                  className="px-4 py-2 bg-primary text-white text-sm font-medium rounded-lg hover:bg-primary-hover transition-colors"
+                  className="px-4 py-2 bg-slate-900 text-white text-sm font-medium rounded-lg hover:bg-slate-800 transition-colors"
                 >
-                  Get API Key
+                  注册
                 </Link>
               </div>
             )}
