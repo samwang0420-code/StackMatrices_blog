@@ -1,28 +1,16 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Playfair_Display, Merriweather } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { SITE_CONFIG } from "@/lib/constants";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { AuthProvider } from "@/components/AuthProvider";
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages } from 'next-intl/server';
 
 const inter = Inter({
   subsets: ["latin"],
   display: 'swap',
-  variable: '--font-inter',
-});
-
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  display: 'swap',
-  variable: '--font-playfair',
-});
-
-const merriweather = Merriweather({
-  weight: ['300', '400', '700', '900'],
-  subsets: ["latin"],
-  display: 'swap',
-  variable: '--font-merriweather',
 });
 
 export const metadata: Metadata = {
@@ -69,19 +57,25 @@ export const viewport: Viewport = {
   themeColor: '#3c3cf6',
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
-}: Readonly<{
+  params: { locale },
+}: {
   children: React.ReactNode;
-}>) {
+  params: { locale: string };
+}) {
+  const messages = await getMessages();
+
   return (
-    <html lang="en">
-      <body className={`${inter.variable} ${playfair.variable} ${merriweather.variable} font-sans min-h-screen flex flex-col bg-background-light antialiased`}>
-        <AuthProvider>
-          <Navbar />
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </AuthProvider>
+    <html lang={locale}>
+      <body className={`${inter.className} min-h-screen flex flex-col bg-white antialiased`}>
+        <NextIntlClientProvider messages={messages} locale={locale}>
+          <AuthProvider>
+            <Navbar />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </AuthProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

@@ -1,3 +1,7 @@
+import createNextIntlPlugin from 'next-intl/plugin';
+
+const withNextIntl = createNextIntlPlugin('./src/i18n.ts');
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
@@ -6,13 +10,11 @@ const nextConfig = {
     unoptimized: true,
   },
   eslint: {
-    // 忽略 ESLint 错误，防止构建失败
     ignoreDuringBuilds: true,
   },
   typescript: {
-    // 忽略 TypeScript 错误，防止构建失败
     ignoreBuildErrors: true,
   },
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);

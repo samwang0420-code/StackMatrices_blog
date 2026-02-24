@@ -1,0 +1,50 @@
+{
+  "nav": {
+    "home": "Home",
+    "directory": "Directory",
+    "blog": "Blog",
+    "tools": "Tools",
+    "pricing": "Services"
+  },
+  "pricing": {
+    "title": "Choose Your Data Service",
+    "subtitle": "Pay per use, no subscription required",
+    "singleResearch": {
+      "name": "Single Product Research",
+      "description": "Get multi-platform reviews for 1 product, ideal for quick competitive analysis"
+    },
+    "batchCompare": {
+      "name": "Batch Comparison",
+      "description": "Compare 3-5 competitors, auto-generate comparison report"
+    },
+    "contentMaterial": {
+      "name": "Content Materials",
+      "description": "Get real user pain points + testimonials for reviews"
+    },
+    "tcoAnalysis": {
+      "name": "TCO Calculator",
+      "description": "Real pricing data + hidden cost analysis"
+    },
+    "competitorMonitor": {
+      "name": "Competitor Monitor",
+      "description": "Weekly automated review tracking for specified products"
+    },
+    "apiDeveloper": {
+      "name": "API Developer Pack",
+      "description": "5000 API calls + technical support"
+    },
+    "buy": "Buy",
+    "popular": "Popular"
+  },
+  "buy": {
+    "title": "Purchase Service",
+    "loginRequired": "Please Login",
+    "loginRequiredDesc": "You need to login to purchase services",
+    "goLogin": "Login",
+    "scanToPay": "Scan to Pay",
+    "uploadScreenshot": "Upload Payment Screenshot",
+    "submit": "Submit Order",
+    "success": "Order Submitted",
+    "successDesc": "We will review your payment screenshot soon"
+  }
+}
