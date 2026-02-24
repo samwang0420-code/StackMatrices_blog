@@ -1,10 +1,9 @@
-"""API client for Apify Black Box."""
-import os
+/** API client for Apify Black Box. */
 
-# API base URL - use environment variable or default
-API_BASE_URL = os.getenv('NEXT_PUBLIC_API_URL', 'https://api.gspr-hub.site/v1')
+// API base URL - use environment variable or default
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://api.gspr-hub.site/v1';
 
-class ApifyAPIError extends Error {
+export class ApifyAPIError extends Error {
   constructor(message: string, public status?: number) {
     super(message);
     this.name = 'ApifyAPIError';
