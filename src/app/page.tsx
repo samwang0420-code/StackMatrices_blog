@@ -210,49 +210,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Integration Architecture */}
-      <section className="py-24 px-6 border-y border-slate-800/50 bg-slate-900/30">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12">
-            <p className="text-emerald-400 text-sm font-mono mb-4">INTEGRATION_ARCHITECTURE</p>
-            <h2 className="text-3xl font-bold mb-4">How Skills Integrate</h2>
-            <p className="text-slate-400">Seamless connection with your existing stack</p>
-          </div>
-          
-          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-8">
-            <div className="grid grid-cols-7 gap-2 items-center text-center">
-              <div className="col-span-1">
-                <div className="bg-slate-800 rounded p-3 text-xs font-mono text-slate-400">APIFY</div>
-              </div>
-              <div className="text-slate-600">+</div>
-              <div className="col-span-1">
-                <div className="bg-slate-800 rounded p-3 text-xs font-mono text-slate-400">MAKE</div>
-              </div>
-              <div className="text-slate-600">+</div>
-              <div className="col-span-1">
-                <div className="bg-slate-800 rounded p-3 text-xs font-mono text-slate-400">OPENAI</div>
-              </div>
-              <div className="text-slate-600">→</div>
-              <div className="col-span-2">
-                <div className="bg-emerald-500/20 border border-emerald-500/30 rounded p-4">
-                  <div className="text-emerald-400 font-mono text-sm font-bold">MCP_SERVER</div>
-                  <div className="text-emerald-500/70 text-xs">SKILL_RUNTIME</div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="mt-8 flex justify-center">
-              <div className="text-slate-600">↓</div>
-            </div>
-            
-            <div className="mt-4 bg-slate-800 rounded-lg p-4 text-center">
-              <div className="text-white font-medium mb-2">Your OpenClaw Agent</div>
-              <div className="text-slate-400 text-sm">Autonomous intelligence execution</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA */}
       <section className="py-24 px-6">
         <div className="max-w-4xl mx-auto text-center">
