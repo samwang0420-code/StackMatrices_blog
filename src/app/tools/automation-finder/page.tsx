@@ -175,7 +175,7 @@ export default function AutomationFinder() {
 
   if (showResult) {
     return (
-      <div className="min-h-screen bg-slate-50">
+      <div className="min-h-screen bg-slate-950">
         <Head>
           <title>Your Automation Tool Recommendation | Stackmatrices</title>
           <meta name="description" content="Get personalized automation tool recommendations based on your needs" />
@@ -186,7 +186,7 @@ export default function AutomationFinder() {
             <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
               <CheckCircle className="w-8 h-8 text-white" />
             </div>
-            <h1 className="text-3xl font-bold text-slate-900 mb-2">
+            <h1 className="text-3xl font-bold text-white mb-2">
               Best Tools for You
             </h1>
             <p className="text-slate-600">
@@ -198,7 +198,7 @@ export default function AutomationFinder() {
             {recommendations.map((tool, index) => (
               <div
                 key={tool.id}
-                className={`bg-white rounded-xl shadow-sm border-2 p-6 ${
+                className={`bg-slate-900 rounded-xl shadow-sm border-2 p-6 ${
                   index === 0 ? 'border-blue-500 ring-4 ring-blue-100' : 'border-slate-200'
                 }`}
               >
@@ -209,11 +209,11 @@ export default function AutomationFinder() {
                 )}
                 <div className="flex justify-between items-start mb-4">
                   <div>
-                    <h2 className="text-2xl font-bold text-slate-900">{tool.name}</h2>
+                    <h2 className="text-2xl font-bold text-white">{tool.name}</h2>
                     <p className="text-blue-600 font-medium">{tool.tagline}</p>
                   </div>
                   <div className="text-right">
-                    <div className="text-2xl font-bold text-slate-900">{tool.pricing}</div>
+                    <div className="text-2xl font-bold text-white">{tool.pricing}</div>
                     <div className="text-sm text-slate-500">starting</div>
                   </div>
                 </div>
@@ -224,7 +224,7 @@ export default function AutomationFinder() {
                   {tool.bestFor.map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm"
+                      className="px-3 py-1 bg-slate-100 text-slate-300 rounded-full text-sm"
                     >
                       {tag}
                     </span>
@@ -242,7 +242,7 @@ export default function AutomationFinder() {
                   </a>
                   <Link
                     href={`/blog/${tool.id}-review`}
-                    className="flex-1 text-center py-3 border border-slate-300 rounded-lg font-medium text-slate-700 hover:bg-slate-50 transition-colors"
+                    className="flex-1 text-center py-3 border border-slate-300 rounded-lg font-medium text-slate-300 hover:bg-slate-950 transition-colors"
                   >
                     Read Full Review
                   </Link>
@@ -252,7 +252,7 @@ export default function AutomationFinder() {
           </div>
 
           <div className="bg-blue-50 rounded-xl p-6 mb-8">
-            <h3 className="font-bold text-slate-900 mb-2">💡 Pro Tip</h3>
+            <h3 className="font-bold text-white mb-2">💡 Pro Tip</h3>
             <p className="text-slate-600 text-sm">
               Consider long-term migration costs when choosing tools.
               Test with free trials before committing.
@@ -266,7 +266,7 @@ export default function AutomationFinder() {
 
           <button
             onClick={reset}
-            className="w-full py-3 border border-slate-300 rounded-lg font-medium text-slate-700 hover:bg-slate-50 transition-colors flex items-center justify-center gap-2"
+            className="w-full py-3 border border-slate-300 rounded-lg font-medium text-slate-300 hover:bg-slate-950 transition-colors flex items-center justify-center gap-2"
           >
             <RefreshCcw className="w-4 h-4" />
             Retake Quiz
@@ -280,7 +280,7 @@ export default function AutomationFinder() {
   const progress = ((currentQuestion + 1) / questions.length) * 100;
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-slate-950">
       <Head>
         <title>Automation Tool Finder | Stackmatrices</title>
         <meta name="description" content="Find the best automation tool for your team in 3 minutes" />
@@ -302,18 +302,18 @@ export default function AutomationFinder() {
           </div>
         </div>
 
-        <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-8">
+        <div className="bg-slate-900 rounded-xl shadow-sm border border-slate-200 p-8">
           {currentQuestion > 0 && (
             <button
               onClick={goBack}
-              className="mb-4 text-slate-500 hover:text-slate-700 flex items-center gap-1 text-sm"
+              className="mb-4 text-slate-500 hover:text-slate-300 flex items-center gap-1 text-sm"
             >
               <ArrowLeft className="w-4 h-4" />
               Back
             </button>
           )}
 
-          <h1 className="text-2xl font-bold text-slate-900 mb-6">
+          <h1 className="text-2xl font-bold text-white mb-6">
             {question.text}
           </h1>
 
@@ -322,12 +322,12 @@ export default function AutomationFinder() {
               <button
                 key={option.value}
                 onClick={() => handleAnswer(option.value)}
-                className="w-full p-4 border border-slate-200 rounded-lg hover:border-blue-500 hover:bg-blue-50 transition-all text-left flex items-center gap-4 group"
+                className="w-full p-4 border border-slate-200 rounded-lg hover:border-blue-500 hover:bg-slate-800 transition-all text-left flex items-center gap-4 group"
               >
                 <div className="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center group-hover:bg-blue-100 transition-colors">
                   {option.icon}
                 </div>
-                <span className="font-medium text-slate-900">{option.label}</span>
+                <span className="font-medium text-white">{option.label}</span>
                 <ArrowRight className="w-5 h-5 ml-auto text-slate-400 group-hover:text-blue-500" />
               </button>
             ))}

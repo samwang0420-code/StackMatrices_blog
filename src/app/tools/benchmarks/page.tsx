@@ -407,13 +407,13 @@ export default function BenchmarkDatabase() {
   const lastUpdated = 'February 20, 2026';
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-slate-950">
       {/* Header */}
-      <div className="bg-white border-b border-gray-200">
+      <div className="bg-slate-900 border-b border-slate-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div>
-              <h1 className="text-3xl font-bold text-gray-900 flex items-center gap-3">
+              <h1 className="text-3xl font-bold text-white flex items-center gap-3">
                 <BarChart3 className="w-8 h-8 text-blue-600" />
                 Industry Benchmark Database
               </h1>
@@ -431,10 +431,10 @@ export default function BenchmarkDatabase() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Filters Section */}
-        <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-6">
+        <div className="bg-slate-900 rounded-xl shadow-sm border border-slate-700 p-6 mb-6">
           <div className="flex items-center gap-2 mb-4">
             <Filter className="w-5 h-5 text-gray-500" />
-            <h2 className="text-lg font-semibold text-gray-900">Filters</h2>
+            <h2 className="text-lg font-semibold text-white">Filters</h2>
           </div>
 
           {/* Search */}
@@ -482,7 +482,7 @@ export default function BenchmarkDatabase() {
           {/* Stats Summary */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-4 border-t border-gray-100">
             <div className="text-center">
-              <div className="text-2xl font-bold text-gray-900">{filteredData.length}</div>
+              <div className="text-2xl font-bold text-white">{filteredData.length}</div>
               <div className="text-sm text-gray-500">Categories</div>
             </div>
             <div className="text-center">
@@ -507,14 +507,14 @@ export default function BenchmarkDatabase() {
         </div>
 
         {/* Data Table */}
-        <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+        <div className="bg-slate-900 rounded-xl shadow-sm border border-slate-700 overflow-hidden">
           <div className="overflow-x-auto">
             <table className="w-full">
-              <thead className="bg-gray-50 border-b border-gray-200">
+              <thead className="bg-slate-950 border-b border-slate-700">
                 <tr>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900 w-10"></th>
+                  <th className="px-6 py-4 text-left text-sm font-semibold text-white w-10"></th>
                   <th 
-                    className="px-6 py-4 text-left text-sm font-semibold text-gray-900 cursor-pointer hover:bg-gray-100 transition-colors"
+                    className="px-6 py-4 text-left text-sm font-semibold text-white cursor-pointer hover:bg-gray-100 transition-colors"
                     onClick={() => handleSort('category')}
                   >
                     <div className="flex items-center gap-2">
@@ -523,7 +523,7 @@ export default function BenchmarkDatabase() {
                     </div>
                   </th>
                   <th 
-                    className="px-6 py-4 text-left text-sm font-semibold text-gray-900 cursor-pointer hover:bg-gray-100 transition-colors"
+                    className="px-6 py-4 text-left text-sm font-semibold text-white cursor-pointer hover:bg-gray-100 transition-colors"
                     onClick={() => handleSort('avgPricePerSeat')}
                   >
                     <div className="flex items-center gap-2">
@@ -532,11 +532,11 @@ export default function BenchmarkDatabase() {
                       <ArrowUpDown className="w-4 h-4 text-gray-400" />
                     </div>
                   </th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">
+                  <th className="px-6 py-4 text-left text-sm font-semibold text-white">
                     Price Range
                   </th>
                   <th 
-                    className="px-6 py-4 text-left text-sm font-semibold text-gray-900 cursor-pointer hover:bg-gray-100 transition-colors"
+                    className="px-6 py-4 text-left text-sm font-semibold text-white cursor-pointer hover:bg-gray-100 transition-colors"
                     onClick={() => handleSort('avgContractLength')}
                   >
                     <div className="flex items-center gap-2">
@@ -546,7 +546,7 @@ export default function BenchmarkDatabase() {
                     </div>
                   </th>
                   <th 
-                    className="px-6 py-4 text-left text-sm font-semibold text-gray-900 cursor-pointer hover:bg-gray-100 transition-colors"
+                    className="px-6 py-4 text-left text-sm font-semibold text-white cursor-pointer hover:bg-gray-100 transition-colors"
                     onClick={() => handleSort('hiddenFeesFrequency')}
                   >
                     <div className="flex items-center gap-2">
@@ -556,7 +556,7 @@ export default function BenchmarkDatabase() {
                     </div>
                   </th>
                   <th 
-                    className="px-6 py-4 text-left text-sm font-semibold text-gray-900 cursor-pointer hover:bg-gray-100 transition-colors"
+                    className="px-6 py-4 text-left text-sm font-semibold text-white cursor-pointer hover:bg-gray-100 transition-colors"
                     onClick={() => handleSort('customerSatisfaction')}
                   >
                     <div className="flex items-center gap-2">
@@ -576,7 +576,7 @@ export default function BenchmarkDatabase() {
                   return (
                     <React.Fragment key={item.id}>
                       <tr 
-                        className="hover:bg-gray-50 transition-colors cursor-pointer"
+                        className="hover:bg-slate-950 transition-colors cursor-pointer"
                         onClick={() => toggleRow(item.id)}
                       >
                         <td className="px-6 py-4">
@@ -590,17 +590,17 @@ export default function BenchmarkDatabase() {
                           <div className="flex items-center gap-3">
                             <span className="text-2xl">{item.icon}</span>
                             <div>
-                              <div className="font-semibold text-gray-900">{item.category}</div>
+                              <div className="font-semibold text-white">{item.category}</div>
                               <div className="text-sm text-gray-500">Leader: {item.marketLeader}</div>
                             </div>
                           </div>
                         </td>
                         <td className="px-6 py-4">
-                          <div className="font-semibold text-gray-900">${item.avgPricePerSeat}</div>
+                          <div className="font-semibold text-white">${item.avgPricePerSeat}</div>
                           <div className="text-sm text-gray-500">per seat/month</div>
                         </td>
                         <td className="px-6 py-4">
-                          <div className="text-gray-900">${item.priceRange.low} - ${item.priceRange.high}</div>
+                          <div className="text-white">${item.priceRange.low} - ${item.priceRange.high}</div>
                           <div className="w-24 h-2 bg-gray-200 rounded-full mt-1 overflow-hidden">
                             <div 
                               className="h-full bg-blue-500 rounded-full"
@@ -612,7 +612,7 @@ export default function BenchmarkDatabase() {
                         </td>
                         <td className="px-6 py-4">
                           <div className="flex items-center gap-2">
-                            <span className="font-semibold text-gray-900">{item.avgContractLength} months</span>
+                            <span className="font-semibold text-white">{item.avgContractLength} months</span>
                           </div>
                         </td>
                         <td className="px-6 py-4">
@@ -630,18 +630,18 @@ export default function BenchmarkDatabase() {
                       
                       {/* Expanded Details */}
                       {isExpanded && (
-                        <tr className="bg-gray-50">
+                        <tr className="bg-slate-950">
                           <td colSpan={7} className="px-6 py-6">
                             <div className="grid md:grid-cols-2 gap-6">
                               {/* Left Column */}
                               <div className="space-y-4">
                                 <div>
-                                  <h4 className="font-semibold text-gray-900 mb-2">About</h4>
+                                  <h4 className="font-semibold text-white mb-2">About</h4>
                                   <p className="text-gray-600">{item.description}</p>
                                 </div>
                                 
                                 <div>
-                                  <h4 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
+                                  <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
                                     <Users className="w-4 h-4" />
                                     Market Leaders
                                   </h4>
@@ -664,12 +664,12 @@ export default function BenchmarkDatabase() {
                                 </div>
 
                                 <div>
-                                  <h4 className="font-semibold text-gray-900 mb-2">Pricing Model</h4>
+                                  <h4 className="font-semibold text-white mb-2">Pricing Model</h4>
                                   <p className="text-gray-600 text-sm">{item.pricingModel}</p>
                                 </div>
 
                                 <div>
-                                  <h4 className="font-semibold text-gray-900 mb-2">Contract Terms</h4>
+                                  <h4 className="font-semibold text-white mb-2">Contract Terms</h4>
                                   <p className="text-gray-600 text-sm">{item.contractTerms}</p>
                                 </div>
                               </div>
@@ -677,7 +677,7 @@ export default function BenchmarkDatabase() {
                               {/* Right Column */}
                               <div className="space-y-4">
                                 <div>
-                                  <h4 className="font-semibold text-gray-900 mb-2 flex items-center gap-2 text-red-600">
+                                  <h4 className="font-semibold text-white mb-2 flex items-center gap-2 text-red-600">
                                     <AlertCircle className="w-4 h-4" />
                                     Common Hidden Fees
                                   </h4>
@@ -692,7 +692,7 @@ export default function BenchmarkDatabase() {
                                 </div>
 
                                 <div>
-                                  <h4 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
+                                  <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
                                     <TrendingUp className="w-4 h-4" />
                                     Satisfaction Factors
                                   </h4>
@@ -753,7 +753,7 @@ export default function BenchmarkDatabase() {
           {filteredData.length === 0 && (
             <div className="text-center py-12">
               <div className="text-4xl mb-4">🔍</div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">No results found</h3>
+              <h3 className="text-lg font-semibold text-white mb-2">No results found</h3>
               <p className="text-gray-500">Try adjusting your search or filters</p>
               <button
                 onClick={clearFilters}

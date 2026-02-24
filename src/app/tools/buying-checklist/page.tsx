@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function BuyingChecklistPage() {
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-slate-950">
       <div className="bg-slate-900 py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">

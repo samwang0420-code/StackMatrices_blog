@@ -92,7 +92,7 @@ export default function SyncTimeCalculator() {
 
   if (showResult && result) {
     return (
-      <div className="min-h-screen bg-slate-50">
+      <div className="min-h-screen bg-slate-950">
         <Head>
           <title>Data Sync Cost Analysis | Stackmatrices</title>
           <meta name="description" content="Calculate the real cost of manual data synchronization" />
@@ -103,7 +103,7 @@ export default function SyncTimeCalculator() {
             <div className="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
               <AlertTriangle className="w-8 h-8 text-white" />
             </div>
-            <h1 className="text-3xl font-bold text-slate-900 mb-2">
+            <h1 className="text-3xl font-bold text-white mb-2">
               You're Losing {result.hoursPerYear} Hours/Year
             </h1>
             <p className="text-xl text-red-600 font-bold">
@@ -111,8 +111,8 @@ export default function SyncTimeCalculator() {
             </p>
           </div>
 
-          <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6 mb-8">
-            <h2 className="text-xl font-bold text-slate-900 mb-6">Automation Tool ROI Comparison</h2>
+          <div className="bg-slate-900 rounded-xl shadow-sm border border-slate-200 p-6 mb-8">
+            <h2 className="text-xl font-bold text-white mb-6">Automation Tool ROI Comparison</h2>
             
             <div className="space-y-4">
               {result.toolComparisons.map((tool, index) => (
@@ -124,7 +124,7 @@ export default function SyncTimeCalculator() {
                 >
                   <div className="flex justify-between items-start mb-3">
                     <div>
-                      <h3 className="font-bold text-slate-900">{tool.name}</h3>
+                      <h3 className="font-bold text-white">{tool.name}</h3>
                       <p className="text-sm text-slate-600">
                         ${tool.monthlyPrice}/mo · {tool.setupHours}h setup
                       </p>
@@ -139,7 +139,7 @@ export default function SyncTimeCalculator() {
                   <div className="grid grid-cols-3 gap-4 mb-4">
                     <div>
                       <div className="text-sm text-slate-500">Yearly Cost</div>
-                      <div className="font-bold text-slate-900">${tool.yearlyPrice}</div>
+                      <div className="font-bold text-white">${tool.yearlyPrice}</div>
                     </div>
                     <div>
                       <div className="text-sm text-slate-500">ROI</div>
@@ -149,7 +149,7 @@ export default function SyncTimeCalculator() {
                     </div>
                     <div>
                       <div className="text-sm text-slate-500">Payback</div>
-                      <div className="font-bold text-slate-900">
+                      <div className="font-bold text-white">
                         {tool.paybackMonths > 100 ? 'First month' : `${tool.paybackMonths} months`}
                       </div>
                     </div>
@@ -197,7 +197,7 @@ export default function SyncTimeCalculator() {
             </p>
             <Link
               href="/tools/automation-finder"
-              className="inline-flex items-center px-6 py-3 bg-white text-blue-600 rounded-lg font-bold hover:bg-blue-50 transition-colors"
+              className="inline-flex items-center px-6 py-3 bg-slate-900 text-blue-600 rounded-lg font-bold hover:bg-slate-800 transition-colors"
             >
               Tool Finder
               <ArrowRight className="w-4 h-4 ml-2" />
@@ -206,7 +206,7 @@ export default function SyncTimeCalculator() {
 
           <button
             onClick={reset}
-            className="w-full py-3 border border-slate-300 rounded-lg font-medium text-slate-700 hover:bg-slate-50 transition-colors"
+            className="w-full py-3 border border-slate-300 rounded-lg font-medium text-slate-300 hover:bg-slate-950 transition-colors"
           >
             Recalculate
           </button>
@@ -216,7 +216,7 @@ export default function SyncTimeCalculator() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-slate-950">
       <Head>
         <title>Data Sync Time Cost Calculator | Stackmatrices</title>
         <meta name="description" content="Calculate time and money wasted on manual data sync" />
@@ -227,7 +227,7 @@ export default function SyncTimeCalculator() {
           <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
             <Calculator className="w-8 h-8 text-white" />
           </div>
-          <h1 className="text-3xl font-bold text-slate-900 mb-2">
+          <h1 className="text-3xl font-bold text-white mb-2">
             Manual Data Sync Cost Calculator
           </h1>
           <p className="text-slate-600">
@@ -235,10 +235,10 @@ export default function SyncTimeCalculator() {
           </p>
         </div>
 
-        <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-8">
+        <div className="bg-slate-900 rounded-xl shadow-sm border border-slate-200 p-8">
           <div className="space-y-6">
             <div>
-              <label className="block text-sm font-medium text-slate-700 mb-2">
+              <label className="block text-sm font-medium text-slate-300 mb-2">
                 <Clock className="w-4 h-4 inline mr-1" />
                 Hours per week on manual data sync?
               </label>
@@ -255,7 +255,7 @@ export default function SyncTimeCalculator() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-slate-700 mb-2">
+              <label className="block text-sm font-medium text-slate-300 mb-2">
                 <DollarSign className="w-4 h-4 inline mr-1" />
                 Your hourly rate? (USD)
               </label>
@@ -283,16 +283,16 @@ export default function SyncTimeCalculator() {
         </div>
 
         <div className="mt-8 grid grid-cols-3 gap-4 text-center">
-          <div className="bg-white rounded-lg p-4 border border-slate-200">
-            <div className="text-2xl font-bold text-slate-900">5 hrs</div>
+          <div className="bg-slate-900 rounded-lg p-4 border border-slate-200">
+            <div className="text-2xl font-bold text-white">5 hrs</div>
             <div className="text-sm text-slate-500">Avg wasted/week</div>
           </div>
-          <div className="bg-white rounded-lg p-4 border border-slate-200">
-            <div className="text-2xl font-bold text-slate-900">260 hrs</div>
+          <div className="bg-slate-900 rounded-lg p-4 border border-slate-200">
+            <div className="text-2xl font-bold text-white">260 hrs</div>
             <div className="text-sm text-slate-500">Per year</div>
           </div>
-          <div className="bg-white rounded-lg p-4 border border-slate-200">
-            <div className="text-2xl font-bold text-slate-900">$13,000</div>
+          <div className="bg-slate-900 rounded-lg p-4 border border-slate-200">
+            <div className="text-2xl font-bold text-white">$13,000</div>
             <div className="text-sm text-slate-500">Annual cost ($50/hr)</div>
           </div>
         </div>

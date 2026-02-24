@@ -447,12 +447,12 @@ export default function PricingReport2026(): JSX.Element {
         `}</style>
       </Head>
 
-      <div className="min-h-screen bg-gray-50 print-container">
+      <div className="min-h-screen bg-slate-950 print-container">
         {/* Header */}
         <header className="bg-gradient-to-r from-blue-900 via-blue-800 to-indigo-900 text-white py-12 px-4">
           <div className="max-w-6xl mx-auto">
             <div className="flex items-center gap-2 mb-4">
-              <span className="bg-white/20 px-3 py-1 rounded-full text-sm font-medium">2026 Report</span>
+              <span className="bg-slate-900/20 px-3 py-1 rounded-full text-sm font-medium">2026 Report</span>
               <span className="text-blue-200 text-sm">February Edition</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
@@ -465,7 +465,7 @@ export default function PricingReport2026(): JSX.Element {
             {/* Download Button */}
             <button
               onClick={handleDownloadPDF}
-              className="no-print mt-6 inline-flex items-center gap-2 bg-white text-blue-900 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors shadow-lg"
+              className="no-print mt-6 inline-flex items-center gap-2 bg-slate-900 text-blue-900 px-6 py-3 rounded-lg font-semibold hover:bg-slate-800 transition-colors shadow-lg"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -484,7 +484,7 @@ export default function PricingReport2026(): JSX.Element {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                 </svg>
               </div>
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Executive Summary</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-white">Executive Summary</h2>
             </div>
             <p className="text-gray-600 mb-8 text-lg">
               Our analysis of 50+ SaaS products reveals significant shifts in pricing strategies, with vendors increasingly adopting usage-based models and introducing complex fee structures.
@@ -492,9 +492,9 @@ export default function PricingReport2026(): JSX.Element {
             
             <div className="grid md:grid-cols-3 gap-6">
               {keyFindings.map((finding) => (
-                <div key={finding.id} className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow">
+                <div key={finding.id} className="bg-slate-900 rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow">
                   <div className="text-4xl font-bold text-blue-600 mb-3">{finding.stat}</div>
-                  <h3 className="font-semibold text-gray-900 mb-2">{finding.title}</h3>
+                  <h3 className="font-semibold text-white mb-2">{finding.title}</h3>
                   <p className="text-gray-600 text-sm">{finding.description}</p>
                 </div>
               ))}
@@ -509,20 +509,20 @@ export default function PricingReport2026(): JSX.Element {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h7" />
                 </svg>
               </div>
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Pricing by Category</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-white">Pricing by Category</h2>
             </div>
             <p className="text-gray-600 mb-6">
               Average monthly pricing across major SaaS categories. HR/People platforms command premium prices while communication tools remain most affordable.
             </p>
             
-            <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+            <div className="bg-slate-900 rounded-xl shadow-sm border border-gray-100 p-6">
               <div ref={categoryChartRef} className="w-full h-80" />
             </div>
 
             {/* Category Table */}
-            <div className="mt-6 bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+            <div className="mt-6 bg-slate-900 rounded-xl shadow-sm border border-gray-100 overflow-hidden">
               <table className="w-full">
-                <thead className="bg-gray-50">
+                <thead className="bg-slate-950">
                   <tr>
                     <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700">Category</th>
                     <th className="px-6 py-4 text-center text-sm font-semibold text-gray-700">Average</th>
@@ -532,8 +532,8 @@ export default function PricingReport2026(): JSX.Element {
                 </thead>
                 <tbody className="divide-y divide-gray-100">
                   {categoryData.map((cat) => (
-                    <tr key={cat.category} className="hover:bg-gray-50">
-                      <td className="px-6 py-4 text-sm font-medium text-gray-900">{cat.category}</td>
+                    <tr key={cat.category} className="hover:bg-slate-950">
+                      <td className="px-6 py-4 text-sm font-medium text-white">{cat.category}</td>
                       <td className="px-6 py-4 text-center text-sm text-gray-600">${cat.avgPrice}/mo</td>
                       <td className="px-6 py-4 text-center text-sm text-gray-600">${cat.minPrice}/mo</td>
                       <td className="px-6 py-4 text-center text-sm text-gray-600">${cat.maxPrice}/mo</td>
@@ -552,20 +552,20 @@ export default function PricingReport2026(): JSX.Element {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                 </svg>
               </div>
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Hidden Fees Analysis</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-white">Hidden Fees Analysis</h2>
             </div>
             <p className="text-gray-600 mb-6">
               Breakdown of unexpected costs that inflate SaaS bills beyond advertised prices. Seat overages and API usage are the biggest culprits.
             </p>
             
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+              <div className="bg-slate-900 rounded-xl shadow-sm border border-gray-100 p-6">
                 <div ref={hiddenFeesChartRef} className="w-full h-80" />
               </div>
               
               <div className="space-y-4">
                 {hiddenFeesData.map((fee, index) => (
-                  <div key={fee.name} className="bg-white rounded-xl shadow-sm border border-gray-100 p-4">
+                  <div key={fee.name} className="bg-slate-900 rounded-xl shadow-sm border border-gray-100 p-4">
                     <div className="flex items-center justify-between mb-2">
                       <div className="flex items-center gap-3">
                         <div
@@ -574,9 +574,9 @@ export default function PricingReport2026(): JSX.Element {
                             backgroundColor: ['#3b82f6', '#ef4444', '#f59e0b', '#10b981', '#8b5cf6', '#6b7280'][index],
                           }}
                         />
-                        <span className="font-medium text-gray-900">{fee.name}</span>
+                        <span className="font-medium text-white">{fee.name}</span>
                       </div>
-                      <span className="text-lg font-bold text-gray-900">{fee.percentage}%</span>
+                      <span className="text-lg font-bold text-white">{fee.percentage}%</span>
                     </div>
                     <div className="w-full bg-gray-100 rounded-full h-2">
                       <div
@@ -601,13 +601,13 @@ export default function PricingReport2026(): JSX.Element {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                 </svg>
               </div>
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Price Increase Trends (2024-2026)</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-white">Price Increase Trends (2024-2026)</h2>
             </div>
             <p className="text-gray-600 mb-6">
               Year-over-year pricing evolution across major SaaS categories. All segments show consistent upward trends, with CRM and Analytics leading increases.
             </p>
             
-            <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+            <div className="bg-slate-900 rounded-xl shadow-sm border border-gray-100 p-6">
               <div ref={trendChartRef} className="w-full h-80" />
             </div>
 
@@ -618,7 +618,7 @@ export default function PricingReport2026(): JSX.Element {
                 { label: 'Email Marketing', growth: '+28.6%', color: 'text-amber-600' },
                 { label: 'Analytics', growth: '+24.1%', color: 'text-emerald-600' },
               ].map((item) => (
-                <div key={item.label} className="bg-white rounded-xl shadow-sm border border-gray-100 p-4 text-center">
+                <div key={item.label} className="bg-slate-900 rounded-xl shadow-sm border border-gray-100 p-4 text-center">
                   <div className={`text-2xl font-bold ${item.color}`}>{item.growth}</div>
                   <div className="text-sm text-gray-600">{item.label} Growth</div>
                 </div>
@@ -634,14 +634,14 @@ export default function PricingReport2026(): JSX.Element {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Regional Differences</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-white">Regional Differences</h2>
             </div>
             <p className="text-gray-600 mb-6">
               Price index comparison across global regions (US = 100). Nordic countries face the highest premiums, while Latin America offers significant discounts.
             </p>
             
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+              <div className="bg-slate-900 rounded-xl shadow-sm border border-gray-100 p-6">
                 <div ref={regionalChartRef} className="w-full h-80" />
               </div>
               
@@ -687,7 +687,7 @@ export default function PricingReport2026(): JSX.Element {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                 </svg>
               </div>
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Predictions for 2026</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-white">Predictions for 2026</h2>
             </div>
             <p className="text-gray-600 mb-6">
               Data-driven forecasts for how SaaS pricing will evolve throughout 2026 based on current market signals and vendor communications.
@@ -697,13 +697,13 @@ export default function PricingReport2026(): JSX.Element {
               {predictions2026.map((pred) => (
                 <div
                   key={pred.id}
-                  className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow"
+                  className="bg-slate-900 rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow"
                 >
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-2">
                         <span className="text-2xl font-bold text-indigo-600">0{pred.id}</span>
-                        <h3 className="text-xl font-semibold text-gray-900">{pred.title}</h3>
+                        <h3 className="text-xl font-semibold text-white">{pred.title}</h3>
                       </div>
                       <p className="text-gray-600">{pred.description}</p>
                     </div>
@@ -738,7 +738,7 @@ export default function PricingReport2026(): JSX.Element {
 
           {/* Methodology */}
           <section className="bg-gray-100 rounded-2xl p-8">
-            <h3 className="text-xl font-bold text-gray-900 mb-4">Methodology</h3>
+            <h3 className="text-xl font-bold text-white mb-4">Methodology</h3>
             <p className="text-gray-600 mb-4">
               This report analyzed pricing data from 50+ SaaS products across 8 categories. Data sources include publicly available pricing pages, 
               customer interviews, and industry reports from Gartner, Forrester, and CB Insights. Regional pricing data accounts for currency 
