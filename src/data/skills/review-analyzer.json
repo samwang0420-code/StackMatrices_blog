@@ -1,0 +1,211 @@
+{
+  "id": "review-analyzer",
+  "slug": "review-analyzer",
+  "name": "Review Analyzer",
+  "actionTitle": "AI-Powered Review Analysis & Insights",
+  "tagline": "Extract competitor weaknesses and buyer insights from product reviews using AI",
+  "description": "Analyze product reviews from Amazon, Shopify, or any e-commerce platform. AI categorizes complaints, identifies product gaps, and generates actionable insights for your marketing and product strategy.",
+  "shortDescription": "AI analyzes competitor reviews to find weaknesses you can exploit.",
+  "category": "AI Analysis",
+  "pricing": {
+    "model": "credits_package",
+    "basePrice": "$49",
+    "includesCredits": 1000,
+    "period": "month"
+  },
+  "version": "1.0.0",
+  "author": "StackMatrices",
+  "updatedAt": "2026-02-25",
+  "featured": true,
+  "inputIcon": "logos:amazon",
+  "outputIcon": "sparkles",
+  "outputType": "ai",
+  "aiPowered": true,
+  "deployments": "1.2k",
+  
+  "inputs": [
+    {
+      "name": "productUrl",
+      "type": "string",
+      "required": true,
+      "description": "Product URL (Amazon, Shopify, or any supported platform)",
+      "example": "https://www.amazon.com/dp/B08N5WRWNW"
+    },
+    {
+      "name": "reviewCount",
+      "type": "number",
+      "required": false,
+      "default": 100,
+      "description": "Number of recent reviews to analyze (max 500)",
+      "example": 200
+    },
+    {
+      "name": "analysisType",
+      "type": "array",
+      "required": false,
+      "default": ["complaints", "gaps", "sentiment"],
+      "description": "What to analyze: complaints, gaps, sentiment, features, pricing",
+      "example": ["complaints", "gaps"]
+    },
+    {
+      "name": "outputFormat",
+      "type": "string",
+      "required": false,
+      "default": "detailed",
+      "description": "Report detail level: summary, detailed, or battlecard",
+      "example": "battlecard"
+    }
+  ],
+  
+  "outputs": [
+    {
+      "name": "complaintCategories",
+      "type": "array",
+      "description": "Categorized customer complaints with frequency and severity",
+      "example": [
+        {
+          "category": "Battery Life",
+          "mentions": 34,
+          "severity": "high",
+          "sampleQuotes": ["Drains too fast", "Need to charge daily"],
+          "percentage": 34.0
+        }
+      ]
+    },
+    {
+      "name": "productGaps",
+      "type": "array",
+      "description": "Features customers want but competitor doesn't offer",
+      "example": [
+        {
+          "feature": "Wireless charging",
+          "mentionCount": 23,
+          "urgency": "high"
+        }
+      ]
+    },
+    {
+      "name": "sentimentAnalysis",
+      "type": "object",
+      "description": "Overall sentiment breakdown",
+      "example": {
+        "overall": "mixed",
+        "positive": 45,
+        "neutral": 25,
+        "negative": 30,
+        "score": 58
+      }
+    },
+    {
+      "name": "actionableInsights",
+      "type": "array",
+      "description": "Strategic recommendations for your marketing",
+      "example": [
+        "Emphasize your product's longer battery life in ads",
+        "Offer wireless charging variant - high demand detected"
+      ]
+    }
+  ],
+  
+  "creditUsage": [
+    {
+      "action": "Fetch 100 reviews",
+      "resource": "Data Collection",
+      "credits": "~150",
+      "notes": "Based on data volume and source complexity"
+    },
+    {
+      "action": "AI analysis & categorization",
+      "resource": "AI Processing",
+      "credits": "~5",
+      "notes": "Per 100 reviews processed"
+    },
+    {
+      "action": "Generate battlecard report",
+      "resource": "AI Processing",
+      "credits": "~2",
+      "notes": "Final summarization step"
+    }
+  ],
+  
+  "exampleCost": {
+    "scenario": "Analyze 100 reviews with full report",
+    "totalCredits": 157,
+    "breakdown": [
+      { "step": "Data collection", "credits": 150 },
+      { "step": "AI analysis", "credits": 5 },
+      { "step": "Report generation", "credits": 2 }
+    ],
+    "monthlyCapacity": "~6 products with 1000 credits"
+  },
+  
+  "features": [
+    {
+      "title": "AI-Powered Analysis",
+      "description": "Advanced NLP extracts insights from unstructured review text",
+      "icon": "Brain"
+    },
+    {
+      "title": "Complaint Categorization",
+      "description": "Auto-groups complaints by type: quality, shipping, support, features",
+      "icon": "Tags"
+    },
+    {
+      "title": "Gap Detection",
+      "description": "Identifies product features customers want but competitor doesn't offer",
+      "icon": "Search"
+    },
+    {
+      "title": "Battlecard Generator",
+      "description": "One-click competitive battlecards for sales team",
+      "icon": "FileText"
+    }
+  ],
+  
+  "examples": [
+    {
+      "title": "Quick Competitor Analysis",
+      "description": "Analyze top 100 reviews of a competitor product",
+      "input": {
+        "productUrl": "https://www.amazon.com/dp/B08N5WRWNW",
+        "reviewCount": 100,
+        "analysisType": ["complaints", "gaps", "sentiment"],
+        "outputFormat": "detailed"
+      },
+      "output": {
+        "complaintCategories": [
+          {
+            "category": "Battery Life",
+            "mentions": 34,
+            "severity": "high",
+            "sampleQuotes": ["Drains too fast"],
+            "percentage": 34.0
+          }
+        ],
+        "actionableInsights": [
+          "Emphasize your product's longer battery life in ads"
+        ]
+      }
+    }
+  ],
+  
+  "requirements": [
+    "Python 3.9+",
+    "OpenClaw CLI 2026.2+",
+    "Internet connection"
+  ],
+  
+  "installation": [
+    "Purchase to get License Key",
+    "Run: openclaw skill install review-analyzer",
+    "Enter License Key when prompted",
+    "Done! Start using: \"Analyze reviews for https://amazon.com/dp/xxx\""
+  ],
+  
+  "codePreview": "def run(inputs, license_key):\n    # 1. Extract product ID from URL\n    product_id = extract_product_id(inputs['productUrl'])\n    \n    # 2. Fetch reviews via StackMatrices proxy\n    reviews = sm.fetch_data(\n        license_key=license_key,\n        source=\"reviews\",\n        product_id=product_id,\n        limit=inputs['reviewCount']\n    )\n    \n    # 3. AI analysis via StackMatrices proxy\n    analysis = sm.ai_analyze(\n        license_key=license_key,\n        data=reviews,\n        analysis_type=inputs['analysisType']\n    )\n    \n    return analysis",
+  
+  "estimatedTime": "30-60 seconds",
+  "rateLimit": "50 analyses/hour",
+  "tags": ["AI Analysis", "Review Mining", "Competitor Intelligence", "NLP"],
+  "type": "local"
+}

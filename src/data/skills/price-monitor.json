@@ -1,0 +1,29 @@
+{
+  "id": "price-monitor",
+  "slug": "price-monitor",
+  "actionTitle": "Sync Amazon Competitor Price Drops to Google Sheets",
+  "outcome": "First-mover alerts",
+  "description": "Monitor competitor pricing 24/7 and auto-sync drops to your spreadsheet for immediate action. Get instant notifications when competitors drop prices, so you can react before losing market share.",
+  "shortDescription": "Monitor competitor pricing 24/7 and auto-sync drops to your spreadsheet.",
+  "category": "E-commerce",
+  "pricing": {
+    "model": "subscription",
+    "basePrice": "$99",
+    "period": "month"
+  },
+  "price": "$99",
+  "period": "mo",
+  "deployments": "2.4k",
+  "featured": true,
+  "inputIcon": "logos:amazon",
+  "outputIcon": "logos:google-sheets",
+  "outputType": "sheet",
+  "aiPowered": true,
+  "version": "2.1.0",
+  "author": "StackMatrices",
+  "updatedAt": "2026-02-20",
+  "estimatedTime": "2-5 seconds",
+  "rateLimit": "1000 checks/hour",
+  "tags": ["Amazon", "Price Monitoring", "Google Sheets", "Competitor Analysis"],
+  "type": "local"
+}
