@@ -11,41 +11,26 @@ export const metadata: Metadata = {
 export default function SkillsPage() {
   return (
     <div className="min-h-screen bg-slate-950 text-white">
-      {/* Header */}
-      <nav className="border-b border-slate-800/50 backdrop-blur-md fixed w-full z-50 bg-slate-950/80">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-emerald-500 rounded-lg flex items-center justify-center">
-              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
-            </div>
-            <span className="font-bold text-xl tracking-tight">StackMatrices</span>
-          </Link>
-
-        </div>
-      </nav>
-
-      {/* Hero */}
-      <section className="pt-32 pb-12 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono mb-4">
+      {/* Hero - Synced with How It Works style */}
+      <section className="bg-gradient-to-br from-slate-900 to-slate-800 py-24 border-b border-slate-800">
+        <div className="max-w-5xl mx-auto px-6 text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800 border border-slate-700 text-emerald-400 text-sm font-mono mb-6">
+            <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
             PRE-BUILT INTEGRATIONS
           </div>
           
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">
             Ready-to-Deploy{" "}
             <span className="text-emerald-400">Skills</span>
           </h1>
-          
-          <p className="text-lg text-slate-400 max-w-2xl mx-auto">
+          <p className="text-xl text-slate-400 max-w-2xl mx-auto font-mono">
             Connect your stack. Automate your workflow. Scale your business.
           </p>
         </div>
       </section>
 
       {/* Skills Grid - 4 columns on large screens */}
-      <section className="pb-20 px-6">
+      <section className="pb-20 px-6 pt-12">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
             {skillsData.map((skill) => (
