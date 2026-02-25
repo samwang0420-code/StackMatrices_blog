@@ -243,7 +243,7 @@ export default function SkillDetailPage() {
               <div className="bg-slate-900 border border-slate-800 rounded-xl p-6 space-y-4">
                 <div>
                   <div className="flex items-center gap-2 text-sm text-slate-500 mb-2">
-                    <Shield className="w-4 h-4" /
+                    <Shield className="w-4 h-4" />
                     Requirements
                   </div>
                   <ul className="space-y-1">
@@ -258,7 +258,7 @@ export default function SkillDetailPage() {
                 <div className="grid grid-cols-2 gap-4 pt-4 border-t border-slate-800">
                   <div>
                     <div className="flex items-center gap-2 text-sm text-slate-500 mb-1">
-                      <Clock className="w-4 h-4" /
+                      <Clock className="w-4 h-4" />
                       Setup Time
                     </div>
                     <div className="text-slate-300 font-medium">{skill.deploymentSpecs.setupTime}</div>
@@ -266,7 +266,7 @@ export default function SkillDetailPage() {
                   
                   <div>
                     <div className="flex items-center gap-2 text-sm text-slate-500 mb-1">
-                      <Cpu className="w-4 h-4" /
+                      <Cpu className="w-4 h-4" />
                       Runtime
                     </div>
                     <div className="text-slate-300 font-medium">{skill.deploymentSpecs.runtime}</div>
@@ -275,7 +275,7 @@ export default function SkillDetailPage() {
                 
                 <div className="pt-4 border-t border-slate-800">
                   <div className="flex items-center gap-2 text-sm text-slate-500 mb-1">
-                    <Database className="w-4 h-4" /
+                    <Database className="w-4 h-4" />
                     Data Storage
                   </div>
                   <div className="text-slate-300 font-medium">{skill.deploymentSpecs.dataStorage}</div>
