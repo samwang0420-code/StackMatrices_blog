@@ -1,0 +1,338 @@
+[
+  {
+    "id": "sync-amazon-prices",
+    "slug": "sync-amazon-prices",
+    "actionTitle": "Sync Amazon Competitor Price Drops to Google Sheets",
+    "outcome": "First-mover alerts",
+    "description": "Monitor competitor pricing 24/7 and auto-sync drops to your spreadsheet for immediate action. Get instant notifications when competitors drop prices, so you can react before losing market share.",
+    "shortDescription": "Monitor competitor pricing 24/7 and auto-sync drops to your spreadsheet for immediate action.",
+    "category": "E-commerce",
+    "price": "$99",
+    "period": "mo",
+    "deployments": "2.4k",
+    "featured": true,
+    "inputIcon": "logos:amazon",
+    "outputIcon": "logos:google-sheets",
+    "outputType": "sheet",
+    "aiPowered": true,
+    "version": "2.1.0",
+    "author": "StackMatrices",
+    "updatedAt": "2026-02-20",
+    "estimatedTime": "2-5 seconds",
+    "rateLimit": "1000 checks/hour",
+    "tags": ["Amazon", "Price Monitoring", "Google Sheets", "Competitor Analysis"],
+    "inputs": [
+      {
+        "name": "amazonAsins",
+        "type": "array",
+        "required": true,
+        "description": "List of Amazon ASINs to monitor (max 100 per skill)",
+        "example": ["B08N5WRWNW", "B08N5M7S6K"]
+      },
+      {
+        "name": "priceDropThreshold",
+        "type": "number",
+        "required": false,
+        "default": 5,
+        "description": "Minimum price drop percentage to trigger alert (%)",
+        "example": 10
+      },
+      {
+        "name": "googleSheetId",
+        "type": "string",
+        "required": true,
+        "description": "Target Google Sheets ID for syncing price data",
+        "example": "1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms"
+      },
+      {
+        "name": "checkFrequency",
+        "type": "string",
+        "required": false,
+        "default": "hourly",
+        "description": "Monitoring frequency: hourly, every6hours, daily",
+        "example": "hourly"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "priceChanges",
+        "type": "array",
+        "description": "List of detected price changes",
+        "example": [
+          {
+            "asin": "B08N5WRWNW",
+            "oldPrice": 29.99,
+            "newPrice": 24.99,
+            "dropPercent": 16.7,
+            "timestamp": "2026-02-25T08:30:00Z"
+          }
+        ]
+      },
+      {
+        "name": "syncStatus",
+        "type": "string",
+        "description": "Status of Google Sheets sync operation",
+        "example": "success"
+      },
+      {
+        "name": "alertsSent",
+        "type": "number",
+        "description": "Number of price drop alerts triggered",
+        "example": 3
+      }
+    ],
+    "features": [
+      {
+        "title": "Real-time Monitoring",
+        "description": "Checks competitor prices every hour, 24/7 without manual intervention",
+        "icon": "Clock"
+      },
+      {
+        "title": "Smart Thresholds",
+        "description": "Only alerts on meaningful price drops you care about, filtering noise",
+        "icon": "Filter"
+      },
+      {
+        "title": "Auto-sync to Sheets",
+        "description": "Seamlessly updates your Google Sheets with latest pricing data",
+        "icon": "Sheet"
+      },
+      {
+        "title": "AI Price Prediction",
+        "description": "Predicts when competitors are likely to drop prices based on patterns",
+        "icon": "Brain"
+      }
+    ],
+    "examples": [
+      {
+        "title": "Basic Price Monitoring",
+        "description": "Monitor 5 competitor products and sync to your pricing sheet",
+        "input": {
+          "amazonAsins": ["B08N5WRWNW", "B08N5M7S6K", "B08N5WRWNX"],
+          "priceDropThreshold": 5,
+          "googleSheetId": "1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms",
+          "checkFrequency": "hourly"
+        },
+        "output": {
+          "priceChanges": [
+            {
+              "asin": "B08N5WRWNW",
+              "oldPrice": 29.99,
+              "newPrice": 24.99,
+              "dropPercent": 16.7,
+              "timestamp": "2026-02-25T08:30:00Z"
+            }
+          ],
+          "syncStatus": "success",
+          "alertsSent": 1
+        }
+      },
+      {
+        "title": "Aggressive Monitoring",
+        "description": "Track 50 products with 10% threshold for major price movements",
+        "input": {
+          "amazonAsins": ["B08N5WRWNW", "B08N5M7S6K"],
+          "priceDropThreshold": 10,
+          "googleSheetId": "1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms",
+          "checkFrequency": "every6hours"
+        },
+        "output": {
+          "priceChanges": [],
+          "syncStatus": "success",
+          "alertsSent": 0
+        }
+      }
+    ],
+    "integrations": [
+      {
+        "platform": "Google Sheets",
+        "description": "Auto-sync price data to your existing spreadsheets",
+        "setupSteps": [
+          "Connect your Google account",
+          "Select target spreadsheet",
+          "Map columns (ASIN, Price, Timestamp)",
+          "Activate monitoring"
+        ]
+      },
+      {
+        "platform": "Slack",
+        "description": "Get instant Slack notifications for price drops",
+        "setupSteps": [
+          "Connect Slack workspace",
+          "Choose notification channel",
+          "Set alert preferences",
+          "Test notification"
+        ]
+      },
+      {
+        "platform": "API",
+        "description": "Direct API access for custom integrations",
+        "setupSteps": [
+          "Generate API key in dashboard",
+          "Send POST to /api/v1/skills/sync-amazon-prices",
+          "Handle webhook callbacks",
+          "Process JSON responses"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "extract-review-insights",
+    "slug": "extract-review-insights",
+    "actionTitle": "Extract Competitor Weaknesses from Reviews via AI",
+    "outcome": "Exploit defects",
+    "description": "AI analyzes last 100 competitor reviews, categorizes complaints, identifies product gaps. Turn competitor weaknesses into your competitive advantages.",
+    "shortDescription": "AI analyzes last 100 competitor reviews, categorizes complaints, identifies product gaps.",
+    "category": "AI Analysis",
+    "price": "$49",
+    "period": "analysis",
+    "deployments": "1.8k",
+    "featured": true,
+    "inputIcon": "logos:amazon",
+    "outputIcon": "sparkles",
+    "outputType": "ai",
+    "aiPowered": true,
+    "version": "1.5.0",
+    "author": "StackMatrices",
+    "updatedAt": "2026-02-18",
+    "estimatedTime": "30-60 seconds",
+    "rateLimit": "50 analyses/hour",
+    "tags": ["AI", "Review Analysis", "Competitor Intelligence", "NLP"],
+    "inputs": [
+      {
+        "name": "productAsin",
+        "type": "string",
+        "required": true,
+        "description": "Amazon ASIN of competitor product to analyze",
+        "example": "B08N5WRWNW"
+      },
+      {
+        "name": "reviewCount",
+        "type": "number",
+        "required": false,
+        "default": 100,
+        "description": "Number of recent reviews to analyze (max 500)",
+        "example": 200
+      },
+      {
+        "name": "analysisDepth",
+        "type": "string",
+        "required": false,
+        "default": "standard",
+        "description": "Analysis depth: basic, standard, deep",
+        "example": "deep"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "complaintCategories",
+        "type": "array",
+        "description": "Categorized list of customer complaints",
+        "example": [
+          {
+            "category": "Quality Issues",
+            "mentions": 23,
+            "severity": "high",
+            "quotes": ["Broke after 2 weeks", "Poor materials"]
+          }
+        ]
+      },
+      {
+        "name": "productGaps",
+        "type": "array",
+        "description": "Identified product improvement opportunities",
+        "example": ["Missing USB-C port", "No water resistance"]
+      },
+      {
+        "name": "sentimentScore",
+        "type": "number",
+        "description": "Overall sentiment score (0-100)",
+        "example": 72
+      },
+      {
+        "name": "actionableInsights",
+        "type": "array",
+        "description": "Strategic recommendations based on analysis",
+        "example": ["Emphasize durability in marketing", "Offer USB-C variant"]
+      }
+    ],
+    "features": [
+      {
+        "title": "AI-Powered Analysis",
+        "description": "Advanced NLP models extract insights from unstructured review text",
+        "icon": "Brain"
+      },
+      {
+        "title": "Complaint Categorization",
+        "description": "Automatically groups complaints by type: quality, shipping, support, etc.",
+        "icon": "Tags"
+      },
+      {
+        "title": "Gap Identification",
+        "description": "Spots product features customers want but competitor doesn't offer",
+        "icon": "Search"
+      },
+      {
+        "title": "Actionable Reports",
+        "description": "Get specific recommendations you can implement immediately",
+        "icon": "Checklist"
+      }
+    ],
+    "examples": [
+      {
+        "title": "Quick Competitor Scan",
+        "description": "Analyze top 100 reviews of a competitor product",
+        "input": {
+          "productAsin": "B08N5WRWNW",
+          "reviewCount": 100,
+          "analysisDepth": "standard"
+        },
+        "output": {
+          "complaintCategories": [
+            {
+              "category": "Battery Life",
+              "mentions": 34,
+              "severity": "high",
+              "quotes": ["Drains too fast", "Need to charge daily"]
+            },
+            {
+              "category": "Build Quality",
+              "mentions": 18,
+              "severity": "medium",
+              "quotes": ["Feels cheap", "Scratches easily"]
+            }
+          ],
+          "productGaps": ["Wireless charging", "Longer battery life", "Better case"],
+          "sentimentScore": 68,
+          "actionableInsights": [
+            "Highlight your product's battery life in ads",
+            "Emphasize premium build quality",
+            "Consider bundle with protective case"
+          ]
+        }
+      }
+    ],
+    "integrations": [
+      {
+        "platform": "Notion",
+        "description": "Export analysis reports directly to Notion database",
+        "setupSteps": [
+          "Connect Notion workspace",
+          "Select destination database",
+          "Map report fields",
+          "Auto-export on completion"
+        ]
+      },
+      {
+        "platform": "Slack",
+        "description": "Share insights with your team instantly",
+        "setupSteps": [
+          "Connect Slack workspace",
+          "Choose target channel",
+          "Format report template",
+          "One-click share"
+        ]
+      }
+    ]
+  }
+]
