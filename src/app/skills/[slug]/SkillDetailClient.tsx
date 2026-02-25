@@ -18,8 +18,11 @@ import {
   Search,
   ListChecks,
   Tags,
-  Sheet,
-  Sparkles
+  Sparkles,
+  Terminal,
+  Lock,
+  Cpu,
+  Download
 } from 'lucide-react';
 
 // Skill data interfaces
@@ -58,6 +61,20 @@ interface SkillIntegration {
   setupSteps: string[];
 }
 
+interface CreditUsage {
+  action: string;
+  resource: string;
+  credits: string;
+  notes?: string;
+}
+
+interface ExampleCost {
+  scenario: string;
+  totalCredits: number;
+  breakdown: { step: string; credits: number }[];
+  monthlyCapacity: string;
+}
+
 interface Skill {
   id: string;
   slug: string;
@@ -66,6 +83,12 @@ interface Skill {
   description: string;
   shortDescription: string;
   category: string;
+  pricing: {
+    model: 'credits_package' | 'subscription';
+    basePrice: string;
+    includesCredits?: number;
+    period?: string;
+  };
   price: string;
   period: string;
   deployments: string;
@@ -85,6 +108,12 @@ interface Skill {
   features: SkillFeature[];
   examples: SkillExample[];
   integrations: SkillIntegration[];
+  creditUsage?: CreditUsage[];
+  exampleCost?: ExampleCost;
+  codePreview?: string;
+  requirements?: string[];
+  installation?: string[];
+  type?: 'local' | 'cloud';
 }
 
 interface SkillDetailClientProps {
@@ -95,14 +124,19 @@ interface SkillDetailClientProps {
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Clock,
   Filter,
-  Sheet: Database,
+  Database,
   Brain,
   Tags,
   Search,
-  Checklist: ListChecks,
+  ListChecks,
+  FileText: Code,
+  Globe: ExternalLink,
+  Shield,
+  Zap,
+  Cpu,
 };
 
-// Input/Output Icon Components (from SkillCard)
+// Input/Output Icon Components
 function InputIconBadge({ slug }: { slug: string }) {
   const [failed, setFailed] = useState(false);
   
@@ -170,6 +204,8 @@ export default function SkillDetailClient({ skill }: SkillDetailClientProps) {
     setTimeout(() => setCopiedCode(false), 2000);
   };
 
+  const isLocalSkill = skill.type === 'local';
+
   return (
     <div className="min-h-screen bg-slate-950">
       {/* Header */}
@@ -185,8 +221,14 @@ export default function SkillDetailClient({ skill }: SkillDetailClientProps) {
           
           <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
             <div className="flex-1">
-              {/* Category & Version */}
+              {/* Type Badge */}
               <div className="flex items-center gap-3 mb-3">
+                {isLocalSkill && (
+                  <span className="px-3 py-1 rounded-full text-xs font-medium bg-blue-500/10 text-blue-400 border border-blue-500/20">
+                    <Download className="w-3 h-3 inline mr-1" />
+                    Local Installation
+                  </span>
+                )}
                 <span className="px-3 py-1 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                   {skill.category}
                 </span>
@@ -221,8 +263,13 @@ export default function SkillDetailClient({ skill }: SkillDetailClientProps) {
             {/* Price & CTA */}
             <div className="flex flex-col items-start lg:items-end gap-4">
               <div className="flex items-baseline gap-2">
-                <span className="text-4xl font-bold text-white">{skill.price}</span>
-                <span className="text-slate-500">/{skill.period}</span>
+                <span className="text-4xl font-bold text-white">{skill.pricing?.basePrice || skill.price}</span>
+                {skill.pricing?.model === 'credits_package' && skill.pricing.includesCredits && (
+                  <span className="text-slate-500">/ {skill.pricing.includesCredits} credits</span>
+                )}
+                {skill.pricing?.model === 'subscription' && (
+                  <span className="text-slate-500">/{skill.pricing.period || skill.period}</span>
+                )}
               </div>
               <div className="text-sm text-slate-500">
                 {skill.deployments} deployments
@@ -232,7 +279,7 @@ export default function SkillDetailClient({ skill }: SkillDetailClientProps) {
                 className="inline-flex items-center px-6 py-3 bg-emerald-500 hover:bg-emerald-600 text-white font-medium rounded-lg transition-all duration-200"
               >
                 <Zap className="w-4 h-4 mr-2" />
-                Deploy This Skill
+                {isLocalSkill ? 'Get License Key' : 'Deploy This Skill'}
               </Link>
             </div>
           </div>
@@ -271,6 +318,26 @@ export default function SkillDetailClient({ skill }: SkillDetailClientProps) {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Main Content */}
             <div className="lg:col-span-2 space-y-8">
+              {/* Local Skill Notice */}
+              {isLocalSkill && (
+                <section className="bg-blue-500/5 border border-blue-500/20 rounded-xl p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0">
+                      <div className="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center">
+                        <Lock className="w-5 h-5 text-blue-400" />
+                      </div>
+                    </div>
+                    <div>
+                      <h3 className="text-sm font-medium text-white mb-1">Local Installation - Your Data Stays Private</h3>
+                      <p className="text-sm text-slate-400">
+                        This skill runs on your machine. Your data never leaves your computer. 
+                        We only proxy API calls (Apify, DeepSeek) through our gateway for billing.
+                      </p>
+                    </div>
+                  </div>
+                </section>
+              )}
+
               {/* Data Flow Visualization */}
               <section className="bg-slate-900/50 border border-slate-800 rounded-xl p-6">
                 <h2 className="text-lg font-semibold text-white mb-6">Data Flow</h2>
@@ -289,8 +356,65 @@ export default function SkillDetailClient({ skill }: SkillDetailClientProps) {
                     <OutputIconBadge type={skill.outputType} icon={skill.outputIcon} />
                     <p className="mt-3 text-sm text-slate-400">Output Destination</p>
                   </div>
-                </div>
-              </section>
+                </div>              </section>
+
+              {/* Credits Usage Table (Local Skill Only) */}
+              {isLocalSkill && skill.creditUsage && (
+                <section className="bg-slate-900/50 border border-slate-800 rounded-xl p-6">
+                  <h2 className="text-lg font-semibold text-white mb-6">Credit Usage</h2>
+                  <div className="overflow-x-auto">
+                    <table className="w-full">
+                      <thead>
+                        <tr className="border-b border-slate-700">
+                          <th className="text-left text-sm font-medium text-slate-400 py-3">Action</th>
+                          <th className="text-left text-sm font-medium text-slate-400 py-3">Resource</th>
+                          <th className="text-right text-sm font-medium text-slate-400 py-3">Credits</th>
+                        </tr>
+                      </thead>
+                      <tbody className="text-sm">
+                        {skill.creditUsage.map((usage, idx) => (
+                          <tr key={idx} className="border-b border-slate-800/50">
+                            <td className="py-3 text-white">{usage.action}</td>
+                            <td className="py-3">
+                              <span className={`px-2 py-0.5 rounded text-xs ${
+                                usage.resource === 'Apify' 
+                                  ? 'bg-purple-500/10 text-purple-400' 
+                                  : usage.resource === 'DeepSeek'
+                                  ? 'bg-emerald-500/10 text-emerald-400'
+                                  : 'bg-blue-500/10 text-blue-400'
+                              }`}>
+                                {usage.resource}
+                              </span>
+                            </td>
+                            <td className="py-3 text-right font-mono text-emerald-400">~{usage.credits}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                  
+                  {skill.exampleCost && (
+                    <div className="mt-6 p-4 bg-slate-800/30 rounded-lg">
+                      <h4 className="text-sm font-medium text-white mb-2">Example: {skill.exampleCost.scenario}</h4>
+                      <div className="space-y-1 text-sm">
+                        {skill.exampleCost.breakdown.map((item, idx) => (
+                          <div key={idx} className="flex justify-between text-slate-400">
+                            <span>{item.step}</span>
+                            <span className="font-mono">{item.credits} credits</span>
+                          </div>
+                        ))}
+                        <div className="border-t border-slate-700 pt-2 mt-2 flex justify-between">
+                          <span className="text-white font-medium">Total</span>
+                          <span className="font-mono text-emerald-400 font-bold">{skill.exampleCost.totalCredits} credits</span>
+                        </div>
+                      </div>
+                      <p className="mt-3 text-xs text-slate-500">
+                        💡 {skill.exampleCost.monthlyCapacity}
+                      </p>
+                    </div>
+                  )}
+                </section>
+              )}
 
               {/* Features */}
               <section className="bg-slate-900/50 border border-slate-800 rounded-xl p-6">
@@ -314,6 +438,50 @@ export default function SkillDetailClient({ skill }: SkillDetailClientProps) {
                   })}
                 </div>
               </section>
+
+              {/* Code Preview (Local Skill Only) */}
+              {isLocalSkill && skill.codePreview && (
+                <section className="bg-slate-900/50 border border-slate-800 rounded-xl p-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <h2 className="text-lg font-semibold text-white">Code Preview</h2>
+                    <span className="text-xs text-slate-500">Transparent - You see exactly what runs</span>
+                  </div>
+                  <div className="relative">
+                    <pre className="text-sm bg-slate-950 text-slate-300 p-4 rounded-lg overflow-x-auto">
+                      <code>{skill.codePreview}</code>
+                    </pre>
+                    <button
+                      onClick={() => skill.codePreview && copyToClipboard(skill.codePreview)}
+                      className="absolute top-2 right-2 px-2 py-1 text-xs bg-slate-800 text-slate-400 rounded hover:text-white transition-colors"
+                    >
+                      {copiedCode ? 'Copied!' : 'Copy'}
+                    </button>
+                  </div>
+                </section>
+              )}
+
+              {/* Installation Steps (Local Skill Only) */}
+              {isLocalSkill && skill.installation && (
+                <section className="bg-slate-900/50 border border-slate-800 rounded-xl p-6">
+                  <h2 className="text-lg font-semibold text-white mb-6">Installation</h2>
+                  <div className="space-y-4">
+                    {skill.installation.map((step, idx) => (
+                      <div key={idx} className="flex items-start gap-4">
+                        <div className="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center text-xs font-medium text-emerald-400">
+                          {idx + 1}
+                        </div>
+                        <p className="text-sm text-slate-300">{step}</p>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="mt-6 p-4 bg-slate-800/30 rounded-lg">
+                    <div className="flex items-center gap-2 text-sm text-slate-400">
+                      <Terminal className="w-4 h-4" />
+                      <span>Quick start: Run <code className="bg-slate-700 px-1.5 py-0.5 rounded text-emerald-400">openclaw skill install {skill.id}</code></span>
+                    </div>
+                  </div>
+                </section>
+              )}
 
               {/* Integrations */}
               <section className="bg-slate-900/50 border border-slate-800 rounded-xl p-6">
@@ -339,6 +507,21 @@ export default function SkillDetailClient({ skill }: SkillDetailClientProps) {
 
             {/* Sidebar */}
             <div className="space-y-6">
+              {/* Requirements (Local Skill Only) */}
+              {isLocalSkill && skill.requirements && (
+                <section className="bg-slate-900/50 border border-slate-800 rounded-xl p-6">
+                  <h3 className="text-sm font-medium text-white mb-4">Requirements</h3>
+                  <ul className="space-y-2">
+                    {skill.requirements.map((req, idx) => (
+                      <li key={idx} className="flex items-center text-sm text-slate-400">
+                        <CheckCircle className="w-4 h-4 mr-2 text-emerald-500/50" />
+                        {req}
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              )}
+
               {/* Tech Specs */}
               <section className="bg-slate-900/50 border border-slate-800 rounded-xl p-6">
                 <h3 className="text-sm font-medium text-white mb-4">Technical Specs</h3>
@@ -468,25 +651,6 @@ export default function SkillDetailClient({ skill }: SkillDetailClientProps) {
                     )}
                   </div>
                 ))}
-              </div>
-            </section>
-
-            {/* API Endpoint */}
-            <section className="lg:col-span-2 bg-slate-900/50 border border-slate-800 rounded-xl p-6">
-              <h2 className="text-lg font-semibold text-white mb-4">API Endpoint</h2>
-              <div className="bg-slate-950 rounded-lg p-4 font-mono text-sm">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-emerald-400">POST</span>
-                  <button
-                    onClick={() => copyToClipboard(`https://api.stackmatrices.com/v1/skills/${skill.slug}/run`)}
-                    className="text-xs text-slate-400 hover:text-white transition-colors"
-                  >
-                    {copiedCode ? 'Copied!' : 'Copy'}
-                  </button>
-                </div>
-                <code className="text-slate-300">
-                  https://api.stackmatrices.com/v1/skills/{skill.slug}/run
-                </code>
               </div>
             </section>
           </div>
