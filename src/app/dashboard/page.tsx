@@ -33,7 +33,7 @@ interface CreditsInfo {
   remaining: number;
 }
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'https://api.gspr-hub.site';
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'https://api.stackmatrices.com';
 
 export default function DashboardPage() {
   const { user, loading: authLoading } = useAuth();

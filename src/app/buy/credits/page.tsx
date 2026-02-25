@@ -49,7 +49,7 @@ const pricingPlans: PricingPlan[] = [
   }
 ];
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'https://api.gspr-hub.site';
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'https://api.stackmatrices.com';
 
 export default function BuyCreditsPage() {
   const searchParams = useSearchParams();
