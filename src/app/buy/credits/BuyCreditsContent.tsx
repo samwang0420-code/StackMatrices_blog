@@ -71,48 +71,72 @@ export default function BuyCreditsContent() {
       return;
     }
 
+    if (!selectedPlanData) {
+      setError("Please select a plan");
+      return;
+    }
+
     setLoading(true);
     setError("");
 
     try {
+      const requestBody = {
+        user_id: user.id || 'anonymous',
+        skill_id: skillId,
+        plan_id: selectedPlan,
+        credits: selectedPlanData.credits,
+        amount: selectedPlanData.price,
+        currency: 'USD'
+      };
+
+      console.log('Creating order:', requestBody);
+
       const orderResponse = await fetch(`${API_BASE}/v1/orders/create`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          user_id: user.id,
-          skill_id: skillId,
-          plan_id: selectedPlan,
-          credits: selectedPlanData?.credits,
-          amount: selectedPlanData?.price,
-          currency: 'USD'
-        })
+        body: JSON.stringify(requestBody)
       });
 
       if (!orderResponse.ok) {
-        throw new Error('Failed to create order');
+        const errorData = await orderResponse.json().catch(() => ({}));
+        console.error('Order creation failed:', errorData);
+        throw new Error(errorData.detail || `Failed to create order: ${orderResponse.status}`);
       }
 
       const order = await orderResponse.json();
+      console.log('Order created:', order);
 
       const confirmResponse = await fetch(`${API_BASE}/v1/orders/${order.order_id}/confirm`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-        }
+        },
+        body: JSON.stringify({
+          payment_method: 'demo',
+          transaction_id: 'txn_' + Date.now()
+        })
       });
 
       if (!confirmResponse.ok) {
-        throw new Error('Payment failed');
+        const errorData = await confirmResponse.json().catch(() => ({}));
+        console.error('Payment confirmation failed:', errorData);
+        throw new Error(errorData.detail || `Payment failed: ${confirmResponse.status}`);
       }
 
       const result = await confirmResponse.json();
+      console.log('Payment confirmed:', result);
+      
+      if (!result.license_key) {
+        throw new Error('No license key returned from server');
+      }
       
       setLicenseKey(result.license_key);
       setSuccess(true);
 
     } catch (err: any) {
+      console.error('Purchase error:', err);
       setError(err.message || 'Purchase failed. Please try again.');
     } finally {
       setLoading(false);
