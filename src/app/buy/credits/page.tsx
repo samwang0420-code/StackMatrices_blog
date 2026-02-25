@@ -143,7 +143,7 @@ export default function BuyCreditsPage() {
             <h1 className="text-2xl font-bold text-white mb-2">Purchase Successful!</h1>
             <p className="text-slate-400 mb-6">Your License Key has been generated</p>
             
-            <!-- License Key Display -->
+            {/* License Key Display */}
             <div className="bg-slate-800/50 rounded-lg p-4 mb-6">
               <p className="text-sm text-slate-400 mb-2">Your License Key</p>
               <div className="flex items-center gap-2">
@@ -161,7 +161,7 @@ export default function BuyCreditsPage() {
               {copied && <p className="text-emerald-400 text-sm mt-2">Copied to clipboard!</p>}
             </div>
             
-            <!-- Summary -->
+            {/* Summary */}
             <div className="bg-slate-800/50 rounded-lg p-4 mb-6 text-left">
               <h3 className="text-sm font-medium text-white mb-3">Order Summary</h3>
               <div className="space-y-2 text-sm">
@@ -184,7 +184,7 @@ export default function BuyCreditsPage() {
               </div>
             </div>
 
-            <!-- Next Steps -->
+            {/* Next Steps */}
             <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-lg p-4 mb-6 text-left">
               <h3 className="text-sm font-medium text-emerald-400 mb-3">Next Steps</h3>
               <ol className="text-sm text-slate-300 space-y-2 list-decimal list-inside">
