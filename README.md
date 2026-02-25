@@ -95,3 +95,4 @@ export const SITE_CONFIG = {
 - 使用 `<img>` 标签而非 Next.js `<Image>` 以支持静态导出
 - 图片使用 placeholder.co 服务，建议替换为实际图片
 - 构建输出为 `dist/` 文件夹
+
