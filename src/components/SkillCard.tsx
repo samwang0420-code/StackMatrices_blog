@@ -180,7 +180,7 @@ export function SkillCard({ skill, compact = false }: SkillCardProps) {
   if (compact) {
     return (
       <Link 
-        href={`/buy?skill=${skill.id}`}
+        href={`/skills/${skill.id}`}
         className="group block bg-slate-900 border border-slate-800 rounded-xl p-4 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10"
       >
         {/* Input ➔ Output Icons */}
@@ -215,7 +215,10 @@ export function SkillCard({ skill, compact = false }: SkillCardProps) {
   }
 
   return (
-    <div className="group bg-slate-800/80 rounded-lg p-4 border border-slate-700 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10 hover:bg-slate-800">
+    <Link 
+      href={`/skills/${skill.id}`}
+      className="group block bg-slate-800/80 rounded-lg p-4 border border-slate-700 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10 hover:bg-slate-800"
+    >
       {/* Icons + Deployments */}
       <div className="flex items-center justify-between mb-3">
         <div className="flex flex-col">
@@ -256,14 +259,13 @@ export function SkillCard({ skill, compact = false }: SkillCardProps) {
           <span className="text-slate-500 text-xs">/{skill.period}</span>
         </div>
         
-        <Link
-          href={`/buy?skill=${skill.id}`}
-          className="px-3 py-1.5 border border-slate-600 text-slate-300 text-xs font-medium rounded hover:bg-emerald-500 hover:border-emerald-500 hover:text-white transition-all duration-200"
+        <span
+          className="px-3 py-1.5 border border-slate-600 text-slate-300 text-xs font-medium rounded group-hover:bg-emerald-500 group-hover:border-emerald-500 group-hover:text-white transition-all duration-200"
         >
-          Deploy
-        </Link>
+          View Details →
+        </span>
       </div>
-    </div>
+    </Link>
   );
 }
 

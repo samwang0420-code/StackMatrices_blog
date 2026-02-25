@@ -1,0 +1,242 @@
+[
+  {
+    "id": "sync-amazon-prices",
+    "actionTitle": "Sync Amazon Competitor Price Drops to Google Sheets",
+    "outcome": "First-mover alerts",
+    "description": "Monitor competitor pricing 24/7 and auto-sync drops to your spreadsheet for immediate action.",
+    "longDescription": "Never miss a competitor price drop again. This skill monitors your target ASINs continuously and instantly syncs price changes to your Google Sheets. Get notified the moment competitors drop prices, giving you the first-mover advantage to adjust your strategy.",
+    "price": "$99",
+    "period": "mo",
+    "deployments": "2.4k",
+    "featured": true,
+    "inputIcon": "logos:amazon",
+    "outputIcon": "logos:google-sheets",
+    "outputType": "sheet",
+    "aiPowered": true,
+    "features": [
+      "Monitor up to 500 ASINs simultaneously",
+      "Real-time price change detection (5-min intervals)",
+      "Automatic Google Sheets sync with historical data",
+      "Price drop alerts via Slack/Email",
+      "Buy Box winner tracking",
+      "Competitive pricing recommendations",
+      "Historical price trend analysis"
+    ],
+    "deploymentSpecs": {
+      "requirements": ["Apify API Key", "Google Sheets API", "Google Cloud Service Account"],
+      "setupTime": "5 minutes",
+      "runtime": "Cloud (24/7)",
+      "dataStorage": "Your Google Drive"
+    }
+  },
+  {
+    "id": "extract-review-insights",
+    "actionTitle": "Extract Competitor Weaknesses from Reviews via AI",
+    "outcome": "Exploit defects",
+    "description": "AI analyzes last 100 competitor reviews, categorizes complaints, identifies product gaps.",
+    "longDescription": "Turn competitor weaknesses into your competitive advantage. Our AI analyzes customer reviews to extract pain points, feature gaps, and sentiment trends. Know exactly what customers hate about competitor products and position yours as the solution.",
+    "price": "$49",
+    "period": "analysis",
+    "deployments": "1.8k",
+    "featured": true,
+    "inputIcon": "logos:amazon",
+    "outputIcon": "sparkles",
+    "outputType": "ai",
+    "aiPowered": true,
+    "features": [
+      "AI-powered sentiment analysis",
+      "Automatic complaint categorization",
+      "Feature gap identification",
+      "Star rating correlation analysis",
+      "Review authenticity detection",
+      "Export to PDF/CSV reports",
+      "Competitive battlecard generation"
+    ],
+    "deploymentSpecs": {
+      "requirements": ["OpenAI API Key", "Apify API Key (optional)"],
+      "setupTime": "2 minutes",
+      "runtime": "On-demand",
+      "dataStorage": "Local/Your Cloud"
+    }
+  },
+  {
+    "id": "track-listing-changes",
+    "actionTitle": "Track Amazon Listing Changes & Alert via Slack",
+    "outcome": "SEO intelligence",
+    "description": "Monitors title, bullets, images, backend keywords. Alerts on any competitor SEO changes.",
+    "longDescription": "Stay ahead of competitor SEO strategies. Track every change they make to their listings - titles, bullet points, images, backend keywords. Get instant Slack alerts when they optimize, so you can respond immediately.",
+    "price": "$79",
+    "period": "mo",
+    "deployments": "980",
+    "featured": true,
+    "inputIcon": "logos:amazon",
+    "outputIcon": "logos:slack-icon",
+    "outputType": "message",
+    "aiPowered": false,
+    "features": [
+      "Title change tracking with diff view",
+      "Bullet point modification alerts",
+      "Image update notifications",
+      "Backend keyword change detection",
+      "Slack integration with @mentions",
+      "Change history log (90 days)",
+      "Bulk ASIN monitoring"
+    ],
+    "deploymentSpecs": {
+      "requirements": ["Apify API Key", "Slack Webhook URL"],
+      "setupTime": "3 minutes",
+      "runtime": "Cloud (24/7)",
+      "dataStorage": "StackMatrices Cloud"
+    }
+  },
+  {
+    "id": "sync-multi-inventory",
+    "actionTitle": "Sync Multi-Channel Inventory Levels in Real-Time",
+    "outcome": "Zero stockouts",
+    "description": "Unifies Amazon, Shopify, warehouse stock. Alerts before you hit zero inventory.",
+    "longDescription": "Never oversell or stock out again. Real-time inventory synchronization across all your sales channels. Get low stock alerts before you hit zero, with automated reorder recommendations based on sales velocity.",
+    "price": "$129",
+    "period": "mo",
+    "deployments": "3.1k",
+    "featured": true,
+    "inputIcon": "logos:shopify",
+    "outputIcon": "logos:slack-icon",
+    "outputType": "message",
+    "aiPowered": false,
+    "features": [
+      "Real-time inventory sync (1-min intervals)",
+      "Multi-channel unification (Amazon, Shopify, Woo)",
+      "Low stock alerts with sales velocity",
+      "Automatic reorder point calculation",
+      "Warehouse transfer recommendations",
+      "Oversell prevention system",
+      "Inventory forecasting dashboard"
+    ],
+    "deploymentSpecs": {
+      "requirements": ["Shopify API Key", "Amazon MWS/SP-API", "Slack Webhook (optional)"],
+      "setupTime": "10 minutes",
+      "runtime": "Cloud (24/7)",
+      "dataStorage": "Encrypted Cloud + Your Systems"
+    }
+  },
+  {
+    "id": "calculate-true-margins",
+    "actionTitle": "Calculate True Profit Margins Across All SKUs",
+    "outcome": "Hidden cost detection",
+    "description": "Factors in Amazon fees, COGS, shipping, PPC. Real profitability per SKU.",
+    "longDescription": "Know your real profit per SKU, not just revenue. This skill factors in all costs - Amazon fees, COGS, shipping, PPC spend, storage fees, and returns. Identify your true winners and losers with SKU-level profitability analysis.",
+    "price": "$89",
+    "period": "mo",
+    "deployments": "1.5k",
+    "featured": false,
+    "inputIcon": "logos:amazon",
+    "outputIcon": "logos:google-sheets",
+    "outputType": "sheet",
+    "aiPowered": true,
+    "features": [
+      "True profit calculation per SKU",
+      "Amazon fee breakdown (FBA, referral, storage)",
+      "PPC cost attribution",
+      "COGS tracking with inventory layers",
+      "Return rate impact analysis",
+      "Break-even point calculation",
+      "Automated daily profit reports"
+    ],
+    "deploymentSpecs": {
+      "requirements": ["Amazon SP-API", "Google Sheets API", "PPC Data Access"],
+      "setupTime": "7 minutes",
+      "runtime": "Cloud (Daily sync)",
+      "dataStorage": "Your Google Drive"
+    }
+  },
+  {
+    "id": "generate-ai-listings",
+    "actionTitle": "Generate AI-Optimized Listings from Competitor Data",
+    "outcome": "Higher CTR & CVR",
+    "description": "Analyzes top performers + buyer psychology. Creates SEO-optimized listings.",
+    "longDescription": "Create high-converting listings in minutes, not hours. AI analyzes top-performing competitor listings and buyer psychology to generate optimized titles, bullets, and descriptions that rank and convert.",
+    "price": "$39",
+    "period": "listing",
+    "deployments": "4.2k",
+    "featured": false,
+    "inputIcon": "logos:amazon",
+    "outputIcon": "sparkles",
+    "outputType": "ai",
+    "aiPowered": true,
+    "features": [
+      "AI-generated optimized titles",
+      "Keyword-rich bullet points",
+      "HTML description generation",
+      "Backend keyword suggestions",
+      "A/B test variant creation",
+      "Multi-language translation",
+      "Compliance checking (TOS safe)"
+    ],
+    "deploymentSpecs": {
+      "requirements": ["OpenAI API Key", "Amazon Product API (optional)"],
+      "setupTime": "1 minute",
+      "runtime": "On-demand",
+      "dataStorage": "Local/Export"
+    }
+  },
+  {
+    "id": "tiktok-domestic",
+    "actionTitle": "Sync TikTok Leads to Feishu CRM Automatically",
+    "outcome": "Zero lead loss",
+    "description": "Capture TikTok leads in real-time and push to Feishu for immediate follow-up.",
+    "longDescription": "Capture every TikTok lead instantly. Real-time synchronization from TikTok Lead Gen to Feishu CRM. Ensure no lead falls through the cracks with automated assignment and instant notifications to your sales team.",
+    "price": "$149",
+    "period": "mo",
+    "deployments": "620",
+    "featured": false,
+    "inputIcon": "logos:tiktok-icon",
+    "outputIcon": "logos:lark",
+    "outputType": "message",
+    "aiPowered": false,
+    "features": [
+      "Real-time lead capture (< 30 seconds)",
+      "Automatic Feishu CRM sync",
+      "Lead scoring and qualification",
+      "Sales team assignment rules",
+      "Instant notifications (Feishu Bot)",
+      "Lead source attribution",
+      "Duplicate prevention system"
+    ],
+    "deploymentSpecs": {
+      "requirements": ["TikTok Business Account", "Feishu Admin Access", "Webhook Configuration"],
+      "setupTime": "15 minutes",
+      "runtime": "Cloud (24/7)",
+      "dataStorage": "Feishu CRM + Backup"
+    }
+  },
+  {
+    "id": "enterprise-referral",
+    "actionTitle": "Auto-Process Employee Referrals via WeCom",
+    "outcome": "Streamlined hiring",
+    "description": "Parse referral submissions, route to hiring managers, track bonuses in WeCom.",
+    "longDescription": "Streamline your employee referral program. Automatically parse referral submissions, route to the right hiring managers, track progress, and manage bonus payouts - all within WeCom. Reduce referral processing time by 80%.",
+    "price": "$199",
+    "period": "mo",
+    "deployments": "340",
+    "featured": false,
+    "inputIcon": "logos:wechat",
+    "outputIcon": "brain-circuit",
+    "outputType": "ai",
+    "aiPowered": true,
+    "features": [
+      "AI-powered resume parsing",
+      "Automatic hiring manager routing",
+      "Interview scheduling automation",
+      "Bonus tracking and calculation",
+      "Referral status notifications",
+      "Hiring pipeline dashboard",
+      "Integration with HR systems"
+    ],
+    "deploymentSpecs": {
+      "requirements": ["WeCom Admin Access", "OpenAI API Key", "HR System API (optional)"],
+      "setupTime": "20 minutes",
+      "runtime": "Cloud (24/7)",
+      "dataStorage": "Enterprise Cloud"
+    }
+  }
+]

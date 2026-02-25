@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { useAuth } from '@/components/AuthProvider';
 import { 
   Zap, 
@@ -10,8 +11,13 @@ import {
   ExternalLink,
   Copy,
   CheckCircle,
-  AlertCircle
+  AlertCircle,
+  Terminal,
+  Play,
+  ChevronRight,
+  Check
 } from 'lucide-react';
+import skillsData from '@/data/skills-detailed.json';
 
 interface License {
   id: string;
@@ -35,12 +41,188 @@ interface CreditsInfo {
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'https://api.stackmatrices.com';
 
+// Toast Component
+function Toast({ message, onClose }: { message: string; onClose: () => void }) {
+  useEffect(() => {
+    const timer = setTimeout(onClose, 5000);
+    return () => clearTimeout(timer);
+  }, [onClose]);
+
+  return (
+    <div className="fixed top-24 right-6 z-50 bg-emerald-500 text-white px-6 py-4 rounded-xl shadow-2xl flex items-center gap-3 animate-slide-in">
+      <CheckCircle className="w-5 h-5" />
+      <span className="font-medium">{message}</span>
+      <button onClick={onClose} className="ml-2 hover:opacity-80">×</button>
+    </div>
+  );
+}
+
+// Terminal Code Block Component
+function TerminalCommand({ command, label }: { command: string; label?: string }) {
+  const [copied, setCopied] = useState(false);
+
+  const copy = () => {
+    navigator.clipboard.writeText(command);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  return (
+    <div className="bg-slate-950 rounded-xl overflow-hidden border border-slate-800">
+      {label && (
+        <div className="flex items-center gap-2 px-4 py-2 bg-slate-900 border-b border-slate-800">
+          <Terminal className="w-4 h-4 text-slate-500" />
+          <span className="text-xs text-slate-500 font-mono">{label}</span>
+        </div>
+      )}
+      <div className="p-4 font-mono text-sm">
+        <div className="flex items-start gap-3">
+          <span className="text-emerald-500 select-none">$</span>
+          <code className="text-slate-300 flex-1 break-all">{command}</code>
+          <button
+            onClick={copy}
+            className="shrink-0 p-1.5 rounded hover:bg-slate-800 text-slate-500 hover:text-emerald-400 transition-colors"
+            title="Copy to clipboard"
+          >
+            {copied ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// Deployment Card Component
+function DeploymentCard({ license }: { license: License }) {
+  const skill = skillsData.find(s => s.id === license.skill_id);
+  const [showSetup, setShowSetup] = useState(false);
+  const installCommand = `npx stack-matrices deploy ${license.skill_id} --license ${license.key}`;
+
+  return (
+    <div className="bg-gradient-to-br from-slate-900 to-slate-800 border border-slate-700 rounded-2xl overflow-hidden hover:border-emerald-500/50 transition-all duration-300">
+      {/* Card Header */}
+      <div className="p-6 border-b border-slate-700/50">
+        <div className="flex items-start justify-between mb-4">
+          <div>
+            <div className="flex items-center gap-2 mb-2">
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-medium border border-emerald-500/20">
+                <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse"></span>
+                {license.status === 'active' ? 'Ready to Deploy' : license.status}
+              </span>
+              {license.type === 'credits' && (
+                <span className="px-2 py-1 rounded-full bg-blue-500/10 text-blue-400 text-xs border border-blue-500/20">
+                  {license.credits_remaining?.toLocaleString()} credits
+                </span>
+              )}
+            </div>
+            <h3 className="text-lg font-bold text-white">{license.skill_name}</h3>
+            <p className="text-slate-400 text-sm mt-1">{skill?.description?.slice(0, 100)}...</p>
+          </div>
+        </div>
+
+        {/* Quick Stats */}
+        <div className="grid grid-cols-3 gap-4 text-sm">
+          <div>
+            <span className="text-slate-500">License Key</span>
+            <div className="font-mono text-emerald-400 text-xs mt-1">{license.key.slice(0, 16)}...</div>
+          </div>
+          <div>
+            <span className="text-slate-500">Purchased</span>
+            <div className="text-white mt-1">{new Date(license.created_at).toLocaleDateString()}</div>
+          </div>
+          <div>
+            <span className="text-slate-500">{license.type === 'credits' ? 'Credits Used' : 'Expires'}</span>
+            <div className="text-white mt-1">
+              {license.type === 'credits' 
+                ? `${license.credits_used} / ${license.credits_total}`
+                : license.expires_at 
+                  ? new Date(license.expires_at).toLocaleDateString()
+                  : 'Never'
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Quick Install Section */}
+      <div className="p-6 bg-slate-950/50">
+        <div className="flex items-center justify-between mb-4">
+          <h4 className="text-sm font-semibold text-white flex items-center gap-2">
+            <Terminal className="w-4 h-4 text-emerald-400" />
+            Quick Install
+          </h4>
+          <button
+            onClick={() => setShowSetup(!showSetup)}
+            className="text-xs text-slate-400 hover:text-emerald-400 flex items-center gap-1 transition-colors"
+          >
+            {showSetup ? 'Hide Setup' : 'Show Setup'}
+            <ChevronRight className={`w-3 h-3 transition-transform ${showSetup ? 'rotate-90' : ''}`} />
+          </button>
+        </div>
+
+        <TerminalCommand command={installCommand} />
+
+        {showSetup && skill?.deploymentSpecs && (
+          <div className="mt-4 p-4 bg-slate-900 rounded-xl border border-slate-800">
+            <h5 className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">Setup Requirements</h5>
+            <ul className="space-y-2">
+              {skill.deploymentSpecs.requirements.map((req, idx) => (
+                <li key={idx} className="flex items-center gap-2 text-sm text-slate-300">
+                  <Check className="w-4 h-4 text-emerald-500" />
+                  {req}
+                </li>
+              ))}
+            </ul>
+            <div className="mt-3 pt-3 border-t border-slate-800 flex items-center gap-4 text-xs text-slate-500">
+              <span>Setup: {skill.deploymentSpecs.setupTime}</span>
+              <span>Runtime: {skill.deploymentSpecs.runtime}</span>
+            </div>
+          </div>
+        )}
+
+        <div className="mt-4 flex gap-3">
+          <Link
+            href={`/skills/${license.skill_id}`}
+            className="flex-1 py-2.5 px-4 bg-slate-800 hover:bg-slate-700 text-white text-sm font-medium rounded-lg transition-colors text-center"
+          >
+            View Documentation
+          </Link>
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              copy();
+            }}
+            className="flex-1 py-2.5 px-4 bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-medium rounded-lg transition-colors text-center flex items-center justify-center gap-2"
+          >
+            <Play className="w-4 h-4" />
+            Deploy Now
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function DashboardPage() {
   const { user, loading: authLoading } = useAuth();
+  const router = useRouter();
+  const searchParams = useSearchParams();
   const [licenses, setLicenses] = useState<License[]>([]);
   const [credits, setCredits] = useState<CreditsInfo | null>(null);
   const [loading, setLoading] = useState(true);
-  const [copiedKey, setCopiedKey] = useState<string | null>(null);
+  const [toast, setToast] = useState<string | null>(null);
+
+  // Check for success redirect from payment
+  useEffect(() => {
+    const success = searchParams.get('success');
+    const skillName = searchParams.get('skill');
+    if (success === 'true') {
+      setToast(`Payment Successful! ${skillName ? `${skillName} is` : 'Your skill is'} ready for deployment below.`);
+      // Clean URL
+      router.replace('/dashboard', { scroll: false });
+    }
+  }, [searchParams, router]);
 
   useEffect(() => {
     if (user) {
@@ -50,7 +232,6 @@ export default function DashboardPage() {
 
   const fetchData = async () => {
     try {
-      // Fetch licenses from API
       const response = await fetch(`${API_BASE}/v1/user/licenses`, {
         headers: {
           'Authorization': `Bearer ${await getAuthToken()}`
@@ -70,25 +251,13 @@ export default function DashboardPage() {
   };
 
   const getAuthToken = async () => {
-    // Get token from Supabase session
-    // This is a placeholder - actual implementation depends on your auth setup
     return 'token';
-  };
-
-  const copyToClipboard = (text: string, id: string) => {
-    navigator.clipboard.writeText(text);
-    setCopiedKey(id);
-    setTimeout(() => setCopiedKey(null), 2000);
-  };
-
-  const getUsagePercentage = (used: number, total: number) => {
-    return Math.min((used / total) * 100, 100);
   };
 
   if (authLoading || loading) {
     return (
       <div className="min-h-screen bg-slate-950 flex items-center justify-center">
-        <div className="text-slate-400">Loading...</div>
+        <div className="text-slate-400">Loading Command Center...</div>
       </div>
     );
   }
@@ -97,7 +266,7 @@ export default function DashboardPage() {
     return (
       <div className="min-h-screen bg-slate-950 flex items-center justify-center">
         <div className="text-center">
-          <p className="text-slate-400 mb-4">Please login to view your dashboard</p>
+          <p className="text-slate-400 mb-4">Please login to access your Command Center</p>
           <Link href="/login" className="py-2 px-4 bg-emerald-500 text-white rounded-lg">
             Login
           </Link>
@@ -108,11 +277,16 @@ export default function DashboardPage() {
 
   return (
     <div className="min-h-screen bg-slate-950 py-12 px-4">
+      {toast && <Toast message={toast} onClose={() => setToast(null)} />}
+      
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-white mb-2">Dashboard</h1>
-          <p className="text-slate-400">{user.email}</p>
+          <div className="flex items-center gap-3 mb-2">
+            <Terminal className="w-6 h-6 text-emerald-400" />
+            <h1 className="text-3xl font-bold text-white">Command Center</h1>
+          </div>
+          <p className="text-slate-400">Deploy and manage your StackMatrices skills</p>
         </div>
 
         {/* Credits Overview */}
@@ -131,211 +305,67 @@ export default function DashboardPage() {
             
             <div className="bg-slate-900 border border-slate-800 rounded-xl p-6">
               <div className="flex items-center justify-between mb-2">
-                <span className="text-slate-400 text-sm">Total Purchased</span>
-                <CreditCard className="w-5 h-5 text-blue-400" />
+                <span className="text-slate-400 text-sm">Active Skills</span>
+                <Package className="w-5 h-5 text-blue-400" />
               </div>
-              <div className="text-3xl font-bold text-white">{credits.total_purchased.toLocaleString()}</div>
+              <div className="text-3xl font-bold text-white">{licenses.length}</div>
+              <Link href="/skills" className="text-blue-400 text-sm hover:underline mt-2 inline-block">
+                Browse More
+              </Link>
             </div>
             
             <div className="bg-slate-900 border border-slate-800 rounded-xl p-6">
               <div className="flex items-center justify-between mb-2">
-                <span className="text-slate-400 text-sm">Total Used</span>
-                <Package className="w-5 h-5 text-amber-400" />
+                <span className="text-slate-400 text-sm">Total Deployed</span>
+                <CheckCircle className="w-5 h-5 text-emerald-400" />
               </div>
-              <div className="text-3xl font-bold text-white">{credits.total_used.toLocaleString()}</div>
+              <div className="text-3xl font-bold text-white">
+                {licenses.filter(l => l.status === 'active').length}
+              </div>
+              <span className="text-slate-500 text-sm mt-2 inline-block">Ready to use</span>
             </div>
           </div>
         )}
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Licenses Section */}
-          <div className="lg:col-span-2">
-            <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6">
-              <div className="flex justify-between items-center mb-6">
-                <h2 className="text-xl font-bold text-white">My License Keys</h2>
-                <Link href="/skills" className="text-sm text-emerald-400 hover:text-emerald-300">
-                  Browse Skills →
-                </Link>
-              </div>
-
-              {licenses.length === 0 ? (
-                <div className="text-center py-12 bg-slate-800/50 rounded-lg">
-                  <div className="w-12 h-12 bg-slate-700 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Zap className="w-6 h-6 text-slate-500" />
-                  </div>
-                  <p className="text-slate-400 mb-4">No licenses yet</p>
-                  <Link
-                    href="/skills"
-                    className="inline-block py-2 px-4 bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg font-medium"
-                  >
-                    Deploy First Skill
-                  </Link>
-                </div>
-              ) : (
-                <div className="space-y-4">
-                  {licenses.map((license) => (
-                    <div key={license.id} className="bg-slate-800/50 border border-slate-700 rounded-lg p-4">
-                      <div className="flex justify-between items-start mb-3">
-                        <div>
-                          <div className="flex items-center gap-2 mb-1">
-                            <span className="inline-block px-2 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-bold rounded">
-                              {license.skill_name}
-                            </span>
-                            <span className={`inline-block px-2 py-1 text-xs font-medium rounded ${
-                              license.type === 'credits' 
-                                ? 'bg-blue-500/20 text-blue-400' 
-                                : 'bg-purple-500/20 text-purple-400'
-                            }`}>
-                              {license.type === 'credits' ? 'Credits' : 'Subscription'}
-                            </span>
-                          </div>
-                          <div className="font-mono text-emerald-400 text-sm">{license.key}</div>
-                        </div>
-                        <span className={`text-xs px-2 py-1 rounded ${
-                          license.status === 'active' 
-                            ? 'bg-emerald-500/20 text-emerald-400' 
-                            : 'bg-red-500/20 text-red-400'
-                        }`}>
-                          {license.status}
-                        </span>
-                      </div>
-
-                      {/* Credits Progress (for credits type) */}
-                      {license.type === 'credits' && license.credits_total && (
-                        <div className="mt-3">
-                          <div className="flex justify-between text-xs text-slate-400 mb-1">
-                            <span>Credits Used</span>
-                            <span>{license.credits_used.toLocaleString()} / {license.credits_total.toLocaleString()}</span>
-                          </div>
-                          <div className="w-full bg-slate-700 rounded-full h-2">
-                            <div 
-                              className="bg-emerald-500 h-2 rounded-full transition-all"
-                              style={{ width: `${getUsagePercentage(license.credits_used, license.credits_total)}%` }}
-                            />
-                          </div>
-                          <div className="text-xs text-slate-500 mt-1">
-                            {license.credits_remaining?.toLocaleString()} credits remaining
-                          </div>
-                        </div>
-                      )}
-
-                      {/* Expiry (for subscription type) */}
-                      {license.type === 'subscription' && license.expires_at && (
-                        <div className="mt-3 flex items-center gap-2 text-xs text-slate-400">
-                          <AlertCircle className="w-4 h-4" />
-                          <span>Expires: {new Date(license.expires_at).toLocaleDateString()}</span>
-                        </div>
-                      )}
-
-                      {/* Copy Button */}
-                      <div className="mt-3 flex gap-2">
-                        <button
-                          onClick={() => copyToClipboard(license.key, license.id)}
-                          className="flex items-center gap-1 text-xs text-slate-400 hover:text-white transition-colors"
-                        >
-                          {copiedKey === license.id ? (
-                            <>
-                              <CheckCircle className="w-3 h-3 text-emerald-400" />
-                              <span className="text-emerald-400">Copied!</span>
-                            </>
-                          ) : (
-                            <>
-                              <Copy className="w-3 h-3" />
-                              <span>Copy Key</span>
-                            </>
-                          )}
-                        </button>
-                        <Link 
-                          href={`/skills/${license.skill_id}`}
-                          className="flex items-center gap-1 text-xs text-slate-400 hover:text-white transition-colors"
-                        >
-                          <ExternalLink className="w-3 h-3" />
-                          <span>View Docs</span>
-                        </Link>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              )}
+        {/* Deployment Cards Grid */}
+        {licenses.length === 0 ? (
+          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-12 text-center">
+            <div className="w-16 h-16 bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Terminal className="w-8 h-8 text-slate-500" />
             </div>
-
-            {/* Usage Instructions */}
-            <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 mt-6">
-              <h2 className="text-xl font-bold text-white mb-4">How to Use</h2>
-              <div className="space-y-4">
-                <div className="bg-slate-800/50 rounded-lg p-4">
-                  <p className="text-sm text-slate-400 mb-2">1. Install the skill via OpenClaw CLI:</p>
-                  <pre className="text-sm text-emerald-400 overflow-x-auto bg-slate-950 p-3 rounded">
-{`$ openclaw skill install review-analyzer
-Enter your license key: sm-review-analyzer-xxxxx
-✓ Skill installed successfully`}
-                  </pre>
-                </div>
-                <div className="bg-slate-800/50 rounded-lg p-4">
-                  <p className="text-sm text-slate-400 mb-2">2. Use the skill directly in OpenClaw:</p>
-                  <pre className="text-sm text-emerald-400 overflow-x-auto bg-slate-950 p-3 rounded">
-{`You: Analyze reviews for https://amazon.com/dp/B08N5WRWNW
-
-OpenClaw: Analyzing 100 reviews...
-✓ Found 34 complaints about Battery Life
-✓ Identified 5 product gaps
-✓ Generated battlecard
-
-Credits used: 157
-Remaining: 843`}
-                  </pre>
-                </div>
-              </div>
-            </div>
+            <h2 className="text-xl font-bold text-white mb-2">No Skills Deployed Yet</h2>
+            <p className="text-slate-400 mb-6 max-w-md mx-auto">
+              Browse our skill registry and deploy your first automation in minutes.
+            </p>
+            <Link
+              href="/skills"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold rounded-lg transition-colors"
+            >
+              Browse Skills
+              <ChevronRight className="w-4 h-4" />
+            </Link>
           </div>
-
-          {/* Sidebar */}
-          <div className="space-y-6">
-            {/* Credits Card */}
-            <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6">
-              <h3 className="font-bold text-white mb-4">Credits</h3>
-              <div className="text-3xl font-bold text-emerald-400 mb-2">
-                {credits?.remaining.toLocaleString() || '0'}
-              </div>
-              <p className="text-slate-400 text-sm mb-4">Available credits</p>
-              <Link
-                href="/buy/credits"
-                className="block w-full py-3 px-4 bg-emerald-500 hover:bg-emerald-600 text-white text-center rounded-lg font-medium transition-colors"
-              >
-                Buy Credits
-              </Link>
-            </div>
-
-            {/* Quick Actions */}
-            <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6">
-              <h3 className="font-bold text-white mb-4">Quick Actions</h3>
-              <div className="space-y-3">
-                <Link
-                  href="/skills"
-                  className="block w-full py-3 px-4 bg-slate-800 hover:bg-slate-700 text-white text-center rounded-lg font-medium transition-colors"
-                >
-                  Browse Skills
-                </Link>
-                <a
-                  href="https://api.gspr-hub.site/admin.html"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block w-full py-3 px-4 bg-slate-800 hover:bg-slate-700 text-white text-center rounded-lg font-medium transition-colors"
-                >
-                  Admin Console →
-                </a>
-              </div>
-            </div>
-
-            <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6">
-              <h3 className="font-bold text-white mb-4">Support</h3>
-              <p className="text-slate-400 text-sm mb-4">Need help with your deployment?</p>
-              <a href="mailto:sam.wang01@icloud.com" className="text-emerald-400 hover:text-emerald-300 text-sm">
-                Contact Support →
-              </a>
-            </div>
+        ) : (
+          <div className="grid gap-6">
+            {licenses.map((license) => (
+              <DeploymentCard key={license.id} license={license} />
+            ))}
           </div>
-        </div>
+        )}
+
+        {/* Pro Tips */}
+        {licenses.length > 0 && (
+          <div className="mt-8 p-6 bg-gradient-to-r from-emerald-900/20 to-slate-900 border border-emerald-500/20 rounded-xl">
+            <h3 className="text-sm font-semibold text-emerald-400 mb-3 flex items-center gap-2">
+              <Zap className="w-4 h-4" />
+              Pro Tip
+            </h3>
+            <p className="text-slate-300 text-sm">
+              Copy the install command above and paste it in your terminal. The skill will automatically 
+              configure itself and prompt you for any required API keys.
+            </p>
+          </div>
+        )}
       </div>
     </div>
   );
