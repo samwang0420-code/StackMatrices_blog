@@ -372,7 +372,7 @@ export default function SkillDetailClient({ skill }: SkillDetailClientProps) {
                         </tr>
                       </thead>
                       <tbody className="text-sm">
-                        {skill.creditUsage.map((usage, idx) => (
+                        {(skill.creditUsage || []).map((usage, idx) => (
                           <tr key={idx} className="border-b border-slate-800/50">
                             <td className="py-3 text-white">{usage.action}</td>
                             <td className="py-3">
@@ -397,7 +397,7 @@ export default function SkillDetailClient({ skill }: SkillDetailClientProps) {
                     <div className="mt-6 p-4 bg-slate-800/30 rounded-lg">
                       <h4 className="text-sm font-medium text-white mb-2">Example: {skill.exampleCost.scenario}</h4>
                       <div className="space-y-1 text-sm">
-                        {skill.exampleCost.breakdown.map((item, idx) => (
+                        {(skill.exampleCost?.breakdown || []).map((item, idx) => (
                           <div key={idx} className="flex justify-between text-slate-400">
                             <span>{item.step}</span>
                             <span className="font-mono">{item.credits} credits</span>
@@ -420,7 +420,7 @@ export default function SkillDetailClient({ skill }: SkillDetailClientProps) {
               <section className="bg-slate-900/50 border border-slate-800 rounded-xl p-6">
                 <h2 className="text-lg font-semibold text-white mb-6">Key Features</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {skill.features.map((feature, idx) => {
+                  {(skill.features || []).map((feature, idx) => {
                     const IconComponent = iconMap[feature.icon] || Zap;
                     return (
                       <div key={idx} className="flex items-start p-4 rounded-lg bg-slate-800/50 border border-slate-700/50">
@@ -465,7 +465,7 @@ export default function SkillDetailClient({ skill }: SkillDetailClientProps) {
                 <section className="bg-slate-900/50 border border-slate-800 rounded-xl p-6">
                   <h2 className="text-lg font-semibold text-white mb-6">Installation</h2>
                   <div className="space-y-4">
-                    {skill.installation.map((step, idx) => (
+                    {(skill.installation || []).map((step, idx) => (
                       <div key={idx} className="flex items-start gap-4">
                         <div className="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center text-xs font-medium text-emerald-400">
                           {idx + 1}
@@ -487,7 +487,7 @@ export default function SkillDetailClient({ skill }: SkillDetailClientProps) {
               <section className="bg-slate-900/50 border border-slate-800 rounded-xl p-6">
                 <h2 className="text-lg font-semibold text-white mb-6">Integrations</h2>
                 <div className="space-y-4">
-                  {skill.integrations.map((integration, idx) => (
+                  {(skill.integrations || []).map((integration, idx) => (
                     <div key={idx} className="border border-slate-700/50 rounded-lg p-4 bg-slate-800/30">
                       <div className="flex items-center justify-between mb-2">
                         <h3 className="font-medium text-white">{integration.platform}</h3>
@@ -512,7 +512,7 @@ export default function SkillDetailClient({ skill }: SkillDetailClientProps) {
                 <section className="bg-slate-900/50 border border-slate-800 rounded-xl p-6">
                   <h3 className="text-sm font-medium text-white mb-4">Requirements</h3>
                   <ul className="space-y-2">
-                    {skill.requirements.map((req, idx) => (
+                    {(skill.requirements || []).map((req, idx) => (
                       <li key={idx} className="flex items-center text-sm text-slate-400">
                         <CheckCircle className="w-4 h-4 mr-2 text-emerald-500/50" />
                         {req}
@@ -556,7 +556,7 @@ export default function SkillDetailClient({ skill }: SkillDetailClientProps) {
               <section className="bg-slate-900/50 border border-slate-800 rounded-xl p-6">
                 <h3 className="text-sm font-medium text-white mb-3">Tags</h3>
                 <div className="flex flex-wrap gap-2">
-                  {skill.tags.map((tag, idx) => (
+                  {(skill.tags || []).map((tag, idx) => (
                     <span
                       key={idx}
                       className="px-2.5 py-1 rounded-full text-xs font-medium bg-slate-800 text-slate-300 border border-slate-700"
@@ -598,7 +598,7 @@ export default function SkillDetailClient({ skill }: SkillDetailClientProps) {
                 <h2 className="text-lg font-semibold text-white">Input Parameters</h2>
               </div>
               <div className="space-y-4">
-                {skill.inputs.map((input, idx) => (
+                {(skill.inputs || []).map((input, idx) => (
                   <div key={idx} className="border-l-2 border-emerald-500/50 pl-4 py-2">
                     <div className="flex items-center gap-2 mb-1">
                       <code className="text-sm font-semibold text-white">{input.name}</code>
@@ -634,7 +634,7 @@ export default function SkillDetailClient({ skill }: SkillDetailClientProps) {
                 <h2 className="text-lg font-semibold text-white">Response Format</h2>
               </div>
               <div className="space-y-4">
-                {skill.outputs.map((output, idx) => (
+                {(skill.outputs || []).map((output, idx) => (
                   <div key={idx} className="border-l-2 border-emerald-500/50 pl-4 py-2">
                     <div className="flex items-center gap-2 mb-1">
                       <code className="text-sm font-semibold text-white">{output.name}</code>
@@ -663,7 +663,7 @@ export default function SkillDetailClient({ skill }: SkillDetailClientProps) {
               <section className="bg-slate-900/50 border border-slate-800 rounded-xl p-4">
                 <h2 className="text-sm font-medium text-white mb-3">Choose Example</h2>
                 <div className="space-y-2">
-                  {skill.examples.map((example, idx) => (
+                  {(skill.examples || []).map((example, idx) => (
                     <button
                       key={idx}
                       onClick={() => setSelectedExample(idx)}
