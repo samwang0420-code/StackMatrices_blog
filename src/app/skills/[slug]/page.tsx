@@ -1,18 +1,21 @@
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 import SkillDetailClient from './SkillDetailClient';
-import skillsData from '@/data/skills-detail.json';
+import reviewAnalyzer from '@/data/skills/review-analyzer.json';
+
+// 所有可用的 skills
+const skillsData = [reviewAnalyzer];
 
 // Generate static params for all skills
 export async function generateStaticParams() {
-  return skillsData.map((skill) => ({
+  return skillsData.map((skill: any) => ({
     slug: skill.slug,
   }));
 }
 
 // Generate metadata for SEO
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const skill = skillsData.find((s) => s.slug === params.slug);
+  const skill = skillsData.find((s: any) => s.slug === params.slug);
   
   if (!skill) {
     return {
@@ -33,11 +36,11 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
 // Main page component
 export default function SkillDetailPage({ params }: { params: { slug: string } }) {
-  const skill = skillsData.find((s) => s.slug === params.slug);
+  const skill = skillsData.find((s: any) => s.slug === params.slug);
 
   if (!skill) {
     notFound();
   }
 
-  return <SkillDetailClient skill={skill} />;
+  return <SkillDetailClient skill={skill as any} />;
 }
