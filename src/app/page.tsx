@@ -3,7 +3,8 @@ import { Metadata } from "next";
 import { SkillCard } from "@/components/SkillCard";
 import { HeroSection } from "@/components/HeroSection";
 import skillsData from "@/data/skills.json";
-import { generateOrganizationSchema, generateFAQSchema, JsonLd } from "@/components/schema-org";
+import { TrustBadges, TestimonialCard, LiveActivityFeed } from '@/components/social-proof';
+import { generateOrganizationSchema, generateFAQSchema, JsonLd } from '@/components/schema-org';
 
 export const metadata: Metadata = {
   title: "StackMatrices | Premier OpenClaw Skill Registry",
@@ -168,6 +169,43 @@ export default function HomePage() {
               </svg>
             </Link>
           </div>
+
+          {/* Trust Badges */}
+          <TrustBadges />
+
+          {/* Testimonials */}
+          <div className="mt-16">
+            <div className="text-center mb-8">
+              <p className="text-emerald-400 text-sm font-mono mb-2">TESTIMONIALS</p>
+              <h3 className="text-2xl font-bold">What Users Say</h3>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <TestimonialCard
+                quote="Saved me 10 hours/week on competitor monitoring. The insights are incredibly actionable."
+                author="Sarah Chen"
+                role="E-commerce Director"
+                company="Nordic Goods"
+                skill="Price Monitor"
+                metric="10h/week saved"
+              />
+              <TestimonialCard
+                quote="Best investment for my agency. Clients love the detailed competitor reports we deliver."
+                author="Marcus Johnson"
+                role="Marketing Lead"
+                company="GrowthLab"
+                skill="Competitor Tracker"
+                metric="3x faster delivery"
+              />
+              <TestimonialCard
+                quote="The Review Analyzer helped us identify product issues before they became negative trends."
+                author="Lisa Park"
+                role="Product Manager"
+                company="TechGear"
+                skill="Review Analyzer"
+                metric="15% fewer returns"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -191,6 +229,9 @@ export default function HomePage() {
           </Link>
         </div>
       </section>
-    </div>
+
+      {/* Live Activity Feed */}
+      <LiveActivityFeed />
+    </>
   );
 }
