@@ -266,12 +266,6 @@ function DeploymentCard({ license }: { license: License }) {
         <div className="mt-3 text-xs text-slate-500 text-center">
           💡 <span className="text-slate-400">Download and double-click run.bat (Windows) or run.sh (Mac/Linux)</span>
         </div>
-            className="flex-1 py-2.5 px-4 bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-medium rounded-lg transition-colors text-center flex items-center justify-center gap-2"
-          >
-            <Play className="w-4 h-4" />
-            Deploy Now
-          </a>
-        </div>
       </div>
     </div>
   );
