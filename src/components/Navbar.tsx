@@ -2,7 +2,9 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useState } from 'react';
 import { useAuth } from './AuthProvider';
+import { Menu, X } from 'lucide-react';
 
 // Monochrome OpenClaw Lobster Icon
 function OpenClawLobster({ className = "w-6 h-6" }: { className?: string }) {
@@ -85,6 +87,7 @@ function OpenClawLobster({ className = "w-6 h-6" }: { className?: string }) {
 export function Navbar() {
   const pathname = usePathname();
   const { user, signOut } = useAuth();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
   const isActive = (path: string) => pathname === path || pathname?.startsWith(`${path}/`);
 
@@ -202,7 +205,42 @@ export function Navbar() {
             </div>
           )}
         </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="md:hidden p-2 text-slate-400 hover:text-white transition-colors"
+          aria-label="Toggle menu"
+        >
+          {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        </button>
       </div>
+
+      {/* Mobile Menu Panel */}
+      {mobileMenuOpen && (
+        <div className="md:hidden border-t border-slate-800 bg-slate-950/95 backdrop-blur-md">
+          <div className="px-4 py-4 space-y-3">
+            <Link href="/" onClick={() => setMobileMenuOpen(false)} className={`block py-2 text-sm font-medium ${isActive('/') ? 'text-emerald-400' : 'text-slate-400'}`}>Home</Link>
+            <Link href="/skills" onClick={() => setMobileMenuOpen(false)} className={`block py-2 text-sm font-medium ${isActive('/skills') ? 'text-emerald-400' : 'text-slate-400'}`}>Skills</Link>
+            <Link href="/deploy" onClick={() => setMobileMenuOpen(false)} className={`block py-2 text-sm font-medium ${isActive('/deploy') ? 'text-emerald-400' : 'text-slate-400'}`}>Deploy</Link>
+            <Link href="/how-it-works" onClick={() => setMobileMenuOpen(false)} className={`block py-2 text-sm font-medium ${isActive('/how-it-works') ? 'text-emerald-400' : 'text-slate-400'}`}>How It Works</Link>
+            <Link href="/faq" onClick={() => setMobileMenuOpen(false)} className={`block py-2 text-sm font-medium ${isActive('/faq') ? 'text-emerald-400' : 'text-slate-400'}`}>FAQ</Link>
+            <div className="border-t border-slate-800 pt-3 mt-3">
+              {user ? (
+                <>
+                  <Link href="/dashboard" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-sm font-medium text-emerald-400">Dashboard</Link>
+                  <button onClick={() => { signOut(); setMobileMenuOpen(false); }} className="block py-2 text-sm font-medium text-slate-500">Logout</button>
+                </>
+              ) : (
+                <>
+                  <Link href="/login" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-sm font-medium text-slate-400">Login</Link>
+                  <Link href="/register" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-sm font-medium text-emerald-400">Get Started</Link>
+                </>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </nav>
   );
 }
