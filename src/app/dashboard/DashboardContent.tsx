@@ -97,6 +97,7 @@ function TerminalCommand({ command, label }: { command: string; label?: string }
 // Deployment Card Component
 function DeploymentCard({ license }: { license: License }) {
   const skill = skillsData.find(s => s.id === license.skill_id);
+  const { user } = useAuth();
   const [showSetup, setShowSetup] = useState(false);
   const [isDownloading, setIsDownloading] = useState(false);
   const installCommand = `npx stack-matrices deploy ${license.skill_id} --license=${license.key}`;
