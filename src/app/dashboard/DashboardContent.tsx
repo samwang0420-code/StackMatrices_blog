@@ -184,29 +184,44 @@ function DeploymentCard({ license }: { license: License }) {
         <div className="flex items-center justify-between mb-4">
           <h4 className="text-sm font-semibold text-white flex items-center gap-2">
             <Terminal className="w-4 h-4 text-emerald-400" />
-            Quick Install
+            Install via Git
           </h4>
-          <button
-            onClick={() => setShowSetup(!showSetup)}
-            className="text-xs text-slate-400 hover:text-emerald-400 flex items-center gap-1 transition-colors"
-          >
-            {showSetup ? 'Hide Setup' : 'Show Setup'}
-            <ChevronRight className={`w-3 h-3 transition-transform ${showSetup ? 'rotate-90' : ''}`} />
-          </button>
         </div>
 
-        <TerminalCommand command={installCommand} />
+        {/* Git URL */}
+        <div className="bg-slate-900 rounded-lg p-4 border border-slate-800 mb-4">
+          <div className="text-xs text-slate-400 mb-2">Git Repository URL</div>
+          <code className="text-sm text-emerald-400 font-mono block">
+            https://github.com/stackmatrices/{license.skill_id}.git
+          </code>
+        </div>
 
-        {showSetup && skill?.deploymentSpecs && (
-          <div className="mt-4 p-4 bg-slate-900 rounded-xl border border-slate-800">
-            <h5 className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">Setup Requirements</h5>
-            <ul className="space-y-2">
-              {skill.deploymentSpecs.requirements.map((req, idx) => (
-                <li key={idx} className="flex items-center gap-2 text-sm text-slate-300">
-                  <Check className="w-4 h-4 text-emerald-500" />
-                  {req}
-                </li>
-              ))}
+        {/* 安装方式 */}
+        <div className="space-y-3">
+          <div className="bg-slate-900 rounded-lg p-3 border border-slate-800">
+            <div className="text-xs text-slate-400 mb-2">Method 1: Git Clone</div>
+            <TerminalCommand command={`git clone https://github.com/stackmatrices/${license.skill_id}.git`} />
+          </div>
+
+          <div className="bg-slate-900 rounded-lg p-3 border border-slate-800">
+            <div className="text-xs text-slate-400 mb-2">Method 2: One-line Installer</div>
+            <TerminalCommand command={`curl -fsSL https://install.stackmatrices.com | python3 - ${license.skill_id}`} />
+          </div>
+
+          <div className="bg-slate-900 rounded-lg p-3 border border-slate-800">
+            <div className="text-xs text-slate-400 mb-2">Method 3: OpenClaw (Paste in chat)</div>
+            <div className="bg-slate-950 rounded p-2 text-sm text-slate-300 font-mono">
+              Install https://github.com/stackmatrices/{license.skill_id}
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-4 p-3 bg-emerald-500/10 border border-emerald-500/20 rounded-lg">
+          <p className="text-xs text-emerald-400">
+            💡 <strong>Simplest way:</strong> Just paste the Git URL in your OpenClaw chat to install and run instantly.
+          </p>
+        </div>
+      </div>
             </ul>
             <div className="mt-3 pt-3 border-t border-slate-800 flex items-center gap-4 text-xs text-slate-500">
               <span>Setup: {skill.deploymentSpecs.setupTime}</span>
