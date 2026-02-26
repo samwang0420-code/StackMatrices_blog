@@ -1,19 +1,14 @@
 import Link from "next/link";
 import { Metadata } from "next";
-import { Fragment } from "react";
 import { SkillCard } from "@/components/SkillCard";
 import { HeroSection } from "@/components/HeroSection";
 import skillsData from "@/data/skills.json";
 import { TrustBadges, TestimonialCard, LiveActivityFeed } from '@/components/social-proof';
-import { generateOrganizationSchema, generateFAQSchema, JsonLd } from '@/components/schema-org';
+import { generateOrganizationSchema, generateFAQSchema } from '@/components/schema-org';
 
-export const metadata: Metadata = {
-  title: "StackMatrices | Premier OpenClaw Skill Registry",
-  description: "High-performance, ready-to-deploy Skills for the OpenClaw ecosystem. Transform your AI agent into a strategic business asset.",
-};
-
-// FAQ data for GEO
-const HOME_FAQS = [
+// Schema.org for GEO
+const ORG_SCHEMA = generateOrganizationSchema();
+const FAQ_SCHEMA = generateFAQSchema([
   {
     question: "What is StackMatrices?",
     answer: "StackMatrices is a registry of ready-to-deploy AI Skills for the OpenClaw ecosystem. Each Skill automates specific business tasks like competitor monitoring, data analysis, and workflow automation."
@@ -30,7 +25,15 @@ const HOME_FAQS = [
     question: "What is the pricing model?",
     answer: "Skills use a Credits-based system. You purchase credits upfront, and each operation consumes credits based on resource usage. Credits never expire."
   }
-];
+]);
+
+export const metadata: Metadata = {
+  title: "StackMatrices | Premier OpenClaw Skill Registry",
+  description: "High-performance, ready-to-deploy Skills for the OpenClaw ecosystem. Transform your AI agent into a strategic business asset.",
+  other: {
+    'json-ld': JSON.stringify([ORG_SCHEMA, FAQ_SCHEMA])
+  }
+};
 
 // Skill Block for Categories
 function SkillBlock({ icon, title, category }: { icon: string; title: string; category: string }) {
@@ -52,12 +55,13 @@ export default function HomePage() {
   const featuredSkills = skillsData.filter(skill => skill.featured).slice(0, 4);
 
   return (
-    <Fragment>
-      {/* Schema.org structured data for GEO */}
-      <JsonLd data={generateOrganizationSchema()} />
-      <JsonLd data={generateFAQSchema(HOME_FAQS)} />
+    <div className="min-h-screen bg-slate-950 text-white">
+      {/* Schema.org structured data via hidden script */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([ORG_SCHEMA, FAQ_SCHEMA]) }}
+      />
       
-      <div className="min-h-screen bg-slate-950 text-white">
       {/*  Hero with Animation  */}
       <HeroSection />
 
@@ -233,6 +237,6 @@ export default function HomePage() {
 
       {/* Live Activity Feed */}
       <LiveActivityFeed />
-    </Fragment>
+    </div>
   );
 }

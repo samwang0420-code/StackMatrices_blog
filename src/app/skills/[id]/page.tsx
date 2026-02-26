@@ -1,6 +1,5 @@
 import skillsData from '@/data/skills-detailed.json';
 import SkillDetailClient from './SkillDetailClient';
-import { generateSkillSchema, JsonLd } from '@/components/schema-org';
 
 // Generate static paths for all skills at build time
 export function generateStaticParams() {
@@ -9,7 +8,7 @@ export function generateStaticParams() {
   }));
 }
 
-// Generate metadata for each skill page
+// Generate metadata for each skill page with Schema.org
 export function generateMetadata({ params }: { params: { id: string } }) {
   const skill = skillsData.find(s => s.id === params.id);
   
@@ -19,9 +18,34 @@ export function generateMetadata({ params }: { params: { id: string } }) {
     };
   }
 
+  // Schema.org structured data for GEO
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": skill.actionTitle,
+    "description": skill.longDescription || skill.description,
+    "applicationCategory": "BusinessApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": skill.price.replace('$', '').split('/')[0],
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": 4.8,
+      "reviewCount": parseInt(skill.deployments.replace('k', '00')) || 100
+    },
+    "operatingSystem": "Any",
+    "softwareVersion": "1.0"
+  };
+
   return {
     title: `${skill.actionTitle} | StackMatrices Skills`,
     description: skill.longDescription || skill.description,
+    other: {
+      'json-ld': JSON.stringify(schema)
+    }
   };
 }
 
@@ -41,17 +65,5 @@ export default function SkillDetailPage({ params }: { params: { id: string } }) 
     );
   }
 
-  return (
-    <>
-      <JsonLd data={generateSkillSchema({
-        id: skill.id,
-        name: skill.actionTitle,
-        description: skill.longDescription || skill.description,
-        price: skill.price,
-        rating: 4.8,
-        reviewCount: parseInt(skill.deployments.replace('k', '00'))
-      })} />
-      <SkillDetailClient skill={skill} />
-    </>
-  );
+  return <SkillDetailClient skill={skill} />;
 }

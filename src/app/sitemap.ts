@@ -1,71 +1,58 @@
 import { MetadataRoute } from 'next';
-import { supabase } from '@/lib/supabase';
-import { SITE_CONFIG } from '@/lib/constants';
+import skillsData from '@/data/skills-detailed.json';
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  // Base URLs
+const SITE_URL = 'https://stackmatrices.com';
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  // Base routes
   const routes: MetadataRoute.Sitemap = [
     {
-      url: SITE_CONFIG.url,
+      url: SITE_URL,
       lastModified: new Date(),
       changeFrequency: 'daily',
       priority: 1.0,
     },
     {
-      url: `${SITE_CONFIG.url}/directory`,
+      url: `${SITE_URL}/skills`,
       lastModified: new Date(),
       changeFrequency: 'daily',
       priority: 0.9,
     },
     {
-      url: `${SITE_CONFIG.url}/blog`,
+      url: `${SITE_URL}/deploy`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
+      url: `${SITE_URL}/how-it-works`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    },
+    {
+      url: `${SITE_URL}/faq`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.6,
+    },
+    {
+      url: `${SITE_URL}/dashboard`,
       lastModified: new Date(),
       changeFrequency: 'daily',
-      priority: 0.9,
+      priority: 0.8,
     },
   ];
 
-  // Fetch all tools
-  try {
-    const { data: tools } = await supabase
-      .from('product_hunt_tools')
-      .select('id, name, updated_at')
-      .order('votes_count', { ascending: false });
-
-    if (tools) {
-      tools.forEach((tool) => {
-        routes.push({
-          url: `${SITE_CONFIG.url}/tools/${tool.id}`,
-          lastModified: tool.updated_at ? new Date(tool.updated_at) : new Date(),
-          changeFrequency: 'weekly',
-          priority: 0.7,
-        });
-      });
-    }
-  } catch (e) {
-    console.error('Error fetching tools for sitemap:', e);
-  }
-
-  // Fetch all articles
-  try {
-    const { data: articles } = await supabase
-      .from('articles')
-      .select('slug, updated_at')
-      .eq('published', true);
-
-    if (articles) {
-      articles.forEach((article) => {
-        routes.push({
-          url: `${SITE_CONFIG.url}/blog/${article.slug}`,
-          lastModified: article.updated_at ? new Date(article.updated_at) : new Date(),
-          changeFrequency: 'weekly',
-          priority: 0.8,
-        });
-      });
-    }
-  } catch (e) {
-    console.error('Error fetching articles for sitemap:', e);
-  }
+  // Add all skill pages
+  skillsData.forEach((skill) => {
+    routes.push({
+      url: `${SITE_URL}/skills/${skill.id}`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    });
+  });
 
   return routes;
 }
