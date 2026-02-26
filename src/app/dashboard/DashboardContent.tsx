@@ -17,6 +17,7 @@ import {
   ChevronRight,
   Check
 } from 'lucide-react';
+import { APIError, EmptyState } from '@/components/error-handling';
 import skillsData from '@/data/skills-detailed.json';
 
 interface License {
@@ -211,6 +212,7 @@ export default function DashboardPage() {
   const [licenses, setLicenses] = useState<License[]>([]);
   const [credits, setCredits] = useState<CreditsInfo | null>(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const [toast, setToast] = useState<string | null>(null);
 
   // Check for success redirect from payment
@@ -232,19 +234,23 @@ export default function DashboardPage() {
 
   const fetchData = async () => {
     try {
+      setError(null);
       const response = await fetch(`${API_BASE}/v1/user/licenses`, {
         headers: {
           'Authorization': `Bearer ${await getAuthToken()}`
         }
       });
       
-      if (response.ok) {
-        const data = await response.json();
-        setLicenses(data.licenses || []);
-        setCredits(data.credits || null);
+      if (!response.ok) {
+        throw new Error(`Failed to load data: ${response.status}`);
       }
-    } catch (err) {
+      
+      const data = await response.json();
+      setLicenses(data.licenses || []);
+      setCredits(data.credits || null);
+    } catch (err: any) {
       console.error('Failed to fetch data:', err);
+      setError(err.message || 'Failed to load your dashboard data');
     } finally {
       setLoading(false);
     }
@@ -289,6 +295,19 @@ export default function DashboardPage() {
           <p className="text-slate-400">Deploy and manage your StackMatrices skills</p>
         </div>
 
+        {/* Error State */}
+        {error && (
+          <div className="mb-8">
+            <APIError 
+              message={error} 
+              onRetry={() => {
+                setLoading(true);
+                fetchData();
+              }} 
+            />
+          </div>
+        )}
+
         {/* Credits Overview */}
         {credits && (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
@@ -329,22 +348,12 @@ export default function DashboardPage() {
 
         {/* Deployment Cards Grid */}
         {licenses.length === 0 ? (
-          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-12 text-center">
-            <div className="w-16 h-16 bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Terminal className="w-8 h-8 text-slate-500" />
-            </div>
-            <h2 className="text-xl font-bold text-white mb-2">No Skills Deployed Yet</h2>
-            <p className="text-slate-400 mb-6 max-w-md mx-auto">
-              Browse our skill registry and deploy your first automation in minutes.
-            </p>
-            <Link
-              href="/skills"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold rounded-lg transition-colors"
-            >
-              Browse Skills
-              <ChevronRight className="w-4 h-4" />
-            </Link>
-          </div>
+          <EmptyState 
+            icon={<Terminal className="w-8 h-8 text-slate-500" />}
+            title="No Skills Deployed Yet"
+            description="Browse our skill registry and deploy your first automation in minutes."
+            action={{ label: "Browse Skills", href: "/skills" }}
+          />
         ) : (
           <div className="grid gap-6">
             {licenses.map((license) => (
