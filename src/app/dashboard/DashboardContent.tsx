@@ -15,7 +15,8 @@ import {
   Terminal,
   Play,
   ChevronRight,
-  Check
+  Check,
+  Download
 } from 'lucide-react';
 import { APIError, EmptyState } from '@/components/error-handling';
 import skillsData from '@/data/skills-detailed.json';
@@ -97,7 +98,40 @@ function TerminalCommand({ command, label }: { command: string; label?: string }
 function DeploymentCard({ license }: { license: License }) {
   const skill = skillsData.find(s => s.id === license.skill_id);
   const [showSetup, setShowSetup] = useState(false);
+  const [isDownloading, setIsDownloading] = useState(false);
   const installCommand = `npx stack-matrices deploy ${license.skill_id} --license=${license.key}`;
+
+  const handleDownload = async () => {
+    setIsDownloading(true);
+    try {
+      // 调用本地打包服务器生成并下载
+      const response = await fetch('http://localhost:8765/generate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          skill_id: license.skill_id,
+          name: user?.email || 'User',
+          api_keys: {}
+        })
+      });
+      
+      if (!response.ok) throw new Error('Failed to generate package');
+      
+      const data = await response.json();
+      
+      // 触发下载
+      window.location.href = `http://localhost:8765${data.download_url}`;
+      
+    } catch (err) {
+      // 如果服务器不可用，直接下载预生成的包
+      const link = document.createElement('a');
+      link.href = `/packages/${license.skill_id}_v1.0.zip`;
+      link.download = `${license.skill_id}_v1.0.zip`;
+      link.click();
+    } finally {
+      setIsDownloading(false);
+    }
+  };
 
   return (
     <div className="bg-gradient-to-br from-slate-900 to-slate-800 border border-slate-700 rounded-2xl overflow-hidden hover:border-emerald-500/50 transition-all duration-300">
@@ -181,19 +215,48 @@ function DeploymentCard({ license }: { license: License }) {
           </div>
         )}
 
-        <div className="mt-4 flex gap-3">
-          <Link
-            href={`/skills/${license.skill_id}`}
-            className="flex-1 py-2.5 px-4 bg-slate-800 hover:bg-slate-700 text-white text-sm font-medium rounded-lg transition-colors text-center"
+        <div className="mt-4 grid grid-cols-2 gap-3">
+          <button
+            onClick={handleDownload}
+            disabled={isDownloading}
+            className="py-2.5 px-4 bg-emerald-500 hover:bg-emerald-600 disabled:bg-emerald-500/50 text-white text-sm font-medium rounded-lg transition-colors text-center flex items-center justify-center gap-2"
           >
-            View Documentation
-          </Link>
+            {isDownloading ? (
+              <>
+                <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none"/>
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"/>
+                </svg>
+                Preparing...
+              </>
+            ) : (
+              <>
+                <Download className="w-4 h-4" />
+                Download Package
+              </>
+            )}
+          </button>
+          
           <a
             href="#"
             onClick={(e) => {
               e.preventDefault();
+              const copy = () => {
+                navigator.clipboard.writeText(installCommand);
+                // 可以添加 toast 提示
+              };
               copy();
             }}
+            className="py-2.5 px-4 bg-slate-800 hover:bg-slate-700 text-white text-sm font-medium rounded-lg transition-colors text-center flex items-center justify-center gap-2"
+          >
+            <Copy className="w-4 h-4" />
+            Copy Command
+          </a>
+        </div>
+        
+        <div className="mt-3 text-xs text-slate-500 text-center">
+          💡 <span className="text-slate-400">Download and double-click run.bat (Windows) or run.sh (Mac/Linux)</span>
+        </div>
             className="flex-1 py-2.5 px-4 bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-medium rounded-lg transition-colors text-center flex items-center justify-center gap-2"
           >
             <Play className="w-4 h-4" />
