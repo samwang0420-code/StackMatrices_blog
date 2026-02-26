@@ -3,11 +3,32 @@ import { Metadata } from "next";
 import { SkillCard } from "@/components/SkillCard";
 import { HeroSection } from "@/components/HeroSection";
 import skillsData from "@/data/skills.json";
+import { generateOrganizationSchema, generateFAQSchema, JsonLd } from "@/components/schema-org";
 
 export const metadata: Metadata = {
   title: "StackMatrices | Premier OpenClaw Skill Registry",
   description: "High-performance, ready-to-deploy Skills for the OpenClaw ecosystem. Transform your AI agent into a strategic business asset.",
 };
+
+// FAQ data for GEO
+const HOME_FAQS = [
+  {
+    question: "What is StackMatrices?",
+    answer: "StackMatrices is a registry of ready-to-deploy AI Skills for the OpenClaw ecosystem. Each Skill automates specific business tasks like competitor monitoring, data analysis, and workflow automation."
+  },
+  {
+    question: "How do I deploy a Skill?",
+    answer: "Simply purchase a Skill from our registry, then run the one-command deployment: 'npx stack-matrices deploy SKILL_ID --license=YOUR_LICENSE_KEY'. The Skill automatically configures itself."
+  },
+  {
+    question: "Do I need coding skills?",
+    answer: "No. StackMatrices Skills are designed for non-technical users. All configuration is handled automatically. You only need to provide your API keys when prompted."
+  },
+  {
+    question: "What is the pricing model?",
+    answer: "Skills use a Credits-based system. You purchase credits upfront, and each operation consumes credits based on resource usage. Credits never expire."
+  }
+];
 
 // Skill Block for Categories
 function SkillBlock({ icon, title, category }: { icon: string; title: string; category: string }) {
@@ -29,7 +50,12 @@ export default function HomePage() {
   const featuredSkills = skillsData.filter(skill => skill.featured).slice(0, 4);
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
+    <>
+      {/* Schema.org structured data for GEO */}
+      <JsonLd data={generateOrganizationSchema()} />
+      <JsonLd data={generateFAQSchema(HOME_FAQS)} />
+      
+      <div className="min-h-screen bg-slate-950 text-white">
       {/*  Hero with Animation  */}
       <HeroSection />
 

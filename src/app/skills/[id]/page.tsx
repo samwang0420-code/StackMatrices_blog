@@ -1,5 +1,6 @@
 import skillsData from '@/data/skills-detailed.json';
 import SkillDetailClient from './SkillDetailClient';
+import { generateSkillSchema, JsonLd } from '@/components/schema-org';
 
 // Generate static paths for all skills at build time
 export function generateStaticParams() {
@@ -40,5 +41,17 @@ export default function SkillDetailPage({ params }: { params: { id: string } }) 
     );
   }
 
-  return <SkillDetailClient skill={skill} />;
+  return (
+    <>
+      <JsonLd data={generateSkillSchema({
+        id: skill.id,
+        name: skill.actionTitle,
+        description: skill.longDescription || skill.description,
+        price: skill.price,
+        rating: 4.8,
+        reviewCount: parseInt(skill.deployments.replace('k', '00'))
+      })} />
+      <SkillDetailClient skill={skill} />
+    </>
+  );
 }
