@@ -96,7 +96,7 @@ export default function BuyPageContent() {
         payment_screenshot: screenshotBase64,
       };
 
-      const response = await fetch(`${API_BASE_URL}/orders/create`, {
+      const response = await fetch(`${API_BASE_URL}/v1/orders/create`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
