@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Metadata } from "next";
+import { Fragment } from "react";
 import { SkillCard } from "@/components/SkillCard";
 import { HeroSection } from "@/components/HeroSection";
 import skillsData from "@/data/skills.json";
@@ -51,7 +52,7 @@ export default function HomePage() {
   const featuredSkills = skillsData.filter(skill => skill.featured).slice(0, 4);
 
   return (
-    <>
+    <Fragment>
       {/* Schema.org structured data for GEO */}
       <JsonLd data={generateOrganizationSchema()} />
       <JsonLd data={generateFAQSchema(HOME_FAQS)} />
@@ -232,6 +233,6 @@ export default function HomePage() {
 
       {/* Live Activity Feed */}
       <LiveActivityFeed />
-    </>
+    </Fragment>
   );
 }
