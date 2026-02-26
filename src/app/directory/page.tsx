@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { SITE_CONFIG } from "@/lib/constants";
-import { supabase } from "@/lib/supabase";
+import skillsData from "@/data/skills-detailed.json";
 import DirectoryClient from "./DirectoryClient";
 
 export const metadata: Metadata = {
@@ -21,37 +21,24 @@ export const metadata: Metadata = {
   },
 };
 
-async function getTools() {
-  try {
-    const { data } = await supabase
-      .from('product_hunt_tools')
-      .select('*')
-      .order('votes_count', { ascending: false });
-    
-    if (data && data.length > 0) {
-      // 直接返回原始数据，保留 Product Hunt 分类
-      return data.map(tool => ({
-        id: tool.id,
-        name: tool.name,
-        description: tool.tagline || tool.description,
-        category: tool.category || 'Other',
-        topics: tool.topics || [],
-        rating: tool.rating || 0,
-        reviews_count: tool.reviews_count || 0,
-        votes_count: tool.votes_count || 0,
-        logo_url: tool.thumbnail_url || `https://placehold.co/64x64/3c3cf6/ffffff?text=${tool.name.charAt(0)}`,
-        website_url: tool.url,
-      }));
-    }
-  } catch (e) {
-    console.error('Error fetching tools:', e);
-  }
-  
-  return [];
+// Static export - use skills data
+function getTools() {
+  return skillsData.map(skill => ({
+    id: skill.id,
+    name: skill.actionTitle,
+    description: skill.description,
+    category: skill.category || 'Automation',
+    topics: skill.tags || [],
+    rating: 4.8,
+    reviews_count: 100,
+    votes_count: parseInt(skill.deployments.replace('k', '00')) || 500,
+    logo_url: skill.logo || `https://placehold.co/64x64/3c3cf6/ffffff?text=${skill.actionTitle.charAt(0)}`,
+    website_url: `/skills/${skill.id}`,
+  }));
 }
 
-export default async function DirectoryPage() {
-  const tools = await getTools();
+export default function DirectoryPage() {
+  const tools = getTools();
 
   return <DirectoryClient tools={tools} />;
 }

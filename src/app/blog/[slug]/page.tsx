@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Script from "next/script";
-import { supabase } from "@/lib/supabase";
 import { SITE_CONFIG } from "@/lib/constants";
 import { generateArticleJsonLd, generateBreadcrumbJsonLd } from "@/lib/jsonld";
 import { fallbackArticles } from "@/lib/fallback-data";
@@ -30,55 +29,18 @@ interface Article {
   updated_at?: string;
 }
 
-async function getArticleBySlug(slug: string): Promise<Article | null> {
-  // 首先尝试从 Supabase 获取真实数据
-  try {
-    const { data } = await supabase
-      .from('articles')
-      .select('*')
-      .eq('slug', slug)
-      .eq('published', true)
-      .single();
-    
-    if (data) {
-      return data as Article;
-    }
-  } catch (e) {
-    console.error('Supabase error:', e);
-  }
-  
-  // 如果 Supabase 没有，检查 fallback
-  const fallbackArticle = fallbackArticles.find(a => a.slug === slug);
-  return fallbackArticle || null;
+// Static export - use fallback data only
+function getArticleBySlug(slug: string): Article | null {
+  return fallbackArticles.find(a => a.slug === slug) || null;
 }
 
-export async function generateStaticParams() {
-  // 收集所有文章 slug（Supabase + fallback 合并）
-  const allSlugs = new Set<string>();
-  
-  // 从 Supabase 获取
-  try {
-    const { data } = await supabase
-      .from('articles')
-      .select('slug')
-      .eq('published', true);
-    
-    if (data) {
-      data.forEach((article: { slug: string }) => allSlugs.add(article.slug));
-    }
-  } catch (e) {
-    console.error('Supabase error in generateStaticParams:', e);
-  }
-  
-  // 添加 fallback 文章
-  fallbackArticles.forEach(a => allSlugs.add(a.slug));
-  
-  console.log(`Generating static params for ${allSlugs.size} articles`);
-  return Array.from(allSlugs).map(slug => ({ slug }));
+export function generateStaticParams() {
+  // 只使用 fallback 文章
+  return fallbackArticles.map(a => ({ slug: a.slug }));
 }
 
-export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
-  const article = await getArticleBySlug(params.slug);
+export function generateMetadata({ params }: BlogPostPageProps): Metadata {
+  const article = getArticleBySlug(params.slug);
   
   if (!article) {
     return {
@@ -119,8 +81,8 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   };
 }
 
-export default async function BlogPostPage({ params }: BlogPostPageProps) {
-  const article = await getArticleBySlug(params.slug);
+export default function BlogPostPage({ params }: BlogPostPageProps) {
+  const article = getArticleBySlug(params.slug);
   
   if (!article) {
     notFound();
@@ -192,7 +154,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             {article.excerpt}
           </p>
 
-          {/* Main Content - 使用 ECharts 渲染器 */}
+          {/* Main Content */}
           <ArticleContentRenderer content={article.content} />
 
           {/* Tags */}

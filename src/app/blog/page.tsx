@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { SITE_CONFIG } from "@/lib/constants";
-import { supabase } from "@/lib/supabase";
 import { fallbackArticles } from "@/lib/fallback-data";
 
 export const metadata: Metadata = {
@@ -39,29 +38,13 @@ interface Article {
   updated_at?: string;
 }
 
-async function getArticles(): Promise<Article[]> {
-  // 首先尝试从 Supabase 获取真实数据
-  try {
-    const { data } = await supabase
-      .from('articles')
-      .select('*')
-      .eq('published', true)
-      .order('date', { ascending: false });
-    
-    if (data && data.length > 0) {
-      return data as Article[];
-    }
-  } catch (e) {
-    console.error('Supabase error:', e);
-  }
-  
-  // 只有当 Supabase 返回空时才使用 fallback
-  console.log('Using fallback articles');
+// Static export - use fallback data only
+function getArticles(): Article[] {
   return fallbackArticles;
 }
 
-export default async function BlogPage() {
-  const articles = await getArticles();
+export default function BlogPage() {
+  const articles = getArticles();
   const featuredArticle = articles.find(a => a.featured) || articles[0];
   const listArticles = articles.filter(a => a.id !== featuredArticle?.id);
 
