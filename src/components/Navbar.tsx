@@ -150,6 +150,12 @@ export function Navbar() {
             Skills
           </Link>
           <Link 
+            href="/deploy" 
+            className={`text-sm font-medium transition-colors ${isActive('/deploy') ? 'text-emerald-400' : 'text-slate-400 hover:text-emerald-400'}`}
+          >
+            Deploy
+          </Link>
+          <Link 
             href="/how-it-works" 
             className={`text-sm font-medium transition-colors ${isActive('/how-it-works') ? 'text-emerald-400' : 'text-slate-400 hover:text-emerald-400'}`}
           >
