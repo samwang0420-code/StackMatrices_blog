@@ -96,7 +96,7 @@ function TerminalCommand({ command, label }: { command: string; label?: string }
 function DeploymentCard({ license }: { license: License }) {
   const skill = skillsData.find(s => s.id === license.skill_id);
   const [showSetup, setShowSetup] = useState(false);
-  const installCommand = `npx stack-matrices deploy ${license.skill_id} --license ${license.key}`;
+  const installCommand = `npx stack-matrices deploy ${license.skill_id} --license=${license.key}`;
 
   return (
     <div className="bg-gradient-to-br from-slate-900 to-slate-800 border border-slate-700 rounded-2xl overflow-hidden hover:border-emerald-500/50 transition-all duration-300">

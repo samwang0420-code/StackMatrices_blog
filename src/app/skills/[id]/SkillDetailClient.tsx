@@ -148,7 +148,7 @@ export default function SkillDetailClient({ skill }: { skill: Skill }) {
   const [copied, setCopied] = useState(false);
   
   const copyCommand = () => {
-    const cmd = `stackmatrices deploy ${skill.id} --key=YOUR_LICENSE_KEY`;
+    const cmd = `npx stack-matrices deploy ${skill.id} --license=YOUR_LICENSE_KEY`;
     navigator.clipboard.writeText(cmd);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
@@ -309,7 +309,7 @@ export default function SkillDetailClient({ skill }: { skill: Skill }) {
                 </button>
               </div>
               <div className="text-emerald-400">
-                $ stackmatrices deploy {skill.id} --key=<span className="text-amber-400">YOUR_LICENSE_KEY</span>
+                $ npx stack-matrices deploy {skill.id} --license=<span className="text-amber-400">YOUR_LICENSE_KEY</span>
               </div>
             </div>            
             
