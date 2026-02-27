@@ -148,7 +148,7 @@ export default function SkillDetailClient({ skill }: { skill: Skill }) {
   const [copied, setCopied] = useState(false);
   
   const copyCommand = () => {
-    const cmd = `npx stack-matrices deploy ${skill.id} --license=YOUR_LICENSE_KEY`;
+    const cmd = `git clone https://github.com/stackmatrices/${skill.id}.git\ncd ${skill.id}\npip install -r requirements.txt\npython main.py --license=YOUR_LICENSE_KEY`;
     navigator.clipboard.writeText(cmd);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
@@ -288,16 +288,16 @@ export default function SkillDetailClient({ skill }: { skill: Skill }) {
         </div>
       </section>
       
-      {/* One-Command Install Preview */}
+      {/* Git Install Preview */}
       <section className="py-16 px-6 border-t border-slate-800">
         <div className="max-w-5xl mx-auto">
           <div className="bg-gradient-to-br from-emerald-900/20 to-slate-900 border border-emerald-500/20 rounded-2xl p-8">
-            <h2 className="text-2xl font-bold mb-4">One-Command Deployment</h2>
+            <h2 className="text-2xl font-bold mb-4">Git Install</h2>
             <p className="text-slate-400 mb-6">
-              After purchase, deploy instantly with a single command. No coding required.
+              Install directly from Git. No package managers, no complex setup.
             </p>
             
-            <div className="bg-slate-950 rounded-xl p-4 font-mono text-sm">
+            <div className="bg-slate-950 rounded-xl p-4 font-mono text-sm mb-4">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-slate-500">Terminal</span>
                 <button
@@ -308,10 +308,22 @@ export default function SkillDetailClient({ skill }: { skill: Skill }) {
                   {copied ? 'Copied!' : 'Copy'}
                 </button>
               </div>
-              <div className="text-emerald-400">
-                $ npx stack-matrices deploy {skill.id} --license=<span className="text-amber-400">YOUR_LICENSE_KEY</span>
+              <div className="text-emerald-400 space-y-1">
+                <div>$ git clone https://github.com/stackmatrices/{skill.id}.git</div>
+                <div>$ cd {skill.id}</div>
+                <div>$ pip install -r requirements.txt</div>
+                <div>$ python main.py --license=<span className="text-amber-400">YOUR_LICENSE_KEY</span></div>
               </div>
-            </div>            
+            </div>
+
+            <div className="bg-slate-900/50 rounded-lg p-4 mb-6">
+              <p className="text-sm text-slate-400">
+                <span className="text-emerald-400 font-medium">Or use the installer:</span>
+              </p>
+              <code className="text-emerald-400 text-sm mt-1 block">
+                $ python3 -c "$(curl -fsSL https://stackmatrices.com/install.sh)" {skill.id}
+              </code>
+            </div>
             
             <div className="mt-6 flex flex-col sm:flex-row gap-4">
               <Link
@@ -322,10 +334,12 @@ export default function SkillDetailClient({ skill }: { skill: Skill }) {
               </Link>
               
               <a
-                href="#"
+                href={`https://github.com/stackmatrices/${skill.id}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-6 py-3 border border-slate-700 hover:border-emerald-500 text-slate-300 hover:text-emerald-400 rounded-lg transition-colors text-center"
               >
-                View Documentation
+                View Source on GitHub
               </a>
             </div>
           </div>

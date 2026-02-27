@@ -188,15 +188,15 @@ export default function BuyPageContent() {
               </div>
             </div>
 
-            {/* One-Line Preview */}
+            {/* Git Install Preview */}
             <div>
               <h3 className="text-sm font-semibold text-slate-300 mb-3 flex items-center gap-2">
                 <Terminal className="w-4 h-4" />
-                Your Install Command (After Purchase)
+                Git Install (After Purchase)
               </h3>
-              <TerminalCommand command={`npx stack-matrices deploy ${skillId} --license=YOUR_LICENSE_KEY`} />
+              <TerminalCommand command={`git clone https://github.com/stackmatrices/${skillId}.git && cd ${skillId} && pip install -r requirements.txt`} />
               <p className="text-xs text-slate-500 mt-2">
-                Your actual license key will be generated after payment verification.
+                Then run with: python main.py --license=YOUR_LICENSE_KEY
               </p>
             </div>
 
