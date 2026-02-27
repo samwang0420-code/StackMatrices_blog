@@ -226,8 +226,7 @@ export default function SkillRunnerContent() {
                     message.role === 'assistant'
                       ? 'bg-slate-800 text-slate-200'
                       : 'bg-emerald-500 text-white'
-                  }`}
-003e
+                  }`}>
                     {message.type === 'result' ? (
                       <ResultCard data={message.data} />
                     ) : (
