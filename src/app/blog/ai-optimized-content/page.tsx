@@ -42,12 +42,12 @@ export default function AIOptimizedContentPage() {
             <div className="flex items-center gap-2">
               <Calendar className="w-4 h-4" />
               {ARTICLE.date}
-        </div>
+            </div>
             <div className="flex items-center gap-2">
               <Clock className="w-4 h-4" />
               {ARTICLE.readTime}
-        </div>
-      </div>
+            </div>
+          </div>
 
           <div className="relative aspect-video w-full rounded-xl overflow-hidden mb-8">
             <Image
