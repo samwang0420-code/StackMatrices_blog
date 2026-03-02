@@ -4,7 +4,8 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { 
   ArrowLeft, Building2, Globe, Mail, User, Target, Users, 
-  Search, Send, CheckCircle, Loader2, MapPin
+  Search, Send, CheckCircle, Loader2, MapPin, Phone, MessageCircle,
+  Briefcase, Stethoscope
 } from 'lucide-react';
 
 const INDUSTRIES = [
@@ -30,7 +31,6 @@ export default function AnalysisRequestPage() {
 
     const formData = new FormData(e.currentTarget);
     
-    // Parse keywords and competitors from comma-separated strings
     const keywordsStr = formData.get('keywords') as string;
     const competitorsStr = formData.get('competitors') as string;
     
@@ -42,7 +42,11 @@ export default function AnalysisRequestPage() {
       keywords: keywordsStr.split(',').map(k => k.trim()).filter(k => k),
       competitors: competitorsStr ? competitorsStr.split(',').map(c => c.trim()).filter(c => c) : [],
       contactName: formData.get('contactName'),
+      jobTitle: formData.get('jobTitle'),
       email: formData.get('email'),
+      phone: formData.get('phone'),
+      whatsapp: formData.get('whatsapp'),
+      notes: formData.get('notes'),
     };
 
     try {
@@ -133,7 +137,6 @@ export default function AnalysisRequestPage() {
   return (
     <div className="min-h-screen bg-navy text-white py-16 px-6">
       <div className="max-w-2xl mx-auto">
-        {/* Back Link */}
         <Link
           href="/"
           className="inline-flex items-center gap-2 text-gray-400 hover:text-white mb-8 transition-colors"
@@ -142,7 +145,6 @@ export default function AnalysisRequestPage() {
           Back to Home
         </Link>
 
-        {/* Header */}
         <div className="mb-10">
           <div className="flex items-center gap-2 mb-4">
             <Search className="w-5 h-5 text-primary" />
@@ -152,12 +154,10 @@ export default function AnalysisRequestPage() {
           <h1 className="text-3xl md:text-4xl font-bold mb-4">Request Your Free GEO Analysis</h1>          
           <p className="text-gray-400">
             Get a comprehensive analysis of your practice's AI visibility across ChatGPT, 
-            Perplexity, Claude, and Google SGE. Receive actionable recommendations to 
-            capture AI-referred patients.
+            Perplexity, Claude, and Google SGE.
           </p>
         </div>
 
-        {/* Form */}
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Section 1: Business Info */}
           <div className="bg-navy-light rounded-xl p-6 border border-gray-800">
@@ -167,7 +167,6 @@ export default function AnalysisRequestPage() {
             </h2>
             
             <div className="space-y-4">
-              {/* Website */}
               <div>
                 <label htmlFor="website" className="block text-sm font-medium text-gray-300 mb-2">
                   Website URL *
@@ -185,7 +184,6 @@ export default function AnalysisRequestPage() {
                 </div>
               </div>
 
-              {/* Business Name */}
               <div>
                 <label htmlFor="businessName" className="block text-sm font-medium text-gray-300 mb-2">
                   Business / Practice Name *
@@ -203,7 +201,6 @@ export default function AnalysisRequestPage() {
                 </div>
               </div>
 
-              {/* Address */}
               <div>
                 <label htmlFor="address" className="block text-sm font-medium text-gray-300 mb-2">
                   Business Address *
@@ -215,13 +212,12 @@ export default function AnalysisRequestPage() {
                     id="address"
                     name="address"
                     required
-                    placeholder="123 Main St, Miami, FL 33101"
+                    placeholder="123 Main St, Beverly Hills, CA 90210"
                     className="w-full bg-navy border border-gray-700 rounded-lg pl-12 pr-4 py-3 text-white placeholder-gray-500 focus:border-primary focus:outline-none transition-colors"
                   />
                 </div>
               </div>
 
-              {/* Industry */}
               <div>
                 <label htmlFor="industry" className="block text-sm font-medium text-gray-300 mb-2">
                   Industry *
@@ -251,7 +247,6 @@ export default function AnalysisRequestPage() {
             </h2>
             
             <div className="space-y-4">
-              {/* Keywords */}
               <div>
                 <label htmlFor="keywords" className="block text-sm font-medium text-gray-300 mb-2">
                   Target Keywords (3-5) *
@@ -270,7 +265,6 @@ export default function AnalysisRequestPage() {
                 <p className="text-xs text-gray-500 mt-1">Separate keywords with commas</p>
               </div>
 
-              {/* Competitors */}
               <div>
                 <label htmlFor="competitors" className="block text-sm font-medium text-gray-300 mb-2">
                   Main Competitors
@@ -298,38 +292,106 @@ export default function AnalysisRequestPage() {
             </h2>
             
             <div className="space-y-4">
-              {/* Contact Name */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="contactName" className="block text-sm font-medium text-gray-300 mb-2">
+                    Contact Name *
+                  </label>
+                  <div className="relative">
+                    <User className="absolute left-4 top-3.5 w-5 h-5 text-gray-500" />
+                    <input
+                      type="text"
+                      id="contactName"
+                      name="contactName"
+                      required
+                      placeholder="Dr. John Smith"
+                      className="w-full bg-navy border border-gray-700 rounded-lg pl-12 pr-4 py-3 text-white placeholder-gray-500 focus:border-primary focus:outline-none transition-colors"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label htmlFor="jobTitle" className="block text-sm font-medium text-gray-300 mb-2">
+                    Job Title *
+                  </label>
+                  <div className="relative">
+                    <Briefcase className="absolute left-4 top-3.5 w-5 h-5 text-gray-500" />
+                    <input
+                      type="text"
+                      id="jobTitle"
+                      name="jobTitle"
+                      required
+                      placeholder="Medical Director"
+                      className="w-full bg-navy border border-gray-700 rounded-lg pl-12 pr-4 py-3 text-white placeholder-gray-500 focus:border-primary focus:outline-none transition-colors"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                    Email *
+                  </label>
+                  <div className="relative">
+                    <Mail className="absolute left-4 top-3.5 w-5 h-5 text-gray-500" />
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      placeholder="john@yourclinic.com"
+                      className="w-full bg-navy border border-gray-700 rounded-lg pl-12 pr-4 py-3 text-white placeholder-gray-500 focus:border-primary focus:outline-none transition-colors"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-2">
+                    Phone Number *
+                  </label>
+                  <div className="relative">
+                    <Phone className="absolute left-4 top-3.5 w-5 h-5 text-gray-500" />
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      required
+                      placeholder="+1 (555) 123-4567"
+                      className="w-full bg-navy border border-gray-700 rounded-lg pl-12 pr-4 py-3 text-white placeholder-gray-500 focus:border-primary focus:outline-none transition-colors"
+                    />
+                  </div>
+                </div>
+              </div>
+
               <div>
-                <label htmlFor="contactName" className="block text-sm font-medium text-gray-300 mb-2">
-                  Your Name *
+                <label htmlFor="whatsapp" className="block text-sm font-medium text-gray-300 mb-2">
+                  WeChat / WhatsApp
                 </label>
                 <div className="relative">
-                  <User className="absolute left-4 top-3.5 w-5 h-5 text-gray-500" />
+                  <MessageCircle className="absolute left-4 top-3.5 w-5 h-5 text-gray-500" />
                   <input
                     type="text"
-                    id="contactName"
-                    name="contactName"
-                    required
-                    placeholder="Dr. John Smith"
+                    id="whatsapp"
+                    name="whatsapp"
+                    placeholder="Your WeChat ID or WhatsApp number"
                     className="w-full bg-navy border border-gray-700 rounded-lg pl-12 pr-4 py-3 text-white placeholder-gray-500 focus:border-primary focus:outline-none transition-colors"
                   />
                 </div>
               </div>
 
-              {/* Email */}
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-                  Email Address *
+                <label htmlFor="notes" className="block text-sm font-medium text-gray-300 mb-2">
+                  Additional Notes
                 </label>
                 <div className="relative">
-                  <Mail className="absolute left-4 top-3.5 w-5 h-5 text-gray-500" />
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    placeholder="john@yourclinic.com"
-                    className="w-full bg-navy border border-gray-700 rounded-lg pl-12 pr-4 py-3 text-white placeholder-gray-500 focus:border-primary focus:outline-none transition-colors"
+                  <Stethoscope className="absolute left-4 top-3.5 w-5 h-5 text-gray-500" />
+                  <textarea
+                    id="notes"
+                    name="notes"
+                    rows={3}
+                    placeholder="Any specific concerns, goals, or information you'd like us to know..."
+                    className="w-full bg-navy border border-gray-700 rounded-lg pl-12 pr-4 py-3 text-white placeholder-gray-500 focus:border-primary focus:outline-none transition-colors resize-none"
                   />
                 </div>
               </div>
