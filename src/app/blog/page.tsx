@@ -5,6 +5,16 @@ import { ArrowRight, Calendar, Clock, User, Tag } from "lucide-react";
 
 const BLOG_POSTS = [
   {
+    id: "seo-geo-trends-2025",
+    title: "SEO and GEO Trends 2025: Data-Driven Analysis for Medical Practices",
+    excerpt: "Comprehensive analysis of search engine and generative engine optimization trends. Learn how 8.5B daily Google searches and AI platforms are reshaping patient acquisition.",
+    category: "Research",
+    author: "StackMatrices Intelligence",
+    date: "March 2, 2026",
+    readTime: "15 min read",
+    featured: true,
+  },
+  {
     id: "ai-eating-seo-budget",
     title: "Why AI is Eating Your SEO Budget (And What to Do About It)",
     excerpt: "Traditional SEO is dying. Here's why 47% of your market is now invisible to your $50K/month SEO spend, and what successful practices are doing instead.",
@@ -12,7 +22,7 @@ const BLOG_POSTS = [
     author: "Sam Wang",
     date: "March 1, 2026",
     readTime: "8 min read",
-    featured: true,
+    featured: false,
   },
   {
     id: "hidden-cost-calculator",
@@ -68,6 +78,7 @@ const BLOG_POSTS = [
 
 const CATEGORIES = [
   "All",
+  "Research",
   "Strategy",
   "Analysis",
   "Tactics",
