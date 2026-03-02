@@ -13,7 +13,6 @@ export function Navbar() {
 
   const navItems = [
     { href: '/interventions', label: 'Interventions' },
-    { href: '/audit', label: 'Audit' },
     { href: '/cases', label: 'Cases' },
     { href: '/insights', label: 'Insights' },
     { href: '/faq', label: 'FAQ' },
@@ -47,10 +46,10 @@ export function Navbar() {
           ))}
           
           <Link 
-            href="/audit" 
+            href="/analysis-request" 
             className="bg-danger hover:bg-danger-hover text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors"
           >
-            Get My Clinic's AI Leakage Audit
+            Free GEO Analysis
           </Link>
         </div>
 

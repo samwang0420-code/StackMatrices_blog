@@ -1,5 +1,6 @@
 'use client';
 
+import Link from "next/link";
 import { AlertTriangle, CheckCircle, XCircle, ArrowRight, Shield, FileText } from "lucide-react";
 
 // Sample audit data
@@ -127,13 +128,13 @@ export default function AuditPage() {
             competitor landscape, and revenue impact.
           </p>
           
-          <a
-            href="mailto:audit@stackmatrices.com?subject=AI Visibility Audit Request"
+          <Link
+            href="/analysis-request"
             className="inline-flex items-center gap-2 bg-danger hover:bg-danger-hover text-white font-semibold px-8 py-4 rounded-lg transition-colors"
           >
             Request Your Free Audit
             <ArrowRight size={20} />
-          </a>
+          </Link>
           
           <div className="mt-6 flex items-center justify-center gap-6 text-sm text-gray-500">
             <div className="flex items-center gap-2">

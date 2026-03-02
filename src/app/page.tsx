@@ -386,7 +386,7 @@ function FinalCTA() {
 
       <div className="flex flex-col sm:flex-row gap-4 justify-center">
         <Link
-          href="/audit"
+          href="/analysis-request"
           className="inline-flex items-center justify-center gap-2 bg-danger hover:bg-danger-hover text-white px-8 py-4 rounded-lg font-semibold transition-colors"
         >
           Get My Free Audit
@@ -431,7 +431,7 @@ export default function HomePage() {
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Link 
-                  href="/audit" 
+                  href="/analysis-request" 
                   className="inline-flex items-center justify-center gap-2 bg-danger hover:bg-danger-hover text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors"
                 >
                   Get My AI Leakage Audit
