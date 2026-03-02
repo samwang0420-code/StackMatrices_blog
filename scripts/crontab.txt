@@ -1,0 +1,10 @@
+# Content Monitoring Cron Jobs
+
+# Daily check at 8:00 AM UTC
+0 8 * * * cd /root/.openclaw/workspace/blog && python3 scripts/content_monitor.py >> logs/content_monitor.log 2>&1
+
+# Weekly deep dive every Monday at 9:00 AM UTC
+0 9 * * 1 cd /root/.openclaw/workspace/blog && python3/scripts/weekly_report.py >> logs/weekly_report.log 2>&1
+
+# Monthly analysis on 1st of month
+0 10 1 * * cd /root/.openclaw/workspace/blog && python3 scripts/monthly_analysis.py >> logs/monthly_analysis.log 2>&1
