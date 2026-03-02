@@ -1,6 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft, Clock, Calendar, User, ExternalLink } from "lucide-react";
 import { notFound } from "next/navigation";
+import { BLOG_IMAGES } from "@/lib/pexels";
 
 // Article data with deep research content
 const ARTICLES: Record<string, {
@@ -9,6 +11,7 @@ const ARTICLES: Record<string, {
   author: string;
   date: string;
   readTime: string;
+  image: string;
   sections: Array<{
     type: 'heading' | 'paragraph' | 'stats' | 'list' | 'quote' | 'table';
     content?: string;
@@ -24,6 +27,7 @@ const ARTICLES: Record<string, {
     author: "Sam Wang",
     date: "March 2, 2026",
     readTime: "12 min read",
+    image: BLOG_IMAGES["ai-eating-seo-budget"],
     sections: [
       {
         type: 'heading',
@@ -84,6 +88,7 @@ const ARTICLES: Record<string, {
     author: "Dr. Amanda Chen",
     date: "March 2, 2026",
     readTime: "10 min read",
+    image: BLOG_IMAGES["hidden-cost-calculator"],
     sections: [
       {
         type: 'heading',
@@ -123,6 +128,7 @@ const ARTICLES: Record<string, {
     author: "Michael Torres",
     date: "March 2, 2026",
     readTime: "10 min read",
+    image: BLOG_IMAGES["chatgpt-vs-perplexity"],
     sections: [
       {
         type: 'heading',
@@ -171,6 +177,7 @@ const ARTICLES: Record<string, {
     author: "Sarah Kim",
     date: "March 2, 2026",
     readTime: "15 min read",
+    image: BLOG_IMAGES["geo-checklist"],
     sections: [
       {
         type: 'heading',
@@ -218,6 +225,7 @@ const ARTICLES: Record<string, {
     author: "Sam Wang",
     date: "March 2, 2026",
     readTime: "15 min read",
+    image: BLOG_IMAGES["6-month-playbook"],
     sections: [
       {
         type: 'heading',
@@ -298,7 +306,7 @@ export default function InsightPage({ params }: { params: { id: string } }) {
 
           <h1 className="text-3xl md:text-4xl font-bold mb-6">{article.title}</h1>
 
-          <div className="flex flex-wrap items-center gap-6 text-sm text-gray-400">
+          <div className="flex flex-wrap items-center gap-6 text-sm text-gray-400 mb-8">
             <div className="flex items-center gap-2">
               <User className="w-4 h-4" />
               {article.author}
@@ -311,6 +319,16 @@ export default function InsightPage({ params }: { params: { id: string } }) {
               <Clock className="w-4 h-4" />
               {article.readTime}
             </div>
+          </div>
+
+          <div className="relative aspect-video w-full rounded-xl overflow-hidden mb-8">
+            <Image
+              src={article.image}
+              alt={article.title}
+              fill
+              className="object-cover"
+              unoptimized
+            />
           </div>
         </div>
 

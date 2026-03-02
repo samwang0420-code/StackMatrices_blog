@@ -1,7 +1,9 @@
 'use client';
 
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Calendar, Clock, User, Tag } from "lucide-react";
+import { BLOG_IMAGES } from "@/lib/pexels";
 
 const BLOG_POSTS = [
   {
@@ -13,6 +15,7 @@ const BLOG_POSTS = [
     date: "March 2, 2026",
     readTime: "15 min read",
     featured: true,
+    image: BLOG_IMAGES["seo-geo-trends-2025"],
   },
   {
     id: "ai-eating-seo-budget",
@@ -23,6 +26,7 @@ const BLOG_POSTS = [
     date: "March 1, 2026",
     readTime: "8 min read",
     featured: false,
+    image: BLOG_IMAGES["ai-eating-seo-budget"],
   },
   {
     id: "hidden-cost-calculator",
@@ -33,6 +37,7 @@ const BLOG_POSTS = [
     date: "February 28, 2026",
     readTime: "6 min read",
     featured: false,
+    image: BLOG_IMAGES["hidden-cost-calculator"],
   },
   {
     id: "chatgpt-vs-perplexity",
@@ -43,6 +48,7 @@ const BLOG_POSTS = [
     date: "February 25, 2026",
     readTime: "10 min read",
     featured: false,
+    image: BLOG_IMAGES["chatgpt-vs-perplexity"],
   },
   {
     id: "geo-checklist",
@@ -53,6 +59,7 @@ const BLOG_POSTS = [
     date: "February 20, 2026",
     readTime: "12 min read",
     featured: false,
+    image: BLOG_IMAGES["geo-checklist"],
   },
   {
     id: "6-month-playbook",
@@ -63,6 +70,7 @@ const BLOG_POSTS = [
     date: "February 15, 2026",
     readTime: "15 min read",
     featured: false,
+    image: BLOG_IMAGES["6-month-playbook"],
   },
   {
     id: "case-study-beverly-hills",
@@ -73,6 +81,7 @@ const BLOG_POSTS = [
     date: "February 10, 2026",
     readTime: "8 min read",
     featured: false,
+    image: BLOG_IMAGES["case-study-beverly-hills"],
   },
 ];
 
@@ -126,8 +135,15 @@ export default function BlogPage() {
               className="block bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-primary/50 transition-colors"
             >
               <div className="grid md:grid-cols-2">
-                <div className="aspect-video md:aspect-auto bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
-                  <span className="text-6xl">📝</span>                </div>                
+                <div className="aspect-video md:aspect-auto relative overflow-hidden">
+                  <Image
+                    src={featured.image}
+                    alt={featured.title}
+                    fill
+                    className="object-cover"
+                    unoptimized
+                  />
+                </div>                
                 <div className="p-8">
                   <div className="flex items-center gap-4 mb-4">
                     <span className="px-3 py-1 bg-primary/20 text-primary text-sm font-medium rounded-full">
@@ -155,11 +171,19 @@ export default function BlogPage() {
               href={`/blog/${post.id}`}
               className="block bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-primary/50 transition-colors group"
             >
-              <div className="aspect-video bg-gradient-to-br from-primary/10 to-transparent flex items-center justify-center">
-                <span className="text-4xl">📄</span>              </div>              
+              <div className="aspect-video relative overflow-hidden">
+                <Image
+                  src={post.image}
+                  alt={post.title}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  unoptimized
+                />
+              </div>              
               <div className="p-6">
                 <div className="flex items-center gap-2 mb-3">
-                  <Tag className="w-3 h-3 text-primary" />                  <span className="text-xs text-primary">{post.category}</span>                </div>                
+                  <Tag className="w-3 h-3 text-primary" />                  
+                  <span className="text-xs text-primary">{post.category}</span>                </div>                
                 <h3 className="font-semibold mb-2 group-hover:text-primary transition-colors">
                   {post.title}
                 </h3>                
