@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { 
   ArrowLeft, Building2, Globe, Mail, User, Target, Users, 
-  Search, Send, CheckCircle, Loader2
+  Search, Send, CheckCircle, Loader2, MapPin
 } from 'lucide-react';
 
 const INDUSTRIES = [
@@ -37,6 +37,7 @@ export default function AnalysisRequestPage() {
     const payload = {
       website: formData.get('website'),
       businessName: formData.get('businessName'),
+      address: formData.get('address'),
       industry: formData.get('industry'),
       keywords: keywordsStr.split(',').map(k => k.trim()).filter(k => k),
       competitors: competitorsStr ? competitorsStr.split(',').map(c => c.trim()).filter(c => c) : [],
@@ -197,6 +198,24 @@ export default function AnalysisRequestPage() {
                     name="businessName"
                     required
                     placeholder="Elite Aesthetic Center"
+                    className="w-full bg-navy border border-gray-700 rounded-lg pl-12 pr-4 py-3 text-white placeholder-gray-500 focus:border-primary focus:outline-none transition-colors"
+                  />
+                </div>
+              </div>
+
+              {/* Address */}
+              <div>
+                <label htmlFor="address" className="block text-sm font-medium text-gray-300 mb-2">
+                  Business Address *
+                </label>
+                <div className="relative">
+                  <MapPin className="absolute left-4 top-3.5 w-5 h-5 text-gray-500" />
+                  <input
+                    type="text"
+                    id="address"
+                    name="address"
+                    required
+                    placeholder="123 Main St, Miami, FL 33101"
                     className="w-full bg-navy border border-gray-700 rounded-lg pl-12 pr-4 py-3 text-white placeholder-gray-500 focus:border-primary focus:outline-none transition-colors"
                   />
                 </div>
