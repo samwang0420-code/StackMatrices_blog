@@ -1,0 +1,234 @@
+[
+  {
+    "title": "Blog System Database Migration",
+    "description": "Migrate static blog pages to database-driven dynamic rendering. Currently articles are hardcoded as .tsx files.",
+    "category": "Backend",
+    "priority": "high",
+    "status": "in_progress",
+    "estimated_hours": 8,
+    "tags": [
+      "supabase",
+      "nextjs",
+      "database",
+      "migration"
+    ],
+    "acceptance_criteria": [
+      "Blog list fetches from API",
+      "Dynamic article routes",
+      "Markdown rendering"
+    ],
+    "technical_notes": "Use ReactMarkdown with remark-gfm. Implement ISR for static regeneration.",
+    "project": "StackMatrices",
+    "created_at": "2026-03-02T15:22:33.833511",
+    "updated_at": "2026-03-02T15:22:33.833551"
+  },
+  {
+    "title": "Case Studies Dynamic Rendering",
+    "description": "Move case studies from hardcoded constants to database. Need case_studies table with results as JSON.",
+    "category": "Backend",
+    "priority": "high",
+    "status": "planned",
+    "estimated_hours": 6,
+    "tags": [
+      "database",
+      "schema",
+      "migration",
+      "cases"
+    ],
+    "acceptance_criteria": [
+      "Create case_studies table",
+      "Migrate 3 existing studies",
+      "Dynamic detail pages"
+    ],
+    "technical_notes": "Table: id, title, slug, location, type, content, results(JSON), testimonial",
+    "project": "StackMatrices",
+    "created_at": "2026-03-02T15:22:33.833557",
+    "updated_at": "2026-03-02T15:22:33.833560"
+  },
+  {
+    "title": "Performance Optimization Bundle",
+    "description": "Address Core Web Vitals and loading performance. Current bundle size is large.",
+    "category": "Performance",
+    "priority": "high",
+    "status": "planned",
+    "estimated_hours": 12,
+    "tags": [
+      "performance",
+      "cwv",
+      "bundle",
+      "optimization"
+    ],
+    "acceptance_criteria": [
+      "LCP under 2.5s",
+      "FID under 100ms",
+      "Bundle size -30%"
+    ],
+    "technical_notes": "Code splitting, next/image optimization, lazy loading, service worker",
+    "project": "StackMatrices",
+    "created_at": "2026-03-02T15:22:33.833562",
+    "updated_at": "2026-03-02T15:22:33.833564"
+  },
+  {
+    "title": "Search Functionality Implementation",
+    "description": "Add full-text search across blog articles and case studies.",
+    "category": "Feature",
+    "priority": "medium",
+    "status": "planned",
+    "estimated_hours": 10,
+    "tags": [
+      "search",
+      "fulltext",
+      "algolia",
+      "postgres"
+    ],
+    "acceptance_criteria": [
+      "Search input in nav",
+      "Real-time suggestions",
+      "Results with filters"
+    ],
+    "technical_notes": "Use Postgres full-text search or Algolia. Debounced search input.",
+    "project": "StackMatrices",
+    "created_at": "2026-03-02T15:22:33.833566",
+    "updated_at": "2026-03-02T15:22:33.833567"
+  },
+  {
+    "title": "Content Management Dashboard",
+    "description": "Create admin interface for managing blog articles without code changes.",
+    "category": "Frontend",
+    "priority": "medium",
+    "status": "planned",
+    "estimated_hours": 16,
+    "tags": [
+      "admin",
+      "cms",
+      "dashboard",
+      "crud"
+    ],
+    "acceptance_criteria": [
+      "Protected admin panel",
+      "WYSIWYG editor",
+      "Image upload",
+      "Preview mode"
+    ],
+    "technical_notes": "TipTap editor, Supabase Auth, Supabase Storage for images",
+    "project": "StackMatrices",
+    "created_at": "2026-03-02T15:22:33.833569",
+    "updated_at": "2026-03-02T15:22:33.833571"
+  },
+  {
+    "title": "Content Monitoring System Enhancement",
+    "description": "Improve Python content monitor with error handling and auto-publishing.",
+    "category": "Automation",
+    "priority": "medium",
+    "status": "in_progress",
+    "estimated_hours": 10,
+    "tags": [
+      "python",
+      "cron",
+      "scraping",
+      "automation"
+    ],
+    "acceptance_criteria": [
+      "Monitor 10+ sources",
+      "AI content generation",
+      "Slack notifications"
+    ],
+    "technical_notes": "scripts/content_monitor.py. Add retry logic, source priority queue.",
+    "project": "StackMatrices",
+    "created_at": "2026-03-02T15:22:33.833573",
+    "updated_at": "2026-03-02T15:22:33.833575"
+  },
+  {
+    "title": "Analytics Dashboard v2",
+    "description": "Build comprehensive analytics dashboard with AI visibility metrics and conversion funnels.",
+    "category": "Analytics",
+    "priority": "medium",
+    "status": "planned",
+    "estimated_hours": 20,
+    "tags": [
+      "analytics",
+      "dashboard",
+      "metrics",
+      "visualization"
+    ],
+    "acceptance_criteria": [
+      "Real-time tracking",
+      "AI referral breakdown",
+      "Funnel visualization"
+    ],
+    "technical_notes": "Recharts/Tremor, aggregate from multiple sources, role-based access",
+    "project": "StackMatrices",
+    "created_at": "2026-03-02T15:22:33.833577",
+    "updated_at": "2026-03-02T15:22:33.833578"
+  },
+  {
+    "title": "Newsletter Subscription System",
+    "description": "Build email newsletter for blog subscribers with automated digests.",
+    "category": "Feature",
+    "priority": "low",
+    "status": "backlog",
+    "estimated_hours": 14,
+    "tags": [
+      "newsletter",
+      "email",
+      "marketing",
+      "automation"
+    ],
+    "acceptance_criteria": [
+      "Email capture forms",
+      "Double opt-in",
+      "Weekly digest",
+      "Analytics"
+    ],
+    "technical_notes": "Resend API, Supabase edge functions for scheduled digests",
+    "project": "StackMatrices",
+    "created_at": "2026-03-02T15:22:33.833580",
+    "updated_at": "2026-03-02T15:22:33.833582"
+  },
+  {
+    "title": "A/B Testing Framework",
+    "description": "Implement A/B testing for landing pages and CTAs to optimize conversions.",
+    "category": "Growth",
+    "priority": "low",
+    "status": "backlog",
+    "estimated_hours": 12,
+    "tags": [
+      "ab-testing",
+      "growth",
+      "analytics",
+      "experimentation"
+    ],
+    "acceptance_criteria": [
+      "Experiment UI",
+      "Traffic splitting",
+      "Conversion tracking"
+    ],
+    "technical_notes": "PostHog or GrowthBook, database-stored experiments, Segment tracking",
+    "project": "StackMatrices",
+    "created_at": "2026-03-02T15:22:33.833584",
+    "updated_at": "2026-03-02T15:22:33.833585"
+  },
+  {
+    "title": "Mobile App PWA Features",
+    "description": "Enhance PWA capabilities for offline reading and push notifications.",
+    "category": "Mobile",
+    "priority": "low",
+    "status": "backlog",
+    "estimated_hours": 8,
+    "tags": [
+      "pwa",
+      "mobile",
+      "offline",
+      "notifications"
+    ],
+    "acceptance_criteria": [
+      "Add to home screen",
+      "Offline reading",
+      "Push notifications"
+    ],
+    "technical_notes": "Workbox service worker, next-pwa, web app manifest",
+    "project": "StackMatrices",
+    "created_at": "2026-03-02T15:22:33.833587",
+    "updated_at": "2026-03-02T15:22:33.833589"
+  }
+]
