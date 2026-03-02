@@ -3,12 +3,16 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #0f172a;
-  --primary: #3c3cf6;
-  --primary-hover: #2a2acc;
-  --primary-light: #ececfc;
-  --background-light: #f5f5f8;
+  --background: #0B0F19;
+  --foreground: #F9FAFB;
+  --primary: #2DD4BF;
+  --primary-hover: #14B8A6;
+  --primary-light: #CCFBF1;
+  --danger: #EF4444;
+  --danger-hover: #DC2626;
+  --navy: #0B0F19;
+  --navy-light: #111827;
+  --navy-lighter: #1A1F2E;
   --font-inter: 'Inter', system-ui, sans-serif;
 }
 

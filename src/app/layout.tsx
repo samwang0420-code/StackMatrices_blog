@@ -52,7 +52,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  themeColor: '#3c3cf6',
+  themeColor: '#0B0F19',
 };
 
 export default function RootLayout({
@@ -61,8 +61,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="zh">
-      <body className={`${inter.className} min-h-screen flex flex-col bg-white antialiased`}>
+    <html lang="en">
+      <body className={`${inter.className} min-h-screen flex flex-col bg-navy text-white antialiased`}>
         <AuthProvider>
           <Navbar />
           <main className="flex-1">{children}</main>

@@ -18,9 +18,19 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         primary: {
-          DEFAULT: "#3c3cf6",
-          hover: "#2a2acc",
-          light: "#ececfc",
+          DEFAULT: "#2DD4BF", // Clinical Teal
+          hover: "#14B8A6",
+          light: "#CCFBF1",
+        },
+        danger: {
+          DEFAULT: "#EF4444", // Security Red
+          hover: "#DC2626",
+          light: "#FEE2E2",
+        },
+        navy: {
+          DEFAULT: "#0B0F19", // Deep Space Navy
+          light: "#111827",
+          lighter: "#1A1F2E",
         },
         "background-light": "#f5f5f8",
         code: {
