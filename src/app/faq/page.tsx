@@ -183,7 +183,7 @@ export default function FAQPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="mailto:hello@stackmatrices.com?subject=GEO Question"
+              href="mailto:hello@gspr-hub.site?subject=GEO Question"
               className="inline-flex items-center justify-center gap-2 bg-navy-light hover:bg-navy-lighter text-white px-6 py-3 rounded-lg border border-gray-800 transition-colors"
             >
               <Mail size={16} />

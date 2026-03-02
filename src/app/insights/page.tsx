@@ -141,7 +141,7 @@ export default function InsightsPage() {
           </p>
           
           <a
-            href="mailto:insights@stackmatrices.com?subject=Subscribe to GEO Insights"
+            href="mailto:insights@gspr-hub.site?subject=Subscribe to GEO Insights"
             className="inline-flex items-center gap-2 bg-primary hover:bg-primary-hover text-navy font-semibold px-6 py-3 rounded-lg transition-colors"
           >
             Subscribe via Email

@@ -1,11 +1,12 @@
 import Link from "next/link";
 import { Metadata } from "next";
 import { 
-  Shield, Activity, TrendingUp, ArrowRight, Bot, CheckCircle2,
+  Shield, Activity, TrendingUp, ArrowRight,
   Brain, Search, Users, BarChart3, FileText, ArrowUpRight, Quote,
   Stethoscope, Building2, Sparkles, HeartPulse, Microscope,
   Award, Clock, ShieldCheck
 } from "lucide-react";
+import { AIChatDemoAnimated } from "@/components/AIChatDemo";
 
 export const metadata: Metadata = {
   title: "StackMatrices | GEO Agency for Medical Practices",
@@ -21,69 +22,6 @@ function MedicalCard({ icon: Icon, title, description }: { icon: any, title: str
       </div>
       <h3 className="font-semibold text-white mb-1">{title}</h3>
       <p className="text-sm text-gray-300">{description}</p>
-    </div>
-  );
-}
-
-// AI Chat Demo - Clean Medical Style
-function AIChatDemo() {
-  return (
-    <div className="bg-white rounded-2xl shadow-2xl overflow-hidden max-w-md mx-auto">
-      {/* Header */}
-      <div className="bg-gradient-to-r from-primary to-primary-dark px-6 py-4">
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
-            <Bot className="w-5 h-5 text-white" />
-          </div>
-          <div>
-            <p className="text-white font-semibold">AI Assistant</p>
-            <p className="text-primary-light text-xs">Online</p>
-          </div>
-        </div>
-      </div>
-      
-      {/* Chat Content */}
-      <div className="p-6 bg-gray-50">
-        <div className="space-y-4">
-          {/* User Message */}
-          <div className="flex justify-end">
-            <div className="bg-primary text-white rounded-2xl rounded-tr-sm px-4 py-3 max-w-[80%]">
-              <p className="text-sm">What's the best dental implant clinic in Miami?</p>
-            </div>
-          </div>
-          
-          {/* AI Response */}
-          <div className="flex gap-3">
-            <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
-              <Bot className="w-4 h-4 text-white" />
-            </div>
-            <div className="flex-1">
-              <p className="text-gray-600 text-sm mb-3">Here are the top-rated dental implant clinics in Miami:</p>
-              <div className="space-y-2">
-                <div className="bg-white border border-green-200 rounded-lg p-3 shadow-sm">
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-green-500" />
-                    <span className="font-medium text-gray-800">Competitor A Dental Group</span>
-                    <span className="ml-auto text-xs text-green-600 bg-green-50 px-2 py-0.5 rounded">Top Rated</span>
-                  </div>
-                </div>
-                <div className="bg-white border border-green-200 rounded-lg p-3 shadow-sm">
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-green-500" />
-                    <span className="font-medium text-gray-800">Competitor B Smile Center</span>
-                  </div>
-                </div>
-                <div className="bg-gray-100 border border-gray-200 rounded-lg p-3 opacity-60">
-                  <div className="flex items-center gap-2">
-                    <span className="w-4 h-4 rounded-full border-2 border-gray-300"></span>
-                    <span className="font-medium text-gray-400">Your Clinic (Not Listed)</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   );
 }
@@ -191,7 +129,7 @@ export default function HomePage() {
             
             {/* Right Content - AI Demo */}
             <div className="hidden lg:block">
-              <AIChatDemo />
+              <AIChatDemoAnimated />
             </div>
           </div>
           
