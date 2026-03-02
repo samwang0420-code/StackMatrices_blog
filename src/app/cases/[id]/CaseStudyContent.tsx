@@ -2,15 +2,22 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, Building2, Stethoscope, TrendingUp } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+
+// Map icon names to components
+const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
+  Building2,
+  Stethoscope,
+  TrendingUp,
+};
 
 interface CaseStudy {
   title: string;
   location: string;
   type: string;
-  icon: React.ComponentType<{ className?: string }>;
+  iconName: string;
   image: string;
   results: Array<{
     label: string;
@@ -22,7 +29,7 @@ interface CaseStudy {
 }
 
 export default function CaseStudyContent({ study }: { study: CaseStudy }) {
-  const Icon = study.icon;
+  const Icon = ICON_MAP[study.iconName] || Building2;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-navy via-navy-light to-navy-dark text-white py-16 px-6">

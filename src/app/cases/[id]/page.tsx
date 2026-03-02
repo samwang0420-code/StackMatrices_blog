@@ -1,5 +1,4 @@
 import { notFound } from "next/navigation";
-import { Building2, Stethoscope, TrendingUp } from "lucide-react";
 import { BLOG_IMAGES } from "@/lib/pexels";
 import CaseStudyContent from "./CaseStudyContent";
 
@@ -8,7 +7,7 @@ const CASE_STUDIES = {
     title: "Elite Aesthetic Center",
     location: "Beverly Hills, California",
     type: "Plastic Surgery",
-    icon: Building2,
+    iconName: "Building2",
     image: BLOG_IMAGES["case-study-beverly-hills"],
     results: [
       { label: "AI Visibility Score", from: "28/100", to: "82/100", change: "+193%" },
@@ -144,7 +143,7 @@ Elite Aesthetic Center went from **AI-invisible to market-dominant** in 90 days,
     title: "Miami Implant Specialists",
     location: "Miami, Florida",
     type: "Dental Implants",
-    icon: Stethoscope,
+    iconName: "Stethoscope",
     image: BLOG_IMAGES["ai-eating-seo-budget"],
     results: [
       { label: "AI Visibility Score", from: "18/100", to: "74/100", change: "+311%" },
@@ -276,7 +275,7 @@ Miami Implant Specialists was paradoxically both **market-dominant and AI-invisi
     title: "Radiance MedSpa Network",
     location: "California (6 locations)",
     type: "Medical Aesthetics",
-    icon: TrendingUp,
+    iconName: "TrendingUp",
     image: BLOG_IMAGES["hidden-cost-calculator"],
     results: [
       { label: "AI Visibility", from: "35/100", to: "69/100", change: "+97%" },
