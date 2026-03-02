@@ -18,19 +18,27 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         primary: {
-          DEFAULT: "#2DD4BF", // Clinical Teal
-          hover: "#14B8A6",
-          light: "#CCFBF1",
+          DEFAULT: "#0EA5E9", // Medical Blue
+          hover: "#0284C7",
+          light: "#E0F2FE",
+          dark: "#0369A1",
         },
         danger: {
-          DEFAULT: "#EF4444", // Security Red
+          DEFAULT: "#EF4444", // Alert Red
           hover: "#DC2626",
           light: "#FEE2E2",
         },
         navy: {
-          DEFAULT: "#0B0F19", // Deep Space Navy
-          light: "#111827",
-          lighter: "#1A1F2E",
+          DEFAULT: "#0C4A6E", // Deep Medical Blue
+          light: "#075985",
+          lighter: "#0369A1",
+          dark: "#082F49",
+        },
+        medical: {
+          white: "#FAFAFA",
+          cream: "#F8F7F4",
+          silver: "#E5E7EB",
+          slate: "#64748B",
         },
         "background-light": "#f5f5f8",
         code: {
