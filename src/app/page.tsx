@@ -290,16 +290,19 @@ function CasesPreview() {
 function InsightsPreview() {
   const articles = [
     {
+      id: "ai-eating-seo-budget",
       title: "Why AI is Eating Your SEO Budget",
       excerpt: "Traditional SEO is dying. Here's why 47% of your market is now invisible to your $50K/month SEO spend.",
       category: "Strategy",
     },
     {
+      id: "hidden-cost-calculator",
       title: "The Hidden Cost of AI Invisibility",
       excerpt: "Calculate exactly how much revenue your practice is losing to AI-referred competitor traffic.",
       category: "Analysis",
     },
     {
+      id: "ai-platform-comparison",
       title: "ChatGPT vs Perplexity vs Claude",
       excerpt: "Which AI engine sends you the most patients? Platform-specific strategies for each.",
       category: "Tactics",
@@ -318,32 +321,39 @@ function InsightsPreview() {
       </div>
 
       <div className="grid md:grid-cols-3 gap-6 mb-8">
-        {articles.map((article, idx) => (
-          <div
-            key={idx}
-            className="bg-navy-light rounded-xl p-6 border border-gray-800 hover:border-gray-700 transition-colors"
+        {articles.map((article) => (
+          <Link
+            key={article.id}
+            href={`/insights/${article.id}`}
+            className="group bg-navy-light rounded-xl p-6 border border-gray-800 hover:border-gray-700 transition-colors"
           >
             <div className="flex items-center gap-2 mb-4">
               <FileText className="w-4 h-4 text-primary" />
               <span className="text-xs text-gray-500 uppercase">{article.category}</span>
             </div>
             
-            <h3 className="font-semibold mb-3 hover:text-primary transition-colors cursor-pointer">
+            <h3 className="font-semibold mb-3 group-hover:text-primary transition-colors">
               {article.title}
             </h3>
             
             <p className="text-sm text-gray-400 mb-4">{article.excerpt}</p>
             
-            <div className="flex items-center gap-1 text-primary text-sm cursor-pointer">
+            <div className="flex items-center gap-1 text-primary text-sm">
               Read More
               <ArrowUpRight size={14} />
             </div>
-          </div>
+          </Link>
         ))}
       </div>
 
-      <div className="text-center text-sm text-gray-500">
-        Full insights library coming soon. <Link href="/audit" className="text-primary hover:underline">Get notified</Link>.
+      <div className="text-center">
+        <Link 
+          href="/insights" 
+          className="inline-flex items-center gap-2 bg-navy-light hover:bg-navy-lighter text-white px-6 py-3 rounded-lg border border-gray-800 transition-colors"
+        >
+          View All Insights
+          <ArrowRight size={16} />
+        </Link>
       </div>
     </div>
   );
@@ -464,6 +474,23 @@ export default function HomePage() {
       <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <InsightsPreview />
+        </div>
+      </section>
+
+      {/* FAQ Teaser */}
+      <section className="py-16 px-6 bg-navy-light/30">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-2xl font-bold mb-4">Have Questions?</h2>
+          <p className="text-gray-400 mb-6">
+            Browse our comprehensive FAQ or reach out directly.
+          </p>
+          <Link
+            href="/faq"
+            className="inline-flex items-center gap-2 text-primary hover:text-white transition-colors"
+          >
+            View FAQ
+            <ArrowRight size={16} />
+          </Link>
         </div>
       </section>
 

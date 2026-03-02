@@ -12,9 +12,11 @@ export function Navbar() {
   const isActive = (path: string) => pathname === path;
 
   const navItems = [
-    { href: '/interventions', label: 'Strategic Interventions' },
-    { href: '/audit', label: 'AI Visibility Audit' },
-    { href: '/cases', label: 'Case Studies' },
+    { href: '/interventions', label: 'Interventions' },
+    { href: '/audit', label: 'Audit' },
+    { href: '/cases', label: 'Cases' },
+    { href: '/insights', label: 'Insights' },
+    { href: '/faq', label: 'FAQ' },
   ];
 
   return (
