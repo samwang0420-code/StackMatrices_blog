@@ -2,7 +2,7 @@ import { Tool, Article, Category } from './types';
 
 export const SITE_CONFIG = {
   name: 'Stackmatrices',
-  description: 'Find the Best SaaS Tools to Grow Your Business. Honest reviews, comparisons, and exclusive deals for marketers, creators, and entrepreneurs.',
+  description: 'GEO Agency for Medical Practices | Recover patients lost to AI. We help plastic surgeons, dentists, and medspas get recommended by ChatGPT, Perplexity, and Google AI. Stop losing $300K+/year to AI-diverted patients.',
   url: 'https://stackmatrices.com',
   twitter: '@stackmatrices',
   image: 'https://stackmatrices.com/og-image.jpg',
