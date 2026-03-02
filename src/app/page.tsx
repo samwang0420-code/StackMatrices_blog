@@ -246,6 +246,101 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Customer Cases Section */}
+      <section className="py-20 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <p className="text-primary text-sm font-semibold tracking-widest uppercase mb-4">Customer Cases</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">客户案例</h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              多家医疗机构共同选择：依托 StackMatrices GEO，达成 AI 搜索推荐精准占位
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {/* Case 1 */}
+            <div className="bg-navy-lighter rounded-2xl p-6 border border-gray-800 hover:border-primary/50 transition-all">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-primary to-primary/50 rounded-xl flex items-center justify-center">
+                  <span className="text-navy font-bold text-lg">美</span>
+                </div>
+                <div>
+                  <h3 className="font-bold text-white">美丽医美诊所</h3>
+                  <p className="text-gray-500 text-sm">上海 · 医美</p>
+                </div>
+              </div>
+              <div className="mb-4">
+                <div className="text-3xl font-bold text-primary mb-1">+340%</div>
+                <p className="text-gray-400 text-sm">AI 可见度提升</p>
+              </div>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                "部署后 60 天，从 AI 搜索完全不可见到每周 30+ 精准咨询，ROI 超过 500%"
+              </p>
+            </div>
+
+            {/* Case 2 */}
+            <div className="bg-navy-lighter rounded-2xl p-6 border border-gray-800 hover:border-primary/50 transition-all">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-danger to-danger/50 rounded-xl flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">齿</span>
+                </div>
+                <div>
+                  <h3 className="font-bold text-white">Expert Dental</h3>
+                  <p className="text-gray-500 text-sm">深圳 · 口腔</p>
+                </div>
+              </div>
+              <div className="mb-4">
+                <div className="text-3xl font-bold text-danger mb-1">$2.4M</div>
+                <p className="text-gray-400 text-sm">挽回年度损失</p>
+              </div>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                "原本每年被 AI 导流损失超 200 万，现在我们是 ChatGPT 推荐的 Top 3 牙科诊所"
+              </p>
+            </div>
+
+            {/* Case 3 */}
+            <div className="bg-navy-lighter rounded-2xl p-6 border border-gray-800 hover:border-primary/50 transition-all">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-500/50 rounded-xl flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">整</span>
+                </div>
+                <div>
+                  <h3 className="font-bold text-white">雅致整形</h3>
+                  <p className="text-gray-500 text-sm">北京 · 整形</p>
+                </div>
+              </div>
+              <div className="mb-4">
+                <div className="text-3xl font-bold text-orange-400 mb-1">85%</div>
+                <p className="text-gray-400 text-sm">高意向客户占比</p>
+              </div>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                "通过 GEO 优化，从 Perplexity 来的客户质量极高，转化率是传统 SEO 的 3 倍"
+              </p>
+            </div>
+          </div>
+
+          {/* Stats Row */}
+          <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="text-center">
+              <div className="text-4xl font-bold text-primary mb-2">50+</div>
+              <p className="text-gray-400 text-sm">服务医疗机构</p>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-primary mb-2">$12M+</div>
+              <p className="text-gray-400 text-sm">为客户挽回损失</p>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-primary mb-2">89%</div>
+              <p className="text-gray-400 text-sm">AI 可见度平均提升</p>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-primary mb-2">4.9/5</div>
+              <p className="text-gray-400 text-sm">客户满意度</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
