@@ -162,7 +162,7 @@ export default function AIOptimizedContentPage() {
           <p className="text-gray-300 mb-4">Here's how we rewrote a client's dental implant page to optimize for AI citation:</p>
 
           <div className="bg-white/5 rounded-xl p-6 my-6">
-            <h4 className="font-semibold text-primary mb-3">Before (Traditional SEO)>/h4>
+            <h4 className="font-semibold text-primary mb-3">Before (Traditional SEO)</h4>
             <p className="text-gray-400 text-sm italic">
               "Our dental implant services are the best in Miami. We use state-of-the-art technology and 
               have years of experience. Contact us today for a consultation."
