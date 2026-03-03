@@ -596,9 +596,9 @@ Most medical practices don't realize they're losing thousands monthly to AI-dive
 
 ## The Formula
 
-```
+\`\`\`
 Monthly AI Queries x Capture Rate x Conversion Rate x Average Value = Revenue Impact
-```
+\`\`\`
 
 ## Average Medical Practice Example
 

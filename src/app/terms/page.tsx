@@ -113,7 +113,7 @@ export default function TermsPage() {
           </div>
 
           <div>
-            <h2 className="text-xl font-bold mb-4 text-primary">9. Termination>/h2>
+            <h2 className="text-xl font-bold mb-4 text-primary">9. Termination</h2>
             <p className="text-gray-300 leading-relaxed">
               Either party may terminate the agreement with 30 days written notice. Upon termination, 
               all completed work will be delivered to the client. Outstanding payments for completed 
