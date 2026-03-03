@@ -2,7 +2,14 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { createClient } from '@supabase/supabase-js';
 import { Mail, ArrowRight, Send, Check, Loader2 } from "lucide-react";
+
+// Initialize Supabase client with ANON key (safe for frontend)
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
+
+const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -23,18 +30,62 @@ export default function ContactPage() {
     };
 
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+      // Get client IP
+      const ipResponse = await fetch('https://api.ipify.org?format=json').catch(() => null);
+      const ip = ipResponse ? (await ipResponse.json()).ip : 'unknown';
 
-      const result = await response.json();
+      // Save to Supabase directly from frontend
+      const { data: submission, error: dbError } = await supabase
+        .from('contact_submissions')
+        .insert([
+          {
+            name: data.name,
+            email: data.email,
+            subject: data.subject,
+            message: data.message,
+            ip_address: ip,
+            user_agent: navigator.userAgent,
+            source: 'website',
+            status: 'new'
+          }
+        ])
+        .select()
+        .single();
 
-      if (!response.ok) {
-        throw new Error(result.error || "Failed to send message");
+      if (dbError) {
+        console.error('Database error:', dbError);
+        throw new Error('Failed to save your message. Please try again.');
+      }
+
+      // Send email notification via Resend (from client side)
+      // Note: In production, you might want to use a serverless function for this
+      // But for now, we'll skip email if Resend fails
+      try {
+        await fetch('https://api.resend.com/emails', {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${process.env.NEXT_PUBLIC_RESEND_API_KEY || ''}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            from: 'StackMatrices Contact <contact@stackmatrices.com>',
+            to: 'sam.wang01@icloud.com',
+            subject: `New Contact: ${data.subject}`,
+            html: `
+              <h2>New Contact Form Submission</h2>
+              <p><strong>Name:</strong> ${data.name}</p>
+              <p><strong>Email:</strong> ${data.email}</p>
+              <p><strong>Subject:</strong> ${data.subject}</p>
+              <p><strong>Message:</strong></p>
+              <p>${data.message.replace(/\n/g, '<br>')}</p>
+              <hr>
+              <p><small>ID: ${submission.id}</small></p>
+            `,
+            reply_to: data.email,
+          }),
+        });
+      } catch (emailErr) {
+        console.log('Email notification skipped:', emailErr);
       }
 
       setIsSubmitted(true);
