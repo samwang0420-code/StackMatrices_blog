@@ -1,0 +1,136 @@
+{
+  "iterations": [
+    {
+      "id": "tech-001",
+      "title": "Blog System Database Migration",
+      "description": "Migrate static blog pages to database-driven dynamic rendering. Currently 9 articles are hardcoded as .tsx files.",
+      "category": "Backend",
+      "priority": "high",
+      "status": "in_progress",
+      "estimated_hours": 8,
+      "tags": ["supabase", "nextjs", "database", "migration"],
+      "acceptance_criteria": [
+        "Blog list fetches from API",
+        "Dynamic article routes",
+        "Markdown rendering"
+      ],
+      "project": "StackMatrices"
+    },
+    {
+      "id": "tech-002",
+      "title": "Case Studies Dynamic Rendering",
+      "description": "Move case studies from hardcoded constants to database. Need case_studies table with results as JSON.",
+      "category": "Backend",
+      "priority": "high",
+      "status": "planned",
+      "estimated_hours": 6,
+      "tags": ["database", "schema", "migration", "cases"]
+    },
+    {
+      "id": "tech-003",
+      "title": "Performance Optimization Bundle",
+      "description": "Address Core Web Vitals and loading performance. Bundle size reduction and image optimization.",
+      "category": "Performance",
+      "priority": "high",
+      "status": "planned",
+      "estimated_hours": 12,
+      "tags": ["performance", "cwv", "bundle", "optimization"]
+    },
+    {
+      "id": "tech-004",
+      "title": "Search Functionality Implementation",
+      "description": "Add full-text search across blog articles and case studies.",
+      "category": "Feature",
+      "priority": "medium",
+      "status": "planned",
+      "estimated_hours": 10,
+      "tags": ["search", "fulltext", "algolia", "postgres"]
+    },
+    {
+      "id": "tech-005",
+      "title": "Content Management Dashboard",
+      "description": "Create admin interface for managing blog articles without code changes.",
+      "category": "Frontend",
+      "priority": "medium",
+      "status": "planned",
+      "estimated_hours": 16,
+      "tags": ["admin", "cms", "dashboard", "crud"]
+    },
+    {
+      "id": "tech-006",
+      "title": "Content Monitoring System Enhancement",
+      "description": "Improve Python content monitor with error handling and auto-publishing.",
+      "category": "Automation",
+      "priority": "medium",
+      "status": "in_progress",
+      "estimated_hours": 10,
+      "tags": ["python", "cron", "scraping", "automation"]
+    },
+    {
+      "id": "tech-007",
+      "title": "Analytics Dashboard v2",
+      "description": "Build comprehensive analytics dashboard with AI visibility metrics.",
+      "category": "Analytics",
+      "priority": "medium",
+      "status": "planned",
+      "estimated_hours": 20,
+      "tags": ["analytics", "dashboard", "metrics", "visualization"]
+    },
+    {
+      "id": "tech-008",
+      "title": "Newsletter Subscription System",
+      "description": "Build email newsletter for blog subscribers with automated digests.",
+      "category": "Feature",
+      "priority": "low",
+      "status": "backlog",
+      "estimated_hours": 14,
+      "tags": ["newsletter", "email", "marketing", "automation"]
+    },
+    {
+      "id": "tech-009",
+      "title": "A/B Testing Framework",
+      "description": "Implement A/B testing for landing pages and CTAs.",
+      "category": "Growth",
+      "priority": "low",
+      "status": "backlog",
+      "estimated_hours": 12,
+      "tags": ["ab-testing", "growth", "analytics", "experimentation"]
+    },
+    {
+      "id": "tech-010",
+      "title": "Mobile App PWA Features",
+      "description": "Enhance PWA capabilities for offline reading and push notifications.",
+      "category": "Mobile",
+      "priority": "low",
+      "status": "backlog",
+      "estimated_hours": 8,
+      "tags": ["pwa", "mobile", "offline", "notifications"]
+    }
+  ],
+  "summary": {
+    "total": 10,
+    "total_hours": 116,
+    "by_status": {
+      "in_progress": 2,
+      "planned": 5,
+      "backlog": 3
+    },
+    "by_priority": {
+      "high": 3,
+      "medium": 4,
+      "low": 3
+    },
+    "by_category": {
+      "Backend": 2,
+      "Frontend": 1,
+      "Performance": 1,
+      "Feature": 2,
+      "Automation": 1,
+      "Analytics": 1,
+      "Growth": 1,
+      "Mobile": 1
+    }
+  },
+  "project": "StackMatrices",
+  "last_updated": "2026-03-02T15:00:00Z"
+}
