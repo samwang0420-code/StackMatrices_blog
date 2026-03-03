@@ -1,9 +1,51 @@
 'use client';
 
 import Link from "next/link";
-import { Mail, ArrowRight, Send } from "lucide-react";
+import { useState } from "react";
+import { Mail, ArrowRight, Send, Check, Loader2 } from "lucide-react";
 
 export default function ContactPage() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setError("");
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get("name") as string,
+      email: formData.get("email") as string,
+      subject: formData.get("subject") as string,
+      message: formData.get("message") as string,
+    };
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || "Failed to send message");
+      }
+
+      setIsSubmitted(true);
+      (e.target as HTMLFormElement).reset();
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "An unexpected error occurred");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-navy via-navy-light to-navy-dark text-white py-16 px-6">
       <div className="max-w-4xl mx-auto">
@@ -67,90 +109,113 @@ export default function ContactPage() {
 
           {/* Right - Contact Form */}
           <div className="bg-white rounded-2xl p-8 text-gray-900">
-            <h2 className="text-2xl font-bold mb-2">Send Us a Message</h2>
-            <p className="text-gray-500 mb-6">
-              Fill out the form below and we'll get back to you within 24 hours.
-            </p>
-
-            <form 
-              className="space-y-4"
-              onSubmit={(e) => {
-                e.preventDefault();
-                const formData = new FormData(e.currentTarget);
-                const subject = `Contact Form: ${formData.get('subject')}`;
-                const body = `
-Name: ${formData.get('name')}
-Email: ${formData.get('email')}
-
-Message:
-${formData.get('message')}
-                `.trim();
-                window.location.href = `mailto:sam.wang01@icloud.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-              }}
-            >
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Name *</label>
-                  <input
-                    type="text"
-                    name="name"
-                    required
-                    className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:border-primary focus:outline-none"
-                    placeholder="Your name"
-                  />
+            {isSubmitted ? (
+              // Success State
+              <div className="text-center py-8">
+                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Check className="w-8 h-8 text-green-600" />
                 </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Email *</label>
-                  <input
-                    type="email"
-                    name="email"
-                    required
-                    className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:border-primary focus:outline-none"
-                    placeholder="your@email.com"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Subject *</label>
-                <select
-                  name="subject"
-                  required
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:border-primary focus:outline-none"
+                <h3 className="text-2xl font-bold mb-2">Message Sent!</h3>
+                <p className="text-gray-600 mb-6">
+                  Thank you for reaching out. We'll get back to you within 24 hours.
+                </p>
+                <button
+                  onClick={() => setIsSubmitted(false)}
+                  className="text-primary hover:underline font-medium"
                 >
-                  <option value="">Select...</option>
-                  <option value="General Inquiry">General Inquiry</option>
-                  <option value="Service Question">Service Question</option>
-                  <option value="Partnership">Partnership</option>
-                  <option value="Support">Support</option>
-                </select>
+                  Send another message
+                </button>
               </div>
+            ) : (
+              // Form State
+              <>
+                <h2 className="text-2xl font-bold mb-2">Send Us a Message</h2>
+                <p className="text-gray-500 mb-6">
+                  Fill out the form below and we'll get back to you within 24 hours.
+                </p>
 
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Message *</label>
-                <textarea
-                  name="message"
-                  required
-                  rows={4}
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:border-primary focus:outline-none resize-none"
-                  placeholder="How can we help you?"
-                />
-              </div>
+                {error && (
+                  <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-4">
+                    <p className="text-red-600 text-sm">{error}</p>
+                  </div>
+                )}
 
-              <button
-                type="submit"
-                className="w-full bg-primary hover:bg-primary-hover text-white font-semibold py-3 rounded-lg flex items-center justify-center gap-2 transition-colors"
-              >
-                <Send className="w-5 h-5" /> Send Message
-              </button>
-            </form>
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Name *</label>
+                      <input
+                        type="text"
+                        name="name"
+                        required
+                        className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:border-primary focus:outline-none"
+                        placeholder="Your name"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Email *</label>
+                      <input
+                        type="email"
+                        name="email"
+                        required
+                        className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:border-primary focus:outline-none"
+                        placeholder="your@email.com"
+                      />
+                    </div>
+                  </div>
 
-            <p className="text-xs text-gray-500 text-center mt-4">
-              Prefer to schedule?{" "}
-              <Link href="/analysis-request" className="text-primary hover:underline">
-                Request a free audit
-              </Link>
-            </p>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Subject *</label>
+                    <select
+                      name="subject"
+                      required
+                      className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:border-primary focus:outline-none"
+                    >
+                      <option value="">Select...</option>
+                      <option value="General Inquiry">General Inquiry</option>
+                      <option value="Service Question">Service Question</option>
+                      <option value="Partnership">Partnership</option>
+                      <option value="Support">Support</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Message *</label>
+                    <textarea
+                      name="message"
+                      required
+                      rows={4}
+                      className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:border-primary focus:outline-none resize-none"
+                      placeholder="How can we help you?"
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full bg-primary hover:bg-primary-hover disabled:bg-gray-400 text-white font-semibold py-3 rounded-lg flex items-center justify-center gap-2 transition-colors"
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="w-5 h-5 animate-spin" />
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-5 h-5" /> Send Message
+                      </>
+                    )}
+                  </button>
+                </form>
+
+                <p className="text-xs text-gray-500 text-center mt-4">
+                  Prefer to schedule?{" "}
+                  <Link href="/analysis-request" className="text-primary hover:underline">
+                    Request a free audit
+                  </Link>
+                </p>
+              </>
+            )}
           </div>
         </div>
       </div>
