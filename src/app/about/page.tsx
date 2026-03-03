@@ -53,9 +53,13 @@ const TEAM = [
 const MILESTONES = [
   { year: "2023", event: "StackMatrices founded" },
   { year: "2023", event: "First client: Beverly Hills plastic surgery" },
-  { year: "2024", event: "Reached 50+ medical practices served" },
-  { year: "2024", event: "$12M+ revenue recovered for clients" },
-  { year: "2024", event: "Expanded to multi-location chains" },
+  { year: "2026", event: "Reached 50+ medical practices served" },
+  { year: "2026", event: "$12M+ revenue recovered for clients" },
+  { year: "2026", event: "Expanded to multi-location chains" },
+  { year: "2025", event: "Launched AI monitoring platform" },
+  { year: "2025", event: "100+ practices across US & Canada" },
+  { year: "2026", event: "Industry monitor system deployed" },
+  { year: "2026", event: "Expanded to dental and fertility clinics" },
 ];
 
 export default function AboutPage() {

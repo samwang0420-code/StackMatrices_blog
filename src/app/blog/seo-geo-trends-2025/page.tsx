@@ -63,7 +63,7 @@ export default function SEOTrends2025Page() {
             <ul className="space-y-2 text-gray-300">
               <li>Google processes 8.5 billion searches daily but faces growing competition from AI-native search platforms</li>
               <li>58-60% of searches now end without a click, forcing brands to optimize for visibility within search results</li>
-              <li>The GEO market is projected to grow from $886 million in 2024 to $7.3 billion by 2031</li>
+              <li>The GEO market is projected to grow from $886 million in 2026 to $7.3 billion by 2031</li>
               <li>ChatGPT holds 59.7% of the AI search market, with Perplexity reaching 153 million monthly visits</li>
               <li>86% of SEO professionals now use AI tools in their workflow</li>
             </ul>
@@ -160,7 +160,7 @@ export default function SEOTrends2025Page() {
           <div className="grid grid-cols-3 gap-4 my-8">
             <div className="bg-white/5 rounded-xl p-6 text-center">
               <p className="text-3xl font-bold text-primary mb-1">$886M</p>
-              <p className="text-xs text-gray-400">GEO Market 2024</p>
+              <p className="text-xs text-gray-400">GEO Market 2026</p>
             </div>
             <div className="bg-white/5 rounded-xl p-6 text-center">
               <p className="text-3xl font-bold text-primary mb-1">$7.3B</p>

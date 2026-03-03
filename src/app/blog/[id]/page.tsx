@@ -20,7 +20,7 @@ const BLOG_POSTS: Record<string, {
     readTime: "8 min read",
     content: `## The $14 Billion Shift Nobody's Talking About
 
-In 2024, something fundamental changed about how patients find medical practices. It wasn't a Google algorithm update. It wasn't a new advertising platform. It was the rise of AI answer engines.
+In 2026, something fundamental changed about how patients find medical practices. It wasn't a Google algorithm update. It wasn't a new advertising platform. It was the rise of AI answer engines.
 
 ChatGPT, Claude, Perplexity, and Google's Search Generative Experience (SGE) are now the first stop for an estimated 47% of high-intent medical queries.
 
