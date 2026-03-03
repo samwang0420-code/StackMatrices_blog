@@ -1,14 +1,21 @@
 import { createClient } from '@supabase/supabase-js';
 import { NextResponse } from 'next/server';
 
-// Initialize Supabase client
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
-const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY || '';
-
-const supabase = createClient(supabaseUrl, supabaseServiceKey);
-
 // Resend API configuration
 const RESEND_API_KEY = process.env.RESEND_API_KEY || '';
+
+// Helper to get Supabase client (lazy initialization)
+function getSupabaseClient() {
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+  const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY || '';
+  
+  if (!supabaseUrl || !supabaseServiceKey) {
+    console.warn('Supabase credentials not configured');
+    return null;
+  }
+  
+  return createClient(supabaseUrl, supabaseServiceKey);
+}
 
 export async function POST(request: Request) {
   try {
@@ -27,30 +34,38 @@ export async function POST(request: Request) {
     const ip = request.headers.get('x-forwarded-for') || 'unknown';
     const userAgent = request.headers.get('user-agent') || 'unknown';
 
-    // Save to Supabase
-    const { data: submission, error: dbError } = await supabase
-      .from('contact_submissions')
-      .insert([
-        {
-          name,
-          email,
-          subject,
-          message,
-          ip_address: ip,
-          user_agent: userAgent,
-          source: 'website',
-          status: 'new'
-        }
-      ])
-      .select()
-      .single();
+    // Get Supabase client
+    const supabase = getSupabaseClient();
+    
+    let submissionId = null;
 
-    if (dbError) {
-      console.error('Database error:', dbError);
-      return NextResponse.json(
-        { error: 'Failed to save submission' },
-        { status: 500 }
-      );
+    // Save to Supabase if configured
+    if (supabase) {
+      const { data: submission, error: dbError } = await supabase
+        .from('contact_submissions')
+        .insert([
+          {
+            name,
+            email,
+            subject,
+            message,
+            ip_address: ip,
+            user_agent: userAgent,
+            source: 'website',
+            status: 'new'
+          }
+        ])
+        .select()
+        .single();
+
+      if (dbError) {
+        console.error('Database error:', dbError);
+        // Don't fail - still try to send email
+      } else {
+        submissionId = submission?.id;
+      }
+    } else {
+      console.log('Supabase not configured, skipping database save');
     }
 
     // Send email notification via Resend
@@ -75,21 +90,23 @@ export async function POST(request: Request) {
               <p>${message.replace(/\n/g, '<br>')}</p>
               <hr>
               <p><small>Submitted at: ${new Date().toISOString()}</small></p>
-              <p><small>View in dashboard: https://fixemvsckapejyfwphft.supabase.co</small></p>
+              ${supabase ? '<p><small>View in dashboard: https://fixemvsckapejyfwphft.supabase.co</small></p>' : ''}
             `,
             reply_to: email,
           }),
         });
       } catch (emailError) {
         console.error('Email sending error:', emailError);
-        // Don't fail the request if email fails, just log it
+        // Don't fail the request if email fails
       }
+    } else {
+      console.log('Resend not configured, skipping email notification');
     }
 
     return NextResponse.json({
       success: true,
       message: 'Thank you for your message. We will get back to you within 24 hours.',
-      id: submission.id
+      id: submissionId
     });
 
   } catch (error) {
