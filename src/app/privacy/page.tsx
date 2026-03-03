@@ -2,17 +2,17 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | StackMatrices",
-  description: "StackMatrices privacy policy - how we handle your data when you use our OpenClaw Skill Registry.",
+  description: "StackMatrices privacy policy - how we handle your data when you use our GEO optimization services.",
 };
 
 export default function PrivacyPage() {
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
+    <div className="min-h-screen bg-gradient-to-br from-navy via-navy-light to-navy-dark text-white">
       {/* Header */}
-      <section className="bg-gradient-to-br from-slate-900 to-slate-800 py-16">
-        <div className="max-w-4xl mx-auto px-6">
+      <section className="py-16 px-6">
+        <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl font-bold mb-4">Privacy Policy</h1>
-          <p className="text-slate-400">Last updated: February 2026</p>
+          <p className="text-gray-400">Last updated: March 2026</p>
         </div>
       </section>
 
@@ -20,89 +20,113 @@ export default function PrivacyPage() {
       <section className="max-w-4xl mx-auto px-6 py-12">
         <div className="space-y-12">
           <div>
-            <h2 className="text-xl font-bold mb-4 text-emerald-400">1. Introduction</h2>
-            <p className="text-slate-300 leading-relaxed">
+            <h2 className="text-xl font-bold mb-4 text-primary">1. Introduction</h2>
+            <p className="text-gray-300 leading-relaxed">
               StackMatrices ("we", "our", "us") is committed to protecting your privacy. This Privacy Policy 
-              explains how we collect, use, and safeguard your information when you use our OpenClaw Skill 
-              Registry and related services.
+              explains how we collect, use, and safeguard your information when you use our GEO optimization 
+              services for medical practices.
             </p>
           </div>
 
           <div>
-            <h2 className="text-xl font-bold mb-4 text-emerald-400">2. Information We Collect</h2>
-            <div className="space-y-3 text-slate-300">
-              <p><strong className="text-white">Account Information:</strong> Email address, password (encrypted), and account preferences.</p>
-              <p><strong className="text-white">License Keys:</strong> Records of purchased skills and their usage.</p>
-              <p><strong className="text-white">API Usage:</strong> Logs of skill invocations for billing and service improvement.</p>
-              <p><strong className="text-white">Payment Data:</strong> Payment screenshots for verification (not stored permanently).</p>
+            <h2 className="text-xl font-bold mb-4 text-primary">2. Information We Collect</h2>
+            <div className="space-y-3 text-gray-300">
+              <p><strong className="text-white">Practice Information:</strong> Practice name, website URL, 
+              location, services offered, and contact details.</p>
+              
+              <p><strong className="text-white">Website Data:</strong> Access credentials for website platforms 
+              (WordPress, hosting, etc.) to implement technical optimizations.</p>
+              
+              <p><strong className="text-white">Analytics Data:</strong> Google Analytics, Search Console, and other 
+              performance data to assess current visibility and track improvements.</p>
+              
+              <p><strong className="text-white">Communication Records:</strong> Emails, meeting notes, and 
+              other correspondence related to your project.</p>
             </div>
           </div>
 
           <div>
-            <h2 className="text-xl font-bold mb-4 text-emerald-400">3. How We Use Your Information</h2>
-            <ul className="space-y-2 text-slate-300 list-disc list-inside">
-              <li>Provide and maintain our Skill Registry services</li>
-              <li>Process payments and verify transactions</li>
-              <li>Send license keys and account notifications</li>
-              <li>Monitor service usage for billing</li>
-              <li>Improve our skills and user experience</li>
-              <li>Respond to support requests</li>
+            <h2 className="text-xl font-bold mb-4 text-primary">3. How We Use Your Information</h2>
+            <ul className="space-y-2 text-gray-300 list-disc list-inside">
+              <li>Deliver GEO optimization services as outlined in our agreement</li>
+              <li>Implement technical changes to your website and online presence</li>
+              <li>Monitor and report on AI visibility improvements</li>
+              <li>Communicate project updates and request necessary approvals</li>
+              <li>Maintain accurate records for billing and accounting</li>
+              <li>Improve our services based on anonymized aggregate data</li>
             </ul>
           </div>
 
           <div>
-            <h2 className="text-xl font-bold mb-4 text-emerald-400">4. Data Security</h2>
-            <p className="text-slate-300 leading-relaxed">
-              We implement industry-standard security measures:
+            <h2 className="text-xl font-bold mb-4 text-primary">4. Data Security</h2>
+            <p className="text-gray-300 leading-relaxed">
+              We implement industry-standard security measures to protect your information:
             </p>
-            <ul className="space-y-2 text-slate-300 list-disc list-inside mt-3">
-              <li>All data transmitted via HTTPS/SSL encryption</li>
-              <li>Passwords hashed using bcrypt</li>
-              <li>Supabase security for database operations</li>
-              <li>Regular security audits of our infrastructure</li>
-              <li>No storage of sensitive payment information</li>
+            <ul className="space-y-2 text-gray-300 list-disc list-inside mt-3">
+              <li>Encrypted storage for all credentials and sensitive data</li>
+              <li>Access limited to authorized team members only</li>
+              <li>Regular security audits and updates</li>
+              <li>Secure communication channels for all client interactions</li>
             </ul>
           </div>
 
           <div>
-            <h2 className="text-xl font-bold mb-4 text-emerald-400">5. Third-Party Services</h2>
-            <p className="text-slate-300 leading-relaxed">
-              We use the following third-party services:
+            <h2 className="text-xl font-bold mb-4 text-primary">5. Third-Party Services</h2>
+            <p className="text-gray-300 leading-relaxed">
+              We use the following third-party services to deliver our services:
             </p>
-            <ul className="space-y-2 text-slate-300 list-disc list-inside mt-3">
-              <li><strong className="text-white">Supabase:</strong> For authentication and database services</li>
-              <li><strong className="text-white">Apify:</strong> For data extraction services (when using our skills)</li>
-              <li><strong className="text-white">OpenAI:</strong> For AI processing capabilities</li>
+            <ul className="space-y-2 text-gray-300 list-disc list-inside mt-3">
+              <li><strong className="text-white">Supabase:</strong> For secure data storage and project management</li>
+              <li><strong className="text-white">Vercel:</strong> For hosting and deployment</li>
+              <li><strong className="text-white">Google Analytics:</strong> For website performance analysis</li>
+            </ul>
+            <p className="text-gray-300 mt-3">
+              These services have their own privacy policies and security measures.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-bold mb-4 text-primary">6. Data Retention</h2>
+            <p className="text-gray-300 leading-relaxed">
+              We retain your information for the duration of our working relationship and for a reasonable 
+              period thereafter (typically 2 years) for legal and business purposes. You may request deletion 
+              of your data at any time after project completion.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-bold mb-4 text-primary">7. Your Rights</h2>
+            <p className="text-gray-300 leading-relaxed">You have the right to:</p>
+            <ul className="space-y-2 text-gray-300 list-disc list-inside mt-3">
+              <li>Access the personal information we hold about you</li>
+              <li>Request corrections to inaccurate information</li>
+              <li>Request deletion of your data (subject to legal requirements)</li>
+              <li>Opt out of marketing communications</li>
             </ul>
           </div>
 
           <div>
-            <h2 className="text-xl font-bold mb-4 text-emerald-400">6. Your Rights</h2>
-            <p className="text-slate-300 leading-relaxed">
-              You have the right to:
-            </p>
-            <ul className="space-y-2 text-slate-300 list-disc list-inside mt-3">
-              <li>Access your personal data</li>
-              <li>Request correction of inaccurate data</li>
-              <li>Request deletion of your account and data</li>
-              <li>Export your data</li>
-            </ul>
-          </div>
-
-          <div>
-            <h2 className="text-xl font-bold mb-4 text-emerald-400">7. Data Retention</h2>
-            <p className="text-slate-300 leading-relaxed">
-              We retain your data as long as your account is active. Upon account deletion, we remove 
-              personal information within 30 days. Aggregated usage data may be retained for analytics 
-              purposes in anonymized form.
+            <h2 className="text-xl font-bold mb-4 text-primary">8. HIPAA and Healthcare Compliance</h2>
+            <p className="text-gray-300 leading-relaxed">
+              While we work with medical practices, we do not handle Protected Health Information (PHI) as 
+              defined by HIPAA. Our services focus on public-facing marketing and visibility optimization. 
+              We maintain appropriate safeguards for all client data.
             </p>
           </div>
 
           <div>
-            <h2 className="text-xl font-bold mb-4 text-emerald-400">8. Contact Us</h2>
-            <p className="text-slate-300 leading-relaxed">
+            <h2 className="text-xl font-bold mb-4 text-primary">9. Changes to This Policy</h2>
+            <p className="text-gray-300 leading-relaxed">
+              We may update this privacy policy from time to time. We will notify you of any significant 
+              changes via email. Continued use of our services after changes constitutes acceptance of the updated policy.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-bold mb-4 text-primary">10. Contact Us</h2>
+            <p className="text-gray-300 leading-relaxed">
               For privacy-related questions or requests, contact us at:{" "}
-              <a href="mailto:sam.wang01@icloud.com" className="text-emerald-400 hover:underline">
+              <a href="mailto:sam.wang01@icloud.com" className="text-primary hover:underline">
                 sam.wang01@icloud.com
               </a>
             </p>

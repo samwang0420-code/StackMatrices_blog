@@ -48,7 +48,7 @@ export function Footer() {
 
         {/* Bottom */}
         <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-gray-500 text-sm">© 2024 Stackmatrices Intelligence. All rights reserved.</p>
+          <p className="text-gray-500 text-sm">© 2026 Stackmatrices Intelligence. All rights reserved.</p>
           <p className="text-gray-600 text-xs">
             We may earn a commission from referrals to third-party services, at no additional cost to your practice.
           </p>
