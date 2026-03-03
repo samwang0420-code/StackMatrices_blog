@@ -58,7 +58,20 @@ def view_latest_content():
         print(f"\n{'='*70}")
         print("📋 FULL TWEET (Copy this):")
         print("="*70)
-        if data.get('full_tweet'):
+        # Show full thread
+        if data.get('type') == 'thread' and data.get('tweets'):
+            print(f"\n{'='*70}")
+            print(f"📝 THREAD ({data.get('tweet_count')} tweets)")
+            print(f"Topic: {data.get('topic', 'N/A')}")
+            print(f"{'='*70}")
+            
+            for i, tweet in enumerate(data['tweets'], 1):
+                print(f"\n--- Tweet {i}/{data['tweet_count']} ---")
+                print(tweet)
+            
+            if data.get('hashtags'):
+                print(f"\n#️⃣ HASHTAGS: {data['hashtags']}")
+        elif data.get('full_tweet'):
             print(data['full_tweet'])
         else:
             full = f"{data.get('hook', '')}\n\n{data.get('body', '')}"
