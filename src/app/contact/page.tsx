@@ -29,35 +29,12 @@ export default function ContactPage() {
       message: formData.get("message") as string,
     };
 
-    try {
-      // Get client IP
-      const ipResponse = await fetch('https://api.ipify.org?format=json').catch(() => null);
-      const ip = ipResponse ? (await ipResponse.json()).ip : 'unknown';
-
-      // Save to Supabase directly from frontend
-      const { data: submission, error: dbError } = await supabase
-        .from('contact_submissions')
-        .insert([
-          {
-            name: data.name,
-            email: data.email,
-            subject: data.subject,
-            message: data.message,
-            ip_address: ip,
-            user_agent: navigator.userAgent,
-            source: 'website',
-            status: 'new'
-          }
-        ])
-        .select()
-        .single();
-
-      if (dbError) {
-        console.error('Database error:', dbError);
-        // Fallback: show email link
-        window.location.href = `mailto:sam.wang01@icloud.com?subject=${encodeURIComponent(data.subject)}&body=${encodeURIComponent('Name: ' + data.name + '\nEmail: ' + data.email + '\n\n' + data.message)}`;
-        return;
-      }
+    // 直接打开邮件客户端
+    const mailto = `mailto:sam.wang01@icloud.com?subject=${encodeURIComponent(data.subject)}&body=${encodeURIComponent('Name: ' + data.name + '\nEmail: ' + data.email + '\n\n' + data.message)}`;
+    window.location.href = mailto;
+    
+    setIsSubmitting(false);
+    setIsSubmitted(true);
 
       // Send email notification via Resend (from client side)
       // Note: In production, you might want to use a serverless function for this
