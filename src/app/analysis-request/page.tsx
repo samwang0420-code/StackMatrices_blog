@@ -50,25 +50,30 @@ export default function AnalysisRequestPage() {
     };
 
     try {
-      const response = await fetch('https://dashboard.gspr-hub.site/api/analyze', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'X-API-Key': 'geo-internal-samwang0420',
-        },
-        body: JSON.stringify(payload),
-      });
+      // 直接发邮件，不走数据库
+      const subject = `New GEO Analysis Request: ${payload.businessName}`;
+      const body = `
+Website: ${payload.website}
+Business: ${payload.businessName}
+Address: ${payload.address}
+Industry: ${payload.industry}
 
-      if (response.ok) {
-        setIsSuccess(true);
-        window.scrollTo(0, 0);
-      } else {
-        const data = await response.json().catch(() => ({}));
-        setError(data.message || 'Failed to submit. Please try again.');
-      }
-    } catch (err) {
-      setError('Network error. Please check your connection and try again.');
-    } finally {
+Keywords: ${payload.keywords.join(', ')}
+Competitors: ${payload.competitors.join(', ')}
+
+Contact: ${payload.contactName} (${payload.jobTitle})
+Email: ${payload.email}
+Phone: ${payload.phone}
+WhatsApp: ${payload.whatsapp}
+
+Notes: ${payload.notes}
+      `.trim();
+      
+      window.location.href = `mailto:sam.wang01@icloud.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      
+      setIsSuccess(true);
+      window.scrollTo(0, 0);
+    }
       setIsSubmitting(false);
     }
   };
