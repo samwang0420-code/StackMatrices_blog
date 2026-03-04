@@ -317,27 +317,27 @@ export function HeroSection() {
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-mono mb-6">
               <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
-              OPENCLAW_SKILL_REGISTRY
+              GEO FOR MEDICAL PRACTICES
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              The Premier{" "}
-              <span className="text-emerald-400">OpenClaw Skill</span>
+              Get More Patients with{" "}
+              <span className="text-emerald-400">AI Search</span>
               <br />
-              Registry for Global Intelligence
+              Optimization
             </h1>
             
             <p className="text-lg md:text-xl text-slate-400 mb-8 leading-relaxed">
-              We design high-performance, ready-to-deploy Skills for the OpenClaw ecosystem. 
-              Transform your AI agent into a strategic business asset.
+              We help medical practices appear in ChatGPT, Perplexity, and Google AI Overviews. 
+              Capture AI-referred patients before your competitors do.
             </p>
             
             <div className="flex flex-wrap gap-4">
               <Link 
-                href="/skills" 
+                href="/analysis-request" 
                 className="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-4 rounded-xl font-semibold transition-all"
               >
-                Browse Skill Registry
+                Get Free Analysis
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
@@ -346,7 +346,7 @@ export function HeroSection() {
                 href="/how-it-works" 
                 className="inline-flex items-center gap-2 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white px-8 py-4 rounded-xl font-semibold transition-all"
               >
-                Deployment Guide
+                See How It Works
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
@@ -356,15 +356,15 @@ export function HeroSection() {
             <div className="mt-12 flex flex-wrap gap-8 text-sm text-slate-500">
               <div className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
-                Zero-Code Deployment
+                ChatGPT & Perplexity Optimization
               </div>
               <div className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
-                MCP Server Integration
+                Google AI Overviews Coverage
               </div>
               <div className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
-                24/7 Autonomous Operation
+                Free Analysis Report
               </div>
             </div>
           </div>
