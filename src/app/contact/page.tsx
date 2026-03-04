@@ -54,7 +54,9 @@ export default function ContactPage() {
 
       if (dbError) {
         console.error('Database error:', dbError);
-        throw new Error('Failed to save your message. Please try again.');
+        // Fallback: show email link
+        window.location.href = `mailto:sam.wang01@icloud.com?subject=${encodeURIComponent(data.subject)}&body=${encodeURIComponent('Name: ' + data.name + '\nEmail: ' + data.email + '\n\n' + data.message)}`;
+        return;
       }
 
       // Send email notification via Resend (from client side)
