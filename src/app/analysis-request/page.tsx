@@ -2,11 +2,17 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { createClient } from '@supabase/supabase-js';
 import { 
   ArrowLeft, Building2, Globe, Mail, User, Target, Users, 
   Search, Send, CheckCircle, Loader2, MapPin, Phone, MessageCircle,
   Briefcase, Stethoscope
 } from 'lucide-react';
+
+// Initialize Supabase
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
+const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 const INDUSTRIES = [
   { value: 'medical-aesthetics', label: 'Medical Aesthetics' },
@@ -69,7 +75,23 @@ WhatsApp: ${payload.whatsapp}
 Notes: ${payload.notes}
       `.trim();
       
-      window.location.href = `mailto:sam.wang01@icloud.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      // Save to Supabase
+      const { error: dbError } = await supabase
+        .from('contact_submissions')
+        .insert([{
+          name: payload.contactName,
+          email: payload.email,
+          subject: `GEO Analysis Request: ${payload.businessName}`,
+          message: body,
+          source: 'analysis-request',
+          status: 'new'
+        }]);
+
+      if (dbError) {
+        console.error('Database error:', dbError);
+        // Fallback to email
+        window.location.href = `mailto:sam.wang01@icloud.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      }
       
       setIsSuccess(true);
       window.scrollTo(0, 0);

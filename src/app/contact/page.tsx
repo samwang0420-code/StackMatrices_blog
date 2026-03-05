@@ -29,50 +29,28 @@ export default function ContactPage() {
       message: formData.get("message") as string,
     };
 
-    // 直接打开邮件客户端
-    const mailto = `mailto:sam.wang01@icloud.com?subject=${encodeURIComponent(data.subject)}&body=${encodeURIComponent('Name: ' + data.name + '\nEmail: ' + data.email + '\n\n' + data.message)}`;
-    window.location.href = mailto;
-    
-    setIsSubmitting(false);
+    // Save to Supabase first
+    const { error: dbError } = await supabase
+      .from('contact_submissions')
+      .insert([{
+        name: data.name,
+        email: data.email,
+        subject: data.subject,
+        message: data.message,
+        source: 'website',
+        status: 'new'
+      }]);
+
+    if (dbError) {
+      console.error('Database error:', dbError);
+      // Fallback to email
+      window.location.href = `mailto:sam.wang01@icloud.com?subject=${encodeURIComponent(data.subject)}&body=${encodeURIComponent('Name: ' + data.name + '\nEmail: ' + data.email + '\n\n' + data.message)}`;
+      return;
+    }
+
     setIsSubmitted(true);
-
-      // Send email notification via Resend (from client side)
-      // Note: In production, you might want to use a serverless function for this
-      // But for now, we'll skip email if Resend fails
-      try {
-        await fetch('https://api.resend.com/emails', {
-          method: 'POST',
-          headers: {
-            'Authorization': `Bearer ${process.env.NEXT_PUBLIC_RESEND_API_KEY || ''}`,
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            from: 'StackMatrices Contact <contact@stackmatrices.com>',
-            to: 'sam.wang01@icloud.com',
-            subject: `New Contact: ${data.subject}`,
-            html: `
-              <h2>New Contact Form Submission</h2>
-              <p><strong>Name:</strong> ${data.name}</p>
-              <p><strong>Email:</strong> ${data.email}</p>
-              <p><strong>Subject:</strong> ${data.subject}</p>
-              <p><strong>Message:</strong></p>
-              <p>${data.message.replace(/\n/g, '<br>')}</p>
-              <hr>
-              <p><small>ID: ${submission.id}</small></p>
-            `,
-            reply_to: data.email,
-          }),
-        });
-      } catch (emailErr) {
-        console.log('Email notification skipped:', emailErr);
-      }
-
-      setIsSubmitted(true);
-      (e.target as HTMLFormElement).reset();
-    } catch (err) {
-      setError(err instanceof Error ? err.message : "An unexpected error occurred");
-    } finally {
-      setIsSubmitting(false);
+    setIsSubmitting(false);
+  };
     }
   };
 
