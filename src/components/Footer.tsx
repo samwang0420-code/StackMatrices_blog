@@ -8,7 +8,7 @@ export function Footer() {
         {/* Compliance Badge */}
         <div className="flex items-center justify-center gap-2 text-sm text-gray-500 mb-8 pb-8 border-b border-gray-800">
           <Shield size={16} className="text-primary" />
-          Fully Compliant with Healthcare Privacy Standards (HIPAA/GDPR Equivalent Semantic Handling)
+          Privacy-conscious data handling
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
