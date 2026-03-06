@@ -51,7 +51,6 @@ export default function ContactPage() {
     setIsSubmitted(true);
     setIsSubmitting(false);
   };
-    }
   };
 
   return (
