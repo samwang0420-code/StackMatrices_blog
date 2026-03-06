@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Script from "next/script";
 import { ArrowRight, HelpCircle, Mail } from "lucide-react";
 
 const FAQ_CATEGORIES = [
@@ -130,75 +131,110 @@ const FAQ_CATEGORIES = [
   }
 ];
 
+// Generate FAQPage Schema
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": FAQ_CATEGORIES.flatMap(cat => 
+    cat.questions.map(q => ({
+      "@type": "Question",
+      "name": q.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": q.a
+      }
+    }))
+  )
+};
+
 export default function FAQPage() {
   return (
-    <div className="min-h-screen bg-navy text-white py-16 px-6">
-      <div className="max-w-4xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 mb-6">
-            <HelpCircle className="w-6 h-6 text-primary" />
-            <span className="text-primary text-sm font-semibold uppercase tracking-wider">FAQ</span>
-          </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Frequently Asked Questions</h1>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Everything you need to know about AI visibility, GEO, and transforming 
-            your medical practice's patient acquisition.
-          </p>
-        </div>
-
-        {/* FAQ Categories */}
-        <div className="space-y-16">
-          {FAQ_CATEGORIES.map((category, catIdx) => (
-            <div key={catIdx}>
-              <h2 className="text-2xl font-bold mb-8 pb-4 border-b border-gray-800">
-                {category.title}
-              </h2>
-              
-              <div className="space-y-6">
-                {category.questions.map((item, qIdx) => (
-                  <div 
-                    key={qIdx}
-                    className="bg-navy-light rounded-xl p-6 border border-gray-800"
-                  >
-                    <h3 className="font-semibold text-lg mb-3 text-white">
-                      {item.q}
-                    </h3>
-                    <p className="text-gray-400 leading-relaxed">
-                      {item.a}
-                    </p>
-                  </div>
-                ))}
-              </div>
+    <>
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <div className="min-h-screen bg-navy text-white py-16 px-6">
+        <div className="max-w-4xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 mb-6">
+              <HelpCircle className="w-6 h-6 text-primary" />
+              <span className="text-primary text-sm font-semibold uppercase tracking-wider">FAQ</span>
             </div>
-          ))}
-        </div>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">Frequently Asked Questions</h1>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Everything you need to know about AI visibility, GEO, and transforming 
+              your medical practice&apos;s patient acquisition.
+            </p>
+          </div>
 
-        {/* Contact CTA */}
-        <div className="mt-16 bg-gradient-to-r from-primary/10 to-danger/10 rounded-2xl p-8 border border-gray-800 text-center">
-          <h2 className="text-2xl font-bold mb-4">Still Have Questions?</h2>
-          <p className="text-gray-400 mb-6 max-w-xl mx-auto">
-            Can't find what you're looking for? Get in touch and we'll answer 
-            your specific questions about GEO for your practice.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="mailto:sam.wang01@icloud.com?subject=GEO Question"
-              className="inline-flex items-center justify-center gap-2 bg-navy-light hover:bg-navy-lighter text-white px-6 py-3 rounded-lg border border-gray-800 transition-colors"
-            >
-              <Mail size={16} />
-              Email Us
-            </a>
-            <Link
-              href="/audit"
-              className="inline-flex items-center justify-center gap-2 bg-danger hover:bg-danger-hover text-white px-6 py-3 rounded-lg font-semibold transition-colors"
-            >
-              Get Your Free Audit
-              <ArrowRight size={16} />
-            </Link>
+          {/* FAQ Categories */}
+          <div className="space-y-16">
+            {FAQ_CATEGORIES.map((category, catIdx) => (
+              <div key={catIdx}>
+                <h2 className="text-2xl font-bold mb-8 pb-4 border-b border-gray-800">
+                  {category.title}
+                </h2>
+                
+                <div className="space-y-6">
+                  {category.questions.map((item, qIdx) => (
+                    <div 
+                      key={qIdx}
+                      className="bg-navy-light rounded-xl p-6 border border-gray-800"
+                      itemScope
+                      itemProp="mainEntity"
+                      itemType="https://schema.org/Question"
+                    >
+                      <h3 
+                        className="font-semibold text-lg mb-3 text-white"
+                        itemProp="name"
+                      >
+                        {item.q}
+                      </h3>
+                      <div 
+                        itemScope
+                        itemProp="acceptedAnswer"
+                        itemType="https://schema.org/Answer"
+                      >
+                        <p className="text-gray-400 leading-relaxed" itemProp="text">
+                          {item.a}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Contact CTA */}
+          <div className="mt-16 bg-gradient-to-r from-primary/10 to-danger/10 rounded-2xl p-8 border border-gray-800 text-center">
+            <h2 className="text-2xl font-bold mb-4">Still Have Questions?</h2>
+            <p className="text-gray-400 mb-6 max-w-xl mx-auto">
+              Can&apos;t find what you&apos;re looking for? Get in touch and we&apos;ll answer 
+              your specific questions about GEO for your practice.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="mailto:sam.wang01@icloud.com?subject=GEO Question"
+                className="inline-flex items-center justify-center gap-2 bg-navy-light hover:bg-navy-lighter text-white px-6 py-3 rounded-lg border border-gray-800 transition-colors"
+              >
+                <Mail size={16} />
+                Email Us
+              </a>
+              <Link
+                href="/audit"
+                className="inline-flex items-center justify-center gap-2 bg-danger hover:bg-danger-hover text-white px-6 py-3 rounded-lg font-semibold transition-colors"
+              >
+                Get Your Free Audit
+                <ArrowRight size={16} />
+              </Link>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
