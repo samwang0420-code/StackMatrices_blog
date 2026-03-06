@@ -1,0 +1,5 @@
+file '/root/.openclaw/workspace/blog/public/tiktok-assets/v4_01.mp4'
+file '/root/.openclaw/workspace/blog/public/tiktok-assets/v4_02.mp4'
+file '/root/.openclaw/workspace/blog/public/tiktok-assets/v4_03.mp4'
+file '/root/.openclaw/workspace/blog/public/tiktok-assets/v4_04.mp4'
+file '/root/.openclaw/workspace/blog/public/tiktok-assets/v4_05.mp4'

@@ -29,28 +29,72 @@ export default function ContactPage() {
       message: formData.get("message") as string,
     };
 
-    // Save to Supabase first
-    const { error: dbError } = await supabase
-      .from('contact_submissions')
-      .insert([{
-        name: data.name,
-        email: data.email,
-        subject: data.subject,
-        message: data.message,
-        source: 'website',
-        status: 'new'
-      }]);
+    try {
+      // Get client IP
+      const ipResponse = await fetch('https://api.ipify.org?format=json').catch(() => null);
+      const ip = ipResponse ? (await ipResponse.json()).ip : 'unknown';
 
-    if (dbError) {
-      console.error('Database error:', dbError);
-      // Fallback to email
-      window.location.href = `mailto:sam.wang01@icloud.com?subject=${encodeURIComponent(data.subject)}&body=${encodeURIComponent('Name: ' + data.name + '\nEmail: ' + data.email + '\n\n' + data.message)}`;
-      return;
+      // Save to Supabase directly from frontend
+      const { data: submission, error: dbError } = await supabase
+        .from('contact_submissions')
+        .insert([
+          {
+            name: data.name,
+            email: data.email,
+            subject: data.subject,
+            message: data.message,
+            ip_address: ip,
+            user_agent: navigator.userAgent,
+            source: 'website',
+            status: 'new'
+          }
+        ])
+        .select()
+        .single();
+
+      if (dbError) {
+        console.error('Database error:', dbError);
+        throw new Error('Failed to save your message. Please try again.');
+      }
+
+      // Send email notification via Resend (from client side)
+      // Note: In production, you might want to use a serverless function for this
+      // But for now, we'll skip email if Resend fails
+      try {
+        await fetch('https://api.resend.com/emails', {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${process.env.NEXT_PUBLIC_RESEND_API_KEY || ''}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            from: 'StackMatrices Contact <contact@stackmatrices.com>',
+            to: 'sam.wang01@icloud.com',
+            subject: `New Contact: ${data.subject}`,
+            html: `
+              <h2>New Contact Form Submission</h2>
+              <p><strong>Name:</strong> ${data.name}</p>
+              <p><strong>Email:</strong> ${data.email}</p>
+              <p><strong>Subject:</strong> ${data.subject}</p>
+              <p><strong>Message:</strong></p>
+              <p>${data.message.replace(/\n/g, '<br>')}</p>
+              <hr>
+              <p><small>ID: ${submission.id}</small></p>
+            `,
+            reply_to: data.email,
+          }),
+        });
+      } catch (emailErr) {
+        console.log('Email notification skipped:', emailErr);
+      }
+
+      setIsSubmitted(true);
+      (e.target as HTMLFormElement).reset();
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "An unexpected error occurred");
+    } finally {
+      setIsSubmitting(false);
     }
-
-    setIsSubmitted(true);
-    setIsSubmitting(false);
-  };
   };
 
   return (

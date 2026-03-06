@@ -1,0 +1,44 @@
+{
+  "id": "tiktok_v2_20260303_131010",
+  "generated_at": "2026-03-03T13:10:10.435486",
+  "template_id": "geo_value_v2",
+  "title": "What is GEO - Value Focus",
+  "duration": 25,
+  "frames": [
+    {
+      "duration": 4,
+      "text": "Here's what's happening to medical practices",
+      "visual_text": "THE SHIFT",
+      "visual_type": "title"
+    },
+    {
+      "duration": 6,
+      "text": "84% of patients now use AI to find doctors. They don't Google anymore. They ask ChatGPT, Perplexity, Claude.",
+      "visual_text": "84%",
+      "visual_type": "stat",
+      "subtext": "use AI to find doctors"
+    },
+    {
+      "duration": 6,
+      "text": "If your practice isn't visible to AI, you're missing half your potential patients.",
+      "visual_text": "50%",
+      "visual_type": "stat",
+      "subtext": "of patients invisible"
+    },
+    {
+      "duration": 5,
+      "text": "But here's the good news: practices optimizing for AI are seeing 3x more qualified leads.",
+      "visual_text": "3X MORE",
+      "visual_type": "stat",
+      "subtext": "qualified leads"
+    },
+    {
+      "duration": 4,
+      "text": "We can help you get found. Drop your specialty and city in comments.",
+      "visual_text": "GET FOUND",
+      "visual_type": "cta"
+    }
+  ],
+  "hashtags": "#GEO #MedicalPractice #Doctor #HealthcareMarketing #AI",
+  "full_script": "Here's what's happening to medical practices 84% of patients now use AI to find doctors. They don't Google anymore. They ask ChatGPT, Perplexity, Claude. If your practice isn't visible to AI, you're missing half your potential patients. But here's the good news: practices optimizing for AI are seeing 3x more qualified leads. We can help you get found. Drop your specialty and city in comments."
+}

@@ -2,17 +2,11 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { createClient } from '@supabase/supabase-js';
 import { 
   ArrowLeft, Building2, Globe, Mail, User, Target, Users, 
   Search, Send, CheckCircle, Loader2, MapPin, Phone, MessageCircle,
   Briefcase, Stethoscope
 } from 'lucide-react';
-
-// Initialize Supabase
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
-const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 const INDUSTRIES = [
   { value: 'medical-aesthetics', label: 'Medical Aesthetics' },
@@ -56,46 +50,25 @@ export default function AnalysisRequestPage() {
     };
 
     try {
-      // 直接发邮件，不走数据库
-      const subject = `New GEO Analysis Request: ${payload.businessName}`;
-      const body = `
-Website: ${payload.website}
-Business: ${payload.businessName}
-Address: ${payload.address}
-Industry: ${payload.industry}
+      const response = await fetch('https://dashboard.gspr-hub.site/api/analyze', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-API-Key': 'geo-internal-samwang0420',
+        },
+        body: JSON.stringify(payload),
+      });
 
-Keywords: ${payload.keywords.join(', ')}
-Competitors: ${payload.competitors.join(', ')}
-
-Contact: ${payload.contactName} (${payload.jobTitle})
-Email: ${payload.email}
-Phone: ${payload.phone}
-WhatsApp: ${payload.whatsapp}
-
-Notes: ${payload.notes}
-      `.trim();
-      
-      // Save to Supabase
-      const { error: dbError } = await supabase
-        .from('contact_submissions')
-        .insert([{
-          name: payload.contactName,
-          email: payload.email,
-          subject: `GEO Analysis Request: ${payload.businessName}`,
-          message: body,
-          source: 'analysis-request',
-          status: 'new'
-        }]);
-
-      if (dbError) {
-        console.error('Database error:', dbError);
-        // Fallback to email
-        window.location.href = `mailto:sam.wang01@icloud.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      if (response.ok) {
+        setIsSuccess(true);
+        window.scrollTo(0, 0);
+      } else {
+        const data = await response.json().catch(() => ({}));
+        setError(data.message || 'Failed to submit. Please try again.');
       }
-      
-      setIsSuccess(true);
-      window.scrollTo(0, 0);
-    }
+    } catch (err) {
+      setError('Network error. Please check your connection and try again.');
+    } finally {
       setIsSubmitting(false);
     }
   };
