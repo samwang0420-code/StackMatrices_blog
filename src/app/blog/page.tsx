@@ -96,6 +96,16 @@ const BLOG_POSTS = [
   },
   {
     id: "6-month-playbook",
+  },
+  {
+    id: "quality-guidelines",
+    title: "Google's Quality Guidelines for Medical Content: The Complete Guide",
+    excerpt: "Learn how Google's official quality standards can transform your practice's online visibility in AI search results.",
+    category: "Technical Implementation",
+    author: "StackMatrices Intelligence",
+    date: "March 7, 2026",
+    readTime: "8 min read",
+    featured: false,
     title: "From Invisible to Unstoppable: The 6-Month GEO Playbook",
     excerpt: "The exact week-by-week implementation plan we use to transform medical practices from AI-invisible to market-dominant.",
     category: "Implementation",
