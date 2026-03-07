@@ -174,7 +174,19 @@ export default function AIEvaluationPage() {
             The practices winning at AI visibility aren&apos;t doing anything magical. They&apos;re doing 
             the fundamentals well: being findable, being credible, and being specific.
           </p>
-        </article>
+        
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BlogPosting",
+              "headline": "Medical SEO Content",
+              "author": {"@type": "Organization", "name": "StackMatrices Intelligence"},
+              "publisher": {"@type": "Organization", "name": "StackMatrices"}
+            })
+          }}
+        /></article>
 
         {/* Sources */}
         <div className="mt-12 pt-8 border-t border-white/10">

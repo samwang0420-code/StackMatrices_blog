@@ -223,7 +223,19 @@ export default function Predictions2026Page() {
               advantages by Q4.
             </p>
           </div>
-        </article>
+        
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BlogPosting",
+              "headline": "Medical SEO Content",
+              "author": {"@type": "Organization", "name": "StackMatrices Intelligence"},
+              "publisher": {"@type": "Organization", "name": "StackMatrices"}
+            })
+          }}
+        /></article>
 
         <div className="mt-12 pt-8 border-t border-white/10">
           <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
