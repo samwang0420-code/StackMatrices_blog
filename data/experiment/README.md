@@ -1,67 +1,106 @@
-# 30-Day SEO+GEO Experiment
-## StackMatrices Blog Optimization Test
+# 30-Day SEO+GEO Experiment (Dynamic)
+## StackMatrices Blog - Based on Real Monitoring Data
 
 **Start Date:** March 8, 2026
 **End Date:** April 7, 2026
-**Goal:** Identify which SEO+GEO methods actually improve blog visibility
+
+> ⚠️ This experiment evolves as we gather real data. Last updated: March 8, 2026
 
 ---
 
-## Hypotheses to Test
+## Content Sources (From Monitoring)
 
-| # | Hypothesis | Method | Success Metric |
-|---|------------|--------|----------------|
-| H1 | Structured content with clear headings ranks higher in AI citations | Use h2/h3 hierarchy, bullet points, numbered lists | AI citation rate |
-| H2 | Schema markup increases rich result appearance | Add Article, FAQ, HowTo schema | Google rich results |
-| H3 | Internal linking improves topical authority | Link between related posts | Pages indexed |
-| H4 | Longer content ranks better for competitive terms | Expand posts to 2000+ words | Keyword rankings |
-| H5 | Publication frequency matters | Post daily vs weekly | Traffic growth |
-| H6 | Images with alt text improve visibility | Add descriptive alt to all images | Image search traffic |
-| H7 | Backlinks from medical directories help | Get listed on medical directories | Domain authority |
-| H8 | Fresh content signals authority | Update posts weekly | AI citation freshness |
+| Source | Topics | Insight Type |
+|--------|--------|--------------|
+| Foundation | Quality Guidelines, AI Evaluation | Technical standards |
+| Industry | ASPS Stats, FDA Compliance | Market data |
+| Tactics | AI Overviews, Entity SEO | Actionable strategies |
+| Case Studies | Top Clinics | Real-world results |
 
 ---
 
-## Weekly Actions
+## Hypotheses (Derived from Monitoring)
 
-### Week 1 (Mar 8-14): Content Structure
-- [x] Baseline: Check current indexed pages
-- [ ] Add schema markup to all posts
-- [ ] Optimize headings hierarchy
-- [ ] Add internal links between posts
+### Phase 1: Technical Standards (Week 1)
 
-### Week 2 (Mar 15-21): Content Depth
-- [ ] Expand 2 posts to long-form (2000+ words)
-- [ ] Add FAQ sections
-- [ ] Add HowTo schema
+| # | Hypothesis | Based On | Test Method |
+|---|------------|----------|-------------|
+| H1 | Pages with proper Schema markup get AI cited more | Quality Guidelines content | Compare citation rates |
+| H2 | Structured content (hierarchy, bullets) = higher AI citations | AI Evaluation Framework | Content analysis |
+| H3 | Internal linking to "authority" pages improves trust | Quality Guidelines E-E-A-T | Track internal link structure |
 
-### Week 3 (Mar 22-28): Authority Building
-- [ ] Submit to medical directories
-- [ ] Add Wikipedia citations
-- [ ] Request backlinks from partners
+### Phase 2: Content Depth (Week 2)
 
-### Week 4 (Mar 29 - Apr 7): Measurement
-- [ ] Compare rankings vs baseline
-- [ ] Analyze AI citation changes
-- [ ] Document winning methods
+| # | Hypothesis | Based On | Test Method |
+|---|------------|----------|-------------|
+| H4 | Long-form content (2000+ words) ranks for competitive terms | Industry stats show depth matters | Keyword tracking |
+| H5 | FAQ sections appear in AI responses | AI Overviews optimization | SERP analysis |
+| H6 | Specific numbers/percentages get cited more | Industry data emphasis | Citation tracking |
 
----
+### Phase 3: Authority Building (Week 3)
 
-## Baseline Metrics (Mar 8, 2026)
+| # | Hypothesis | Based On | Test Method |
+|---|------------|----------|-------------|
+| H7 | Third-party citations (not self-referenced) improve AI trust | Case study patterns | Backlink analysis |
+| H8 | Wikipedia presence = faster AI indexing | Entity SEO best practices | Indexing speed |
 
-| Metric | Value |
-|--------|-------|
-| Total blog posts | 6 |
-| Indexed pages | 6 |
-| Domain Authority | TBD |
-| Organic keywords | TBD |
-| AI citations (ChatGPT/Perplexity) | TBD |
+### Phase 4: Freshness & Distribution (Week 4)
+
+| # | Hypothesis | Based On | Test Method |
+|---|------------|----------|-------------|
+| H9 | Daily publishing > weekly for AI indexing | Content monitoring frequency | Traffic comparison |
+| H10 | Social distribution amplifies AI visibility | Case study success patterns | Referral tracking |
 
 ---
 
-## Daily Log
+## Experiment Evolution Log
 
-### Day 1 (Mar 8)
-- Published: "How AI Actually Evaluates Medical Content"
-- Added: Internal links to existing posts
-- Baseline established
+### March 8, 2026 (v1.0)
+- Initial framework based on content monitoring sources
+- 10 hypotheses across 4 phases
+
+### [Future Updates]
+- New hypotheses added based on:
+  - Content monitoring discoveries
+  - Week 1-2 results
+  - New industry developments
+
+---
+
+## Action Items (This Week)
+
+### From Monitoring → Actions
+
+| Source | Insight | Experiment Action |
+|--------|---------|-------------------|
+| Quality Guidelines | E-E-A-T matters | Add author schemas |
+| AI Evaluation | Entity signals | Build entity presence |
+| Industry Stats | Specific numbers win | Add data points to posts |
+| Case Studies | What works | Replicate winning patterns |
+
+---
+
+## Measurement
+
+### Daily
+- [ ] Track indexed pages
+- [ ] Monitor AI citation appearances
+
+### Weekly (Saturday)
+- [ ] Run experiment tracker
+- [ ] Update this document
+- [ ] Report to user
+
+---
+
+## Expected Outcomes
+
+By April 7, we should know:
+1. Which technical optimizations actually move the needle
+2. Content characteristics that trigger AI citations
+3. Authority signals that accelerate indexing
+4. Publishing frequency impact
+
+---
+
+*This experiment is a living document. It will update weekly based on findings.*
