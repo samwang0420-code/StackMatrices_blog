@@ -64,6 +64,9 @@ function getFallbackImage(index: number): string {
 
 // Pre-defined image URLs for each blog post to ensure consistency
 export const BLOG_IMAGES: Record<string, string> = {
+    "schema-markup-guide": "https://images.pexels.com/photos/8435692/pexels-photo-8435692.jpeg?auto=compress&cs=tinysrgb&w=800",
+  "predictions-2026": "https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&w=800",
+  "ai-optimized-content": "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800",
   "seo-geo-trends-2025": "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   "ai-eating-seo-budget": "https://images.pexels.com/photos/5473298/pexels-photo-5473298.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   "hidden-cost-calculator": "https://images.pexels.com/photos/7567443/pexels-photo-7567443.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",

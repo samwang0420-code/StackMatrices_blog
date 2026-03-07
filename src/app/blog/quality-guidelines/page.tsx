@@ -1,32 +1,57 @@
-import { Metadata } from 'next';
+'use client';
 
-export const metadata: Metadata = {
+import Link from "next/link";
+import { ArrowLeft, Clock, Calendar, User } from "lucide-react";
+
+const ARTICLE = {
   title: "Google's Quality Guidelines for Medical Content: The Complete Guide",
-  description: "Learn how Google's Quality Evaluator Guidelines impact medical content and how to optimize for AI search visibility.",
+  category: "Technical Implementation",
+  author: "StackMatrices Intelligence",
+  date: "March 7, 2026",
+  readTime: "8 min read",
 };
 
-export default function BlogPost() {
+export default function QualityGuidelinesPage() {
   return (
-    <article className="min-h-screen bg-navy text-white py-16 px-6">
+    <div className="min-h-screen bg-gradient-to-br from-navy via-navy-light to-navy-dark text-white py-16 px-6">
       <div className="max-w-3xl mx-auto">
-        <header className="mb-12">
-          <div className="flex items-center gap-4 text-primary text-sm mb-4">
-            <span>Technical Implementation</span>
-            <span>•</span>
-            <span>March 7, 2026</span>
-          </div>
-          <h1 className="text-4xl font-bold mb-6">
-            Google&apos;s Quality Guidelines for Medical Content: The Complete Guide
-          </h1>
-          <p className="text-xl text-gray-400">
-            How understanding Google&apos;s official quality standards can transform your practice&apos;s online visibility in AI search results.
-          </p>
-        </header>
+        <Link
+          href="/blog"
+          className="inline-flex items-center gap-2 text-gray-400 hover:text-white mb-8 transition-colors"
+        >
+          <ArrowLeft size={16} />
+          Back to Blog
+        </Link>
 
-        <div className="prose prose-invert max-w-none">
-          <h2>What Are Google&apos;s Quality Evaluator Guidelines?</h2>
+        <div className="mb-10">
+          <div className="flex items-center gap-4 mb-6">
+            <span className="px-3 py-1 bg-primary/20 text-primary text-sm font-medium rounded-full">
+              {ARTICLE.category}
+            </span>
+          </div>
+
+          <h1 className="text-3xl md:text-4xl font-bold mb-6">{ARTICLE.title}</h1>
+
+          <div className="flex flex-wrap items-center gap-6 text-sm text-gray-400">
+            <div className="flex items-center gap-2">
+              <User className="w-4 h-4" />
+              {ARTICLE.author}
+            </div>
+            <div className="flex items-center gap-2">
+              <Calendar className="w-4 h-4" />
+              {ARTICLE.date}
+            </div>
+            <div className="flex items-center gap-2">
+              <Clock className="w-4 h-4" />
+              {ARTICLE.readTime}
+            </div>
+          </div>
+        </div>
+
+        <article className="prose prose-invert max-w-none">
+          <h2>What Are Google's Quality Evaluator Guidelines?</h2>
           <p>
-            Google&apos;s Search Quality Evaluator Guidelines are the secret manual that determines how human evaluators 
+            Google's Search Quality Evaluator Guidelines are the secret manual that determines how human evaluators 
             assess website quality. While these guidelines don&apos;t directly control rankings, they influence the 
             algorithms that do. For medical practices, understanding these guidelines is essential for AI visibility.
           </p>
@@ -48,7 +73,7 @@ export default function BlogPost() {
 
           <h2>E-E-A-T for Medical Practices</h2>
           <p>
-            E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness) forms the foundation of Google&apos;s 
+            E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness) forms the foundation of Google's 
             quality assessment. For aesthetic medical practices, demonstrating these qualities is critical.
           </p>
 
@@ -61,9 +86,9 @@ export default function BlogPost() {
           </ol>
 
           <h2>Action Checklist for Compliance</h2>
-          <div className="bg-navy-light p-6 rounded-xl my-8">
-            <h3 className="mb-4">Technical Requirements:</h3>
-            <ul className="space-y-2">
+          <div className="bg-white/5 border border-primary/30 rounded-xl p-6 my-8">
+            <h3 className="text-lg font-semibold text-primary mb-4">Technical Requirements:</h3>
+            <ul className="space-y-2 text-gray-300">
               <li>✅ Add author bio pages with credentials</li>
               <li>✅ Implement Schema markup for medical professionals</li>
               <li>✅ Link to authoritative medical sources</li>
@@ -73,11 +98,11 @@ export default function BlogPost() {
 
           <h2>Conclusion</h2>
           <p>
-            Understanding and implementing Google&apos;s Quality Guidelines is about providing genuine value to potential patients. 
+            Understanding and implementing Google's Quality Guidelines is about providing genuine value to potential patients. 
             Practices that prioritize quality content and demonstrate real expertise will thrive in AI-powered search.
           </p>
-        </div>
+        </article>
       </div>
-    </article>
+    </div>
   );
 }
