@@ -1,7 +1,7 @@
 'use client';
 
 import Link from "next/link";
-import { ArrowLeft, Clock, Calendar, User } from "lucide-react";
+import { ArrowLeft, Clock, Calendar, User, ExternalLink } from "lucide-react";
 
 const ARTICLE = {
   title: "Google's Quality Guidelines for Medical Content: The Complete Guide",
@@ -102,6 +102,38 @@ export default function QualityGuidelinesPage() {
             Practices that prioritize quality content and demonstrate real expertise will thrive in AI-powered search.
           </p>
         </article>
+
+        {/* Sources */}
+        <div className="mt-12 pt-8 border-t border-white/10">
+          <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
+            <ExternalLink className="w-5 h-5 text-primary" />
+            Data Sources
+          </h3>
+          <ul className="space-y-2">
+            <li className="text-sm text-gray-400 flex items-start gap-2">
+              <span className="text-primary">[1]</span>
+              Google Search Quality Evaluator Guidelines
+            </li>
+            <li className="text-sm text-gray-400 flex items-start gap-2">
+              <span className="text-primary">[2]</span>
+              Google's YMYL Classification
+            </li>
+          </ul>
+        </div>
+
+        <div className="mt-12 bg-white/5 border border-white/10 rounded-2xl p-8">
+          <h2 className="text-2xl font-bold mb-4">Ready to Optimize Your Medical Content?</h2>
+          <p className="text-gray-300 mb-6">
+            Get your free GEO analysis and discover how to align your practice content with Google's quality standards.
+          </p>
+          <Link
+            href="/analysis-request"
+            className="inline-flex items-center gap-2 bg-primary hover:bg-primary-hover text-white px-6 py-3 rounded-lg font-semibold transition-colors"
+          >
+            Get Your Free Analysis
+            <ArrowLeft className="w-4 h-4 rotate-180" />
+          </Link>
+        </div>
       </div>
     </div>
   );
