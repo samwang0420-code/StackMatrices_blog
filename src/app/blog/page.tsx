@@ -7,6 +7,17 @@ import { BLOG_IMAGES } from "@/lib/pexels";
 
 const BLOG_POSTS = [
   {
+    id: "ai-evaluates-medical-content",
+    title: "How AI Actually Evaluates Medical Content: What No One Tells You",
+    excerpt: "Most practices optimize for dead search engines. Here's how AI really evaluates medical content—and what actually gets cited.",
+    category: "AI Search Trends",
+    author: "StackMatrices Intelligence",
+    date: "March 8, 2026",
+    readTime: "12 min read",
+    featured: true,
+    image: BLOG_IMAGES["ai-evaluates-medical-content"],
+  },
+  {
     id: "quality-guidelines",
     title: "Google's Quality Guidelines for Medical Content: The Complete Guide",
     excerpt: "Learn how Google's official quality standards can transform your practice's online visibility in AI search results.",
