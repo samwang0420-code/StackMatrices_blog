@@ -1,0 +1,128 @@
+[
+  {
+    "id": "source1_1",
+    "source": "foundation",
+    "title": "Google's Quality Guidelines for Medical Content: The Complete Guide",
+    "pillar": "Technical Implementation",
+    "keywords": [
+      "E-E-A-T",
+      "YMYL",
+      "quality guidelines"
+    ],
+    "outline": [
+      "What are Google's Quality Evaluator Guidelines",
+      "Why YMYL content requires extra care",
+      "E-E-A-T for medical practices",
+      "How to demonstrate expertise online",
+      "Action checklist for compliance"
+    ]
+  },
+  {
+    "id": "source1_2",
+    "source": "foundation",
+    "title": "How AI Evaluates Medical Content: A Complete Framework",
+    "pillar": "AI Search Trends",
+    "keywords": [
+      "AI content evaluation",
+      "medical SEO",
+      "authority"
+    ],
+    "outline": [
+      "How AI systems understand medical content",
+      "Entity vs keyword-based indexing",
+      "Trust signals that matter",
+      "Building topical authority",
+      "Technical implementation"
+    ]
+  },
+  {
+    "id": "source2_1",
+    "source": "industry",
+    "title": "2024 Plastic Surgery Statistics: What Practices Need to Know",
+    "pillar": "Industry Data",
+    "keywords": [
+      "ASPS",
+      "statistics",
+      "trends"
+    ],
+    "outline": [
+      "Key statistics from ASPS 2024",
+      "Growth areas in aesthetic medicine",
+      "Patient demographics shift",
+      "Marketing implications",
+      "Content opportunities"
+    ]
+  },
+  {
+    "id": "source2_2",
+    "source": "industry",
+    "title": "FDA Compliance in Medical Marketing: The Complete Guide",
+    "pillar": "Compliance",
+    "keywords": [
+      "FDA",
+      "compliance",
+      "regulations"
+    ],
+    "outline": [
+      "FDA advertising rules for medical devices",
+      "HIPAA considerations in marketing",
+      "What AI systems think about compliance",
+      "Safe vs risky content approaches",
+      "Documentation requirements"
+    ]
+  },
+  {
+    "id": "source3_1",
+    "source": "tactics",
+    "title": "Optimizing for Google AI Overviews in Healthcare",
+    "pillar": "GEO Strategy",
+    "keywords": [
+      "AI Overviews",
+      "SGE",
+      "optimization"
+    ],
+    "outline": [
+      "How AI Overviews work",
+      "Content requirements for healthcare",
+      "Schema markup for medical practices",
+      "Featured snippet optimization",
+      "Measuring visibility"
+    ]
+  },
+  {
+    "id": "source3_2",
+    "source": "tactics",
+    "title": "Entity SEO for Medical Practices: The Foundation of GEO",
+    "pillar": "Technical Implementation",
+    "keywords": [
+      "Entity SEO",
+      "knowledge graph",
+      "authority"
+    ],
+    "outline": [
+      "What is Entity SEO",
+      "Building your Knowledge Graph presence",
+      "Entity citations and references",
+      "Wikipedia and authority building",
+      "Implementation roadmap"
+    ]
+  },
+  {
+    "id": "source4_1",
+    "source": "case_studies",
+    "title": "How Top Beverly Hills Clinics Win at Digital Marketing",
+    "pillar": "Case Studies",
+    "keywords": [
+      "Beverly hills",
+      "case study",
+      "strategy"
+    ],
+    "outline": [
+      "What makes elite clinics different",
+      "Content strategy analysis",
+      "Authority building tactics",
+      "Patient trust signals",
+      "Lessons to apply today"
+    ]
+  }
+]

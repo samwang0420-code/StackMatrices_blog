@@ -1,0 +1,101 @@
+[
+  {
+    "id": "post_20260307_134016_0",
+    "generated_at": "2026-03-07T13:40:16.749420",
+    "pillar": "AI Search Trends",
+    "title_template": "How [AI Platform] is Changing Patient Acquisition for [Specialty]",
+    "outline": [
+      "Introduction: The shift in patient behavior",
+      "Data: [X]% of patients now use AI to find doctors",
+      "Platform analysis: How [AI Platform] recommends practitioners",
+      "What this means for [specialty] practices",
+      "Action items: How to optimize for [AI Platform]"
+    ],
+    "keywords": [
+      "AI search",
+      "patient acquisition",
+      "medical marketing"
+    ],
+    "target_length": "2000 words",
+    "status": "idea"
+  },
+  {
+    "id": "post_20260307_134016_1",
+    "generated_at": "2026-03-07T13:40:16.749478",
+    "pillar": "GEO Strategy",
+    "title_template": "The Complete [Year] GEO Checklist for Medical Practices",
+    "outline": [
+      "Why traditional SEO is no longer enough",
+      "The 47-point GEO checklist",
+      "Technical foundation (Schema markup)",
+      "Content optimization for AI",
+      "Entity and authority building",
+      "Measuring success"
+    ],
+    "keywords": [
+      "GEO checklist",
+      "medical SEO",
+      "AI visibility"
+    ],
+    "target_length": "3000 words",
+    "status": "idea"
+  },
+  {
+    "id": "post_20260307_134016_2",
+    "generated_at": "2026-03-07T13:40:16.749505",
+    "pillar": "Case Studies",
+    "title_template": "How [Practice Type] Saved $[Amount] with GEO",
+    "outline": [
+      "The problem: Traditional marketing inefficiency",
+      "The solution: GEO implementation",
+      "Results: Traffic, leads, revenue impact",
+      "Key takeaways for similar practices"
+    ],
+    "keywords": [
+      "case study",
+      "ROI",
+      "practice growth"
+    ],
+    "target_length": "1500 words",
+    "status": "idea"
+  },
+  {
+    "id": "post_20260307_134016_3",
+    "generated_at": "2026-03-07T13:40:16.749529",
+    "pillar": "Technical Implementation",
+    "title_template": "Schema Markup Guide for [Specialty] Practices",
+    "outline": [
+      "What is schema markup and why it matters for AI",
+      "Essential schema types for [specialty]",
+      "Step-by-step implementation",
+      "Testing and validation",
+      "Common mistakes to avoid"
+    ],
+    "keywords": [
+      "schema markup",
+      "technical SEO",
+      "implementation"
+    ],
+    "target_length": "2500 words",
+    "status": "idea"
+  },
+  {
+    "id": "post_20260307_134016_4",
+    "generated_at": "2026-03-07T13:40:16.749553",
+    "pillar": "Industry News",
+    "title_template": "[Platform] Update: What [Specialty] Practices Need to Know",
+    "outline": [
+      "What's changing",
+      "Impact on patient search behavior",
+      "Immediate action items",
+      "Long-term strategy adjustment"
+    ],
+    "keywords": [
+      "algorithm update",
+      "industry news",
+      "strategy"
+    ],
+    "target_length": "1000 words",
+    "status": "idea"
+  }
+]
