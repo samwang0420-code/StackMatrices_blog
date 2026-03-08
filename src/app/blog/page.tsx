@@ -7,6 +7,17 @@ import { BLOG_IMAGES } from "@/lib/pexels";
 
 const BLOG_POSTS = [
   {
+    id: "google-ai-mode-12-percent",
+    title: "The 12% Reality Check: What Google's AI Mode Really Means for Medical Practices",
+    excerpt: "Moz's Tom Capper analyzed 40,000 keywords. The result: only 12% overlap between AI Mode and traditional rankings. Here's what that means for your practice.",
+    category: "Industry Data",
+    author: "StackMatrices Intelligence",
+    date: "March 8, 2026",
+    readTime: "10 min read",
+    featured: true,
+    image: BLOG_IMAGES["google-ai-mode-12-percent"],
+  },
+  {
     id: "ai-evaluates-medical-content",
     title: "How AI Actually Evaluates Medical Content: What No One Tells You",
     excerpt: "Most practices optimize for dead search engines. Here's how AI really evaluates medical content—and what actually gets cited.",
