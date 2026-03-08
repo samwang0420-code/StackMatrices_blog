@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { ArrowLeft, Clock, Calendar, User, ExternalLink } from "lucide-react";
+import { Menu, ChevronRight } from "lucide-react";
 
 const ARTICLE = {
   title: "Entity SEO for Medical Practices: The Foundation Nobody Talks About",
@@ -10,6 +11,11 @@ const ARTICLE = {
   date: "March 8, 2026",
   readTime: "14 min read",
 };
+const TABLE_OF_CONTENTS = [
+  { id: "section1", title: "Section 1" },
+  { id: "section2", title: "Section 2" },
+  { id: "section3", title: "Section 3" },
+];
 
 export default function EntitySEOPage() {
   return (
@@ -48,14 +54,30 @@ export default function EntitySEOPage() {
           </div>
         </div>
 
-        <article className="prose prose-invert max-w-none">
+        {/* Table of Contents */}
+        <div className="bg-white/5 border border-white/10 rounded-xl p-6 mb-10">
+          <div className="flex items-center gap-2 text-primary text-sm font-medium mb-4">
+            <Menu size={16} />
+            Table of Contents
+          </div>
+          <nav className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            {TABLE_OF_CONTENTS.map((item) => (
+              <a key={item.id} href={`#${item.id}`} className="text-sm text-gray-400 hover:text-white transition-colors flex items-center gap-1">
+                <ChevronRight size={12} />
+                {item.title}
+              </a>
+            ))}
+          </nav>
+        </div>
+
+        <article className="prose prose-invert prose-lg max-w-none">
           <p className="text-xl text-gray-300 mb-8 leading-relaxed">
             Everyone talks about keywords, backlinks, content length. Almost nobody talks about entities. 
             That&apos;s a mistake. For medical practices, entity optimization is the difference between 
             being invisible and being the obvious answer.
           </p>
 
-          <h2>What Actually Is an Entity</h2>
+          <h2 id="section1">What Actually Is an Entity</h2>
           <p>
             An entity is anything that can be identified uniquely. A person. A place. An organization. 
             A medical procedure. Your practice.

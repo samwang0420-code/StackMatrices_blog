@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, Clock, Calendar, User, ExternalLink } from "lucide-react";
+import { Menu, ChevronRight } from "lucide-react";
 import { BLOG_IMAGES } from "@/lib/pexels";
 
 const ARTICLE = {
@@ -12,6 +13,11 @@ const ARTICLE = {
   date: "March 3, 2026",
   readTime: "12 min read",
 };
+const TABLE_OF_CONTENTS = [
+  { id: "section1", title: "Section 1" },
+  { id: "section2", title: "Section 2" },
+  { id: "section3", title: "Section 3" },
+];
 
 export default function AIOptimizedContentPage() {
   return (
@@ -60,7 +66,7 @@ export default function AIOptimizedContentPage() {
           </div>
         </div>
 
-        <article className="prose prose-invert max-w-none">
+        <article className="prose prose-invert prose-lg max-w-none">
           <h2 className="text-2xl font-bold mt-12 mb-4 text-white">The Anatomy of AI-Cited Content</h2>
           
           <p className="text-gray-300 mb-6 leading-relaxed">
