@@ -10,7 +10,7 @@ import { AIChatDemoAnimated } from "@/components/AIChatDemo";
 
 export const metadata: Metadata = {
   title: "StackMatrices | GEO Agency for Medical Practices",
-  description: "Your Patients are Asking AI. Are they Finding You or Your Competitor? We help medical practices capture AI-referred patients before competitors do.",
+  description: "Local SEO meets AI search. We make your medical practice visible to patients in your city when they use ChatGPT, Perplexity, or Google.",
 };
 
 // Clean Medical Card Component
