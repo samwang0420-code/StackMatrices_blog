@@ -1,7 +1,7 @@
 'use client';
 
 import Link from "next/link";
-import { ArrowLeft, Clock, Calendar, User, ExternalLink } from "lucide-react";
+import { ArrowLeft, Clock, Calendar, User, ExternalLink, Menu, ChevronRight } from "lucide-react";
 
 const ARTICLE = {
   title: "The 12% Reality Check: What Google's AI Mode Really Means for Medical Practices",
@@ -10,6 +10,16 @@ const ARTICLE = {
   date: "March 8, 2026",
   readTime: "10 min read",
 };
+
+const TABLE_OF_CONTENTS = [
+  { id: "overview", title: "The Great Disconnect" },
+  { id: "implications", title: "What This Means for Medical Practices" },
+  { id: "fanout", title: "The Fan-Out Effect" },
+  { id: "visual", title: "Death of the Visual" },
+  { id: "cards", title: "The Organic Burial" },
+  { id: "action", title: "What Medical Practices Should Do Now" },
+  { id: "conclusion", title: "Conclusion" },
+];
 
 export default function GoogleAIModePage() {
   return (
@@ -55,7 +65,7 @@ export default function GoogleAIModePage() {
             If you&apos;re still optimizing the old way, you&apos;re already invisible.
           </p>
 
-          <h2>The Great Disconnect: 88% to 12%</h2>
+          <h2 id="overview">The Great Disconnect: 88% to 12%</h2>
           <p>
             In traditional search, AI Overviews act as a sophisticated concierge—they summarize the results 
             already on page one. In those cases, there&apos;s an 88% URL overlap between AI-cited sources 
@@ -86,7 +96,7 @@ export default function GoogleAIModePage() {
             This isn&apos;t a reorganization of the SERP—it&apos;s the emergence of a separate search engine logic.
           </p>
 
-          <h2>What This Means for Medical Practices</h2>
+          <h2 id="overview">What This Means for Medical Practices</h2>
           <p>
             If you&apos;re spending budget on traditional SEO—building backlinks, optimizing for specific keywords, 
             chasing domain authority—you need to understand: <strong>the rules have changed</strong>.
@@ -104,7 +114,7 @@ export default function GoogleAIModePage() {
             <li><strong>Traditional SEO metrics</strong>—domain authority, backlink count—aren&apos;t the primary factors anymore</li>
           </ul>
 
-          <h2>The &quot;Fan-Out&quot; Effect: Beyond Single-Keyword SEO</h2>
+          <h2 id="overview">The &quot;Fan-Out&quot; Effect: Beyond Single-Keyword SEO</h2>
           <p>
             Here&apos;s the mechanism behind this shift: Google&apos;s AI Mode uses &quot;fan-out&quot; queries. 
             When a user enters a search, AI Mode branches out—generating a cluster of related search terms 
@@ -128,7 +138,7 @@ export default function GoogleAIModePage() {
             </p>
           </div>
 
-          <h2>Death of the Visual? The Return of the Verbose</h2>
+          <h2 id="overview">Death of the Visual? The Return of the Verbose</h2>
           <p>
             We&apos;ve spent years being told the future of search is visual, snackable, and video-first. 
             AI Mode is a sudden pivot back to structured prose.
@@ -152,7 +162,7 @@ export default function GoogleAIModePage() {
             well-structured, and authoritative, not just optimized for keywords.
           </p>
 
-          <h2>The &quot;Organic Burial&quot;: Why Cards Aren&apos;t Enough</h2>
+          <h2 id="overview">The &quot;Organic Burial&quot;: Why Cards Aren&apos;t Enough</h2>
           <p>
             In AI Mode, the closest thing to a traditional organic result is the &quot;Card&quot;—a clickable 
             result block that resembles a standard listing. While these appear in roughly 63% of results, 
@@ -164,7 +174,7 @@ export default function GoogleAIModePage() {
             the answers directly.
           </p>
 
-          <h2>What Medical Practices Should Do Now</h2>
+          <h2 id="overview">What Medical Practices Should Do Now</h2>
           
           <h3>1. Build Topical Authority, Not Just Keyword Rankings</h3>
           <p>
@@ -191,7 +201,7 @@ export default function GoogleAIModePage() {
             whether your practice appears in AI-generated responses for your target queries.
           </p>
 
-          <h2>The Bottom Line</h2>
+          <h2 id="overview">The Bottom Line</h2>
           <p>
             The 12% overlap isn&apos;t just a number—it&apos;s a signal that the foundation of SEO has shifted. 
             Medical practices that recognize this early and adapt their content strategy will capture the 
@@ -205,7 +215,7 @@ export default function GoogleAIModePage() {
 
 
 
-          <h2>The Scrolling Tax: Why Position 10 Is Basically Invisible</h2>
+          <h2 id="overview">The Scrolling Tax: Why Position 10 Is Basically Invisible</h2>
           <p>
             In traditional SERPs, organic results appear in the top position about half the time. 
             In AI Mode, paragraphs and lists dominate the top. Organic-style cards are almost exclusively 
@@ -217,7 +227,7 @@ export default function GoogleAIModePage() {
             renders your organic-style visibility nearly invisible to the average user.
           </p>
 
-          <h2>The Survival Gap: The Elite 4.5 Average</h2>
+          <h2 id="overview">The Survival Gap: The Elite 4.5 Average</h2>
           <p>
             Perhaps the most punishing finding: the quality threshold required to enter AI Mode citations. 
             The average organic rank of a URL cited in AI Mode is <strong className="text-primary">4.5</strong>.
@@ -246,7 +256,7 @@ export default function GoogleAIModePage() {
             losing rank—you&apos;re being excluded from the AI-generated conversation entirely.
           </p>
 
-          <h2>Conclusion: Navigating the AI-First SERP</h2>
+          <h2 id="overview">Conclusion: Navigating the AI-First SERP</h2>
           <p>
             AI Mode isn&apos;t just a new &quot;feature&quot; on the Google result page—it&apos;s a fundamental shift 
             in how search results are indexed and displayed. We&apos;re moving from a world where we compete 
