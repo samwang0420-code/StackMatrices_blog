@@ -203,6 +203,66 @@ export default function GoogleAIModePage() {
           </p>
         </article>
 
+
+
+          <h2>The Scrolling Tax: Why Position 10 Is Basically Invisible</h2>
+          <p>
+            In traditional SERPs, organic results appear in the top position about half the time. 
+            In AI Mode, paragraphs and lists dominate the top. Organic-style cards are almost exclusively 
+            relegated to the bottom of the stack—typically appearing at position 10.
+          </p>
+          <p>
+            When you combine the 12% overlap with this &quot;footer status&quot; for cards, the conclusion is clear: 
+            even if you&apos;re one of the lucky few cited, you&apos;re paying a heavy &quot;scrolling tax&quot; that 
+            renders your organic-style visibility nearly invisible to the average user.
+          </p>
+
+          <h2>The Survival Gap: The Elite 4.5 Average</h2>
+          <p>
+            Perhaps the most punishing finding: the quality threshold required to enter AI Mode citations. 
+            The average organic rank of a URL cited in AI Mode is <strong className="text-primary">4.5</strong>.
+          </p>
+          <div className="bg-white/5 border border-primary/30 rounded-xl p-6 my-8">
+            <h3 className="text-lg font-semibold text-primary mb-4">The Ranking Gap</h3>
+            <div className="grid grid-cols-2 gap-4 text-center">
+              <div className="bg-white/5 rounded-lg p-4">
+                <p className="text-4xl font-bold text-primary mb-2">4.5</p>
+                <p className="text-sm text-gray-400">Average rank in AI Mode citations</p>
+              </div>
+              <div className="bg-white/5 rounded-lg p-4">
+                <p className="text-4xl font-bold text-gray-400 mb-2">5.5</p>
+                <p className="text-sm text-gray-400">Random Top 10 average</p>
+              </div>
+            </div>
+          </div>
+          <p>
+            To put that in perspective: a random sampling of the Top 10 would yield an average rank of 5.5. 
+            By hitting a 4.5 average, Google is signaling it&apos;s cherry-picking only the absolute top-tier 
+            results from across its various fan-out queries.
+          </p>
+          <p>
+            <strong>The bottom line: if you&apos;re ranking positions 6-10 in traditional search, the survival gap 
+            has become a canyon.</strong> If you aren&apos;t at the apex of a topical cluster, you aren&apos;t just 
+            losing rank—you&apos;re being excluded from the AI-generated conversation entirely.
+          </p>
+
+          <h2>Conclusion: Navigating the AI-First SERP</h2>
+          <p>
+            AI Mode isn&apos;t just a new &quot;feature&quot; on the Google result page—it&apos;s a fundamental shift 
+            in how search results are indexed and displayed. We&apos;re moving from a world where we compete 
+            for a spot in the Top 10 to a world where we must compete for inclusion in a &quot;fan-out&quot; query 
+            logic that only recognizes a tiny sliver of the organic world.
+          </p>
+          <div className="bg-white/5 border-l-4 border-primary p-5 my-8">
+            <p className="text-gray-300">
+              <strong className="text-white">The hard truth:</strong> If your tracking and optimization are 
+              still focused solely on the traditional organic list, you&apos;re likely blind to your own disappearance. 
+              In a search environment where your organic visibility can vanish into a 12% shadow, scale-based 
+              tracking isn&apos;t just a luxury—it&apos;s the only pulse check left.
+            </p>
+          </div>
+
+
         {/* Sources */}
         <div className="mt-12 pt-8 border-t border-white/10">
           <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
