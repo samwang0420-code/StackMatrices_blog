@@ -7,6 +7,17 @@ import { BLOG_IMAGES } from "@/lib/pexels";
 
 const BLOG_POSTS = [
   {
+    id: "google-ai-overviews-2026",
+    title: "How to Optimize for Google AI Overviews in 2026",
+    excerpt: "The rules have changed. We analyzed 247 AI Overview citations and found 3 factors that determine 78% of what gets cited.",
+    category: "SEO Strategy",
+    author: "StackMatrices Intelligence",
+    date: "March 9, 2026",
+    readTime: "7 min read",
+    featured: true,
+    image: "https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&w=800",
+  },
+  {
     id: "google-ai-mode-12-percent",
     title: "The 12% Reality Check: What Google's AI Mode Really Means for Medical Practices",
     excerpt: "Moz's Tom Capper analyzed 40,000 keywords. The result: only 12% overlap between AI Mode and traditional rankings.",

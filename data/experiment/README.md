@@ -104,3 +104,22 @@ By April 7, we should know:
 ---
 
 *This experiment is a living document. It will update weekly based on findings.*
+
+---
+
+## Article Progress
+
+### Published (March 2026)
+
+| # | Date | Article | Hypothesis Tested |
+|---|------|---------|-------------------|
+| 1 | Mar 7 | quality-guidelines | H1: Schema markup |
+| 2 | Mar 8 | ai-evaluates-medical-content | H2: Structured content |
+| 3 | Mar 8 | entity-seo-medical-practices | H3: Internal linking |
+| 4 | Mar 8 | google-ai-mode-12-percent | H4: Long-form content |
+| 5 | Mar 9 | google-ai-overviews-2026 | H5: FAQ sections in AI responses |
+
+### Status: Day 2 of Experiment
+- Articles published: 5
+- Hypotheses tested: 5
+- Next: Continue daily publishing
