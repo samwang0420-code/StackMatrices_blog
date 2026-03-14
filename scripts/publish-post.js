@@ -3,17 +3,31 @@
 /**
  * Blog Post Publisher
  * 
- * Usage:
- *   node scripts/publish-post.js --title "My Post" --content "Content here" [--slug "my-post"] [--tags "tag1,tag2"]
- * 
- * Or use environment variable:
- *   PUBLISH_API_KEY=your-key node scripts/publish-post.js --title "Post Title" --content "Content"
+ * 直接写入本地文件并推送到 GitHub
  */
 
-const API_URL = process.env.BLOG_API_URL || 'http://localhost:3000/api/publish'
-const API_KEY = process.env.PUBLISH_API_KEY || 'dev-key-2026'
+import { writeFile, mkdir } from 'fs/promises'
+import { join } from 'path'
+import { execSync } from 'child_process'
 
-// Parse command line arguments
+const BLOG_DIR = join(process.cwd(), 'content', 'blog')
+
+function getFrontmatter(data) {
+  const tags = data.tags ? JSON.stringify(data.tags) : '[]'
+  return `---
+title: "${data.title}"
+description: "${data.description || data.title}"
+date: "${new Date().toISOString().split('T')[0]}"
+tags: ${tags}
+author: "${data.author || 'StackMatrices Team'}"
+---
+
+# ${data.title}
+
+${data.content}
+`
+}
+
 const args = process.argv.slice(2)
 const params = {}
 
@@ -40,52 +54,41 @@ Usage: node scripts/publish-post.js [options]
 Options:
   --title       Post title (required)
   --content     Post content (required)
-  --slug        URL slug (optional, auto-generated)
+  --slug        URL slug (optional)
   --tags        Comma-separated tags (optional)
   --description Short description (optional)
-  --author      Author name (optional)
 
 Example:
   node scripts/publish-post.js --title "My Post" --content "Hello world" --tags "news,update"
-
-Environment:
-  BLOG_API_URL     API URL (default: http://localhost:3000/api/publish)
-  PUBLISH_API_KEY  API key (default: dev-key-2026)
 `)
     process.exit(1)
   }
 
+  const finalSlug = slug || title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+/g, '-')
+  
+  await mkdir(BLOG_DIR, { recursive: true })
+  
+  const fullContent = getFrontmatter({
+    title,
+    description,
+    tags: tags ? tags.split(',').map(t => t.trim()) : [],
+    author,
+    content
+  })
+  
+  const filePath = join(BLOG_DIR, `${finalSlug}.md`)
+  await writeFile(filePath, fullContent, 'utf-8')
+  
+  console.log(`✅ Post created: ${filePath}`)
+  
   try {
-    const response = await fetch(API_URL, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${API_KEY}`
-      },
-      body: JSON.stringify({
-        title,
-        content,
-        slug,
-        tags: tags ? tags.split(',').map(t => t.trim()) : [],
-        description,
-        author
-      })
-    })
-
-    const result = await response.json()
-
-    if (result.success) {
-      console.log(`✅ Post published successfully!`)
-      console.log(`   Slug: ${result.slug}`)
-      console.log(`   Path: ${result.path}`)
-    } else {
-      console.log(`❌ Error: ${result.error}`)
-      process.exit(1)
-    }
-  } catch (error) {
-    console.log(`❌ Failed to connect: ${error.message}`)
-    console.log(`   Make sure the server is running at ${API_URL}`)
-    process.exit(1)
+    console.log('📤 Pushing to GitHub...')
+    execSync('git add -A', { cwd: process.cwd(), stdio: 'ignore' })
+    execSync(`git commit -m "Add: ${title}"`, { cwd: process.cwd(), stdio: 'ignore' })
+    execSync('git push origin main', { cwd: process.cwd(), stdio: 'ignore' })
+    console.log('✅ Pushed to GitHub!')
+  } catch (e) {
+    console.log('⚠️ Git push failed, but file was created locally.')
   }
 }
 
