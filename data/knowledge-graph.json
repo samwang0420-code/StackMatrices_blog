@@ -1,0 +1,140 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalPractice",
+      "name": "Dr. Smith Dental",
+      "description": "Premier dental practice in Fresno, CA specializing in cosmetic and restorative dentistry",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Fresno",
+        "addressRegion": "CA",
+        "addressCountry": "US"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": 4.8,
+        "reviewCount": 127
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalPractice",
+      "name": "Beverly Hills Aesthetics",
+      "description": "World-class medical spa and aesthetic clinic in Beverly Hills",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Beverly Hills",
+        "addressRegion": "CA",
+        "addressCountry": "US"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": 4.9,
+        "reviewCount": 342
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "LA Emergency Plumbing",
+      "description": "24/7 emergency plumbing services throughout Los Angeles County",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Los Angeles",
+        "addressRegion": "CA",
+        "addressCountry": "US"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": 4.7,
+        "reviewCount": 89
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalProcedure",
+      "name": "Botox Cosmetic Treatment",
+      "description": "FDA-approved injectable treatment for reducing fine lines and wrinkles",
+      "estimatedCost": {
+        "@type": "MonetaryAmount",
+        "currency": "USD",
+        "value": "450"
+      },
+      "howPerformed": "FDA-approved injectable treatment for reducing fine lines and wrinkles",
+      "performTime": "15-30 minutes",
+      "recoveryTime": "24-48 hours",
+      "faq": [
+        {
+          "question": "What is Botox Cosmetic Treatment?",
+          "answer": "FDA-approved injectable treatment for reducing fine lines and wrinkles"
+        },
+        {
+          "question": "How much does Botox Cosmetic Treatment cost?",
+          "answer": "FDA-approved injectable treatment for reducing fine lines and wrinkles"
+        },
+        {
+          "question": "What is the recovery time for Botox Cosmetic Treatment?",
+          "answer": "FDA-approved injectable treatment for reducing fine lines and wrinkles"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalProcedure",
+      "name": "Dental Implant Surgery",
+      "description": "Permanent tooth replacement solution using titanium implants",
+      "estimatedCost": {
+        "@type": "MonetaryAmount",
+        "currency": "USD",
+        "value": "3000"
+      },
+      "howPerformed": "Permanent tooth replacement solution using titanium implants",
+      "performTime": "1-2 hours",
+      "recoveryTime": "3-6 months",
+      "faq": [
+        {
+          "question": "What is Dental Implant Surgery?",
+          "answer": "Permanent tooth replacement solution using titanium implants"
+        },
+        {
+          "question": "How much does Dental Implant Surgery cost?",
+          "answer": "Permanent tooth replacement solution using titanium implants"
+        },
+        {
+          "question": "What is the recovery time for Dental Implant Surgery?",
+          "answer": "Permanent tooth replacement solution using titanium implants"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalProcedure",
+      "name": "CoolSculpting",
+      "description": "Non-invasive fat reduction treatment using cryolipolysis",
+      "estimatedCost": {
+        "@type": "MonetaryAmount",
+        "currency": "USD",
+        "value": "2000"
+      },
+      "howPerformed": "Non-invasive fat reduction treatment using cryolipolysis",
+      "performTime": "35-60 minutes per area",
+      "recoveryTime": "None",
+      "faq": [
+        {
+          "question": "What is CoolSculpting?",
+          "answer": "Non-invasive fat reduction treatment using cryolipolysis"
+        },
+        {
+          "question": "How much does CoolSculpting cost?",
+          "answer": "Non-invasive fat reduction treatment using cryolipolysis"
+        },
+        {
+          "question": "What is the recovery time for CoolSculpting?",
+          "answer": "Non-invasive fat reduction treatment using cryolipolysis"
+        }
+      ]
+    }
+  ]
+}

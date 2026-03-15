@@ -168,6 +168,24 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             })
           }}
         />
+
+        {/* GEO: Knowledge Graph Entity Reference */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "StackMatrices Blog",
+              "url": "https://stackmatrices.com",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://stackmatrices.com/blog?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
+            })
+          }}
+        />
       </div>
     </div>
   );
