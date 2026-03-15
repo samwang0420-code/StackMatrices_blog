@@ -1,10 +1,595 @@
 2:I[2972,["972","static/chunks/972-f95eba36e5b3e2f0.js","308","static/chunks/app/blog/%5Bslug%5D/page-1abf98d1f161bc14.js"],""]
-3:I[4707,[],""]
-5:I[6423,[],""]
-6:I[8003,["972","static/chunks/972-f95eba36e5b3e2f0.js","674","static/chunks/674-30eea2087977bab3.js","3","static/chunks/3-d3899e4b4871058e.js","185","static/chunks/app/layout-5fc3bf94b4702575.js"],""]
-7:I[4902,["972","static/chunks/972-f95eba36e5b3e2f0.js","674","static/chunks/674-30eea2087977bab3.js","3","static/chunks/3-d3899e4b4871058e.js","185","static/chunks/app/layout-5fc3bf94b4702575.js"],"AuthProvider"]
-8:I[3738,["972","static/chunks/972-f95eba36e5b3e2f0.js","674","static/chunks/674-30eea2087977bab3.js","3","static/chunks/3-d3899e4b4871058e.js","185","static/chunks/app/layout-5fc3bf94b4702575.js"],"Navbar"]
-4:["slug","shopify-google-sheets-automation","d"]
-0:["XHEEX_7KCUznbGIR9Ltns",[[["",{"children":["blog",{"children":[["slug","shopify-google-sheets-automation","d"],{"children":["__PAGE__?{\"slug\":\"shopify-google-sheets-automation\"}",{}]}]}]},"$undefined","$undefined",true],["",{"children":["blog",{"children":[["slug","shopify-google-sheets-automation","d"],{"children":["__PAGE__",{},[["$L1",["$","div",null,{"className":"min-h-screen bg-gradient-to-br from-navy via-navy-light to-navy-dark text-white py-16 px-6","children":["$","div",null,{"className":"max-w-3xl mx-auto","children":[["$","$L2",null,{"href":"/blog","className":"inline-flex items-center gap-2 text-gray-400 hover:text-white mb-8","children":[["$","svg",null,{"xmlns":"http://www.w3.org/2000/svg","width":16,"height":16,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"lucide lucide-arrow-left","aria-hidden":"true","children":[["$","path","1l729n",{"d":"m12 19-7-7 7-7"}],["$","path","x3x0zl",{"d":"M19 12H5"}],"$undefined"]}]," Back to Blog"]}],["$","div",null,{"className":"mb-8","children":[["$","div",null,{"className":"flex gap-2 mb-4 flex-wrap","children":[["$","span","Local SEO",{"className":"px-3 py-1 bg-[#07C160]/20 text-[#07C160] text-sm rounded-full","children":"Local SEO"}],["$","span","California",{"className":"px-3 py-1 bg-[#07C160]/20 text-[#07C160] text-sm rounded-full","children":"California"}],["$","span","Roof Repair",{"className":"px-3 py-1 bg-[#07C160]/20 text-[#07C160] text-sm rounded-full","children":"Roof Repair"}]]}],["$","h1",null,{"className":"text-3xl md:text-4xl font-bold mb-4","children":"Shopify Google Sheets Automation"}],["$","p",null,{"className":"text-gray-400","children":"Article about Shopify Google Sheets Automation - Local SEO guide for California businesses"}]]}],["$","div",null,{"className":"bg-white/5 border border-white/10 rounded-xl p-8","children":[["$","p",null,{"className":"text-gray-300 mb-4","children":"This article was generated automatically using our PSEO system."}],["$","p",null,{"className":"text-gray-300 mb-4","children":["Full optimization tips and local SEO strategies for ","shopify google sheets automation"," in California."]}],["$","p",null,{"className":"text-sm text-gray-500","children":["Date: ","March 14, 2026"," | Author: ","Stackmatrices Team"]}]]}]]}]}],null],null],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","blog","children","$4","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","blog","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/aec777d8fdcd4f76.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":[["$","$L6",null,{"id":"schema-organization","type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"name\":\"Stackmatrices\",\"alternateName\":\"Stackmatrices GEO Agency\",\"url\":\"https://stackmatrices.com\",\"logo\":\"https://stackmatrices.com/logo.svg\",\"description\":\"GEO Agency for Medical Practices | Recover patients lost to AI. We help plastic surgeons, dentists, and medspas get recommended by ChatGPT, Perplexity, and Google AI. Stop losing $300K+/year to AI-diverted patients.\",\"sameAs\":[\"https://twitter.com/stackmatrices\",\"https://linkedin.com/company/stackmatrices\",\"https://github.com/samwang0420-code\"],\"contactPoint\":{\"@type\":\"ContactPoint\",\"email\":\"contact@stackmatrices.com\",\"contactType\":\"sales\",\"availableLanguage\":[\"English\"]},\"knowsAbout\":[\"GEO Marketing\",\"Generative Engine Optimization\",\"AI Search Optimization\",\"Medical Practice Marketing\",\"Plastic Surgery SEO\",\"Dental Marketing\",\"Medspa Marketing\"]}"}}],["$","$L6",null,{"id":"schema-website","type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"WebSite\",\"name\":\"Stackmatrices\",\"url\":\"https://stackmatrices.com\",\"potentialAction\":{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://stackmatrices.com/blog?q={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}}"}}],["$","$L6",null,{"src":"https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX","strategy":"afterInteractive"}],["$","$L6",null,{"id":"google-analytics","strategy":"afterInteractive","children":"\n            window.dataLayer = window.dataLayer || [];\n            function gtag(){dataLayer.push(arguments);}\n            gtag('js', new Date());\n            gtag('config', 'G-XXXXXXXXXX', {\n              page_title: document.title,\n              page_location: window.location.href,\n            });\n          "}]]}],["$","body",null,{"className":"__className_f367f3 min-h-screen flex flex-col bg-navy text-white antialiased","children":["$","$L7",null,{"children":[["$","$L8",null,{}],["$","main",null,{"className":"flex-1","children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}]}],["$","footer",null,{"className":"bg-navy-light border-t border-gray-800","children":["$","div",null,{"className":"max-w-7xl mx-auto px-6 py-12","children":[["$","div",null,{"className":"flex items-center justify-center gap-2 text-sm text-gray-500 mb-8 pb-8 border-b border-gray-800","children":[["$","svg",null,{"xmlns":"http://www.w3.org/2000/svg","width":16,"height":16,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"lucide lucide-shield text-primary","aria-hidden":"true","children":[["$","path","oel41y",{"d":"M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"}],"$undefined"]}],"Privacy-conscious data handling"]}],["$","div",null,{"className":"grid grid-cols-1 md:grid-cols-4 gap-8 mb-8","children":[["$","div",null,{"className":"col-span-1 md:col-span-2","children":[["$","div",null,{"className":"flex items-center gap-2 mb-4","children":[["$","div",null,{"className":"w-8 h-8 bg-primary rounded-lg flex items-center justify-center","children":["$","svg",null,{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"lucide lucide-shield w-5 h-5 text-navy","aria-hidden":"true","children":[["$","path","oel41y",{"d":"M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"}],"$undefined"]}]}],["$","span",null,{"className":"font-bold text-xl text-white","children":"Stackmatrices"}]]}],["$","p",null,{"className":"text-gray-400 text-sm max-w-sm mb-4","children":"Specialized GEO Agency for High-Value Medical Practices. We secure your brand's citation at the exact moment of patient intent."}]]}],["$","div",null,{"children":[["$","h4",null,{"className":"font-semibold text-white mb-4","children":"Solutions"}],["$","ul",null,{"className":"space-y-2","children":[["$","li",null,{"children":["$","$L2",null,{"href":"/interventions","className":"text-gray-400 hover:text-primary text-sm transition-colors","children":"Strategic Interventions"}]}],["$","li",null,{"children":["$","$L2",null,{"href":"/audit","className":"text-gray-400 hover:text-primary text-sm transition-colors","children":"AI Visibility Audit"}]}],["$","li",null,{"children":["$","$L2",null,{"href":"/cases","className":"text-gray-400 hover:text-primary text-sm transition-colors","children":"Case Studies"}]}]]}]]}],["$","div",null,{"children":[["$","h4",null,{"className":"font-semibold text-white mb-4","children":"Verticals"}],["$","ul",null,{"className":"space-y-2","children":[["$","li",null,{"children":["$","span",null,{"className":"text-gray-400 text-sm","children":"Medical Aesthetics"}]}],["$","li",null,{"children":["$","span",null,{"className":"text-gray-400 text-sm","children":"High-End Dentistry"}]}]]}]]}]]}],["$","div",null,{"className":"pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4","children":[["$","p",null,{"className":"text-gray-500 text-sm","children":"© 2026 Stackmatrices Intelligence. All rights reserved."}],["$","p",null,{"className":"text-gray-600 text-xs","children":"We may earn a commission from referrals to third-party services, at no additional cost to your practice."}]]}]]}]}]]}]}]]}]],null],null],["$L9",null]]]]
-9:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"name":"theme-color","content":"#0B0F19"}],["$","meta","2",{"charSet":"utf-8"}],["$","title","3",{"children":"Stackmatrices"}],["$","meta","4",{"name":"description","content":"GEO Agency for Medical Practices | Recover patients lost to AI. We help plastic surgeons, dentists, and medspas get recommended by ChatGPT, Perplexity, and Google AI. Stop losing $300K+/year to AI-diverted patients."}],["$","meta","5",{"name":"author","content":"Stackmatrices Team"}],["$","meta","6",{"name":"keywords","content":"GEO,Generative Engine Optimization,AI Search,Medical Marketing,Plastic Surgery SEO,Dental Marketing,Medspa Marketing"}],["$","meta","7",{"name":"creator","content":"Stackmatrices Team"}],["$","meta","8",{"name":"publisher","content":"Stackmatrices Team"}],["$","meta","9",{"name":"robots","content":"index, follow"}],["$","meta","10",{"name":"googlebot","content":"index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"}],["$","meta","11",{"name":"impact-site-verification","content":"1cc042f8-9429-4ced-9822-5eb8a53de347"}],["$","link","12",{"rel":"canonical","href":"https://stackmatrices.com"}],["$","meta","13",{"property":"og:title","content":"Stackmatrices"}],["$","meta","14",{"property":"og:description","content":"GEO Agency for Medical Practices | Recover patients lost to AI. We help plastic surgeons, dentists, and medspas get recommended by ChatGPT, Perplexity, and Google AI. Stop losing $300K+/year to AI-diverted patients."}],["$","meta","15",{"property":"og:url","content":"https://stackmatrices.com"}],["$","meta","16",{"property":"og:site_name","content":"Stackmatrices"}],["$","meta","17",{"property":"og:locale","content":"en_US"}],["$","meta","18",{"property":"og:image","content":"https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1200"}],["$","meta","19",{"property":"og:image:width","content":"1200"}],["$","meta","20",{"property":"og:image:height","content":"630"}],["$","meta","21",{"property":"og:image:alt","content":"Stackmatrices"}],["$","meta","22",{"property":"og:type","content":"website"}],["$","meta","23",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","24",{"name":"twitter:site","content":"@stackmatrices"}],["$","meta","25",{"name":"twitter:creator","content":"@stackmatrices"}],["$","meta","26",{"name":"twitter:title","content":"Stackmatrices"}],["$","meta","27",{"name":"twitter:description","content":"GEO Agency for Medical Practices | Recover patients lost to AI. We help plastic surgeons, dentists, and medspas get recommended by ChatGPT, Perplexity, and Google AI. Stop losing $300K+/year to AI-diverted patients."}],["$","meta","28",{"name":"twitter:image","content":"https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1200"}],["$","link","29",{"rel":"shortcut icon","href":"/logo.svg"}],["$","link","30",{"rel":"icon","href":"/favicon.ico","type":"image/x-icon","sizes":"16x16"}],["$","link","31",{"rel":"icon","href":"/logo.svg"}],["$","link","32",{"rel":"apple-touch-icon","href":"/logo.svg"}],["$","meta","33",{"name":"next-size-adjust"}]]
+4:I[4707,[],""]
+6:I[6423,[],""]
+7:I[8003,["972","static/chunks/972-f95eba36e5b3e2f0.js","674","static/chunks/674-30eea2087977bab3.js","3","static/chunks/3-d3899e4b4871058e.js","185","static/chunks/app/layout-5fc3bf94b4702575.js"],""]
+8:I[4902,["972","static/chunks/972-f95eba36e5b3e2f0.js","674","static/chunks/674-30eea2087977bab3.js","3","static/chunks/3-d3899e4b4871058e.js","185","static/chunks/app/layout-5fc3bf94b4702575.js"],"AuthProvider"]
+9:I[3738,["972","static/chunks/972-f95eba36e5b3e2f0.js","674","static/chunks/674-30eea2087977bab3.js","3","static/chunks/3-d3899e4b4871058e.js","185","static/chunks/app/layout-5fc3bf94b4702575.js"],"Navbar"]
+3:T6497,<p>
+<h1>Shopify to Google Sheets Automation: The Complete Guide to Real-Time Order Sync</h1></p>
+<p>*Last updated: February 18, 2026 | Reading time: 22 minutes*</p>
+<p>If you're running a Shopify store processing more than 50 orders per day, you're probably spending 2-4 hours daily on data entry—exporting CSVs, copying order details into spreadsheets, updating inventory counts, and creating reports for your team or accountant.</p>
+<p>There's a better way. By connecting Shopify to Google Sheets through automation, you can eliminate manual data entry entirely, get real-time visibility into your business, and free up 10+ hours per week to focus on growth.</p>
+<p>In this comprehensive guide, I'll show you exactly how to build a Shopify-to-Google Sheets automation that syncs orders in real-time, automatically organizes data, and sends alerts when important events occur.</p>
+<h2>Table of Contents</h2>
+1. [The Manual Data Entry Problem](#the-manual-data-entry-problem)
+2. [Real Business Impact: Case Studies](#real-business-impact-case-studies)
+3. [Architecture Overview](#architecture-overview)
+4. [Step 1: Setting Up Your Google Sheets Infrastructure](#step-1-setting-up-your-google-sheets-infrastructure)
+5. [Step 2: Configuring Make (Integromat)](#step-2-configuring-make-integromat)
+6. [Step 3: Building Advanced Workflows](#step-3-building-advanced-workflows)
+7. [Step 4: Creating Dashboards and Reports](#step-4-creating-dashboards-and-reports)
+8. [Advanced Automation Strategies](#advanced-automation-strategies)
+9. [Common Issues and Troubleshooting](#common-issues-and-troubleshooting)
+10. [Scaling Your Automation](#scaling-your-automation)
+<p>---</p>
+<h2>The Manual Data Entry Problem</h2>
+<h3>The Daily Grind of E-commerce Data Management</h3>
+<p>A typical Shopify merchant with 100 orders per day spends time on:</p>
+<p><strong>Morning Routine (45 minutes):</strong>
+<ul><li>Export yesterday's orders from Shopify (CSV)</li>
+<li>Open Excel/Google Sheets</li>
+<li>Copy-paste order data into master spreadsheet</li>
+<li>Format data (dates, currency, split name into first/last)</li>
+<li>Filter out cancelled/test orders</li>
+<li>Sort by product type for fulfillment team</p></li>
+<p><strong>Throughout the Day (2-3 hours):</strong>
+<li>Check for new orders every 2 hours</li>
+<li>Manually update inventory counts</li>
+<li>Send order details to suppliers (copy-paste into emails)</li>
+<li>Update shipping tracking information</li>
+<li>Calculate daily revenue for accounting</p></li>
+<p><strong>End of Day (30 minutes):</strong>
+<li>Reconcile Shopify data with spreadsheet</li>
+<li>Create summary report for stakeholders</li>
+<li>Fix errors from manual entry</p></li>
+<p><strong>Total: 3.5-4 hours per day on data entry alone.</strong></p>
+<h3>The Hidden Costs of Manual Processes</h3>
+<p><strong>Direct Costs:</strong>
+<li>Labor cost: $20/hour × 4 hours/day × 30 days = $2,400/month</li>
+<li>Error correction: 2 hours/week × $20/hour = $160/month</li>
+<li>Delayed fulfillment: Lost sales from slow data flow</p></li>
+<p><strong>Indirect Costs:</strong>
+<li>Delayed decision-making: Waiting for data compilation</li>
+<li>Inventory stockouts: Real-time visibility prevents this</li>
+<li>Customer service issues: Wrong tracking numbers, delayed responses</li>
+<li>Burnout: Team frustration with repetitive tasks</p></li>
+<p><strong>Risk Costs:</strong>
+<li>Human error: Wrong data leads to wrong decisions</li>
+<li>No audit trail: Who changed what and when?</li>
+<li>Data loss: Spreadsheets crash, files get corrupted</p></li>
+<p>---</p>
+<h2>Real Business Impact: Case Studies</h2>
+<h3>Case Study 1: Fashion Retailer (3-Month Transformation)</h3>
+<p><strong>Business Profile:</strong>
+<li>Shopify store selling women's clothing</li>
+<li>80-120 orders per day</li>
+<li>3-person team (owner + 2 fulfillment staff)</li>
+<li>Selling in US, UK, Canada</p></li>
+<p><strong>Before Automation:</strong>
+```
+Daily Routine:
+<li>6 AM: Export orders from Shopify (CSV)</li>
+<li>6:30 AM: Import to Google Sheets, format data</li>
+<li>7:00 AM: Sort by size/color for picking</li>
+<li>9:00 AM: Check for new orders, repeat process</li>
+<li>12:00 PM: Lunch (but often interrupted by "urgent" order checks)</li>
+<li>2:00 PM: Update inventory counts manually</li>
+<li>4:00 PM: Send order summary to shipping partner</li>
+<li>6:00 PM: Final check, reconcile numbers</p></li>
+<p>Problems:
+<li>4 hours/day on data management</li>
+<li>Frequent errors in order details (wrong sizes, addresses)</li>
+<li>Delayed fulfillment (data not ready when picking starts)</li>
+<li>No real-time visibility into sales trends</li>
+<li>Team burnout, high turnover</li>
+```</p>
+<p><strong>After Automation (Make + Google Sheets):</strong>
+```
+New Routine:
+<li>Orders sync to Google Sheets automatically (real-time)</li>
+<li>8 AM: Review automated dashboard (15 minutes)</li>
+<li>8:15 AM: Fulfillment team starts picking (data already sorted)</li>
+<li>12 PM: Lunch (uninterrupted)</li>
+<li>2 PM: Check automated low-stock alerts</li>
+<li>4 PM: Automated report sent to shipping partner</li>
+<li>End of day: No reconciliation needed (data always accurate)</p></li>
+<p>Results:
+<li>Time saved: 4 hours/day → 30 minutes/day (87% reduction)</li>
+<li>Labor cost savings: $2,400/month → $300/month</li>
+<li>Order accuracy: 94% → 99.7%</li>
+<li>Fulfillment speed: 48-hour average → 24-hour average</li>
+<li>Team satisfaction: Significant improvement</li>
+<li>Revenue impact: +23% (faster fulfillment = happier customers = more repeat purchases)</li>
+```</p>
+<p><strong>ROI Calculation:</strong>
+<li>Setup cost: $1,200 (one-time)</li>
+<li>Monthly savings: $2,100 (labor) + $500 (error reduction) = $2,600</li>
+<li>Payback period: 14 days</li>
+<li>12-month ROI: 2,500%</p></li>
+<h3>Case Study 2: Electronics Accessories Brand</h3>
+<p><strong>Challenge:</strong> Multi-channel sales (Shopify + Amazon + eBay) with inventory sync issues</p>
+<p><strong>Automation Solution:</strong>
+1. Shopify orders sync to Google Sheets (real-time)
+2. Amazon/eBay orders import via CSV → also sync to same Sheet
+3. Inventory counts automatically calculated across all channels
+4. Low-stock alerts sent to purchasing manager
+5. Daily sales report auto-generated and emailed</p>
+<p><strong>Results after 6 months:</strong>
+<li>Zero stockouts (previously 2-3 per month)</li>
+<li>Inventory accuracy: 99.2% (up from 87%)</li>
+<li>Reduced overstock by $45,000 (better visibility)</li>
+<li>Accounting reconciliation time: 8 hours/month → 30 minutes/month</p></li>
+<p>---</p>
+<h2>Architecture Overview</h2>
+<h3>The Complete Data Flow</h3>
+<p>```
+Shopify Store
+    ↓ (Webhook trigger)
+New Order Created
+    ↓
+Make (Integromat) - Automation Engine
+    ├─→ Filter: Check order status (paid? cancelled?)
+    ├─→ Transform: Format data for Google Sheets
+    ├─→ Enrich: Add product details, calculate shipping
+    └─→ Route: Send to appropriate Sheet tab
+    ↓
+Google Sheets
+    ├─→ Master Orders Tab (all orders)
+    ├─→ Fulfillment Tab (ready to ship)
+    ├─→ Accounting Tab (for bookkeeper)
+    └─→ Dashboard Tab (KPIs and charts)
+    ↓
+Alerts & Notifications
+    ├─→ Slack: High-value orders
+    ├─→ Email: Daily summary report
+    └─→ SMS: Critical low-stock alerts
+```</p>
+<h3>Data Structure in Google Sheets</h3>
+<p><strong>Tab 1: Master Orders (Auto-populated)</strong>
+| Order ID | Date | Customer | Email | Product | Qty | Total | Status | Shipping | Tracking |
+|----------|------|----------|-------|---------|-----|-------|--------|----------|----------|
+| #1001 | 2026-02-18 | John Smith | john@email.com | Widget Pro | 2 | $59.98 | Paid | Express | 1Z999... |</p>
+<p><strong>Tab 2: Products Sold (Pivot from Master)</strong>
+| Product | Total Sold | Revenue | Avg Order Value |
+|---------|------------|---------|-----------------|
+| Widget Pro | 45 | $2,699.55 | $59.99 |</p>
+<p><strong>Tab 3: Customer List (Unique customers)</strong>
+| Name | Email | Orders | Total Spent | Last Order | Segment |
+|------|-------|--------|-------------|------------|---------|
+| John Smith | john@email.com | 3 | $179.97 | 2026-02-18 | VIP |</p>
+<p><strong>Tab 4: Daily Summary (Auto-generated)</strong>
+| Date | Orders | Revenue | Units | Avg Order | Refunds | Net |
+|------|--------|---------|-------|-----------|---------|-----|
+| 2026-02-18 | 87 | $5,243.13 | 134 | $60.27 | $0 | $5,243.13 |</p>
+<p><strong>Tab 5: Inventory Alerts (Calculated)</strong>
+| Product | Current Stock | Sold (7d) | Days Left | Status |
+|---------|---------------|-----------|-----------|--------|
+| Widget Pro | 23 | 45 | 3.6 | 🔴 LOW |</p>
+<p>---</p>
+<h2>Step 1: Setting Up Your Google Sheets Infrastructure</h2>
+<h3>Step 1.1: Create the Master Spreadsheet</h3>
+<p>1. Go to [Google Sheets](https://sheets.google.com)
+2. Create new spreadsheet: "Shopify Orders Master - 2026"
+3. Share with your team (viewer or editor permissions)</p>
+<h3>Step 1.2: Set Up Tab 1 - Master Orders</h3>
+<p><strong>Headers (Row 1):</strong>
+```
+A: Order ID
+B: Order Date
+C: Customer Name
+D: Customer Email
+E: Customer Phone
+F: Product Name
+G: Variant (Size/Color)
+H: SKU
+I: Quantity
+J: Unit Price
+K: Line Total
+L: Discount
+M: Subtotal
+N: Tax
+O: Shipping
+P: Total
+Q: Payment Status
+R: Fulfillment Status
+S: Shipping Method
+T: Tracking Number
+U: Shipping Address
+V: Billing Address
+W: Tags
+X: Source
+Y: Landing Page
+Z: Referrer
+AA: UTM Source
+AB: UTM Medium
+AC: UTM Campaign
+AD: Notes
+AE: Created At (Timestamp)
+```</p>
+<p><strong>Formatting:</strong>
+<li>Freeze Row 1 (View → Freeze → 1 row)</li>
+<li>Format columns: Currency (K, N, O, P), Date (B)</li>
+<li>Data validation for Status columns (dropdown: Paid/Pending/Cancelled)</li>
+<li>Conditional formatting: Highlight cancelled orders in red</p></li>
+<h3>Step 1.3: Set Up Tab 2 - Daily Summary (Dashboard)</h3>
+<p><strong>Use QUERY function for auto-summaries:</strong></p>
+<p>```javascript
+// Today's Orders
+=QUERY('Master Orders'!A:AE, 
+  "select count(A), sum(P) 
+   where B = date '"&TEXT(TODAY(),"yyyy-mm-dd")&"' 
+   label count(A) 'Orders', sum(P) 'Revenue'")</p>
+<p>// This Week
+=QUERY('Master Orders'!A:AE, 
+  "select count(A), sum(P) 
+   where B >= date '"&TEXT(TODAY()-7,"yyyy-mm-dd")&"' 
+   label count(A) 'Orders', sum(P) 'Revenue'")</p>
+<p>// Top Products This Month
+=QUERY('Master Orders'!A:AE, 
+  "select F, sum(I), sum(P) 
+   where month(B) = "&MONTH(TODAY())&" 
+   group by F 
+   order by sum(P) desc 
+   limit 10 
+   label F 'Product', sum(I) 'Units', sum(P) 'Revenue'")
+```</p>
+<h3>Step 1.4: Set Up Tab 3 - Inventory Tracking</h3>
+<p>Create manual tracking or connect to inventory management system:</p>
+<p>| SKU | Product | Current Stock | On Order | Reserved | Available | Reorder Point | Status |
+|-----|---------|---------------|----------|----------|-----------|---------------|--------|
+| WDGT-001 | Widget Pro | 45 | 100 | 12 | 33 | 20 | 🟢 OK |</p>
+<p><strong>Formula for Available:</strong> `=D2-E2` (Stock - Reserved)
+<strong>Formula for Status:</strong>
+```javascript
+=IF(G2>=D2,"🔴 CRITICAL",
+   IF(G2>=D2*1.5,"🟡 LOW",
+   "🟢 OK"))
+```</p>
+<p>---</p>
+<h2>Step 2: Configuring Make (Integromat)</h2>
+<h3>Step 2.1: Create Your Make Account</h3>
+<p>1. Sign up at [make.com](https://www.make.com)
+2. Start with free plan (1,000 operations/month)
+3. Upgrade to Core plan ($9/month) when you exceed limits</p>
+<h3>Step 2.2: Create New Scenario</h3>
+<p><strong>Scenario Name:</strong> "Shopify Orders to Google Sheets"</p>
+<h3>Step 2.3: Add Trigger - Shopify</h3>
+<p><strong>Module:</strong> Shopify → Watch Orders</p>
+<p><strong>Connection:</strong>
+1. Click "Add" to create new connection
+2. Enter your Shopify store name (your-store.myshopify.com)
+3. Create private app in Shopify:
+   - Settings → Apps and sales channels → Develop apps
+   - Create app → Configure Admin API scopes
+   - Enable: `read_orders`, `read_products`, `read_customers`
+   - Install app → Copy API credentials
+4. Paste credentials in Make</p>
+<p><strong>Trigger Settings:</strong>
+<li><strong>Filter:</strong> Status = "paid" (ignore unpaid/cancelled)</li>
+<li><strong>Limit:</strong> 100 (max orders per run)</li>
+<li><strong>Schedule:</strong> Immediately (webhook)</p></li>
+<h3>Step 2.4: Add Router (Filter Logic)</h3>
+<p><strong>Module:</strong> Flow Control → Router</p>
+<p>Create 3 routes:
+1. <strong>Route A:</strong> Standard orders → Master Orders tab
+2. <strong>Route B:</strong> High-value orders (>$500) → Master + VIP Alert
+3. <strong>Route C:</strong> International orders → Master + Customs tab</p>
+<p><strong>Filter for Route B:</strong>
+```javascript
+{{order.total_price}} > 500
+```</p>
+<p><strong>Filter for Route C:</strong>
+```javascript
+{{order.shipping_address.country}} != "United States"
+```</p>
+<h3>Step 2.5: Add Google Sheets Module</h3>
+<p><strong>Module:</strong> Google Sheets → Add Row</p>
+<p><strong>Connection:</strong>
+1. Authorize Google account
+2. Select spreadsheet: "Shopify Orders Master - 2026"
+3. Select sheet: "Master Orders"</p>
+<p><strong>Mapping (Map Shopify data to Sheet columns):</strong></p>
+<p>```javascript
+// Column A: Order ID
+{{order.name}}</p>
+<p>// Column B: Order Date
+{{formatDate(order.created_at; "YYYY-MM-DD")}}</p>
+<p>// Column C: Customer Name
+{{order.customer.first_name}} {{order.customer.last_name}}</p>
+<p>// Column D: Customer Email
+{{order.email}}</p>
+<p>// Column E: Customer Phone
+{{order.customer.phone}}</p>
+<p>// Column F: Product Name (first item)
+{{order.line_items[1].title}}</p>
+<p>// Column G: Variant
+{{order.line_items[1].variant_title}}</p>
+<p>// Column H: SKU
+{{order.line_items[1].sku}}</p>
+<p>// Column I: Quantity
+{{order.line_items[1].quantity}}</p>
+<p>// Column J: Unit Price
+{{order.line_items[1].price}}</p>
+<p>// Column K: Line Total
+{{order.line_items[1].quantity * order.line_items[1].price}}</p>
+<p>// Column L: Discount
+{{order.total_discounts}}</p>
+<p>// Column M: Subtotal
+{{order.subtotal_price}}</p>
+<p>// Column N: Tax
+{{order.total_tax}}</p>
+<p>// Column O: Shipping
+{{order.shipping_lines[1].price}}</p>
+<p>// Column P: Total
+{{order.total_price}}</p>
+<p>// Column Q: Payment Status
+{{order.financial_status}}</p>
+<p>// Column R: Fulfillment Status
+{{order.fulfillment_status}}</p>
+<p>// Column S: Shipping Method
+{{order.shipping_lines[1].title}}</p>
+<p>// Column T: Tracking Number (blank initially)
+[leave blank]</p>
+<p>// Column U: Shipping Address
+{{order.shipping_address.address1}}, {{order.shipping_address.city}}, {{order.shipping_address.province}} {{order.shipping_address.zip}}</p>
+<p>// Column V: Billing Address
+{{order.billing_address.address1}}, {{order.billing_address.city}}, {{order.billing_address.province}} {{order.billing_address.zip}}</p>
+<p>// Column W: Tags
+{{join(order.tags; ", ")}}</p>
+<p>// Column X: Source
+{{order.source_name}}</p>
+<p>// Column Y: Landing Page
+{{order.landing_site}}</p>
+<p>// Column Z: Referrer
+{{order.referring_site}}</p>
+<p>// Column AA-AC: UTM Parameters
+{{order.note_attributes.utm_source}}
+{{order.note_attributes.utm_medium}}
+{{order.note_attributes.utm_campaign}}</p>
+<p>// Column AD: Notes
+{{order.note}}</p>
+<p>// Column AE: Created At
+{{order.created_at}}
+```</p>
+<h3>Step 2.6: Handle Multiple Line Items</h3>
+<p>If orders can have multiple products, you need an Iterator:</p>
+<p><strong>Add Module:</strong> Flow Control → Iterator
+<strong>Source:</strong> `order.line_items`</p>
+<p>Then inside the iterator, add Google Sheets "Add Row" for each line item.</p>
+<h3>Step 2.7: Add Error Handling</h3>
+<p><strong>Add Module:</strong> Flow Control → Commit
+<strong>On Error:</strong> 
+<li>Add Rollback module</li>
+<li>Send error notification to Slack/Email</li>
+<li>Log error to Google Sheets "Errors" tab</p></li>
+<p>---</p>
+<h2>Step 3: Building Advanced Workflows</h2>
+<h3>Advanced Workflow 1: High-Value Order Alerts</h3>
+<p><strong>Trigger:</strong> Order paid AND Total > $500</p>
+<p><strong>Actions:</strong>
+1. Add to Google Sheets (Master Orders)
+2. Send Slack message to #vip-orders channel
+3. Send email to fulfillment manager
+4. Add to "Priority Fulfillment" queue</p>
+<p><strong>Slack Message Template:</strong>
+```
+🌟 HIGH-VALUE ORDER 🌟</p>
+<p>Order: {{order.name}}
+Customer: {{order.customer.first_name}} {{order.customer.last_name}}
+Amount: ${{order.total_price}}
+Items: {{count(order.line_items)}}</p>
+<p>Fulfill ASAP!
+```</p>
+<h3>Advanced Workflow 2: Low Stock Alerts</h3>
+<p><strong>Trigger:</strong> Every 4 hours (scheduled)</p>
+<p><strong>Process:</strong>
+1. Query Google Sheets for inventory levels
+2. Compare to reorder points
+3. If stock < reorder point:
+   - Send email to purchasing manager
+   - Create draft purchase order
+   - Alert if already on order (avoid double-ordering)</p>
+<h3>Advanced Workflow 3: Daily Summary Report</h3>
+<p><strong>Trigger:</strong> Every day at 8 AM</p>
+<p><strong>Process:</strong>
+1. Query yesterday's orders from Google Sheets
+2. Calculate KPIs:
+   - Total orders
+   - Total revenue
+   - Average order value
+   - Top products
+   - New vs. returning customers
+3. Generate PDF report (using Google Docs)
+4. Email to stakeholders</p>
+<h3>Advanced Workflow 4: Customer Segmentation</h3>
+<p><strong>Trigger:</strong> New order created</p>
+<p><strong>Process:</strong>
+1. Query customer's order history from Google Sheets
+2. Calculate:
+   - Total lifetime value
+   - Number of orders
+   - Days since last order
+   - Average order value
+3. Segment customer:
+   - VIP: LTV > $500 OR 5+ orders
+   - Regular: 2-4 orders
+   - New: 1st order
+4. Tag customer in Shopify with segment
+5. Trigger appropriate marketing workflow</p>
+<p>---</p>
+<h2>Step 4: Creating Dashboards and Reports</h2>
+<h3>Building Executive Dashboard</h3>
+<p><strong>Create new sheet: "Executive Dashboard"</strong></p>
+<p><strong>Section 1: Today's Performance (Live)</strong>
+```javascript
+// Orders Today
+=COUNTIF('Master Orders'!B:B, TODAY())</p>
+<p>// Revenue Today
+=SUMIF('Master Orders'!B:B, TODAY(), 'Master Orders'!P:P)</p>
+<p>// Avg Order Value Today
+=IF(B2>0, B3/B2, 0)
+```</p>
+<p><strong>Section 2: This Week vs Last Week</strong>
+```javascript
+// This Week Orders
+=COUNTIFS('Master Orders'!B:B, ">="&TODAY()-WEEKDAY(TODAY())+1)</p>
+<p>// Last Week Orders
+=COUNTIFS('Master Orders'!B:B, ">="&TODAY()-WEEKDAY(TODAY())-6, 
+          'Master Orders'!B:B, "<="&TODAY()-WEEKDAY(TODAY()))</p>
+<p>// Week-over-Week Growth
+=IF(B5>0, (B4-B5)/B5, 0)
+```</p>
+<p><strong>Section 3: Top 10 Products This Month</strong>
+```javascript
+=QUERY('Master Orders'!A:AE, 
+  "select F, sum(I), sum(P), avg(P) 
+   where month(B) = "&MONTH(TODAY())&" 
+   group by F 
+   order by sum(P) desc 
+   limit 10")
+```</p>
+<p><strong>Section 4: Customer Acquisition</strong>
+```javascript
+// New Customers Today
+=COUNTUNIQUEIFS('Master Orders'!D:D, 'Master Orders'!B:B, TODAY())</p>
+<p>// Returning Customers Today
+=COUNTIFS('Master Orders'!B:B, TODAY()) - B7
+```</p>
+<h3>Creating Visual Charts</h3>
+<p><strong>Chart 1: Daily Revenue Trend (Line Chart)</strong>
+<li>Data: 'Daily Summary'!A:B (Date, Revenue)</li>
+<li>Type: Line chart with trendline</p></li>
+<p><strong>Chart 2: Orders by Hour (Bar Chart)</strong>
+<li>Data: Pivot table from 'Master Orders' by hour</li>
+<li>Shows peak ordering times</p></li>
+<p><strong>Chart 3: Product Category Mix (Pie Chart)</strong>
+<li>Group products by category</li>
+<li>Shows revenue distribution</p></li>
+<p><strong>Chart 4: Geographic Distribution (Map Chart)</strong>
+<li>Use shipping address state/country</li>
+<li>Shows where customers are located</p></li>
+<p>---</p>
+<h2>Advanced Automation Strategies</h2>
+<h3>Strategy 1: Multi-Channel Inventory Sync</h3>
+<p>If you sell on multiple channels (Shopify + Amazon + eBay):</p>
+<p>1. <strong>Central Inventory Sheet:</strong> Single source of truth
+2. <strong>Sync all channels:</strong> All orders flow to master sheet
+3. <strong>Calculate available stock:</strong> 
+   ```
+   Available = Warehouse Stock - Shopify Orders - Amazon Orders - eBay Orders
+   ```
+4. <strong>Push updates back:</strong> Update Shopify inventory every 15 minutes</p>
+<h3>Strategy 2: Automated Purchase Orders</h3>
+<p>When stock runs low:</p>
+<p>1. <strong>Trigger:</strong> Inventory count < reorder point
+2. <strong>Calculate:</strong> Optimal order quantity (EOQ formula)
+3. <strong>Generate:</strong> Purchase order in Google Docs
+4. <strong>Send:</strong> Email to supplier with PO attached
+5. <strong>Track:</strong> Expected delivery date in Sheets
+6. <strong>Alert:</strong> When shipment arrives (update inventory)</p>
+<h3>Strategy 3: Customer Win-Back Campaign</h3>
+<p>Identify inactive customers:</p>
+<p>1. <strong>Query:</strong> Customers with no orders in 90 days
+2. <strong>Segment:</strong> By lifetime value
+3. <strong>Action:</strong> 
+   - High LTV: Personal outreach
+   - Medium LTV: Email discount code
+   - Low LTV: Add to newsletter only
+4. <strong>Track:</strong> Conversion rate of win-back campaigns</p>
+<h3>Strategy 4: Abandoned Cart Recovery Integration</h3>
+<p>Connect with Shopify's abandoned cart data:</p>
+<p>1. <strong>Sync:</strong> Abandoned carts to separate Sheet tab
+2. <strong>Calculate:</strong> Cart value and abandonment reason (if available)
+3. <strong>Trigger:</strong> Recovery email sequence
+4. <strong>Track:</strong> Recovery rate by cart value</p>
+<p>---</p>
+<h2>Common Issues and Troubleshooting</h2>
+<h3>Issue 1: Duplicate Orders in Sheet</h3>
+<p><strong>Cause:</strong> Webhook fires multiple times or scenario runs twice</p>
+<p><strong>Solution:</strong>
+```javascript
+// Add deduplication check
+1. Search Google Sheets for Order ID
+2. If found → Skip (order already exists)
+3. If not found → Add new row
+```</p>
+<h3>Issue 2: Data Formatting Issues</h3>
+<p><strong>Problem:</strong> Dates show as numbers, currency symbols missing</p>
+<p><strong>Solution:</strong>
+<li>Set column formats in Google Sheets (Format → Number)</li>
+<li>Use `formatDate()` in Make for consistent date formatting</li>
+<li>Store prices as numbers (no currency symbol), format in Sheets</p></li>
+<h3>Issue 3: Rate Limiting</h3>
+<p><strong>Problem:</strong> Make hits Google Sheets API limits (500 requests/100 seconds)</p>
+<p><strong>Solution:</strong>
+<li>Add "Sleep" module between operations (1-2 seconds)</li>
+<li>Batch multiple rows with "Add Multiple Rows" instead of "Add Row"</li>
+<li>Upgrade to Google Workspace (higher limits)</p></li>
+<h3>Issue 4: Webhook Failures</h3>
+<p><strong>Problem:</strong> Shopify webhook doesn't fire or Make misses it</p>
+<p><strong>Solution:</strong>
+<li>Add scheduled "List Orders" scenario as backup (runs every 15 minutes)</li>
+<li>Store last sync timestamp</li>
+<li>Query Shopify for orders since last sync</li>
+<li>Deduplicate based on Order ID</p></li>
+<h3>Issue 5: Complex Product Variants</h3>
+<p><strong>Problem:</strong> Orders with 10+ line items overwhelm the sheet</p>
+<p><strong>Solution:</strong>
+<li>Create separate "Line Items" sheet</li>
+<li>Master Orders has one row per order (summary)</li>
+<li>Line Items sheet has one row per product</li>
+<li>Link with Order ID</p></li>
+<p>---</p>
+<h2>Scaling Your Automation</h2>
+<h3>When to Upgrade</h3>
+<p><strong>Free Plan (Make):</strong> 1,000 operations/month
+<li>Good for: ~30 orders/day</p></li>
+<p><strong>Core Plan ($9/month):</strong> 10,000 operations/month
+<li>Good for: ~300 orders/day</p></li>
+<p><strong>Pro Plan ($16/month):</strong> 40,000 operations/month
+<li>Good for: ~1,000 orders/day</p></li>
+<h3>Performance Optimization</h3>
+<p>1. <strong>Reduce Operations:</strong>
+   - Use "Add Multiple Rows" instead of looping
+   - Combine multiple filters into one
+   - Use variables to avoid recalculating</p>
+<p>2. <strong>Batch Processing:</strong>
+   - Instead of real-time, process every 15 minutes
+   - Reduces webhook overhead</p>
+<p>3. <strong>Data Archiving:</strong>
+   - Move orders older than 1 year to "Archive" sheet
+   - Keeps active sheet fast
+   - Still queryable with IMPORTRANGE()</p>
+<h3>Team Collaboration</h3>
+<p><strong>Permission Levels:</strong>
+<li><strong>Owner:</strong> Full access, can modify automation</li>
+<li><strong>Manager:</strong> View/edit Sheets, can't change Make scenario</li>
+<li><strong>Fulfillment:</strong> View/edit specific tabs only</li>
+<li><strong>Accounting:</strong> View-only access to financial data</p></li>
+<p><strong>Documentation:</strong>
+<li>Create "Automation Guide" sheet explaining each tab</li>
+<li>Document Make scenario with comments</li>
+<li>Train team on how to read dashboards</p></li>
+<p>---</p>
+<h2>Conclusion</h2>
+<p>Automating your Shopify-to-Google Sheets workflow will save you 10+ hours per week, eliminate data entry errors, and give you real-time visibility into your business.</p>
+<h3>Your 7-Day Implementation Plan</h3>
+<p><strong>Day 1:</strong> Set up Google Sheets structure
+<strong>Day 2:</strong> Configure Make account and Shopify connection
+<strong>Day 3:</strong> Build basic order sync scenario
+<strong>Day 4:</strong> Test with real orders, fix any issues
+<strong>Day 5:</strong> Add dashboards and reports
+<strong>Day 6:</strong> Train team on new system
+<strong>Day 7:</strong> Monitor and optimize</p>
+<h3>Need Help?</h3>
+<p>If you need assistance setting up this automation:</p>
+<p>- <strong>DIY Template:</strong> Pre-built Make scenarios ($200)
+<li><strong>Guided Setup:</strong> 2-hour consulting call ($400)</li>
+<li><strong>Done-for-You:</strong> Complete setup and training ($1,500)</p></li></ul>
+<p>[Contact us](/contact) to discuss your specific requirements.</p>
+<p>---</p>
+<p>*This guide was last updated February 2026. Shopify and Make update their platforms regularly—if you encounter issues with the specific steps provided, check the official documentation or leave a comment below.*
+</p>5:["slug","shopify-google-sheets-automation","d"]
+0:["hp5uokVgOLw031gGY_38r",[[["",{"children":["blog",{"children":[["slug","shopify-google-sheets-automation","d"],{"children":["__PAGE__?{\"slug\":\"shopify-google-sheets-automation\"}",{}]}]}]},"$undefined","$undefined",true],["",{"children":["blog",{"children":[["slug","shopify-google-sheets-automation","d"],{"children":["__PAGE__",{},[["$L1",["$","div",null,{"className":"min-h-screen bg-gradient-to-br from-navy via-navy-light to-navy-dark text-white py-16 px-6","children":["$","div",null,{"className":"max-w-3xl mx-auto","children":[["$","$L2",null,{"href":"/blog","className":"inline-flex items-center gap-2 text-gray-400 hover:text-white mb-8","children":[["$","svg",null,{"xmlns":"http://www.w3.org/2000/svg","width":16,"height":16,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"lucide lucide-arrow-left","aria-hidden":"true","children":[["$","path","1l729n",{"d":"m12 19-7-7 7-7"}],["$","path","x3x0zl",{"d":"M19 12H5"}],"$undefined"]}]," Back to Blog"]}],["$","div",null,{"className":"mb-8","children":[["$","div",null,{"className":"flex gap-2 mb-4 flex-wrap","children":[["$","span","Shopify",{"className":"px-3 py-1 bg-[#07C160]/20 text-[#07C160] text-sm rounded-full","children":"Shopify"}],["$","span","Automation",{"className":"px-3 py-1 bg-[#07C160]/20 text-[#07C160] text-sm rounded-full","children":"Automation"}],["$","span","Google Sheets",{"className":"px-3 py-1 bg-[#07C160]/20 text-[#07C160] text-sm rounded-full","children":"Google Sheets"}],["$","span","E-commerce",{"className":"px-3 py-1 bg-[#07C160]/20 text-[#07C160] text-sm rounded-full","children":"E-commerce"}],["$","span","Make",{"className":"px-3 py-1 bg-[#07C160]/20 text-[#07C160] text-sm rounded-full","children":"Make"}],["$","span","Integromat",{"className":"px-3 py-1 bg-[#07C160]/20 text-[#07C160] text-sm rounded-full","children":"Integromat"}],["$","span","Workflow",{"className":"px-3 py-1 bg-[#07C160]/20 text-[#07C160] text-sm rounded-full","children":"Workflow"}]]}],["$","h1",null,{"className":"text-3xl md:text-4xl font-bold mb-4","children":"Shopify to Google Sheets Automation: The Complete Guide to Real-Time Order Sync"}],["$","p",null,{"className":"text-gray-400","children":"Learn how to automate Shopify order management by syncing data to Google Sheets in real-time. Save 10+ hours weekly with this step-by-step implementation guide."}]]}],["$","div",null,{"className":"bg-white/5 border border-white/10 rounded-xl p-8 mb-8 prose prose-invert max-w-none","children":["$","div",null,{"dangerouslySetInnerHTML":{"__html":"$3"}}]}],false,["$","p",null,{"className":"text-sm text-gray-500","children":["Date: ","2026-02-18"," | Author: ","Stackmatrices Team"]}],false,["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"name\":\"Stackmatrices\",\"url\":\"https://stackmatrices.com\",\"description\":\"Local SEO and GEO optimization services\"}"}}]]}]}],null],null],null]},[null,["$","$L4",null,{"parallelRouterKey":"children","segmentPath":["children","blog","children","$5","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[null,["$","$L4",null,{"parallelRouterKey":"children","segmentPath":["children","blog","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/aec777d8fdcd4f76.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":[["$","$L7",null,{"id":"schema-organization","type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"name\":\"Stackmatrices\",\"alternateName\":\"Stackmatrices GEO Agency\",\"url\":\"https://stackmatrices.com\",\"logo\":\"https://stackmatrices.com/logo.svg\",\"description\":\"GEO Agency for Medical Practices | Recover patients lost to AI. We help plastic surgeons, dentists, and medspas get recommended by ChatGPT, Perplexity, and Google AI. Stop losing $300K+/year to AI-diverted patients.\",\"sameAs\":[\"https://twitter.com/stackmatrices\",\"https://linkedin.com/company/stackmatrices\",\"https://github.com/samwang0420-code\"],\"contactPoint\":{\"@type\":\"ContactPoint\",\"email\":\"contact@stackmatrices.com\",\"contactType\":\"sales\",\"availableLanguage\":[\"English\"]},\"knowsAbout\":[\"GEO Marketing\",\"Generative Engine Optimization\",\"AI Search Optimization\",\"Medical Practice Marketing\",\"Plastic Surgery SEO\",\"Dental Marketing\",\"Medspa Marketing\"]}"}}],["$","$L7",null,{"id":"schema-website","type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"WebSite\",\"name\":\"Stackmatrices\",\"url\":\"https://stackmatrices.com\",\"potentialAction\":{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://stackmatrices.com/blog?q={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}}"}}],["$","$L7",null,{"src":"https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX","strategy":"afterInteractive"}],["$","$L7",null,{"id":"google-analytics","strategy":"afterInteractive","children":"\n            window.dataLayer = window.dataLayer || [];\n            function gtag(){dataLayer.push(arguments);}\n            gtag('js', new Date());\n            gtag('config', 'G-XXXXXXXXXX', {\n              page_title: document.title,\n              page_location: window.location.href,\n            });\n          "}]]}],["$","body",null,{"className":"__className_f367f3 min-h-screen flex flex-col bg-navy text-white antialiased","children":["$","$L8",null,{"children":[["$","$L9",null,{}],["$","main",null,{"className":"flex-1","children":["$","$L4",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}]}],["$","footer",null,{"className":"bg-navy-light border-t border-gray-800","children":["$","div",null,{"className":"max-w-7xl mx-auto px-6 py-12","children":[["$","div",null,{"className":"flex items-center justify-center gap-2 text-sm text-gray-500 mb-8 pb-8 border-b border-gray-800","children":[["$","svg",null,{"xmlns":"http://www.w3.org/2000/svg","width":16,"height":16,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"lucide lucide-shield text-primary","aria-hidden":"true","children":[["$","path","oel41y",{"d":"M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"}],"$undefined"]}],"Privacy-conscious data handling"]}],["$","div",null,{"className":"grid grid-cols-1 md:grid-cols-4 gap-8 mb-8","children":[["$","div",null,{"className":"col-span-1 md:col-span-2","children":[["$","div",null,{"className":"flex items-center gap-2 mb-4","children":[["$","div",null,{"className":"w-8 h-8 bg-primary rounded-lg flex items-center justify-center","children":["$","svg",null,{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"lucide lucide-shield w-5 h-5 text-navy","aria-hidden":"true","children":[["$","path","oel41y",{"d":"M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"}],"$undefined"]}]}],["$","span",null,{"className":"font-bold text-xl text-white","children":"Stackmatrices"}]]}],["$","p",null,{"className":"text-gray-400 text-sm max-w-sm mb-4","children":"Specialized GEO Agency for High-Value Medical Practices. We secure your brand's citation at the exact moment of patient intent."}]]}],["$","div",null,{"children":[["$","h4",null,{"className":"font-semibold text-white mb-4","children":"Solutions"}],["$","ul",null,{"className":"space-y-2","children":[["$","li",null,{"children":["$","$L2",null,{"href":"/interventions","className":"text-gray-400 hover:text-primary text-sm transition-colors","children":"Strategic Interventions"}]}],["$","li",null,{"children":["$","$L2",null,{"href":"/audit","className":"text-gray-400 hover:text-primary text-sm transition-colors","children":"AI Visibility Audit"}]}],["$","li",null,{"children":["$","$L2",null,{"href":"/cases","className":"text-gray-400 hover:text-primary text-sm transition-colors","children":"Case Studies"}]}]]}]]}],["$","div",null,{"children":[["$","h4",null,{"className":"font-semibold text-white mb-4","children":"Verticals"}],["$","ul",null,{"className":"space-y-2","children":[["$","li",null,{"children":["$","span",null,{"className":"text-gray-400 text-sm","children":"Medical Aesthetics"}]}],["$","li",null,{"children":["$","span",null,{"className":"text-gray-400 text-sm","children":"High-End Dentistry"}]}]]}]]}]]}],["$","div",null,{"className":"pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4","children":[["$","p",null,{"className":"text-gray-500 text-sm","children":"© 2026 Stackmatrices Intelligence. All rights reserved."}],["$","p",null,{"className":"text-gray-600 text-xs","children":"We may earn a commission from referrals to third-party services, at no additional cost to your practice."}]]}]]}]}]]}]}]]}]],null],null],["$La",null]]]]
+a:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"name":"theme-color","content":"#0B0F19"}],["$","meta","2",{"charSet":"utf-8"}],["$","title","3",{"children":"Stackmatrices"}],["$","meta","4",{"name":"description","content":"GEO Agency for Medical Practices | Recover patients lost to AI. We help plastic surgeons, dentists, and medspas get recommended by ChatGPT, Perplexity, and Google AI. Stop losing $300K+/year to AI-diverted patients."}],["$","meta","5",{"name":"author","content":"Stackmatrices Team"}],["$","meta","6",{"name":"keywords","content":"GEO,Generative Engine Optimization,AI Search,Medical Marketing,Plastic Surgery SEO,Dental Marketing,Medspa Marketing"}],["$","meta","7",{"name":"creator","content":"Stackmatrices Team"}],["$","meta","8",{"name":"publisher","content":"Stackmatrices Team"}],["$","meta","9",{"name":"robots","content":"index, follow"}],["$","meta","10",{"name":"googlebot","content":"index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"}],["$","meta","11",{"name":"impact-site-verification","content":"1cc042f8-9429-4ced-9822-5eb8a53de347"}],["$","link","12",{"rel":"canonical","href":"https://stackmatrices.com"}],["$","meta","13",{"property":"og:title","content":"Stackmatrices"}],["$","meta","14",{"property":"og:description","content":"GEO Agency for Medical Practices | Recover patients lost to AI. We help plastic surgeons, dentists, and medspas get recommended by ChatGPT, Perplexity, and Google AI. Stop losing $300K+/year to AI-diverted patients."}],["$","meta","15",{"property":"og:url","content":"https://stackmatrices.com"}],["$","meta","16",{"property":"og:site_name","content":"Stackmatrices"}],["$","meta","17",{"property":"og:locale","content":"en_US"}],["$","meta","18",{"property":"og:image","content":"https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1200"}],["$","meta","19",{"property":"og:image:width","content":"1200"}],["$","meta","20",{"property":"og:image:height","content":"630"}],["$","meta","21",{"property":"og:image:alt","content":"Stackmatrices"}],["$","meta","22",{"property":"og:type","content":"website"}],["$","meta","23",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","24",{"name":"twitter:site","content":"@stackmatrices"}],["$","meta","25",{"name":"twitter:creator","content":"@stackmatrices"}],["$","meta","26",{"name":"twitter:title","content":"Stackmatrices"}],["$","meta","27",{"name":"twitter:description","content":"GEO Agency for Medical Practices | Recover patients lost to AI. We help plastic surgeons, dentists, and medspas get recommended by ChatGPT, Perplexity, and Google AI. Stop losing $300K+/year to AI-diverted patients."}],["$","meta","28",{"name":"twitter:image","content":"https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1200"}],["$","link","29",{"rel":"shortcut icon","href":"/logo.svg"}],["$","link","30",{"rel":"icon","href":"/favicon.ico","type":"image/x-icon","sizes":"16x16"}],["$","link","31",{"rel":"icon","href":"/logo.svg"}],["$","link","32",{"rel":"apple-touch-icon","href":"/logo.svg"}],["$","meta","33",{"name":"next-size-adjust"}]]
 1:null

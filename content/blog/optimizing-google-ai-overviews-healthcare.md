@@ -4,6 +4,15 @@ description: "Learn how to get your healthcare practice featured in Google's AI 
 date: "2026-03-14"
 tags: ["AI Overviews", "Healthcare SEO", "GEO", "Google"]
 author: "StackMatrices Team"
+faq:
+  - question: "What are Google AI Overviews?"
+    answer: "Google AI Overviews are AI-generated summaries that appear at the top of search results, providing instant answers to user queries. For healthcare, they draw from authoritative medical sources."
+  - question: "How can healthcare practices get featured in AI Overviews?"
+    answer: "Healthcare practices can get featured by implementing FAQ schema, creating authoritative content, answering patient questions directly, and building topical authority."
+  - question: "Why is FAQ schema important for healthcare SEO?"
+    answer: "FAQ schema helps Google understand your content structure and increases chances of being cited in AI Overviews, improving visibility to potential patients."
+  - question: "What is GEO for healthcare?"
+    answer: "GEO (Generative Engine Optimization) is the practice of optimizing content for AI search systems like Google AI Overviews, ChatGPT, and Perplexity."
 ---
 
 # Optimizing for Google AI Overviews in Healthcare: A Complete Guide
