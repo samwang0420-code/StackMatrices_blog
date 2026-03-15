@@ -280,5 +280,67 @@
         }
       ]
     }
+  },
+  {
+    "timestamp": "2026-03-15T11:38:26.923363",
+    "urls": [
+      "https://stackmatrices.com/blog/landscaper-in-san-francisco-24-7-emergency-services",
+      "https://stackmatrices.com/blog/botox-vs-laser-treatment-which-is-better-for-2026",
+      "https://stackmatrices.com/blog/best-dental-implants-in-sacramento-top-rated-2026",
+      "https://stackmatrices.com/blog/coolsculpting-in-san-diego-complete-guide-2026",
+      "https://stackmatrices.com/blog/how-to-choose-the-best-emergency-plumber-in-2026"
+    ],
+    "result": {
+      "total": 5,
+      "success": 5,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/landscaper-in-san-francisco-24-7-emergency-services",
+          "result": {
+            "urlNotificationMetadata": {
+              "url": "https://stackmatrices.com/blog/landscaper-in-san-francisco-24-7-emergency-services"
+            }
+          }
+        },
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/botox-vs-laser-treatment-which-is-better-for-2026",
+          "result": {
+            "urlNotificationMetadata": {
+              "url": "https://stackmatrices.com/blog/botox-vs-laser-treatment-which-is-better-for-2026"
+            }
+          }
+        },
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/best-dental-implants-in-sacramento-top-rated-2026",
+          "result": {
+            "urlNotificationMetadata": {
+              "url": "https://stackmatrices.com/blog/best-dental-implants-in-sacramento-top-rated-2026"
+            }
+          }
+        },
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/coolsculpting-in-san-diego-complete-guide-2026",
+          "result": {
+            "urlNotificationMetadata": {
+              "url": "https://stackmatrices.com/blog/coolsculpting-in-san-diego-complete-guide-2026"
+            }
+          }
+        },
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/how-to-choose-the-best-emergency-plumber-in-2026",
+          "result": {
+            "urlNotificationMetadata": {
+              "url": "https://stackmatrices.com/blog/how-to-choose-the-best-emergency-plumber-in-2026"
+            }
+          }
+        }
+      ]
+    }
   }
 ]

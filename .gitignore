@@ -36,3 +36,4 @@ yarn-error.log*
 next-env.d.ts
 tiktok-assets/
 generated-images/
+config/google-service-account.json
