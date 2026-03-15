@@ -1,0 +1,284 @@
+[
+  {
+    "timestamp": "2026-03-15T11:15:04.471036",
+    "urls": [
+      "https://stackmatrices.com/blog/optimizing-google-ai-overviews-healthcare"
+    ],
+    "result": {
+      "total": 1,
+      "success": 0,
+      "failed": 1,
+      "results": [
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/optimizing-google-ai-overviews-healthcare",
+          "error": "HTTP 401: {\n  \"error\": {\n    \"code\": 401,\n    \"message\": \"API keys are not supported by this API. Expected OAuth2 access token or other authentication credentials that assert a principal. See https://cloud.google.com/docs/authentication\",\n    \"status\": \"UNAUTHENTICATED\",\n    \"details\": [\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.ErrorInfo\",\n        \"reason\": \"CREDENTIALS_MISSING\",\n        \"domain\": \"googleapis.com\",\n        \"metadata\": {\n          \"method\": \"google.indexing.v3.UrlService.PublishUrlNotification\",\n          \"service\": \"indexing.googleapis.com\"\n        }\n      }\n    ]\n  }\n}\n"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-15T11:21:02.254605",
+    "urls": [
+      "https://stackmatrices.com/blog/optimizing-google-ai-overviews-healthcare"
+    ],
+    "result": {
+      "total": 1,
+      "success": 0,
+      "failed": 1,
+      "results": [
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/optimizing-google-ai-overviews-healthcare",
+          "error": "<HttpError 403 when requesting https://indexing.googleapis.com/v3/urlNotifications:publish?alt=json returned \"Permission denied. Failed to verify the URL ownership.\". Details: \"Permission denied. Failed to verify the URL ownership.\">"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-15T11:22:44.774207",
+    "urls": [
+      "https://stackmatrices.com/blog/optimizing-google-ai-overviews-healthcare"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/optimizing-google-ai-overviews-healthcare",
+          "result": {
+            "urlNotificationMetadata": {
+              "url": "https://stackmatrices.com/blog/optimizing-google-ai-overviews-healthcare"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-15T11:24:17.707861",
+    "urls": [
+      "https://stackmatrices.com/blog/amazon-competitor-price-monitoring",
+      "https://stackmatrices.com/blog/amazon-review-analysis-guide",
+      "https://stackmatrices.com/blog/boost-space-review-2026",
+      "https://stackmatrices.com/blog/emergency-plumber-fresno-ca",
+      "https://stackmatrices.com/blog/emergency-plumber-long-beach-ca",
+      "https://stackmatrices.com/blog/emergency-plumber-los-angeles-ca",
+      "https://stackmatrices.com/blog/emergency-plumber-oakland-ca",
+      "https://stackmatrices.com/blog/emergency-plumber-san-diego-ca",
+      "https://stackmatrices.com/blog/optimizing-google-ai-overviews-healthcare",
+      "https://stackmatrices.com/blog/roof-repair-fresno-ca",
+      "https://stackmatrices.com/blog/roof-repair-long-beach-ca",
+      "https://stackmatrices.com/blog/roof-repair-oakland-ca",
+      "https://stackmatrices.com/blog/roof-repair-sacramento-ca",
+      "https://stackmatrices.com/blog/shopify-google-sheets-automation",
+      "https://stackmatrices.com/blog/stock-monitoring-ecommerce"
+    ],
+    "result": {
+      "total": 15,
+      "success": 15,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/amazon-competitor-price-monitoring",
+          "result": {
+            "urlNotificationMetadata": {
+              "url": "https://stackmatrices.com/blog/amazon-competitor-price-monitoring"
+            }
+          }
+        },
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/amazon-review-analysis-guide",
+          "result": {
+            "urlNotificationMetadata": {
+              "url": "https://stackmatrices.com/blog/amazon-review-analysis-guide"
+            }
+          }
+        },
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/boost-space-review-2026",
+          "result": {
+            "urlNotificationMetadata": {
+              "url": "https://stackmatrices.com/blog/boost-space-review-2026"
+            }
+          }
+        },
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/emergency-plumber-fresno-ca",
+          "result": {
+            "urlNotificationMetadata": {
+              "url": "https://stackmatrices.com/blog/emergency-plumber-fresno-ca"
+            }
+          }
+        },
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/emergency-plumber-long-beach-ca",
+          "result": {
+            "urlNotificationMetadata": {
+              "url": "https://stackmatrices.com/blog/emergency-plumber-long-beach-ca"
+            }
+          }
+        },
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/emergency-plumber-los-angeles-ca",
+          "result": {
+            "urlNotificationMetadata": {
+              "url": "https://stackmatrices.com/blog/emergency-plumber-los-angeles-ca"
+            }
+          }
+        },
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/emergency-plumber-oakland-ca",
+          "result": {
+            "urlNotificationMetadata": {
+              "url": "https://stackmatrices.com/blog/emergency-plumber-oakland-ca"
+            }
+          }
+        },
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/emergency-plumber-san-diego-ca",
+          "result": {
+            "urlNotificationMetadata": {
+              "url": "https://stackmatrices.com/blog/emergency-plumber-san-diego-ca"
+            }
+          }
+        },
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/optimizing-google-ai-overviews-healthcare",
+          "result": {
+            "urlNotificationMetadata": {
+              "url": "https://stackmatrices.com/blog/optimizing-google-ai-overviews-healthcare"
+            }
+          }
+        },
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/roof-repair-fresno-ca",
+          "result": {
+            "urlNotificationMetadata": {
+              "url": "https://stackmatrices.com/blog/roof-repair-fresno-ca"
+            }
+          }
+        },
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/roof-repair-long-beach-ca",
+          "result": {
+            "urlNotificationMetadata": {
+              "url": "https://stackmatrices.com/blog/roof-repair-long-beach-ca"
+            }
+          }
+        },
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/roof-repair-oakland-ca",
+          "result": {
+            "urlNotificationMetadata": {
+              "url": "https://stackmatrices.com/blog/roof-repair-oakland-ca"
+            }
+          }
+        },
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/roof-repair-sacramento-ca",
+          "result": {
+            "urlNotificationMetadata": {
+              "url": "https://stackmatrices.com/blog/roof-repair-sacramento-ca"
+            }
+          }
+        },
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/shopify-google-sheets-automation",
+          "result": {
+            "urlNotificationMetadata": {
+              "url": "https://stackmatrices.com/blog/shopify-google-sheets-automation"
+            }
+          }
+        },
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/stock-monitoring-ecommerce",
+          "result": {
+            "urlNotificationMetadata": {
+              "url": "https://stackmatrices.com/blog/stock-monitoring-ecommerce"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-15T11:27:50.472273",
+    "urls": [
+      "https://stackmatrices.com/blog/hvac-technician-in-long-beach-24-7-emergency-services",
+      "https://stackmatrices.com/blog/how-to-choose-the-best-landscaper-in-2026",
+      "https://stackmatrices.com/blog/laser-treatment-vs-prp-therapy-which-is-better-for-2026",
+      "https://stackmatrices.com/blog/best-invisalign-in-sacramento-top-rated-2026",
+      "https://stackmatrices.com/blog/teeth-whitening-in-beverly-hills-complete-guide-2026"
+    ],
+    "result": {
+      "total": 5,
+      "success": 5,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/hvac-technician-in-long-beach-24-7-emergency-services",
+          "result": {
+            "urlNotificationMetadata": {
+              "url": "https://stackmatrices.com/blog/hvac-technician-in-long-beach-24-7-emergency-services"
+            }
+          }
+        },
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/how-to-choose-the-best-landscaper-in-2026",
+          "result": {
+            "urlNotificationMetadata": {
+              "url": "https://stackmatrices.com/blog/how-to-choose-the-best-landscaper-in-2026"
+            }
+          }
+        },
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/laser-treatment-vs-prp-therapy-which-is-better-for-2026",
+          "result": {
+            "urlNotificationMetadata": {
+              "url": "https://stackmatrices.com/blog/laser-treatment-vs-prp-therapy-which-is-better-for-2026"
+            }
+          }
+        },
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/best-invisalign-in-sacramento-top-rated-2026",
+          "result": {
+            "urlNotificationMetadata": {
+              "url": "https://stackmatrices.com/blog/best-invisalign-in-sacramento-top-rated-2026"
+            }
+          }
+        },
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/teeth-whitening-in-beverly-hills-complete-guide-2026",
+          "result": {
+            "urlNotificationMetadata": {
+              "url": "https://stackmatrices.com/blog/teeth-whitening-in-beverly-hills-complete-guide-2026"
+            }
+          }
+        }
+      ]
+    }
+  }
+]
