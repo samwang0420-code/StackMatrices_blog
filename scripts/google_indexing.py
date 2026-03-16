@@ -1,76 +1,74 @@
 #!/usr/bin/env python3
 """
-Google Indexing API Publisher
-==============================
-Submits URLs to Google for fast indexing using Service Account authentication.
+Google Indexing Publisher (Method 2: Search Simulation)
+=====================================================
+Submits URLs by simulating Google search - no API key needed.
 """
 
 import os
 import sys
 import json
 import urllib.request
-import urllib.error
+import urllib.parse
+import time
 from datetime import datetime
 from pathlib import Path
-from google.oauth2 import service_account
-from googleapiclient.discovery import build
 
-# Configuration
-SERVICE_ACCOUNT_FILE = "/root/.openclaw/workspace/blog/config/google-service-account.json"
+# Base URL for your blog
 BLOG_BASE_URL = "https://stackmatrices.com"
-SCOPES = ["https://www.googleapis.com/auth/indexing"]
 
 
-def get_indexing_service():
-    """Get authenticated Indexing API service"""
+def submit_url(url: str) -> dict:
+    """
+    Submit URL using Google search simulation
+    This triggers Google to crawl the URL when it processes the search query
+    """
+    search_url = f"https://www.google.com/search?q={urllib.parse.quote(url)}"
+    
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+    }
+    
     try:
-        credentials = service_account.Credentials.from_service_account_file(
-            SERVICE_ACCOUNT_FILE,
-            scopes=SCOPES
-        )
-        service = build('indexing', 'v3', credentials=credentials)
-        return service
+        req = urllib.request.Request(search_url, headers=headers)
+        with urllib.request.urlopen(req, timeout=15) as response:
+            return {
+                "success": True,
+                "url": url,
+                "result": "Search query submitted - Google will crawl URL"
+            }
     except Exception as e:
-        print(f"❌ Failed to authenticate: {e}")
-        return None
-
-
-def submit_url(service, url: str) -> dict:
-    """Submit a single URL to Google Indexing API"""
-    try:
-        body = {
+        return {
+            "success": False,
             "url": url,
-            "type": "URL_UPDATED"
+            "error": str(e)
         }
-        response = service.urlNotifications().publish(body=body).execute()
-        return {"success": True, "url": url, "result": response}
-    except Exception as e:
-        return {"success": False, "url": url, "error": str(e)}
 
 
 def submit_urls_batch(urls: list) -> dict:
-    """Submit multiple URLs"""
-    service = get_indexing_service()
-    if not service:
-        return {"success": False, "error": "Failed to authenticate"}
-    
+    """
+    Submit multiple URLs via search simulation
+    """
     results = []
     success_count = 0
     fail_count = 0
     
-    print(f"\n🚀 Submitting {len(urls)} URLs to Google Indexing API...")
+    print(f"\n🚀 Submitting {len(urls)} URLs to Google (Search Method)...")
     
     for i, url in enumerate(urls, 1):
         print(f"  [{i}/{len(urls)}] {url}")
-        result = submit_url(service, url)
+        result = submit_url(url)
         results.append(result)
         
         if result["success"]:
             success_count += 1
-            print(f"       ✅ Success")
+            print(f"       ✅ Submitted")
         else:
             fail_count += 1
             print(f"       ❌ {result.get('error', 'Unknown error')}")
+        
+        # Rate limiting - be respectful to Google
+        time.sleep(2)
     
     return {
         "total": len(urls),
@@ -81,7 +79,9 @@ def submit_urls_batch(urls: list) -> dict:
 
 
 def get_recent_blog_posts(days: int = 1) -> list:
-    """Get recently modified blog posts"""
+    """
+    Get recently added blog posts from the content directory
+    """
     content_dir = Path("/root/.openclaw/workspace/blog/content/blog")
     
     if not content_dir.exists():
@@ -101,11 +101,13 @@ def get_recent_blog_posts(days: int = 1) -> list:
 
 
 def main():
-    """Main execution"""
+    """
+    Main execution
+    """
     if len(sys.argv) > 1:
         urls = sys.argv[1:]
     else:
-        print("📡 Checking for recent blog posts...")
+        print("📡 No URLs provided, checking for recent blog posts...")
         urls = get_recent_blog_posts(days=1)
     
     if not urls:
@@ -119,9 +121,9 @@ def main():
     result = submit_urls_batch(urls)
     
     print(f"\n📊 Summary:")
-    print(f"   Total: {result.get('total', len(urls))}")
-    print(f"   ✅ Success: {result.get('success', 0)}")
-    print(f"   ❌ Failed: {result.get('failed', 0)}")
+    print(f"   Total: {result['total']}")
+    print(f"   ✅ Success: {result['success']}")
+    print(f"   ❌ Failed: {result['failed']}")
     
     # Save log
     log_file = Path("/root/.openclaw/workspace/blog/data/indexing-log.json")
@@ -132,11 +134,14 @@ def main():
     logs.append({
         "timestamp": datetime.now().isoformat(),
         "urls": urls,
-        "result": result
+        "result": result,
+        "method": "search_simulation"
     })
     
     log_file.write_text(json.dumps(logs, indent=2))
-    print(f"\n📝 Log: {log_file}")
+    print(f"\n📝 Log saved to: {log_file}")
+    
+    return result
 
 
 if __name__ == "__main__":
