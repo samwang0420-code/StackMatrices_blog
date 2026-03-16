@@ -342,5 +342,83 @@
         }
       ]
     }
+  },
+  {
+    "timestamp": "2026-03-16T13:55:42.935099",
+    "urls": [
+      "https://stackmatrices.com/blog/emergency-plumber-in-san-francisco-24-7-emergency-services",
+      "https://stackmatrices.com/blog/emergency-plumber-long-beach-ca",
+      "https://stackmatrices.com/blog/emergency-plumber-los-angeles-ca",
+      "https://stackmatrices.com/blog/emergency-plumber-oakland-ca",
+      "https://stackmatrices.com/blog/emergency-plumber-san-diego-ca",
+      "https://stackmatrices.com/blog/entity-seo-medical-practices-2026",
+      "https://stackmatrices.com/blog/generative-pivot-digital-pr-ai",
+      "https://stackmatrices.com/blog/how-to-choose-the-best-electrician-in-2026",
+      "https://stackmatrices.com/blog/how-to-choose-the-best-emergency-plumber-in-2026-1",
+      "https://stackmatrices.com/blog/how-to-choose-the-best-emergency-plumber-in-2026-2",
+      "https://stackmatrices.com/blog/how-to-choose-the-best-emergency-plumber-in-2026",
+      "https://stackmatrices.com/blog/how-to-choose-the-best-hvac-technician-in-2026",
+      "https://stackmatrices.com/blog/how-to-choose-the-best-landscaper-in-2026-1",
+      "https://stackmatrices.com/blog/how-to-choose-the-best-landscaper-in-2026-2",
+      "https://stackmatrices.com/blog/how-to-choose-the-best-landscaper-in-2026",
+      "https://stackmatrices.com/blog/how-to-choose-the-best-pest-control-in-2026-1",
+      "https://stackmatrices.com/blog/how-to-choose-the-best-pest-control-in-2026-2",
+      "https://stackmatrices.com/blog/how-to-choose-the-best-pest-control-in-2026-3",
+      "https://stackmatrices.com/blog/how-to-choose-the-best-pest-control-in-2026",
+      "https://stackmatrices.com/blog/how-to-choose-the-best-roofing-contractor-in-2026",
+      "https://stackmatrices.com/blog/hvac-technician-in-long-beach-24-7-emergency-services",
+      "https://stackmatrices.com/blog/hvac-technician-in-oakland-24-7-emergency-services",
+      "https://stackmatrices.com/blog/hvac-technician-in-sacramento-24-7-emergency-services",
+      "https://stackmatrices.com/blog/hvac-technician-in-san-diego-24-7-emergency-services",
+      "https://stackmatrices.com/blog/invisalign-in-san-francisco-complete-guide-2026",
+      "https://stackmatrices.com/blog/landscaper-in-long-beach-24-7-emergency-services",
+      "https://stackmatrices.com/blog/landscaper-in-san-francisco-24-7-emergency-services",
+      "https://stackmatrices.com/blog/laser-hair-removal-in-palo-alto-complete-guide-2026",
+      "https://stackmatrices.com/blog/laser-hair-removal-in-san-francisco-complete-guide-2026",
+      "https://stackmatrices.com/blog/laser-treatment-vs-dermal-fillers-which-is-better-for-2026-1",
+      "https://stackmatrices.com/blog/laser-treatment-vs-dermal-fillers-which-is-better-for-2026",
+      "https://stackmatrices.com/blog/laser-treatment-vs-prp-therapy-which-is-better-for-2026-1",
+      "https://stackmatrices.com/blog/laser-treatment-vs-prp-therapy-which-is-better-for-2026",
+      "https://stackmatrices.com/blog/optimizing-google-ai-overviews-healthcare",
+      "https://stackmatrices.com/blog/pest-control-in-los-angeles-24-7-emergency-services",
+      "https://stackmatrices.com/blog/prp-therapy-vs-dermal-fillers-which-is-better-for-2026",
+      "https://stackmatrices.com/blog/prp-therapy-vs-laser-treatment-which-is-better-for-2026",
+      "https://stackmatrices.com/blog/roofing-contractor-in-long-beach-24-7-emergency-services",
+      "https://stackmatrices.com/blog/roofing-contractor-in-los-angeles-24-7-emergency-services",
+      "https://stackmatrices.com/blog/roof-repair-fresno-ca",
+      "https://stackmatrices.com/blog/roof-repair-long-beach-ca",
+      "https://stackmatrices.com/blog/roof-repair-oakland-ca",
+      "https://stackmatrices.com/blog/roof-repair-sacramento-ca",
+      "https://stackmatrices.com/blog/shopify-google-sheets-automation",
+      "https://stackmatrices.com/blog/stock-monitoring-ecommerce",
+      "https://stackmatrices.com/blog/teeth-whitening-in-beverly-hills-complete-guide-2026",
+      "https://stackmatrices.com/blog/teeth-whitening-in-sacramento-complete-guide-2026",
+      "https://stackmatrices.com/blog/test-script-123",
+      "https://stackmatrices.com/blog/veneers-in-palo-alto-complete-guide-2026",
+      "https://stackmatrices.com/blog/veneers-in-san-diego-complete-guide-2026"
+    ],
+    "result": {
+      "success": false,
+      "error": "Failed to authenticate"
+    }
+  },
+  {
+    "timestamp": "2026-03-16T13:57:57.898279",
+    "urls": [
+      "https://stackmatrices.com/blog/best-botox-in-los-angeles-top-rated-2026"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/best-botox-in-los-angeles-top-rated-2026",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
   }
 ]

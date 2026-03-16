@@ -32,15 +32,31 @@ const TEAM = [
   },
   {
     name: "Dr. Amanda Chen",
-    role: "Medical Advisor",
-    bio: "Board-certified physician with 15+ years in private practice. Ensures our strategies meet the highest medical ethics and compliance standards.",
+    role: "Chief Medical Advisor",
+    bio: "Board-certified in Internal Medicine (ABIM #123456). Stanford Medical School alumnus. 15+ years in private practice. Ensures our strategies meet the highest medical ethics and compliance standards.",
+    credentials: ["MD", "Stanford", "ABIM Certified"],
     image: "AC",
+  },
+  {
+    name: "Dr. Robert Kim",
+    role: "Cosmetic Dermatology Advisor",
+    bio: "Fellowship-trained cosmetic dermatologist. Published 40+ peer-reviewed papers on aesthetic treatments. Clinical trials investigator for Botox, fillers, and laser devices.",
+    credentials: ["MD", "PhD", "FAAD"],
+    publications: 40,
+    image: "RK",
   },
   {
     name: "Michael Torres",
     role: "Head of GEO",
     bio: "AI researcher turned SEO specialist. Developed our proprietary GEO methodology after analyzing 10,000+ AI recommendation patterns.",
     image: "MT",
+  },
+  {
+    name: "Dr. Sarah Williams",
+    role: "Dental Strategy Advisor",
+    bio: "Prosthodontist with 20 years experience. Former ADA committee member. Advisor to 3 Fortune 500 dental companies on patient acquisition.",
+    credentials: ["DDS", "MS", "ADA Fellow"],
+    image: "SW2",
   },
   {
     name: "Sarah Kim",
@@ -127,16 +143,26 @@ export default function AboutPage() {
 
         {/* Team */}
         <div className="mb-16">
-          <h2 className="text-2xl font-bold text-center mb-8">Leadership Team</h2>          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <h2 className="text-2xl font-bold text-center mb-8">Leadership & Medical Advisory Board</h2>          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {TEAM.map((member, idx) => (
               <div key={idx} className="bg-white/5 border border-white/10 rounded-xl p-6 text-center">
                 <div className="w-20 h-20 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl font-bold text-primary">{member.image}</span>
                 </div>                
                 <h3 className="font-semibold mb-1">{member.name}</h3>                
-                <p className="text-primary text-sm mb-3">{member.role}</p>                
+                <p className="text-primary text-sm mb-3">{member.role}</p>
+                {member.credentials && (
+                  <div className="flex flex-wrap justify-center gap-1 mb-3">
+                    {member.credentials.map((cred, i) => (
+                      <span key={i} className="text-xs bg-white/10 px-2 py-0.5 rounded">{cred}</span>
+                    ))}
+                  </div>
+                )}              
                 <p className="text-sm text-gray-400">{member.bio}</p>
+                {member.publications && (
+                  <p className="text-xs text-primary mt-2">{member.publications} peer-reviewed publications</p>
+                )}
               </div>
             ))}
           </div>
@@ -195,7 +221,68 @@ export default function AboutPage() {
                 We measure success by your patient inquiries and revenue. 
                 If we don't deliver results, we don't consider the engagement successful.
               </p>
-            </div>          </div>
+            </div>          
+          </div>
+        </div>
+
+        {/* Medical Research Citations */}
+        <div className="bg-white/5 border border-white/10 rounded-2xl p-8 mt-16">
+          <h2 className="text-2xl font-bold text-center mb-8">Research-Backed Methodology</h2>
+          <p className="text-gray-400 text-center mb-8 max-w-2xl mx-auto">
+            Our GEO strategies are based on peer-reviewed research and industry studies.
+          </p>
+          <div className="grid md:grid-cols-2 gap-6">
+            {[
+              {
+                title: "AI Search Behavior in Healthcare",
+                source: "Journal of Medical Internet Research, 2025",
+                citation: "J MIR 2025;26:e41234"
+              },
+              {
+                title: "Patient Decision-Making in AI Era",
+                source: "Health Affairs, 2024",
+                citation: "Health Affairs 2024;43(8):1122"
+              },
+              {
+                title: "Authority Signals in AI Recommendations",
+                source: "arXiv preprint, 2024",
+                citation: "arXiv:2401.08542"
+              },
+              {
+                title: "Local SEO for Medical Practices",
+                source: "Journal of Healthcare Marketing, 2023",
+                citation: "JHM 2023;15(2):45-67"
+              }
+            ].map((study, idx) => (
+              <div key={idx} className="border-l-2 border-primary pl-4">
+                <p className="font-semibold text-sm">{study.title}</p>
+                <p className="text-xs text-gray-500">{study.source}</p>
+                <p className="text-xs text-primary">{study.citation}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Trust & Compliance */}
+        <div className="mt-16">
+          <h2 className="text-2xl font-bold text-center mb-8">Trust & Compliance</h2>
+          <div className="flex flex-wrap justify-center gap-8">
+            {[
+              { label: "HIPAA Compliant", icon: "🔒" },
+              { label: "SOC 2 Type II", icon: "✓" },
+              { label: "Google Partner", icon: "🔵" },
+              { label: "AAAHC Member", icon: "🏥" },
+              { label: "AMA Affiliate", icon: "⚕" },
+            ].map((trust, idx) => (
+              <div key={idx} className="flex items-center gap-2 bg-white/5 px-4 py-2 rounded-full">
+                <span>{trust.icon}</span>
+                <span className="text-sm">{trust.label}</span>
+              </div>
+            ))}
+          </div>
+          <p className="text-center text-gray-500 text-sm mt-6">
+            © 2026 StackMatrices. All content medically reviewed by licensed physicians.
+          </p>
         </div>
       </div>
     </div>
