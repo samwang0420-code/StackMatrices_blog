@@ -173,21 +173,6 @@ body {
 }
 
 /* CTA Button - for affiliate links */
-.blog-content.blog-content .cta-btn {
-  display: inline-block !important;
-  padding: 14px 28px !important;
-  background-color: #3c3cf6 !important;
-  color: white !important;
-  font-weight: 600 !important;
-  font-size: 16px !important;
-  border-radius: 8px !important;
-  text-decoration: none !important;
-  margin: 20px 0 !important;
-  transition: all 0.2s !important;
-  border: none !important;
-  cursor: pointer !important;
-}
-
 .blog-content.blog-content .cta-btn:hover {
   background-color: #2a2acc !important;
   transform: translateY(-2px) !important;
@@ -198,8 +183,11 @@ body {
 @media (max-width: 768px) {
   .blog-content.blog-content {
     padding: 0 16px !important;
+    font-size: 16px !important;
+    line-height: 1.6 !important;
   }
   
+  /* Headings - mobile optimized */
   .blog-content.blog-content h1 {
     font-size: 26px !important;
   }
@@ -208,8 +196,57 @@ body {
     font-size: 20px !important;
   }
   
+  .blog-content.blog-content h3 {
+    font-size: 18px !important;
+  }
+  
+  /* Images - full width on mobile */
   .blog-content.blog-content img {
     margin: 20px auto !important;
     border-radius: 4px !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  
+  /* Tables - horizontal scroll */
+  .blog-content.blog-content table {
+    font-size: 14px !important;
+    display: block !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    white-space: nowrap !important;
+    border: 1px solid #e2e8f0 !important;
+  }
+  
+  .blog-content.blog-content th,
+  .blog-content.blog-content td {
+    padding: 10px 12px !important;
+    min-width: 100px !important;
+  }
+  
+  /* Buttons - mobile optimized */
+  .blog-content.blog-content a[href],
+  .blog-content.blog-content button {
+    min-height: 44px !important;
+    padding: 12px 20px !important;
+    font-size: 16px !important;
+    touch-action: manipulation !important;
+  }
+  
+  /* Links - easier tap */
+  .blog-content.blog-content a {
+    padding: 8px 0 !important;
+    min-height: 44px !important;
+    display: inline-block !important;
+  }
+  
+  /* FAQ section - mobile */
+  .blog-content.blog-content details {
+    padding: 12px !important;
+  }
+  
+  .blog-content.blog-content summary {
+    font-size: 16px !important;
+    padding: 12px !important;
   }
 }
