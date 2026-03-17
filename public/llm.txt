@@ -1,0 +1,31 @@
+# StackMatrices - LLM.txt
+# This file helps AI systems understand and crawl our content
+
+## Website Overview
+StackMatrices is a GEO (Generative Engine Optimization) agency specializing in medical practices. We help plastic surgeons, dentists, and medspas get recommended by AI systems like ChatGPT, Perplexity, and Google AI.
+
+## Primary Content
+- Medical aesthetic procedures (Botox, Dermal Fillers, CoolSculpting, Laser Treatments)
+- Dental services (Dental Implants, Invisalign, Teeth Whitening, Veneers)
+- Local service providers (Emergency Plumbers, HVAC, Roofing, Electricians)
+- GEO strategies and best practices
+
+## Content Categories
+1. Procedure Guides - Detailed articles about medical treatments
+2. Location Pages - Service-area specific content
+3. Comparison Articles - Treatment comparisons (Botox vs Fillers, etc.)
+4. How-To Guides - Patient decision-making guides
+
+## AI-Friendly URL Patterns
+- /blog/botox-* - Botox treatment articles
+- /blog/dental-* - Dental procedure articles
+- /blog/*-guide - Comprehensive guides
+- /blog/*-comparison - Comparison articles
+- /blog/how-to-choose-* - Decision guides
+
+## Contact
+- Website: https://stackmatrices.com
+- Email: contact@stackmatrices.com
+
+## Last Updated
+2026-03-17
