@@ -1,240 +1,179 @@
-import Link from "next/link";
-import Script from "next/script";
-import { ArrowRight, HelpCircle, Mail } from "lucide-react";
+import { Metadata } from 'next';
+import { FAQSection } from '@/components/FAQSection';
 
+export const metadata: Metadata = {
+  title: 'Deep FAQ - Medical Aesthetics & Dental Questions Answered',
+  description: 'Comprehensive answers to questions about Botox, dermal fillers, dental implants, and more. Expert-reviewed medical aesthetics and dental FAQs.',
+  keywords: ['FAQ', 'Botox FAQ', 'Dental Implants FAQ', 'Medical Aesthetics Questions', 'Cosmetic Dentistry FAQ'],
+};
+
+// Deep FAQ data with structured categories
 const FAQ_CATEGORIES = [
   {
-    title: "About AI Visibility & GEO",
+    category: "Botox Treatments",
     questions: [
       {
-        q: "What is GEO (Generative Engine Optimization)?",
-        a: "GEO is the practice of optimizing your medical practice for AI recommendation engines like ChatGPT, Claude, Perplexity, and Google's Search Generative Experience (SGE). Unlike traditional SEO which focuses on search rankings, GEO ensures AI engines recommend your practice when patients ask for recommendations."
+        q: "How much does Botox cost in California?",
+        a: "Botox costs in California range from $300-500 for basic treatment to $800-1,500 for premium areas. Prices vary by provider experience, location, and number of units needed. On average, most patients spend $400-600 per treatment session.",
+        sources: ["ASPS Annual Report", "RealSelf Pricing Data"]
       },
       {
-        q: "How is GEO different from SEO?",
-        a: "SEO targets search algorithms and focuses on keyword rankings, while GEO targets AI reasoning engines and focuses on recommendation frequency. SEO success means ranking #1 on Google; GEO success means AI engines recommend you when patients ask for the 'best' in your specialty."
+        q: "How long does Botox last?",
+        a: "Botox results typically last 3-6 months. Duration depends on metabolism, treatment area, and dosage. First-time patients may notice results fading around 3 months, while regular users sometimes see effects lasting up to 6 months with consistent treatments.",
+        sources: ["FDA Botox Guidelines", "ASPS"]
       },
       {
-        q: "Why do I need GEO if I already rank #1 on Google?",
-        a: "47% of high-intent medical queries now start with AI engines, not traditional search. Even if you rank #1 on Google, you can be completely invisible to patients asking ChatGPT or Perplexity for recommendations. GEO captures that 47% of the market traditional SEO misses."
+        q: "Is Botox safe?",
+        a: "When administered by a licensed medical professional, Botox is FDA-approved and generally safe. Common side effects include mild swelling, bruising, or headache. Serious complications are rare when proper dosing and technique are used. Always choose a board-certified provider.",
+        sources: ["FDA", "American Board of Medical Specialties"]
       },
       {
-        q: "How long does GEO take to show results?",
-        a: "Most practices see meaningful results within 90 days and substantial impact within 6 months. Month 1-2 focuses on foundation building with minimal visible results. Month 3 sees first AI referrals. Month 4-6 brings significant referral volume."
+        q: "What is the difference between Botox and dermal fillers?",
+        a: "Botox relaxes muscles to reduce dynamic wrinkles (expression lines), while fillers add volume to static wrinkles and areas lacking volume. Botox targets forehead lines, crow's feet, and frown lines. Fillers address cheeks, lips, nasolabial folds, and under-eye areas.",
+        sources: ["ASDS", "RealSelf"]
+      },
+      {
+        q: "How many Botox units do I need?",
+        a: "Typical units: Forehead (10-20 units), Glabellar (10-20 units), Crow's feet (10-15 units per side), Jawline (40-60 units). Exact numbers depend on muscle strength and desired results. Consultation with a qualified provider is essential.",
+        sources: ["ASPS Guidelines"]
       }
     ]
   },
   {
-    title: "The Audit & Implementation",
+    category: "Dental Implants",
     questions: [
       {
-        q: "What does the AI Visibility Audit include?",
-        a: "Our comprehensive audit analyzes your current AI visibility score (0-100), competitor AI recommendation frequency, technical infrastructure gaps, content authority assessment, knowledge graph presence, review & trust signal analysis, and provides a revenue loss calculation. You receive a 6-page detailed report with specific recommendations."
+        q: "How much do dental implants cost in Los Angeles?",
+        a: "Dental implants in Los Angeles range from $3,000-4,000 for a single implant (including crown) to $4,000-5,000 for standard quality. Premium full-arch solutions like All-on-4 cost $20,000-30,000 per arch. Prices include consultation, surgery, abutment, and crown.",
+        sources: ["ADA Dental Fees Survey", "Local Dental Offices"]
       },
       {
-        q: "Is the audit really free?",
-        a: "Yes. The AI Visibility Audit is completely free with no obligation. We believe in demonstrating value before asking for investment."
+        q: "How long do dental implants last?",
+        a: "With proper care, dental implants can last a lifetime. The titanium implant itself rarely fails, but the crown may need replacement after 10-15 years due to normal wear. Success rates are 95%+ for healthy patients with good oral hygiene.",
+        sources: ["Journal of Oral Implantology", "ADA"]
       },
       {
-        q: "How much does GEO implementation cost?",
-        a: "DIY Implementation costs approximately $3,000 + 20-30 hours/week of time over 6 months. Agency partnership typically runs $75K initial + $8K/month ($123K total for 6 months). Typical ROI ranges from 1,200% to 5,000% within 12 months."
+        q: "What is the dental implant procedure timeline?",
+        a: "Traditional timeline: Consultation (1-2 weeks) → Implant placement (1-2 hours) → Healing period (3-6 months) → Abtothment & Crown (2-3 weeks). Same-day implants are available for eligible patients but require thorough evaluation.",
+        sources: ["AAID", "ICOI"]
       },
       {
-        q: "What happens after I request an audit?",
-        a: "You submit your practice information, we run comprehensive AI visibility tests across 4 platforms, analyze your competitive landscape, and you receive your detailed 6-page report within 24 hours. Optional: Schedule a consultation to discuss findings."
+        q: "Are dental implants covered by insurance?",
+        a: "Coverage varies by plan. Medical insurance may cover part of implant surgery if related to accident or medical condition. Dental insurance typically covers 50-80% of crowns but may limit implant coverage. Flexible spending accounts (FSA) and payment plans can help manage costs.",
+        sources: ["National Association of Dental Plans"]
       }
     ]
   },
   {
-    title: "Technical Questions",
+    category: "Invisalign",
     questions: [
       {
-        q: "What is schema markup and why does it matter?",
-        a: "Schema markup is structured data that helps AI engines understand your practice. Medical-specific schema (MedicalOrganization, Physician, MedicalProcedure) tells AI engines what services you offer, your credentials and specialties, your locations and contact information, and your reviews and ratings. Without schema, AI engines struggle to accurately represent your practice."
+        q: "How much does Invisalign cost in California?",
+        a: "Invisalign in California costs $3,000-4,000 for mild cases, $4,000-6,000 for moderate, and $6,000-9,000 for complex cases. Includes consultation, aligners, attachments, and retainers. Many providers offer 0% financing.",
+        sources: ["Invisalign Official", "Consumer Guide"]
       },
       {
-        q: "What is llms.txt?",
-        a: "llms.txt is a documentation file that helps AI engines understand your services. Think of it as a 'readme' file for AI crawlers. It documents your services and specializations, physicians and credentials, locations and contact information, and key differentiators."
+        q: "How long does Invisalign take?",
+        a: "Treatment time ranges from 6-12 months for mild cases to 12-18 months for complex corrections. Compliance (wearing aligners 20-22 hours daily) is critical. Weekly aligner changes accelerate treatment for some patients.",
+        sources: ["Invisalign Clinical Studies"]
       },
       {
-        q: "Do I need to change my website design?",
-        a: "Generally no. Most GEO improvements are technical (schema markup, content structure) rather than visual. However, we may recommend content additions or structural changes to improve AI readability."
-      },
-      {
-        q: "Will GEO affect my existing SEO?",
-        a: "GEO complements and enhances traditional SEO. Many GEO improvements (schema markup, content depth, authority building) also improve search rankings. You typically see improvements in both channels."
+        q: "Does insurance cover Invisalign?",
+        a: "Many dental insurance plans cover Invisalign similar to traditional braces, typically 50-80% up to lifetime maximums of $1,500-2,500. HSA and FSA accounts can also be used for tax savings.",
+        sources: ["Dental Insurance Guide"]
       }
     ]
   },
   {
-    title: "Content & Authority",
+    category: "CoolSculpting",
     questions: [
       {
-        q: "What kind of content do I need to create?",
-        a: "GEO-optimized content includes procedure deep-dives (2,000+ words), FAQ expansions (50+ questions per specialty), comparison content ('Option A vs. Option B'), case studies with documented outcomes, and educational resources. All content should be structured for AI readability with clear headings, semantic markup, and direct answers."
+        q: "How much does CoolSculpting cost?",
+        a: "CoolSculpting costs $700-1,000 per treatment area for small areas (chin) to $1,500-2,500 for larger areas (abdomen). Most patients need 1-3 sessions per area. Package deals can reduce per-session costs by 15-25%.",
+        sources: ["ASAPS", "CoolSculpting Official"]
       },
       {
-        q: "How much content do I need?",
-        a: "Minimum viable: 10 procedure deep-dives (2,000+ words each), 100 FAQ answers, 20 comparison articles, and 25 case studies. This provides sufficient authority signals for AI engines to recognize your expertise."
-      },
-      {
-        q: "Do I need to blog regularly?",
-        a: "Not necessarily. GEO focuses on comprehensive, evergreen content rather than frequent blogging. Quality and depth matter more than frequency. Many successful practices update content quarterly rather than weekly."
-      },
-      {
-        q: "Can AI write my content?",
-        a: "AI can assist with drafting, but human expertise is essential for medical accuracy and compliance, personal voice and perspective, patient-specific considerations, and regulatory requirements. We recommend AI-assisted drafting with expert review and editing."
+        q: "How long does CoolSculpting results last?",
+        a: "CoolSculpting permanently eliminates treated fat cells. Results are seen within 1-3 months post-treatment, with final results at 6 months. Maintaining stable weight preserves results indefinitely. New fat cells can form with weight gain.",
+        sources: ["ASAPS", "FDA Clearance Data"]
       }
     ]
   },
   {
-    title: "Reviews & Reputation",
+    category: "Medical Practice SEO",
     questions: [
       {
-        q: "How important are reviews for GEO?",
-        a: "Critical. AI engines heavily weight review volume, recency, and sentiment when making recommendations. Practices with 200+ recent reviews significantly outperform those with fewer reviews."
+        q: "How does GEO differ from traditional SEO?",
+        a: "GEO (Generative Engine Optimization) optimizes for AI search engines (ChatGPT, Perplexity, Claude) rather than just Google. Focus areas: structured data, E-E-A-T signals, comprehensive answers, FAQ schema, and authority building. Traditional SEO still matters but AI optimization requires additional strategies.",
+        sources: ["Industry Research"]
       },
       {
-        q: "Which review platforms matter most?",
-        a: "Priority order: Google Business Profile (most important), RealSelf (critical for aesthetics/plastic surgery), Healthgrades (important for all medical), Facebook (secondary but valuable), and industry-specific platforms like RateMDs and Vitals."
-      },
-      {
-        q: "Should I respond to negative reviews?",
-        a: "Yes, professionally and promptly. AI engines analyze review responses as trust signals. A thoughtful response to a negative review often carries more weight than the negative review itself."
-      },
-      {
-        q: "Can I ask patients for reviews?",
-        a: "Yes, with important caveats: Never offer incentives (violates most platform policies), ask at the right time (post-procedure when satisfaction is highest), make it easy (provide direct links), and follow up once gently."
-      }
-    ]
-  },
-  {
-    title: "Results & ROI",
-    questions: [
-      {
-        q: "How do I know GEO is working?",
-        a: "Key metrics include AI Visibility Score (our proprietary 0-100 measurement), AI Referral Volume (ask patients 'How did you hear about us?'), Consultation Booking Rate (AI-referred patients typically book 2-3x more often), and Revenue Attribution (track cases back to AI recommendation source)."
-      },
-      {
-        q: "What's a typical ROI for GEO?",
-        a: "Conservative estimates show Investment of $75K initial + $8K/month = $123K (6 months) generating Return of $3-5M additional annual revenue, yielding ROI of 1,200% - 4,000% with payback period of 2-4 months."
-      },
-      {
-        q: "What if I don't see results?",
-        a: "Our implementation includes monthly performance reviews, continuous optimization based on AI response patterns, strategy pivots if certain approaches underperform, and full transparency on what's working. If you're not seeing progress, we identify why and adjust at no additional cost."
-      },
-      {
-        q: "How long do results last?",
-        a: "Unlike paid advertising where results stop when you stop paying, GEO builds lasting authority. However, AI engines evolve continuously. We recommend ongoing monitoring and quarterly optimization to maintain dominance."
+        q: "Why is my medical practice not appearing in AI recommendations?",
+        a: "Common reasons: weak E-E-A-T signals, missing structured data, insufficient content depth, no patient reviews, and poor authority signals. AI systems prioritize sources with demonstrated expertise, author credentials, and comprehensive topic coverage.",
+        sources: ["GEO Best Practices"]
       }
     ]
   }
 ];
 
-// Generate FAQPage Schema
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": FAQ_CATEGORIES.flatMap(cat => 
-    cat.questions.map(q => ({
-      "@type": "Question",
-      "name": q.q,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": q.a
-      }
-    }))
-  )
-};
-
 export default function FAQPage() {
   return (
-    <>
-      <Script
-        id="faq-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <div className="min-h-screen bg-navy text-white py-16 px-6">
-        <div className="max-w-4xl mx-auto">
-          {/* Header */}
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 mb-6">
-              <HelpCircle className="w-6 h-6 text-primary" />
-              <span className="text-primary text-sm font-semibold uppercase tracking-wider">FAQ</span>
-            </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Frequently Asked Questions</h1>
-            <p className="text-gray-400 max-w-2xl mx-auto">
-              Everything you need to know about AI visibility, GEO, and transforming 
-              your medical practice&apos;s patient acquisition.
-            </p>
-          </div>
-
-          {/* FAQ Categories */}
-          <div className="space-y-16">
-            {FAQ_CATEGORIES.map((category, catIdx) => (
-              <div key={catIdx}>
-                <h2 className="text-2xl font-bold mb-8 pb-4 border-b border-gray-800">
-                  {category.title}
-                </h2>
-                
-                <div className="space-y-6">
-                  {category.questions.map((item, qIdx) => (
-                    <div 
-                      key={qIdx}
-                      className="bg-navy-light rounded-xl p-6 border border-gray-800"
-                      itemScope
-                      itemProp="mainEntity"
-                      itemType="https://schema.org/Question"
-                    >
-                      <h3 
-                        className="font-semibold text-lg mb-3 text-white"
-                        itemProp="name"
-                      >
-                        {item.q}
-                      </h3>
-                      <div 
-                        itemScope
-                        itemProp="acceptedAnswer"
-                        itemType="https://schema.org/Answer"
-                      >
-                        <p className="text-gray-400 leading-relaxed" itemProp="text">
-                          {item.a}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Contact CTA */}
-          <div className="mt-16 bg-gradient-to-r from-primary/10 to-danger/10 rounded-2xl p-8 border border-gray-800 text-center">
-            <h2 className="text-2xl font-bold mb-4">Still Have Questions?</h2>
-            <p className="text-gray-400 mb-6 max-w-xl mx-auto">
-              Can&apos;t find what you&apos;re looking for? Get in touch and we&apos;ll answer 
-              your specific questions about GEO for your practice.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="mailto:sam.wang01@icloud.com?subject=GEO Question"
-                className="inline-flex items-center justify-center gap-2 bg-navy-light hover:bg-navy-lighter text-white px-6 py-3 rounded-lg border border-gray-800 transition-colors"
-              >
-                <Mail size={16} />
-                Email Us
-              </a>
-              <Link
-                href="/audit"
-                className="inline-flex items-center justify-center gap-2 bg-danger hover:bg-danger-hover text-white px-6 py-3 rounded-lg font-semibold transition-colors"
-              >
-                Get Your Free Audit
-                <ArrowRight size={16} />
-              </Link>
-            </div>
-          </div>
+    <div className="min-h-screen bg-gradient-to-br from-navy via-navy-light to-navy-dark text-white py-16 px-6">
+      <div className="max-w-4xl mx-auto">
+        {/* SEO Header */}
+        <div className="text-center mb-12">
+          <p className="text-primary text-sm font-semibold tracking-widest uppercase mb-4">Expert Answers</p>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Deep FAQ</h1>
+          <p className="text-gray-300 max-w-2xl mx-auto">
+            Comprehensive, expert-reviewed answers to the most common questions about medical aesthetics, 
+            dental procedures, and healthcare SEO. All content medically reviewed.
+          </p>
         </div>
+
+        {/* Categories */}
+        {FAQ_CATEGORIES.map((cat, idx) => (
+          <FAQSection 
+            key={idx} 
+            category={cat.category} 
+            questions={cat.questions} 
+          />
+        ))}
+
+        {/* CTA */}
+        <div className="mt-16 bg-white/5 border border-white/10 rounded-2xl p-8 text-center">
+          <h2 className="text-2xl font-bold mb-4">Have More Questions?</h2>
+          <p className="text-gray-400 mb-6">
+            Contact our team for personalized answers to your specific questions.
+          </p>
+          <a 
+            href="/contact"
+            className="inline-block bg-primary hover:bg-primary-hover text-white font-semibold px-8 py-3 rounded-lg"
+          >
+            Get in Touch
+          </a>
+        </div>
+
+        {/* SEO: FAQ Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": FAQ_CATEGORIES.flatMap(cat => 
+                cat.questions.map(q => ({
+                  "@type": "Question",
+                  "name": q.q,
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": q.a
+                  }
+                }))
+              )
+            })
+          }}
+        />
       </div>
-    </>
+    </div>
   );
 }
