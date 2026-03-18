@@ -9,6 +9,10 @@ User-agent: Googlebot
 Allow: /
 Disallow: /api
 
+# Google-Extended
+User-agent: Google-Extended
+Allow: /
+
 # Host
 Host: https://stackmatrices.com
 

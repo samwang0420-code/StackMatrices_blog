@@ -1,4 +1,7 @@
 /** @type {import('next-sitemap').IConfig} */
+const fs = require('fs');
+const path = require('path');
+
 module.exports = {
   siteUrl: 'https://stackmatrices.com',
   generateRobotsTxt: true,
@@ -8,15 +11,34 @@ module.exports = {
   sitemapSize: 7000,
   exclude: ['/admin', '/api/*', '/_next/*'],
   
-  // 动态路由配置
+  // Generate URLs from blog content
   additionalPaths: async (config) => {
-    // 这里可以从 Supabase 获取所有文章和工具的 URL
-    const result = [
-      { loc: '/blog', changefreq: 'daily', priority: 0.8 },
-      { loc: '/directory', changefreq: 'daily', priority: 0.9 },
-    ];
+    const results = [];
     
-    return result;
+    // Add blog listing
+    results.push({ loc: '/blog', changefreq: 'daily', priority: 0.9 });
+    results.push({ loc: '/faq', changefreq: 'weekly', priority: 0.8 });
+    results.push({ loc: '/compliance', changefreq: 'weekly', priority: 0.8 });
+    
+    // Read blog content directory
+    const blogDir = path.join(process.cwd(), 'content/blog');
+    try {
+      if (fs.existsSync(blogDir)) {
+        const files = fs.readdirSync(blogDir).filter(f => f.endsWith('.md'));
+        for (const file of files) {
+          const slug = file.replace('.md', '');
+          results.push({ 
+            loc: `/blog/${slug}`, 
+            changefreq: 'weekly', 
+            priority: 0.7 
+          });
+        }
+      }
+    } catch (e) {
+      console.log('Error reading blog directory:', e);
+    }
+    
+    return results;
   },
   
   robotsTxtOptions: {
@@ -31,7 +53,13 @@ module.exports = {
         allow: '/',
         disallow: ['/api'],
       },
+      {
+        userAgent: 'Google-Extended',
+        allow: '/',
+      },
     ],
-    additionalSitemaps: [],
+    additionalSitemaps: [
+      'https://stackmatrices.com/sitemap.xml',
+    ],
   },
 }
