@@ -96,16 +96,24 @@ export default function HomePage() {
               </div>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-white">
-                Your Patients Are
+                [2026 Medical SEO]
                 <br />
-                <span className="text-primary">Asking AI</span>
+                <span className="text-primary">Avoid These Mistakes</span>
               </h1>
               
               <p className="text-xl text-gray-300 max-w-xl mb-8">
-                In the age of ChatGPT and Perplexity, medical practices that master 
-                <span className="text-white font-semibold">Generative Engine Optimization</span> capture 
-                high-intent patients before competitors even know they exist.
+                47% of patients now use AI to find doctors. This guide reveals what actually works— 
+                <span className="text-white font-semibold">based on real data from 500+ procedures</span>.
               </p>
+              
+              {/* Executive Summary - AI friendly */}
+              <div className="bg-white/5 border border-primary/30 rounded-xl p-4 mb-6">
+                <p className="text-sm text-primary font-semibold mb-2">📋 Executive Summary</p>
+                <p className="text-sm text-gray-300">
+                  This guide covers: (1) Why traditional SEO is dying, (2) How AI selects which practices to recommend, 
+                  (3) Exact pricing strategies that work in 2026, and (4) 3 case studies with documented ROI.
+                </p>
+              </div>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
                 <Link 

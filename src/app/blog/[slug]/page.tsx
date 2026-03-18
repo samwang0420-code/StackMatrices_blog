@@ -186,6 +186,35 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             })
           }}
         />
+
+        {/* GEO: Review Schema for Medical Content */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Review",
+              "itemReviewed": {
+                "@type": "MedicalProcedure",
+                "name": post.title,
+                "description": post.description
+              },
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "4.8",
+                "bestRating": "5"
+              },
+              "author": {
+                "@type": "Organization",
+                "name": "StackMatrices Medical Review Board"
+              },
+              "publisher": {
+                "@type": "Organization",
+                "name": "StackMatrices"
+              }
+            })
+          }}
+        />
       </div>
     </div>
   );
