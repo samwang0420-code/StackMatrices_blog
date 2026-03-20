@@ -69,3 +69,79 @@ That's how you dominate AI search without blowing your budget.
 ---
 
 *Ready to get your practice found by AI? Let's talk.*
+
+## Step 4: The Real Win—Neutral Searches
+
+Here's where most practices fail:
+
+You get excited when someone searches for your name. But that's not really winning.
+
+The real victory? When someone asks "What's the best med spa in Beverly Hills?"—and your practice shows up. They've never heard of you. The AI chose you anyway.
+
+That's what we call **non-branded visibility.** That's the goal.
+
+Track these, not your brand name:
+
+- **Recommendation searches** — "Best Botox clinic near me"
+- **Comparison searches** — "Botox vs fillers — which is better?"
+- **Question searches** — "How long does Botox last?"
+
+These are the conversations that bring paying patients through your door.
+
+## Step 5: Don't Invent Keywords—Steal Them
+
+Here's what we see all the time: marketing teams sitting in a room, inventing keywords.
+
+Don't do that.
+
+Your best keywords already exist. They're in:
+
+- **Your sales calls** — What do leads actually ask before booking?
+- **Google Business Profile questions** — What are people in your area searching for?
+- **Reviews and Reddit** — How do real patients describe their problems?
+
+Here's a simple workflow:
+
+1. **Export from your SEO tool** — Moz, Ahrefs, whatever you use. Get your current rankings.
+2. **Cluster the themes** — Use an LLM to group similar queries together
+3. **Create variations** — Turn "Botox LA" into "Botox cost Los Angeles" and "best Botox clinic Beverly Hills"
+
+Now you have keywords real people actually use.
+
+## Step 6: Prune Ruthlessly
+
+More keywords = more money. That's how tracking tools work.
+
+Every prompt you add costs you. So be ruthless.
+
+Cut prompts that are:
+
+- **Off-topic** — If it won't lead to a booking, don't track it
+- **Wrong region** — "Colour" vs "Color" matters. Match your market
+- **Outdated** — Don't track news. By the time your weekly report comes out, the news is old
+
+A small, focused list beats a massive one every time.
+
+Think quality over quantity.
+
+## Step 7: Treat AI Like CRO
+
+Here's the mindset shift:
+
+Old SEO was "set and forget." You picked keywords, ranked for them, and moved on.
+
+AI visibility doesn't work that way. AI models change. They learn. They update.
+
+You need to treat it like conversion rate optimization (CRO):
+
+- **Form a hypothesis** — "Our practice will show up for 'Botox vs fillers' queries"
+- **Test it** — Track specific prompt groups
+- **Iterate** — Drop what doesn't work. Double down on what does
+
+Every month, ask yourself: *Are we tracking searches that actually bring patients? Or just searches that make us feel popular?*
+
+Answer honestly. Then adjust.
+
+---
+
+*That* is how you turn AI visibility into real practice growth.
