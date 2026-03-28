@@ -71,10 +71,10 @@ When choosing a provider, consider:
 
 ## Related Articles
 
-- [Root Canal in Fresno](/blog/root_canal-in-fresno-complete-guide-2026/)
-- [Veneers in San Francisco](/blog/veneers-in-san-francisco-complete-guide-2026/)
-- [Invisalign in Sacramento](/blog/invisalign-in-sacramento-complete-guide-2026/)
-- [Teeth Whitening in Los Angeles](/blog/teeth_whitening-in-los-angeles-complete-guide-2026/)
+- [Root Canal in San Diego](/blog/root_canal-in-san-diego-complete-guide-2026/)
+- [Teeth Whitening in Sacramento](/blog/teeth_whitening-in-sacramento-complete-guide-2026/)
+- [Veneers in San Diego](/blog/veneers-in-san-diego-complete-guide-2026/)
+- [Invisalign in Fresno](/blog/invisalign-in-fresno-complete-guide-2026/)
 
 
 ## Conclusion

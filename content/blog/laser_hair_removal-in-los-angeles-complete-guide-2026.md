@@ -71,9 +71,9 @@ When choosing a provider, consider:
 
 ## Related Articles
 
-- [Botox in San Diego](/blog/botox-in-san-diego-complete-guide-2026/)
-- [CoolSculpting in San Francisco](/blog/coolsculpting-in-san-francisco-complete-guide-2026/)
-- [PRP Therapy in Los Angeles](/blog/prp_therapy-in-los-angeles-complete-guide-2026/)
+- [CoolSculpting in Fresno](/blog/coolsculpting-in-fresno-complete-guide-2026/)
+- [Botox in San Francisco](/blog/botox-in-san-francisco-complete-guide-2026/)
+- [PRP Therapy in Sacramento](/blog/prp_therapy-in-sacramento-complete-guide-2026/)
 - [Dermal Fillers in San Francisco](/blog/dermal_fillers-in-san-francisco-complete-guide-2026/)
 
 

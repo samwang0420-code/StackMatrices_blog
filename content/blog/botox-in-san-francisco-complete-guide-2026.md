@@ -71,10 +71,10 @@ When choosing a provider, consider:
 
 ## Related Articles
 
-- [PRP Therapy in San Diego](/blog/prp_therapy-in-san-diego-complete-guide-2026/)
+- [Dermal Fillers in San Diego](/blog/dermal_fillers-in-san-diego-complete-guide-2026/)
+- [Laser Hair Removal in San Diego](/blog/laser_hair_removal-in-san-diego-complete-guide-2026/)
 - [CoolSculpting in Fresno](/blog/coolsculpting-in-fresno-complete-guide-2026/)
-- [Dermal Fillers in San Francisco](/blog/dermal_fillers-in-san-francisco-complete-guide-2026/)
-- [Laser Hair Removal in San Francisco](/blog/laser_hair_removal-in-san-francisco-complete-guide-2026/)
+- [PRP Therapy in Sacramento](/blog/prp_therapy-in-sacramento-complete-guide-2026/)
 
 
 ## Conclusion

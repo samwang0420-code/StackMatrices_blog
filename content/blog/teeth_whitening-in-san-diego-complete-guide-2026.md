@@ -71,10 +71,10 @@ When choosing a provider, consider:
 
 ## Related Articles
 
-- [Dental Implants in San Francisco](/blog/dental_implants-in-san-francisco-complete-guide-2026/)
-- [Root Canal in San Francisco](/blog/root_canal-in-san-francisco-complete-guide-2026/)
-- [Invisalign in San Diego](/blog/invisalign-in-san-diego-complete-guide-2026/)
-- [Veneers in San Diego](/blog/veneers-in-san-diego-complete-guide-2026/)
+- [Veneers in Fresno](/blog/veneers-in-fresno-complete-guide-2026/)
+- [Root Canal in Sacramento](/blog/root_canal-in-sacramento-complete-guide-2026/)
+- [Dental Implants in San Diego](/blog/dental_implants-in-san-diego-complete-guide-2026/)
+- [Invisalign in Los Angeles](/blog/invisalign-in-los-angeles-complete-guide-2026/)
 
 
 ## Conclusion

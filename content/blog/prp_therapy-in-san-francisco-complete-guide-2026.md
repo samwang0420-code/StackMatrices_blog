@@ -71,10 +71,10 @@ When choosing a provider, consider:
 
 ## Related Articles
 
-- [Botox in Sacramento](/blog/botox-in-sacramento-complete-guide-2026/)
-- [Laser Hair Removal in Sacramento](/blog/laser_hair_removal-in-sacramento-complete-guide-2026/)
-- [CoolSculpting in Sacramento](/blog/coolsculpting-in-sacramento-complete-guide-2026/)
-- [Dermal Fillers in Sacramento](/blog/dermal_fillers-in-sacramento-complete-guide-2026/)
+- [Laser Hair Removal in San Diego](/blog/laser_hair_removal-in-san-diego-complete-guide-2026/)
+- [Dermal Fillers in San Diego](/blog/dermal_fillers-in-san-diego-complete-guide-2026/)
+- [Botox in Fresno](/blog/botox-in-fresno-complete-guide-2026/)
+- [CoolSculpting in Fresno](/blog/coolsculpting-in-fresno-complete-guide-2026/)
 
 
 ## Conclusion

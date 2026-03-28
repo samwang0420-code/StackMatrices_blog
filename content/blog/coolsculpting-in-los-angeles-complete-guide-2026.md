@@ -71,9 +71,9 @@ When choosing a provider, consider:
 
 ## Related Articles
 
-- [PRP Therapy in San Francisco](/blog/prp_therapy-in-san-francisco-complete-guide-2026/)
-- [Dermal Fillers in Sacramento](/blog/dermal_fillers-in-sacramento-complete-guide-2026/)
-- [Botox in Los Angeles](/blog/botox-in-los-angeles-complete-guide-2026/)
+- [Botox in Fresno](/blog/botox-in-fresno-complete-guide-2026/)
+- [Dermal Fillers in Fresno](/blog/dermal_fillers-in-fresno-complete-guide-2026/)
+- [PRP Therapy in Sacramento](/blog/prp_therapy-in-sacramento-complete-guide-2026/)
 - [Laser Hair Removal in Fresno](/blog/laser_hair_removal-in-fresno-complete-guide-2026/)
 
 

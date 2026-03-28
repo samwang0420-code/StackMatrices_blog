@@ -71,10 +71,10 @@ When choosing a provider, consider:
 
 ## Related Articles
 
-- [Teeth Whitening in San Diego](/blog/teeth_whitening-in-san-diego-complete-guide-2026/)
-- [Invisalign in San Diego](/blog/invisalign-in-san-diego-complete-guide-2026/)
-- [Dental Implants in San Francisco](/blog/dental_implants-in-san-francisco-complete-guide-2026/)
-- [Veneers in Fresno](/blog/veneers-in-fresno-complete-guide-2026/)
+- [Teeth Whitening in Fresno](/blog/teeth_whitening-in-fresno-complete-guide-2026/)
+- [Dental Implants in San Diego](/blog/dental_implants-in-san-diego-complete-guide-2026/)
+- [Invisalign in Fresno](/blog/invisalign-in-fresno-complete-guide-2026/)
+- [Veneers in San Francisco](/blog/veneers-in-san-francisco-complete-guide-2026/)
 
 
 ## Conclusion

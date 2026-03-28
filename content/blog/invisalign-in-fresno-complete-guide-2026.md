@@ -72,9 +72,9 @@ When choosing a provider, consider:
 ## Related Articles
 
 - [Root Canal in San Diego](/blog/root_canal-in-san-diego-complete-guide-2026/)
-- [Veneers in Sacramento](/blog/veneers-in-sacramento-complete-guide-2026/)
-- [Teeth Whitening in San Francisco](/blog/teeth_whitening-in-san-francisco-complete-guide-2026/)
-- [Dental Implants in Sacramento](/blog/dental_implants-in-sacramento-complete-guide-2026/)
+- [Teeth Whitening in Sacramento](/blog/teeth_whitening-in-sacramento-complete-guide-2026/)
+- [Dental Implants in San Diego](/blog/dental_implants-in-san-diego-complete-guide-2026/)
+- [Veneers in San Diego](/blog/veneers-in-san-diego-complete-guide-2026/)
 
 
 ## Conclusion

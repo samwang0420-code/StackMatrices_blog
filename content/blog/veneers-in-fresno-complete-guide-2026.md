@@ -71,10 +71,10 @@ When choosing a provider, consider:
 
 ## Related Articles
 
-- [Root Canal in Fresno](/blog/root_canal-in-fresno-complete-guide-2026/)
-- [Dental Implants in Fresno](/blog/dental_implants-in-fresno-complete-guide-2026/)
-- [Invisalign in San Francisco](/blog/invisalign-in-san-francisco-complete-guide-2026/)
-- [Teeth Whitening in Fresno](/blog/teeth_whitening-in-fresno-complete-guide-2026/)
+- [Root Canal in San Francisco](/blog/root_canal-in-san-francisco-complete-guide-2026/)
+- [Invisalign in Fresno](/blog/invisalign-in-fresno-complete-guide-2026/)
+- [Dental Implants in Sacramento](/blog/dental_implants-in-sacramento-complete-guide-2026/)
+- [Teeth Whitening in San Francisco](/blog/teeth_whitening-in-san-francisco-complete-guide-2026/)
 
 
 ## Conclusion
