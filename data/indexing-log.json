@@ -1355,5 +1355,36 @@
       ]
     },
     "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-03-28T14:23:27.379183",
+    "urls": [
+      "https://stackmatrices.com/blog/emergency-plumbing-long-beach-ca",
+      "https://stackmatrices.com/blog/emergency-plumber-long-beach-california",
+      "https://stackmatrices.com/blog/emergency-plumber-near-me-long-beach"
+    ],
+    "result": {
+      "total": 3,
+      "success": 3,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/emergency-plumbing-long-beach-ca",
+          "result": "Search query submitted - Google will crawl URL"
+        },
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/emergency-plumber-long-beach-california",
+          "result": "Search query submitted - Google will crawl URL"
+        },
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/emergency-plumber-near-me-long-beach",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
   }
 ]
