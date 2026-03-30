@@ -1,7 +1,7 @@
 ---
 title: "[2026 Ultimate Guide] Pool Maintenance & Repair in San Diego: Real Costs, Side Effects & 5 Trusted Providers"
 description: "Pool maintenance, cleaning, and repair services. Expert guide with real 2026 pricing ($75-150-$250-500+), side effects, recovery time, and verified provider recommendations in San Diego."
-date: "2026-03-29"
+date: "2026-03-30"
 tags: ["Pool Service", "San Diego", "Best Pool Service San Diego", "2026 Guide"]
 author: "StackMatrices Team"
 categories: ["services"]
@@ -71,10 +71,10 @@ When choosing a provider, consider:
 
 ## Related Articles
 
-- [HVAC Technician in San Francisco](/blog/hvac-in-san-francisco-complete-guide-2026/)
-- [Electrician in Sacramento](/blog/electrician-in-sacramento-complete-guide-2026/)
 - [Garage Door in San Francisco](/blog/garage_door-in-san-francisco-complete-guide-2026/)
-- [Roofing Contractor in San Diego](/blog/roofing-in-san-diego-complete-guide-2026/)
+- [Window Cleaning in San Francisco](/blog/window_cleaning-in-san-francisco-complete-guide-2026/)
+- [Landscaper in Fresno](/blog/landscaper-in-fresno-complete-guide-2026/)
+- [Roofing Contractor in San Francisco](/blog/roofing-in-san-francisco-complete-guide-2026/)
 
 
 ## Conclusion
