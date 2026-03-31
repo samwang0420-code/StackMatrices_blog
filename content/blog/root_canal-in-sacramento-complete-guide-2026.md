@@ -1,7 +1,7 @@
 ---
 title: "[2026 Ultimate Guide] Root Canal Treatment in Sacramento: Real Costs, Side Effects & 5 Trusted Providers"
 description: "Treatment to save severely infected or damaged teeth by removing pulp and sealing the canal. Expert guide with real 2026 pricing ($500-800-$1200-2000), side effects, recovery time, and verified provider recommendations in Sacramento."
-date: "2026-03-30"
+date: "2026-03-31"
 tags: ["Root Canal", "Sacramento", "Best Root Canal Sacramento", "2026 Guide"]
 author: "StackMatrices Team"
 categories: ["dental"]
@@ -71,10 +71,10 @@ When choosing a provider, consider:
 
 ## Related Articles
 
-- [Invisalign in Los Angeles](/blog/invisalign-in-los-angeles-complete-guide-2026/)
-- [Veneers in San Diego](/blog/veneers-in-san-diego-complete-guide-2026/)
+- [Dental Implants in Los Angeles](/blog/dental_implants-in-los-angeles-complete-guide-2026/)
 - [Teeth Whitening in Los Angeles](/blog/teeth_whitening-in-los-angeles-complete-guide-2026/)
-- [Dental Implants in San Francisco](/blog/dental_implants-in-san-francisco-complete-guide-2026/)
+- [Invisalign in San Francisco](/blog/invisalign-in-san-francisco-complete-guide-2026/)
+- [Veneers in San Francisco](/blog/veneers-in-san-francisco-complete-guide-2026/)
 
 
 ## Conclusion
