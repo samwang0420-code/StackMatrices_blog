@@ -2012,5 +2012,138 @@
       ]
     },
     "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-03-31T10:48:12.316459",
+    "urls": [
+      "https://stackmatrices.com/blog/botox-clinic-near-me",
+      "https://stackmatrices.com/blog/botox-vs-coolsculpting-comparison-2026",
+      "https://stackmatrices.com/blog/botox-vs-dental_implants-comparison-2026",
+      "https://stackmatrices.com/blog/botox-vs-dermal_fillers-comparison-2026",
+      "https://stackmatrices.com/blog/botox-vs-fillers-vs-coolsculpting",
+      "https://stackmatrices.com/blog/botox-vs-invisalign-comparison-2026",
+      "https://stackmatrices.com/blog/botox-vs-laser_hair_removal-comparison-2026",
+      "https://stackmatrices.com/blog/botox-vs-laser-treatment-which-is-better-for-2026-1",
+      "https://stackmatrices.com/blog/botox-vs-laser-treatment-which-is-better-for-2026",
+      "https://stackmatrices.com/blog/botox-vs-prp_therapy-comparison-2026",
+      "https://stackmatrices.com/blog/botox-vs-teeth_whitening-comparison-2026",
+      "https://stackmatrices.com/blog/botox-vs-veneers-comparison-2026",
+      "https://stackmatrices.com/blog/coolsculpting-vs-dental_implants-comparison-2026",
+      "https://stackmatrices.com/blog/coolsculpting-vs-invisalign-comparison-2026",
+      "https://stackmatrices.com/blog/coolsculpting-vs-laser_hair_removal-comparison-2026",
+      "https://stackmatrices.com/blog/coolsculpting-vs-prp_therapy-comparison-2026",
+      "https://stackmatrices.com/blog/coolsculpting-vs-teeth_whitening-comparison-2026",
+      "https://stackmatrices.com/blog/coolsculpting-vs-veneers-comparison-2026",
+      "https://stackmatrices.com/blog/dental-implant-clinic-near-me",
+      "https://stackmatrices.com/blog/dental_implants-vs-invisalign-comparison-2026"
+    ],
+    "result": {
+      "total": 20,
+      "success": 20,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/botox-clinic-near-me",
+          "result": "Search query submitted - Google will crawl URL"
+        },
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/botox-vs-coolsculpting-comparison-2026",
+          "result": "Search query submitted - Google will crawl URL"
+        },
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/botox-vs-dental_implants-comparison-2026",
+          "result": "Search query submitted - Google will crawl URL"
+        },
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/botox-vs-dermal_fillers-comparison-2026",
+          "result": "Search query submitted - Google will crawl URL"
+        },
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/botox-vs-fillers-vs-coolsculpting",
+          "result": "Search query submitted - Google will crawl URL"
+        },
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/botox-vs-invisalign-comparison-2026",
+          "result": "Search query submitted - Google will crawl URL"
+        },
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/botox-vs-laser_hair_removal-comparison-2026",
+          "result": "Search query submitted - Google will crawl URL"
+        },
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/botox-vs-laser-treatment-which-is-better-for-2026-1",
+          "result": "Search query submitted - Google will crawl URL"
+        },
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/botox-vs-laser-treatment-which-is-better-for-2026",
+          "result": "Search query submitted - Google will crawl URL"
+        },
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/botox-vs-prp_therapy-comparison-2026",
+          "result": "Search query submitted - Google will crawl URL"
+        },
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/botox-vs-teeth_whitening-comparison-2026",
+          "result": "Search query submitted - Google will crawl URL"
+        },
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/botox-vs-veneers-comparison-2026",
+          "result": "Search query submitted - Google will crawl URL"
+        },
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/coolsculpting-vs-dental_implants-comparison-2026",
+          "result": "Search query submitted - Google will crawl URL"
+        },
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/coolsculpting-vs-invisalign-comparison-2026",
+          "result": "Search query submitted - Google will crawl URL"
+        },
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/coolsculpting-vs-laser_hair_removal-comparison-2026",
+          "result": "Search query submitted - Google will crawl URL"
+        },
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/coolsculpting-vs-prp_therapy-comparison-2026",
+          "result": "Search query submitted - Google will crawl URL"
+        },
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/coolsculpting-vs-teeth_whitening-comparison-2026",
+          "result": "Search query submitted - Google will crawl URL"
+        },
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/coolsculpting-vs-veneers-comparison-2026",
+          "result": "Search query submitted - Google will crawl URL"
+        },
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/dental-implant-clinic-near-me",
+          "result": "Search query submitted - Google will crawl URL"
+        },
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/dental_implants-vs-invisalign-comparison-2026",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
   }
 ]
