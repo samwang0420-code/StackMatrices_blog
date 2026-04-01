@@ -2145,5 +2145,955 @@
       ]
     },
     "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-01T09:00:46.444398",
+    "urls": [
+      "https://stackmatrices.com/blog/ai-search-visibility-without-budget/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/ai-search-visibility-without-budget/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-01T09:00:48.641101",
+    "urls": [
+      "https://stackmatrices.com/blog/amazon-competitor-price-monitoring/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/amazon-competitor-price-monitoring/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-01T09:00:50.839727",
+    "urls": [
+      "https://stackmatrices.com/blog/amazon-review-analysis-guide/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/amazon-review-analysis-guide/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-01T09:00:53.013088",
+    "urls": [
+      "https://stackmatrices.com/blog/best-botox-in-los-angeles-top-rated-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/best-botox-in-los-angeles-top-rated-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-01T09:00:55.223463",
+    "urls": [
+      "https://stackmatrices.com/blog/best-botox-in-palo-alto-top-rated-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/best-botox-in-palo-alto-top-rated-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-01T09:00:57.502935",
+    "urls": [
+      "https://stackmatrices.com/blog/best-botox-in-sacramento-top-rated-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/best-botox-in-sacramento-top-rated-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-01T09:00:59.766886",
+    "urls": [
+      "https://stackmatrices.com/blog/best-coolsculpting-in-oakland-top-rated-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/best-coolsculpting-in-oakland-top-rated-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-01T09:01:01.987666",
+    "urls": [
+      "https://stackmatrices.com/blog/best-dental-implants-in-fresno-top-rated-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/best-dental-implants-in-fresno-top-rated-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-01T09:01:04.187319",
+    "urls": [
+      "https://stackmatrices.com/blog/best-dental-implants-in-palo-alto-top-rated-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/best-dental-implants-in-palo-alto-top-rated-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-01T09:01:06.394429",
+    "urls": [
+      "https://stackmatrices.com/blog/best-dental-implants-in-sacramento-top-rated-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/best-dental-implants-in-sacramento-top-rated-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-01T09:01:08.672018",
+    "urls": [
+      "https://stackmatrices.com/blog/best-invisalign-in-beverly-hills-top-rated-2026-1/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/best-invisalign-in-beverly-hills-top-rated-2026-1/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-01T09:01:10.864749",
+    "urls": [
+      "https://stackmatrices.com/blog/best-invisalign-in-beverly-hills-top-rated-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/best-invisalign-in-beverly-hills-top-rated-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-01T09:01:13.070570",
+    "urls": [
+      "https://stackmatrices.com/blog/best-invisalign-in-palo-alto-top-rated-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/best-invisalign-in-palo-alto-top-rated-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-01T09:01:15.260592",
+    "urls": [
+      "https://stackmatrices.com/blog/best-invisalign-in-sacramento-top-rated-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/best-invisalign-in-sacramento-top-rated-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-01T09:01:17.477605",
+    "urls": [
+      "https://stackmatrices.com/blog/best-veneers-in-long-beach-top-rated-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/best-veneers-in-long-beach-top-rated-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-01T09:01:19.668433",
+    "urls": [
+      "https://stackmatrices.com/blog/best-veneers-in-san-francisco-top-rated-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/best-veneers-in-san-francisco-top-rated-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-01T09:01:21.861325",
+    "urls": [
+      "https://stackmatrices.com/blog/boost-space-review-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/boost-space-review-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-01T09:01:24.066652",
+    "urls": [
+      "https://stackmatrices.com/blog/botox-atlanta-ga-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/botox-atlanta-ga-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-01T09:01:26.265494",
+    "urls": [
+      "https://stackmatrices.com/blog/botox-clinic-near-me/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/botox-clinic-near-me/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-01T09:01:28.451093",
+    "urls": [
+      "https://stackmatrices.com/blog/botox-dallas-tx-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/botox-dallas-tx-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-01T09:01:30.694552",
+    "urls": [
+      "https://stackmatrices.com/blog/botox-houston-tx-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/botox-houston-tx-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-01T09:01:37.898373",
+    "urls": [
+      "https://stackmatrices.com/blog/botox-in-beverly-hills-complete-guide-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/botox-in-beverly-hills-complete-guide-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-01T09:01:40.138960",
+    "urls": [
+      "https://stackmatrices.com/blog/botox-in-fresno-complete-guide-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/botox-in-fresno-complete-guide-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-01T09:01:42.654724",
+    "urls": [
+      "https://stackmatrices.com/blog/botox-in-long-beach-complete-guide-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/botox-in-long-beach-complete-guide-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-01T09:01:44.849324",
+    "urls": [
+      "https://stackmatrices.com/blog/botox-in-los-angeles-complete-guide-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/botox-in-los-angeles-complete-guide-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-01T09:01:47.047432",
+    "urls": [
+      "https://stackmatrices.com/blog/botox-in-oakland-complete-guide-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/botox-in-oakland-complete-guide-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-01T09:01:49.249691",
+    "urls": [
+      "https://stackmatrices.com/blog/botox-in-palo-alto-complete-guide-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/botox-in-palo-alto-complete-guide-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-01T09:01:51.437977",
+    "urls": [
+      "https://stackmatrices.com/blog/botox-in-sacramento-complete-guide-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/botox-in-sacramento-complete-guide-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-01T09:01:53.624659",
+    "urls": [
+      "https://stackmatrices.com/blog/botox-in-san-diego-complete-guide-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/botox-in-san-diego-complete-guide-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-01T09:01:55.850588",
+    "urls": [
+      "https://stackmatrices.com/blog/botox-in-san-francisco-complete-guide-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/botox-in-san-francisco-complete-guide-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-01T09:01:58.054312",
+    "urls": [
+      "https://stackmatrices.com/blog/botox-las-vegas-nv-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/botox-las-vegas-nv-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-01T09:02:00.265206",
+    "urls": [
+      "https://stackmatrices.com/blog/botox-miami-fl-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/botox-miami-fl-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-01T09:02:02.463876",
+    "urls": [
+      "https://stackmatrices.com/blog/botox-phoenix-az-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/botox-phoenix-az-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-01T09:02:04.680634",
+    "urls": [
+      "https://stackmatrices.com/blog/botox-san-diego-ca-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/botox-san-diego-ca-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-01T09:02:06.908070",
+    "urls": [
+      "https://stackmatrices.com/blog/botox-seattle-wa-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/botox-seattle-wa-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-01T09:02:09.116157",
+    "urls": [
+      "https://stackmatrices.com/blog/botox-vs-coolsculpting-comparison-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/botox-vs-coolsculpting-comparison-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-01T09:02:11.373559",
+    "urls": [
+      "https://stackmatrices.com/blog/botox-vs-dental_implants-comparison-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/botox-vs-dental_implants-comparison-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-01T09:02:13.569558",
+    "urls": [
+      "https://stackmatrices.com/blog/botox-vs-dermal_fillers-comparison-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/botox-vs-dermal_fillers-comparison-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-01T09:02:15.774877",
+    "urls": [
+      "https://stackmatrices.com/blog/botox-vs-fillers-vs-coolsculpting/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/botox-vs-fillers-vs-coolsculpting/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-01T09:02:17.975458",
+    "urls": [
+      "https://stackmatrices.com/blog/botox-vs-invisalign-comparison-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/botox-vs-invisalign-comparison-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-01T09:02:20.170360",
+    "urls": [
+      "https://stackmatrices.com/blog/botox-vs-laser_hair_removal-comparison-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/botox-vs-laser_hair_removal-comparison-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-01T09:02:22.347981",
+    "urls": [
+      "https://stackmatrices.com/blog/botox-vs-laser-treatment-which-is-better-for-2026-1/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/botox-vs-laser-treatment-which-is-better-for-2026-1/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-01T09:02:24.569777",
+    "urls": [
+      "https://stackmatrices.com/blog/botox-vs-laser-treatment-which-is-better-for-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/botox-vs-laser-treatment-which-is-better-for-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-01T09:02:26.742184",
+    "urls": [
+      "https://stackmatrices.com/blog/botox-vs-prp_therapy-comparison-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/botox-vs-prp_therapy-comparison-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-01T09:02:28.941463",
+    "urls": [
+      "https://stackmatrices.com/blog/botox-vs-teeth_whitening-comparison-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/botox-vs-teeth_whitening-comparison-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-01T09:02:31.127397",
+    "urls": [
+      "https://stackmatrices.com/blog/botox-vs-veneers-comparison-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/botox-vs-veneers-comparison-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-01T09:02:33.313035",
+    "urls": [
+      "https://stackmatrices.com/blog/coolsculpting-in-beverly-hills-complete-guide-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/coolsculpting-in-beverly-hills-complete-guide-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-01T09:02:35.504212",
+    "urls": [
+      "https://stackmatrices.com/blog/coolsculpting-in-fresno-complete-guide-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/coolsculpting-in-fresno-complete-guide-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-01T09:02:37.721054",
+    "urls": [
+      "https://stackmatrices.com/blog/coolsculpting-in-long-beach-complete-guide-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/coolsculpting-in-long-beach-complete-guide-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-01T09:02:39.946780",
+    "urls": [
+      "https://stackmatrices.com/blog/coolsculpting-in-los-angeles-complete-guide-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/coolsculpting-in-los-angeles-complete-guide-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
   }
 ]
