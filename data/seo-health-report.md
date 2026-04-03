@@ -1,101 +1,99 @@
-# Blog SEO Health Report
-Generated: April 2nd, 2026 — 8:00 AM UTC
+# 📊 SEO Health Report — April 3, 2026
 
-## Summary
+## Overall Grade: B+
 
-| Metric | Status | Details |
-|--------|--------|---------|
-| Total Articles | ✅ 270+ | All posts in place |
-| FAQ Schema in Frontmatter | ✅ Active | `faq:` field in 50+ articles |
-| JSON-LD Structured Data | ✅ Implemented | `schema.ts` with Article, FAQ, Organization schemas |
-| Entity Optimization | ✅ Active | Medical/dental keywords throughout |
-| Schema Rendering | ⚠️ Partial | Schema defined but not fully rendered in page.tsx |
+### Summary
+The StackMatrices blog has solid technical SEO foundations but could benefit from content refresh and expanded schema implementation.
 
 ---
 
-## 1. FAQ Schema Status
+## 1. Experiment Tracker
 
-**Status**: ✅ Implemented in frontmatter
+| Metric | Status |
+|--------|--------|
+| Posts published (Week 4) | 0 |
+| Schema markup added | 0 |
 
-Sample from `botox-in-los-angeles-complete-guide-2026.md`:
-```yaml
-faq:
-  - question: "What is Botox Cosmetic Treatment?"
-    answer: "FDA-approved injectable..."
-  - question: "How much does Botox cost in Los Angeles?"
-    answer: "Average costs range from $300-500..."
-```
-
-**Files with FAQ**: ~50+ articles (mostly "complete-guide" and "comparison" posts)
+⚠️ **No new content published in 4 weeks.**
 
 ---
 
-## 2. JSON-LD Structured Data
+## 2. FAQ Schema Check
 
-**Status**: ✅ Defined in `src/app/blog/schema.ts`
+| Blog Post | FAQ in Frontmatter | JSON-LD Output |
+|-----------|---------------------|-----------------|
+| `[slug]` (dynamic) | ✅ Supported | ✅ Yes |
+| ai-optimized-content | ❌ No | ❌ No |
+| entity-seo-medical-practices | ❌ No | ❌ No |
+| predictions-2026 | ❌ No | ❌ No |
+| google-ai-overviews-2026 | ❌ No | ❌ No |
+| enterprise-seo-transformation-2026 | ❌ No | ❌ No |
+| quality-guidelines | ❌ No | ❌ No |
+| schema-markup-guide | ❌ No | ❌ No |
+| seo-geo-trends-2025 | ❌ No | ❌ No |
 
-```typescript
-export const ARTICLE_SCHEMA = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  // ...
-};
-
-export const FAQ_SCHEMA = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": []
-};
-```
-
-**Issue**: Schema is defined but NOT fully integrated into `[slug]/page.tsx`. The page reads `faq` from frontmatter but doesn't render JSON-LD script tags.
-
----
-
-## 3. Entity Optimization
-
-**Status**: ✅ Active
-
-Sample keywords detected in articles:
-- Medical: botox, dermal fillers, prp therapy, coolsculpting
-- Dental: dental implants, invisalign, veneers, root canal
-- Services: emergency plumber, electrician, hvac, landscaper
-
-**Coverage**: 270+ articles covering multiple verticals and locations
+**Findings:**
+- Only the dynamic `[slug]` route has FAQ schema output
+- Static blog pages missing FAQ JSON-LD
+- Need to add FAQ frontmatter + schema injection to static pages
 
 ---
 
-## 4. Schema Rendering Check
+## 3. JSON-LD Structured Data
 
-**Status**: ⚠️ Needs Fix
+| Schema Type | Implemented | Pages |
+|-------------|--------------|-------|
+| FAQPage | ✅ | [slug] only |
+| Organization | ✅ | [slug] |
+| WebSite (SearchAction) | ✅ | [slug] |
+| Review (MedicalProcedure) | ✅ | [slug] - ⚠️ **Generic, may trigger quality warnings** |
+| Article | ❌ | None |
+| BreadcrumbList | ❌ | None |
+| LocalBusiness | ❌ | None |
 
-The `[slug]/page.tsx` reads FAQ data from frontmatter but does NOT render JSON-LD script tags in the HTML output.
+**Schema.ts available** at `src/app/blog/schema.ts` but not imported in static pages.
 
-**Required Fix**: Add script tag rendering in `src/app/blog/[slug]/page.tsx`
+---
 
-```tsx
-// Add to page.tsx
-import { ARTICLE_SCHEMA, FAQ_SCHEMA } from '../schema';
+## 4. Entity Optimization (Medical/Dental Keywords)
 
-// In the return JSX:
-<script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-/>
-```
+| Page | Entity Keywords | Status |
+|------|-----------------|--------|
+| `/audit` | AI visibility score, medical SEO | ✅ Present |
+| `/cases` | Breast augmentation, dental implants | ✅ Present |
+| `/interventions` | AI search optimization, recovery plans | ✅ Present |
+| Blog: entity-seo-medical-practices | Medical practices, local SEO | ✅ Present |
+
+**Medical content exists** but lacks structured entity markup (MedicalBusiness,Physician schema).
+
+---
+
+## 5. Recommendations
+
+### High Priority
+1. **Add FAQ to static blog pages** — Add frontmatter `faq:` array + JSON-LD output
+2. **Remove generic Review schema** — The MedicalProcedure review on every page looks spammy
+3. **Add Article schema** to all blog posts (not just FAQPage)
+
+### Medium Priority
+4. **Import schema.ts** into static pages for consistency
+5. **Add LocalBusiness schema** to /audit landing page
+6. **Add BreadcrumbList schema** for better navigation equity
+
+### Low Priority
+7. **Publish new content** — 4 weeks without new posts
+8. **Add OpenGraph + Twitter Card** meta tags to blog pages
 
 ---
 
 ## Action Items
 
-| Priority | Item | Effort |
-|----------|------|--------|
-| 🔴 High | Render JSON-LD in [slug]/page.tsx | Medium |
-| 🟡 Medium | Add Organization schema to layout | Low |
-| 🟢 Low | Add breadcrumb schema | Low |
+- [ ] Add FAQ schema to 8 static blog pages
+- [ ] Remove generic MedicalProcedure Review schema
+- [ ] Add Article schema to all blog posts
+- [ ] Add LocalBusiness schema to /audit
+- [ ] Consider new blog content for freshness
 
 ---
 
-## Next Check
-
-Scheduled: April 3rd, 2026 — 8:00 AM UTC
+*Generated: 2026-04-03 08:00 UTC*
