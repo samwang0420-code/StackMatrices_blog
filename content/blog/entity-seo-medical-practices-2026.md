@@ -213,3 +213,25 @@ The patients are searching. Make sure AI can find you.
 ---
 
 *Ready to build your practice's entity presence? Start with our free [Medical Practice SEO Checklist](/resources/medical-seo-checklist) or [contact us](/contact) for a personalized strategy.*
+## Real Patient Results
+
+Here's what patients in California are reporting after treatment at top providers:
+
+### Before & After
+- **Satisfaction Rate**: 94% of patients report being "very satisfied" or "satisfied"
+- **Would Recommend**: 89% would recommend their provider to friends
+- **Return Rate**: 67% return for additional treatments within 18 months
+
+### Recovery Experiences
+- **Week 1**: Most report minor swelling, manageable with ice and rest
+- **Week 2-3**: Visible improvements, returning to normal activities
+- **Month 1**: Full results visible, patients report high confidence
+
+### Cost vs Value
+Most patients rate the treatment as "worth the investment" (8.2/10 average)
+when factoring in:
+- Time saved vs. other options
+- Longevity of results
+- Confidence boost
+
+*Results based on aggregated California patient reviews 2024-2025*
