@@ -71,10 +71,10 @@ When choosing a provider, consider:
 
 ## Related Articles
 
-- [Dental Implants in Sacramento](/blog/dental_implants-in-sacramento-complete-guide-2026/)
-- [Veneers in Los Angeles](/blog/veneers-in-los-angeles-complete-guide-2026/)
-- [Root Canal in Los Angeles](/blog/root_canal-in-los-angeles-complete-guide-2026/)
-- [Teeth Whitening in San Francisco](/blog/teeth_whitening-in-san-francisco-complete-guide-2026/)
+- [Veneers in Sacramento](/blog/veneers-in-sacramento-complete-guide-2026/)
+- [Dental Implants in Los Angeles](/blog/dental_implants-in-los-angeles-complete-guide-2026/)
+- [Teeth Whitening in Sacramento](/blog/teeth_whitening-in-sacramento-complete-guide-2026/)
+- [Root Canal in Sacramento](/blog/root_canal-in-sacramento-complete-guide-2026/)
 
 
 ## Conclusion

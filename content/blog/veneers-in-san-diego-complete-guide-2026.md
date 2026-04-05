@@ -71,10 +71,10 @@ When choosing a provider, consider:
 
 ## Related Articles
 
-- [Dental Implants in Sacramento](/blog/dental_implants-in-sacramento-complete-guide-2026/)
-- [Invisalign in San Francisco](/blog/invisalign-in-san-francisco-complete-guide-2026/)
-- [Root Canal in Los Angeles](/blog/root_canal-in-los-angeles-complete-guide-2026/)
-- [Teeth Whitening in Los Angeles](/blog/teeth_whitening-in-los-angeles-complete-guide-2026/)
+- [Invisalign in Los Angeles](/blog/invisalign-in-los-angeles-complete-guide-2026/)
+- [Teeth Whitening in San Diego](/blog/teeth_whitening-in-san-diego-complete-guide-2026/)
+- [Root Canal in Fresno](/blog/root_canal-in-fresno-complete-guide-2026/)
+- [Dental Implants in Los Angeles](/blog/dental_implants-in-los-angeles-complete-guide-2026/)
 
 
 ## Conclusion
