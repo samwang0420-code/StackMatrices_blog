@@ -1,56 +1,57 @@
-# SEO Health Report - April 5, 2026
+# SEO Health Report - April 6, 2026
 
 ## 📊 Summary
 
-| Metric | Status | Details |
-|--------|--------|---------|
-| Total Articles | ✅ 22 | All in Supabase |
-| FAQ Schema | ✅ Active | 4-5 medical/dental articles have FAQ blocks |
-| JSON-LD | ✅ Active | Blog post pages render structured data |
-| Entity Optimization | ✅ Active | Knowledge graph + entity sitemap present |
+| Metric | Status | Notes |
+|--------|--------|-------|
+| Total Blog Posts | 171 | In content/blog/ |
+| FAQ Schema | 🔴 1/171 (0.6%) | Only 1 article has FAQ schema |
+| JSON-LD | 🔴 0/171 | No structured data markup |
+| Last Published | Apr 5, 2026 | Most recent article date |
 
----
+## 🔍 Schema Analysis
 
-## 🔍 Detailed Checks
+### FAQ Schema
+- **Found:** 1 article (`entity-seo-medical-practices-2026.md`)
+- **Missing:** 170 articles need FAQ schema
 
-### 1. Blog Content
-- **22 articles** stored in Supabase
-- Content files exist in `/blog/content/blog/`
-- GEO-optimized medical content: dental, med-spa, plumber categories
+### JSON-LD Structured Data
+- **Found:** 0 articles
+- **Action Required:** Add `application/ld+json` script tags
 
-### 2. FAQ Schema ✅
-- Implemented in `src/app/blog/[slug]/page.tsx`
-- Reads `faq` frontmatter from markdown
-- Renders `FAQPage` JSON-LD when `post.faq` exists
-- Sample: `best-dental-implants-dentist.md` has 4 FAQ entries
+## 🎯 Entity Keywords Coverage
 
-### 3. JSON-LD Structured Data ✅
-Multiple schema types implemented:
-- **BlogPosting** - Article metadata
-- **FAQPage** - FAQ schema (see above)
-- **Organization** - Site branding
-- **WebSite** - Search action
-- **AggregateRating** - Review scores
+| Entity | Coverage | Notes |
+|--------|-----------|-------|
+| Botox | ✅ 72 articles | Good coverage |
+| Invisalign | ✅ 60 articles | Good coverage |
+| Dental Implant | ⚠️ 5 articles | Needs expansion |
+| Med Spa | ⚠️ 1 article | Needs expansion |
+| Plastic Surgery | ❌ 0 articles | Missing entirely |
 
-### 4. Entity Optimization
-- **Knowledge Graph**: `data/knowledge-graph.json`
-- **Entity Sitemap**: `data/entity-sitemap.json`
-- Medical/dental keywords in article frontmatter (e.g., "best-dental-implants-dentist.md")
+## ⚠️ Action Items
 
----
+### High Priority
+1. **Add FAQ Schema** to top 20 articles (Botox, dental, med spa topics)
+2. **Add JSON-LD** structured data to all new articles
 
-## 🚀 Recommendations
+### Medium Priority
+3. **Expand dental implant** content (only 5 articles)
+4. **Add plastic surgery** articles (0 currently)
 
-| Priority | Action | Impact |
-|----------|--------|--------|
-| Low | Add more FAQ blocks to existing articles | Higher AI search visibility |
-| Medium | Submit entity-sitemap.xml to Google | Better entity recognition |
-| Low | Add Review schema to tool comparison articles | Rich snippets |
+### Low Priority
+5. **Add schema markup** to legacy articles
 
----
+## 📈 Experiment Tracker Status
 
-## ✅ Verdict
+- **Week 5** (Mar 08 - Apr 06)
+- **Posts published this period:** 0
+- **Schema markup added:** 0
 
-**SEO Health: GOOD**
+## 🏥 Health Grade: C-
 
-All core GEO/SEO components are functional. No critical issues detected.
+- Schema coverage: <1%
+- Entity keywords: Partial
+- Action needed: High
+
+*Report generated: 2026-04-06 08:00 UTC*

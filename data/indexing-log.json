@@ -1,6 +1,6 @@
 [
   {
-    "timestamp": "2026-04-05T09:05:33.366321",
+    "timestamp": "2026-04-05T09:06:28.771861",
     "urls": [
       "content/blog/botox-in-los-angeles-complete-guide-2026.md"
     ],
@@ -12,6 +12,1445 @@
         {
           "success": false,
           "url": "content/blog/botox-in-los-angeles-complete-guide-2026.md",
+          "error": "HTTP Error 429: Too Many Requests"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-05T09:06:41.223375",
+    "urls": [
+      "content/blog/botox-in-san-diego-complete-guide-2026.md"
+    ],
+    "result": {
+      "total": 1,
+      "success": 0,
+      "failed": 1,
+      "results": [
+        {
+          "success": false,
+          "url": "content/blog/botox-in-san-diego-complete-guide-2026.md",
+          "error": "HTTP Error 429: Too Many Requests"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-05T09:06:53.743021",
+    "urls": [
+      "content/blog/botox-in-san-francisco-complete-guide-2026.md"
+    ],
+    "result": {
+      "total": 1,
+      "success": 0,
+      "failed": 1,
+      "results": [
+        {
+          "success": false,
+          "url": "content/blog/botox-in-san-francisco-complete-guide-2026.md",
+          "error": "HTTP Error 429: Too Many Requests"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-05T09:07:08.958780",
+    "urls": [
+      "content/blog/botox-in-san-diego-complete-guide-2026.md"
+    ],
+    "result": {
+      "total": 1,
+      "success": 0,
+      "failed": 1,
+      "results": [
+        {
+          "success": false,
+          "url": "content/blog/botox-in-san-diego-complete-guide-2026.md",
+          "error": "HTTP Error 429: Too Many Requests"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-05T09:07:26.430230",
+    "urls": [
+      "content/blog/coolsculpting-in-san-diego-complete-guide-2026.md"
+    ],
+    "result": {
+      "total": 1,
+      "success": 0,
+      "failed": 1,
+      "results": [
+        {
+          "success": false,
+          "url": "content/blog/coolsculpting-in-san-diego-complete-guide-2026.md",
+          "error": "HTTP Error 429: Too Many Requests"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-05T09:07:44.070703",
+    "urls": [
+      "content/blog/dental_implants-in-san-diego-complete-guide-2026.md"
+    ],
+    "result": {
+      "total": 1,
+      "success": 0,
+      "failed": 1,
+      "results": [
+        {
+          "success": false,
+          "url": "content/blog/dental_implants-in-san-diego-complete-guide-2026.md",
+          "error": "HTTP Error 429: Too Many Requests"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-05T09:08:00.188133",
+    "urls": [
+      "https://stackmatrices.com/blog/invisalign-atlanta-ga-2026",
+      "https://stackmatrices.com/blog/prp_therapy-in-san-diego-complete-guide-2026",
+      "https://stackmatrices.com/blog/root_canal-in-fresno-complete-guide-2026",
+      "https://stackmatrices.com/blog/invisalign-miami-fl-2026",
+      "https://stackmatrices.com/blog/dermal-fillers-houston-tx-2026",
+      "https://stackmatrices.com/blog/window_cleaning-in-fresno-complete-guide-2026",
+      "https://stackmatrices.com/blog/invisalign-las-vegas-nv-2026",
+      "https://stackmatrices.com/blog/dermal_fillers-in-san-francisco-complete-guide-2026",
+      "https://stackmatrices.com/blog/dermal_fillers-vs-prp_therapy-comparison-2026",
+      "https://stackmatrices.com/blog/garage_door-in-sacramento-complete-guide-2026",
+      "https://stackmatrices.com/blog/invisalign-in-fresno-complete-guide-2026",
+      "https://stackmatrices.com/blog/dental-near-me-beverly-hills",
+      "https://stackmatrices.com/blog/dermal_fillers-vs-dental_implants-comparison-2026",
+      "https://stackmatrices.com/blog/dental_implants-in-fresno-complete-guide-2026",
+      "https://stackmatrices.com/blog/botox-beverly-hills",
+      "https://stackmatrices.com/blog/dermal-fillers-cost-2026",
+      "https://stackmatrices.com/blog/best-invisalign-provider",
+      "https://stackmatrices.com/blog/roof-repair-long-beach-ca",
+      "https://stackmatrices.com/blog/veneers-vs-laser_hair_removal-comparison-2026",
+      "https://stackmatrices.com/blog/test-script-123",
+      "https://stackmatrices.com/blog/botox-near-me-belmont-shore",
+      "https://stackmatrices.com/blog/botox-vs-invisalign-comparison-2026",
+      "https://stackmatrices.com/blog/dermal-fillers-dallas-tx-2026",
+      "https://stackmatrices.com/blog/landscaper-in-sacramento-complete-guide-2026",
+      "https://stackmatrices.com/blog/prp_therapy-in-san-francisco-complete-guide-2026",
+      "https://stackmatrices.com/blog/dermal_fillers-vs-teeth_whitening-comparison-2026",
+      "https://stackmatrices.com/blog/invisalign-in-sacramento-complete-guide-2026",
+      "https://stackmatrices.com/blog/hvac-near-me-industrial-district",
+      "https://stackmatrices.com/blog/botox-reviews-los-angeles",
+      "https://stackmatrices.com/blog/ai-search-visibility-without-budget",
+      "https://stackmatrices.com/blog/botox-in-san-francisco-complete-guide-2026",
+      "https://stackmatrices.com/blog/dental-implants-seattle-wa-2026",
+      "https://stackmatrices.com/blog/best-med-spa-los-angeles",
+      "https://stackmatrices.com/blog/dermal-fillers-phoenix-az-2026",
+      "https://stackmatrices.com/blog/emergency-plumber-near-me-long-beach",
+      "https://stackmatrices.com/blog/dental_implants-vs-teeth_whitening-comparison-2026",
+      "https://stackmatrices.com/blog/dermal_fillers-vs-coolsculpting-comparison-2026",
+      "https://stackmatrices.com/blog/dental_implants-vs-root_canal-comparison-2026",
+      "https://stackmatrices.com/blog/botox-vs-prp_therapy-comparison-2026",
+      "https://stackmatrices.com/blog/best-dental-implants-dentist",
+      "https://stackmatrices.com/blog/prp-therapy-cost-2026",
+      "https://stackmatrices.com/blog/coolsculpting-vs-prp_therapy-comparison-2026",
+      "https://stackmatrices.com/blog/invisalign-reviews",
+      "https://stackmatrices.com/blog/laser_hair_removal-in-san-francisco-complete-guide-2026",
+      "https://stackmatrices.com/blog/botox-in-los-angeles-complete-guide-2026",
+      "https://stackmatrices.com/blog/botox-dallas-tx-2026",
+      "https://stackmatrices.com/blog/veneers-in-fresno-complete-guide-2026",
+      "https://stackmatrices.com/blog/invisalign-vs-veneers-comparison-2026",
+      "https://stackmatrices.com/blog/best-emergency-plumber",
+      "https://stackmatrices.com/blog/coolsculpting-in-san-diego-complete-guide-2026",
+      "https://stackmatrices.com/blog/emergency-plumber-las-vegas-nv-2026",
+      "https://stackmatrices.com/blog/hvac-miami-fl-2026",
+      "https://stackmatrices.com/blog/coolsculpting-in-san-francisco-complete-guide-2026",
+      "https://stackmatrices.com/blog/botox-coral-gables",
+      "https://stackmatrices.com/blog/botox-south-beach",
+      "https://stackmatrices.com/blog/veneers-in-sacramento-complete-guide-2026",
+      "https://stackmatrices.com/blog/invisalign-vs-teeth_whitening-comparison-2026",
+      "https://stackmatrices.com/blog/dermal-fillers-west-hollywood",
+      "https://stackmatrices.com/blog/botox-cost-per-unit-2026",
+      "https://stackmatrices.com/blog/invisalign-cost-2026",
+      "https://stackmatrices.com/blog/dental-implants-houston-tx-2026",
+      "https://stackmatrices.com/blog/dermal-fillers-reviews",
+      "https://stackmatrices.com/blog/invisalign-dallas-tx-2026",
+      "https://stackmatrices.com/blog/teeth-whitening-cost-2026",
+      "https://stackmatrices.com/blog/botox-phoenix-az-2026",
+      "https://stackmatrices.com/blog/roof-repair-oakland-ca",
+      "https://stackmatrices.com/blog/root_canal-in-san-diego-complete-guide-2026",
+      "https://stackmatrices.com/blog/house_cleaning-in-san-francisco-complete-guide-2026",
+      "https://stackmatrices.com/blog/emergency-plumber-phoenix-az-2026",
+      "https://stackmatrices.com/blog/botox-las-vegas-nv-2026",
+      "https://stackmatrices.com/blog/emergency-plumber-miami-fl-2026",
+      "https://stackmatrices.com/blog/pest_control-in-fresno-complete-guide-2026",
+      "https://stackmatrices.com/blog/dermal_fillers-in-los-angeles-complete-guide-2026",
+      "https://stackmatrices.com/blog/invisalign-in-san-diego-complete-guide-2026",
+      "https://stackmatrices.com/blog/teeth_whitening-in-sacramento-complete-guide-2026",
+      "https://stackmatrices.com/blog/laser_hair_removal-in-san-diego-complete-guide-2026",
+      "https://stackmatrices.com/blog/coolsculpting-vs-veneers-comparison-2026",
+      "https://stackmatrices.com/blog/botox-galleria",
+      "https://stackmatrices.com/blog/botox-manhattan",
+      "https://stackmatrices.com/blog/coolsculpting-vs-dental_implants-comparison-2026",
+      "https://stackmatrices.com/blog/coolsculpting-vs-laser_hair_removal-comparison-2026",
+      "https://stackmatrices.com/blog/botox-vs-coolsculpting-comparison-2026",
+      "https://stackmatrices.com/blog/botox-in-san-diego-complete-guide-2026",
+      "https://stackmatrices.com/blog/dermal-fillers-las-vegas-nv-2026",
+      "https://stackmatrices.com/blog/dental-implants-miami-fl-2026",
+      "https://stackmatrices.com/blog/coolsculpting-in-los-angeles-complete-guide-2026",
+      "https://stackmatrices.com/blog/dental_implants-vs-invisalign-comparison-2026",
+      "https://stackmatrices.com/blog/dermal_fillers-vs-veneers-comparison-2026",
+      "https://stackmatrices.com/blog/dental_implants-in-san-diego-complete-guide-2026",
+      "https://stackmatrices.com/blog/hvac-in-san-francisco-complete-guide-2026",
+      "https://stackmatrices.com/blog/dental-implants-phoenix-az-2026",
+      "https://stackmatrices.com/blog/teeth_whitening-vs-prp_therapy-comparison-2026",
+      "https://stackmatrices.com/blog/invisalign-seattle-wa-2026",
+      "https://stackmatrices.com/blog/electrician-in-san-diego-complete-guide-2026",
+      "https://stackmatrices.com/blog/laser_hair_removal-vs-prp_therapy-comparison-2026",
+      "https://stackmatrices.com/blog/laser_hair_removal-in-los-angeles-complete-guide-2026",
+      "https://stackmatrices.com/blog/veneers-vs-prp_therapy-comparison-2026",
+      "https://stackmatrices.com/blog/dermal-fillers-seattle-wa-2026",
+      "https://stackmatrices.com/blog/dermal_fillers-vs-invisalign-comparison-2026",
+      "https://stackmatrices.com/blog/botox-cost-face-2026",
+      "https://stackmatrices.com/blog/hvac-las-vegas-nv-2026",
+      "https://stackmatrices.com/blog/dental-implants-reviews",
+      "https://stackmatrices.com/blog/entity-seo-medical-practices-2026",
+      "https://stackmatrices.com/blog/invisalign-san-diego-ca-2026",
+      "https://stackmatrices.com/blog/dental-implants-atlanta-ga-2026",
+      "https://stackmatrices.com/blog/emergency-plumber-atlanta-ga-2026",
+      "https://stackmatrices.com/blog/invisalign-houston-tx-2026",
+      "https://stackmatrices.com/blog/emergency_plumber-in-los-angeles-complete-guide-2026",
+      "https://stackmatrices.com/blog/emergency-plumber-houston-tx-2026",
+      "https://stackmatrices.com/blog/teeth_whitening-in-fresno-complete-guide-2026",
+      "https://stackmatrices.com/blog/dermal-fillers-atlanta-ga-2026",
+      "https://stackmatrices.com/blog/root_canal-in-sacramento-complete-guide-2026",
+      "https://stackmatrices.com/blog/botox-highland-park",
+      "https://stackmatrices.com/blog/dental-implants-dallas-tx-2026",
+      "https://stackmatrices.com/blog/botox-malibu",
+      "https://stackmatrices.com/blog/botox-santa-monica",
+      "https://stackmatrices.com/blog/coolsculpting-vs-teeth_whitening-comparison-2026",
+      "https://stackmatrices.com/blog/botox-vs-laser_hair_removal-comparison-2026",
+      "https://stackmatrices.com/blog/botox-vs-dental_implants-comparison-2026",
+      "https://stackmatrices.com/blog/prp_therapy-vs-laser_hair_removal-comparison-2026",
+      "https://stackmatrices.com/blog/emergency-plumber-long-beach-california",
+      "https://stackmatrices.com/blog/boost-space-review-2026",
+      "https://stackmatrices.com/blog/dental-implants-las-vegas-nv-2026",
+      "https://stackmatrices.com/blog/botox-the-heights",
+      "https://stackmatrices.com/blog/botox-uptown-dallas",
+      "https://stackmatrices.com/blog/botox-near-me-downtown",
+      "https://stackmatrices.com/blog/botox-houston-tx-2026",
+      "https://stackmatrices.com/blog/botox-san-diego-ca-2026",
+      "https://stackmatrices.com/blog/stock-monitoring-ecommerce",
+      "https://stackmatrices.com/blog/invisalign-vs-laser_hair_removal-comparison-2026",
+      "https://stackmatrices.com/blog/botox-vs-teeth_whitening-comparison-2026",
+      "https://stackmatrices.com/blog/emergency-plumbing-long-beach-ca",
+      "https://stackmatrices.com/blog/dental_implants-in-sacramento-complete-guide-2026",
+      "https://stackmatrices.com/blog/emergency-plumber-san-diego-ca-2026",
+      "https://stackmatrices.com/blog/botox-brooklyn",
+      "https://stackmatrices.com/blog/dental_implants-vs-prp_therapy-comparison-2026",
+      "https://stackmatrices.com/blog/emergency_plumber-vs-hvac-comparison-2026",
+      "https://stackmatrices.com/blog/emergency-plumber-dallas-tx-2026",
+      "https://stackmatrices.com/blog/dermal_fillers-vs-laser_hair_removal-comparison-2026",
+      "https://stackmatrices.com/blog/dental-implants-san-diego-ca-2026",
+      "https://stackmatrices.com/blog/electrician-vs-hvac-comparison-2026",
+      "https://stackmatrices.com/blog/roofing-in-los-angeles-complete-guide-2026",
+      "https://stackmatrices.com/blog/dental_implants-vs-laser_hair_removal-comparison-2026",
+      "https://stackmatrices.com/blog/botox-vs-veneers-comparison-2026",
+      "https://stackmatrices.com/blog/coolsculpting-vs-invisalign-comparison-2026",
+      "https://stackmatrices.com/blog/hvac-seattle-wa-2026",
+      "https://stackmatrices.com/blog/dental_implants-vs-veneers-comparison-2026",
+      "https://stackmatrices.com/blog/emergency-plumber-seattle-wa-2026",
+      "https://stackmatrices.com/blog/veneers-in-san-diego-complete-guide-2026",
+      "https://stackmatrices.com/blog/teeth_whitening-vs-laser_hair_removal-comparison-2026",
+      "https://stackmatrices.com/blog/dermal-fillers-san-diego-ca-2026",
+      "https://stackmatrices.com/blog/pool_service-in-san-diego-complete-guide-2026",
+      "https://stackmatrices.com/blog/prp_therapy-in-los-angeles-complete-guide-2026",
+      "https://stackmatrices.com/blog/best-med-spa-miami",
+      "https://stackmatrices.com/blog/botox-vs-dermal_fillers-comparison-2026",
+      "https://stackmatrices.com/blog/dermal-fillers-miami-fl-2026",
+      "https://stackmatrices.com/blog/teeth_whitening-in-san-diego-complete-guide-2026",
+      "https://stackmatrices.com/blog/teeth_whitening-vs-veneers-comparison-2026",
+      "https://stackmatrices.com/blog/dermal_fillers-in-san-diego-complete-guide-2026",
+      "https://stackmatrices.com/blog/dental-implants-cost-2026",
+      "https://stackmatrices.com/blog/botox-atlanta-ga-2026",
+      "https://stackmatrices.com/blog/botox-miami-fl-2026",
+      "https://stackmatrices.com/blog/invisalign-phoenix-az-2026",
+      "https://stackmatrices.com/blog/best-med-spa-new-york",
+      "https://stackmatrices.com/blog/coolsculpting-cost-2026",
+      "https://stackmatrices.com/blog/invisalign-vs-prp_therapy-comparison-2026",
+      "https://stackmatrices.com/blog/hvac-atlanta-ga-2026",
+      "https://stackmatrices.com/blog/botox-seattle-wa-2026"
+    ],
+    "result": {
+      "total": 168,
+      "success": 0,
+      "failed": 168,
+      "results": [
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/invisalign-atlanta-ga-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/prp_therapy-in-san-diego-complete-guide-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/root_canal-in-fresno-complete-guide-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/invisalign-miami-fl-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/dermal-fillers-houston-tx-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/window_cleaning-in-fresno-complete-guide-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/invisalign-las-vegas-nv-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/dermal_fillers-in-san-francisco-complete-guide-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/dermal_fillers-vs-prp_therapy-comparison-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/garage_door-in-sacramento-complete-guide-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/invisalign-in-fresno-complete-guide-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/dental-near-me-beverly-hills",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/dermal_fillers-vs-dental_implants-comparison-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/dental_implants-in-fresno-complete-guide-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/botox-beverly-hills",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/dermal-fillers-cost-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/best-invisalign-provider",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/roof-repair-long-beach-ca",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/veneers-vs-laser_hair_removal-comparison-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/test-script-123",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/botox-near-me-belmont-shore",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/botox-vs-invisalign-comparison-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/dermal-fillers-dallas-tx-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/landscaper-in-sacramento-complete-guide-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/prp_therapy-in-san-francisco-complete-guide-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/dermal_fillers-vs-teeth_whitening-comparison-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/invisalign-in-sacramento-complete-guide-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/hvac-near-me-industrial-district",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/botox-reviews-los-angeles",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/ai-search-visibility-without-budget",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/botox-in-san-francisco-complete-guide-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/dental-implants-seattle-wa-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/best-med-spa-los-angeles",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/dermal-fillers-phoenix-az-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/emergency-plumber-near-me-long-beach",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/dental_implants-vs-teeth_whitening-comparison-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/dermal_fillers-vs-coolsculpting-comparison-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/dental_implants-vs-root_canal-comparison-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/botox-vs-prp_therapy-comparison-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/best-dental-implants-dentist",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/prp-therapy-cost-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/coolsculpting-vs-prp_therapy-comparison-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/invisalign-reviews",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/laser_hair_removal-in-san-francisco-complete-guide-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/botox-in-los-angeles-complete-guide-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/botox-dallas-tx-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/veneers-in-fresno-complete-guide-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/invisalign-vs-veneers-comparison-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/best-emergency-plumber",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/coolsculpting-in-san-diego-complete-guide-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/emergency-plumber-las-vegas-nv-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/hvac-miami-fl-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/coolsculpting-in-san-francisco-complete-guide-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/botox-coral-gables",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/botox-south-beach",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/veneers-in-sacramento-complete-guide-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/invisalign-vs-teeth_whitening-comparison-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/dermal-fillers-west-hollywood",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/botox-cost-per-unit-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/invisalign-cost-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/dental-implants-houston-tx-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/dermal-fillers-reviews",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/invisalign-dallas-tx-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/teeth-whitening-cost-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/botox-phoenix-az-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/roof-repair-oakland-ca",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/root_canal-in-san-diego-complete-guide-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/house_cleaning-in-san-francisco-complete-guide-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/emergency-plumber-phoenix-az-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/botox-las-vegas-nv-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/emergency-plumber-miami-fl-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/pest_control-in-fresno-complete-guide-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/dermal_fillers-in-los-angeles-complete-guide-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/invisalign-in-san-diego-complete-guide-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/teeth_whitening-in-sacramento-complete-guide-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/laser_hair_removal-in-san-diego-complete-guide-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/coolsculpting-vs-veneers-comparison-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/botox-galleria",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/botox-manhattan",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/coolsculpting-vs-dental_implants-comparison-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/coolsculpting-vs-laser_hair_removal-comparison-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/botox-vs-coolsculpting-comparison-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/botox-in-san-diego-complete-guide-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/dermal-fillers-las-vegas-nv-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/dental-implants-miami-fl-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/coolsculpting-in-los-angeles-complete-guide-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/dental_implants-vs-invisalign-comparison-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/dermal_fillers-vs-veneers-comparison-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/dental_implants-in-san-diego-complete-guide-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/hvac-in-san-francisco-complete-guide-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/dental-implants-phoenix-az-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/teeth_whitening-vs-prp_therapy-comparison-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/invisalign-seattle-wa-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/electrician-in-san-diego-complete-guide-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/laser_hair_removal-vs-prp_therapy-comparison-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/laser_hair_removal-in-los-angeles-complete-guide-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/veneers-vs-prp_therapy-comparison-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/dermal-fillers-seattle-wa-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/dermal_fillers-vs-invisalign-comparison-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/botox-cost-face-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/hvac-las-vegas-nv-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/dental-implants-reviews",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/entity-seo-medical-practices-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/invisalign-san-diego-ca-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/dental-implants-atlanta-ga-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/emergency-plumber-atlanta-ga-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/invisalign-houston-tx-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/emergency_plumber-in-los-angeles-complete-guide-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/emergency-plumber-houston-tx-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/teeth_whitening-in-fresno-complete-guide-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/dermal-fillers-atlanta-ga-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/root_canal-in-sacramento-complete-guide-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/botox-highland-park",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/dental-implants-dallas-tx-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/botox-malibu",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/botox-santa-monica",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/coolsculpting-vs-teeth_whitening-comparison-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/botox-vs-laser_hair_removal-comparison-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/botox-vs-dental_implants-comparison-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/prp_therapy-vs-laser_hair_removal-comparison-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/emergency-plumber-long-beach-california",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/boost-space-review-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/dental-implants-las-vegas-nv-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/botox-the-heights",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/botox-uptown-dallas",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/botox-near-me-downtown",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/botox-houston-tx-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/botox-san-diego-ca-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/stock-monitoring-ecommerce",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/invisalign-vs-laser_hair_removal-comparison-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/botox-vs-teeth_whitening-comparison-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/emergency-plumbing-long-beach-ca",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/dental_implants-in-sacramento-complete-guide-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/emergency-plumber-san-diego-ca-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/botox-brooklyn",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/dental_implants-vs-prp_therapy-comparison-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/emergency_plumber-vs-hvac-comparison-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/emergency-plumber-dallas-tx-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/dermal_fillers-vs-laser_hair_removal-comparison-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/dental-implants-san-diego-ca-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/electrician-vs-hvac-comparison-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/roofing-in-los-angeles-complete-guide-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/dental_implants-vs-laser_hair_removal-comparison-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/botox-vs-veneers-comparison-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/coolsculpting-vs-invisalign-comparison-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/hvac-seattle-wa-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/dental_implants-vs-veneers-comparison-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/emergency-plumber-seattle-wa-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/veneers-in-san-diego-complete-guide-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/teeth_whitening-vs-laser_hair_removal-comparison-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/dermal-fillers-san-diego-ca-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/pool_service-in-san-diego-complete-guide-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/prp_therapy-in-los-angeles-complete-guide-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/best-med-spa-miami",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/botox-vs-dermal_fillers-comparison-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/dermal-fillers-miami-fl-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/teeth_whitening-in-san-diego-complete-guide-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/teeth_whitening-vs-veneers-comparison-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/dermal_fillers-in-san-diego-complete-guide-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/dental-implants-cost-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/botox-atlanta-ga-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/botox-miami-fl-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/invisalign-phoenix-az-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/best-med-spa-new-york",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/coolsculpting-cost-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/invisalign-vs-prp_therapy-comparison-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/hvac-atlanta-ga-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/botox-seattle-wa-2026",
+          "error": "HTTP Error 429: Too Many Requests"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-05T09:08:01.719020",
+    "urls": [
+      "content/blog/dermal_fillers-in-san-diego-complete-guide-2026.md"
+    ],
+    "result": {
+      "total": 1,
+      "success": 0,
+      "failed": 1,
+      "results": [
+        {
+          "success": false,
+          "url": "content/blog/dermal_fillers-in-san-diego-complete-guide-2026.md",
+          "error": "HTTP Error 429: Too Many Requests"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-05T09:08:19.428551",
+    "urls": [
+      "content/blog/electrician-in-san-diego-complete-guide-2026.md"
+    ],
+    "result": {
+      "total": 1,
+      "success": 0,
+      "failed": 1,
+      "results": [
+        {
+          "success": false,
+          "url": "content/blog/electrician-in-san-diego-complete-guide-2026.md",
+          "error": "HTTP Error 429: Too Many Requests"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-05T09:08:40.299097",
+    "urls": [
+      "content/blog/dental_implants-in-fresno-complete-guide-2026.md"
+    ],
+    "result": {
+      "total": 1,
+      "success": 0,
+      "failed": 1,
+      "results": [
+        {
+          "success": false,
+          "url": "content/blog/dental_implants-in-fresno-complete-guide-2026.md",
+          "error": "HTTP Error 429: Too Many Requests"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-05T09:09:02.800114",
+    "urls": [
+      "content/blog/dental_implants-in-sacramento-complete-guide-2026.md"
+    ],
+    "result": {
+      "total": 1,
+      "success": 0,
+      "failed": 1,
+      "results": [
+        {
+          "success": false,
+          "url": "content/blog/dental_implants-in-sacramento-complete-guide-2026.md",
+          "error": "HTTP Error 429: Too Many Requests"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-05T09:09:30.244668",
+    "urls": [
+      "content/blog/dental_implants-in-san-diego-complete-guide-2026.md"
+    ],
+    "result": {
+      "total": 1,
+      "success": 0,
+      "failed": 1,
+      "results": [
+        {
+          "success": false,
+          "url": "content/blog/dental_implants-in-san-diego-complete-guide-2026.md",
+          "error": "HTTP Error 429: Too Many Requests"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-05T09:09:52.451545",
+    "urls": [
+      "content/blog/invisalign-in-fresno-complete-guide-2026.md"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "content/blog/invisalign-in-fresno-complete-guide-2026.md",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-05T09:10:18.633271",
+    "urls": [
+      "content/blog/teeth_whitening-in-fresno-complete-guide-2026.md"
+    ],
+    "result": {
+      "total": 1,
+      "success": 0,
+      "failed": 1,
+      "results": [
+        {
+          "success": false,
+          "url": "content/blog/teeth_whitening-in-fresno-complete-guide-2026.md",
+          "error": "HTTP Error 429: Too Many Requests"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-05T09:10:46.050395",
+    "urls": [
+      "content/blog/teeth_whitening-in-sacramento-complete-guide-2026.md"
+    ],
+    "result": {
+      "total": 1,
+      "success": 0,
+      "failed": 1,
+      "results": [
+        {
+          "success": false,
+          "url": "content/blog/teeth_whitening-in-sacramento-complete-guide-2026.md",
+          "error": "HTTP Error 429: Too Many Requests"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-05T09:11:13.578756",
+    "urls": [
+      "content/blog/teeth_whitening-in-san-diego-complete-guide-2026.md"
+    ],
+    "result": {
+      "total": 1,
+      "success": 0,
+      "failed": 1,
+      "results": [
+        {
+          "success": false,
+          "url": "content/blog/teeth_whitening-in-san-diego-complete-guide-2026.md",
+          "error": "HTTP Error 429: Too Many Requests"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-05T09:11:41.147338",
+    "urls": [
+      "content/blog/veneers-in-fresno-complete-guide-2026.md"
+    ],
+    "result": {
+      "total": 1,
+      "success": 0,
+      "failed": 1,
+      "results": [
+        {
+          "success": false,
+          "url": "content/blog/veneers-in-fresno-complete-guide-2026.md",
+          "error": "HTTP Error 429: Too Many Requests"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-05T09:12:12.171807",
+    "urls": [
+      "content/blog/emergency_plumber-in-los-angeles-complete-guide-2026.md"
+    ],
+    "result": {
+      "total": 1,
+      "success": 0,
+      "failed": 1,
+      "results": [
+        {
+          "success": false,
+          "url": "content/blog/emergency_plumber-in-los-angeles-complete-guide-2026.md",
+          "error": "HTTP Error 429: Too Many Requests"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-05T09:12:44.709158",
+    "urls": [
+      "content/blog/hvac-in-san-francisco-complete-guide-2026.md"
+    ],
+    "result": {
+      "total": 1,
+      "success": 0,
+      "failed": 1,
+      "results": [
+        {
+          "success": false,
+          "url": "content/blog/hvac-in-san-francisco-complete-guide-2026.md",
+          "error": "HTTP Error 429: Too Many Requests"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-05T09:13:17.189901",
+    "urls": [
+      "content/blog/root_canal-in-fresno-complete-guide-2026.md"
+    ],
+    "result": {
+      "total": 1,
+      "success": 0,
+      "failed": 1,
+      "results": [
+        {
+          "success": false,
+          "url": "content/blog/root_canal-in-fresno-complete-guide-2026.md",
+          "error": "HTTP Error 429: Too Many Requests"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-05T09:13:49.833768",
+    "urls": [
+      "content/blog/root_canal-in-sacramento-complete-guide-2026.md"
+    ],
+    "result": {
+      "total": 1,
+      "success": 0,
+      "failed": 1,
+      "results": [
+        {
+          "success": false,
+          "url": "content/blog/root_canal-in-sacramento-complete-guide-2026.md",
+          "error": "HTTP Error 429: Too Many Requests"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-05T09:14:26.156768",
+    "urls": [
+      "content/blog/electrician-in-san-diego-complete-guide-2026.md"
+    ],
+    "result": {
+      "total": 1,
+      "success": 0,
+      "failed": 1,
+      "results": [
+        {
+          "success": false,
+          "url": "content/blog/electrician-in-san-diego-complete-guide-2026.md",
+          "error": "HTTP Error 429: Too Many Requests"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-05T09:15:03.886380",
+    "urls": [
+      "content/blog/landscaper-in-sacramento-complete-guide-2026.md"
+    ],
+    "result": {
+      "total": 1,
+      "success": 0,
+      "failed": 1,
+      "results": [
+        {
+          "success": false,
+          "url": "content/blog/landscaper-in-sacramento-complete-guide-2026.md",
+          "error": "HTTP Error 429: Too Many Requests"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-05T09:15:41.426705",
+    "urls": [
+      "content/blog/pest_control-in-fresno-complete-guide-2026.md"
+    ],
+    "result": {
+      "total": 1,
+      "success": 0,
+      "failed": 1,
+      "results": [
+        {
+          "success": false,
+          "url": "content/blog/pest_control-in-fresno-complete-guide-2026.md",
           "error": "HTTP Error 429: Too Many Requests"
         }
       ]
