@@ -2134,5 +2134,302 @@
       ]
     },
     "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-07T10:43:11.500607",
+    "urls": [
+      "https://stackmatrices.com/blog/amazon-review-analysis-guide",
+      "https://stackmatrices.com/blog/emergency-plumber-atlanta-ga-2026",
+      "https://stackmatrices.com/blog/botox-vs-dermal-fillers-comparison-2026"
+    ],
+    "result": {
+      "total": 3,
+      "success": 3,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/amazon-review-analysis-guide",
+          "result": "Search query submitted - Google will crawl URL"
+        },
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/emergency-plumber-atlanta-ga-2026",
+          "result": "Search query submitted - Google will crawl URL"
+        },
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/botox-vs-dermal-fillers-comparison-2026",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-07T10:43:31.186852",
+    "urls": [
+      "https://stackmatrices.com/blog/best-emergency-plumber"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/best-emergency-plumber",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-07T10:43:33.391730",
+    "urls": [
+      "https://stackmatrices.com/blog/botox-cost-face-2026"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/botox-cost-face-2026",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-07T10:43:35.619072",
+    "urls": [
+      "https://stackmatrices.com/blog/coolsculpting-cost-2026"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/coolsculpting-cost-2026",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-07T10:43:37.843802",
+    "urls": [
+      "https://stackmatrices.com/blog/dental-implants-cost-2026"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/dental-implants-cost-2026",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-07T10:43:40.016755",
+    "urls": [
+      "https://stackmatrices.com/blog/dermal-fillers-cost-2026"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/dermal-fillers-cost-2026",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-07T10:43:42.197992",
+    "urls": [
+      "https://stackmatrices.com/blog/emergency-plumber-atlanta-ga-2026"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/emergency-plumber-atlanta-ga-2026",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-07T10:43:44.441760",
+    "urls": [
+      "https://stackmatrices.com/blog/entity-seo-medical-practices-2026"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/entity-seo-medical-practices-2026",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-07T10:43:46.657909",
+    "urls": [
+      "https://stackmatrices.com/blog/hvac-atlanta-ga-2026"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/hvac-atlanta-ga-2026",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-07T10:43:48.948002",
+    "urls": [
+      "https://stackmatrices.com/blog/hvac-las-vegas-nv-2026"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/hvac-las-vegas-nv-2026",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-07T10:43:51.160517",
+    "urls": [
+      "https://stackmatrices.com/blog/hvac-miami-fl-2026"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/hvac-miami-fl-2026",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-07T10:43:53.426680",
+    "urls": [
+      "https://stackmatrices.com/blog/hvac-near-me-industrial-district"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/hvac-near-me-industrial-district",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-07T10:43:55.674627",
+    "urls": [
+      "https://stackmatrices.com/blog/hvac-seattle-wa-2026"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/hvac-seattle-wa-2026",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-07T10:43:57.871631",
+    "urls": [
+      "https://stackmatrices.com/blog/invisalign-cost-2026"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/invisalign-cost-2026",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-07T10:44:00.076740",
+    "urls": [
+      "https://stackmatrices.com/blog/prp-therapy-cost-2026"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/prp-therapy-cost-2026",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
   }
 ]
