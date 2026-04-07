@@ -1,7 +1,7 @@
 ---
 title: "[2026 Ultimate Guide] Root Canal Treatment in San Diego: Real Costs, Side Effects & 5 Trusted Providers"
 description: "Treatment to save severely infected or damaged teeth by removing pulp and sealing the canal. Expert guide with real 2026 pricing ($500-800-$1200-2000), side effects, recovery time, and verified provider recommendations in San Diego."
-date: "2026-04-06"
+date: "2026-04-07"
 tags: ["Root Canal", "San Diego", "Best Root Canal San Diego", "2026 Guide"]
 author: "StackMatrices Team"
 categories: ["dental"]
@@ -71,10 +71,10 @@ When choosing a provider, consider:
 
 ## Related Articles
 
-- [Veneers in San Francisco](/blog/veneers-in-san-francisco-complete-guide-2026/)
-- [Invisalign in Los Angeles](/blog/invisalign-in-los-angeles-complete-guide-2026/)
-- [Dental Implants in Fresno](/blog/dental_implants-in-fresno-complete-guide-2026/)
-- [Teeth Whitening in San Diego](/blog/teeth_whitening-in-san-diego-complete-guide-2026/)
+- [Teeth Whitening in Los Angeles](/blog/teeth_whitening-in-los-angeles-complete-guide-2026/)
+- [Veneers in Los Angeles](/blog/veneers-in-los-angeles-complete-guide-2026/)
+- [Dental Implants in Los Angeles](/blog/dental_implants-in-los-angeles-complete-guide-2026/)
+- [Invisalign in San Diego](/blog/invisalign-in-san-diego-complete-guide-2026/)
 
 
 ## Conclusion
