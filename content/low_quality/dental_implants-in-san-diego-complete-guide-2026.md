@@ -1,7 +1,7 @@
 ---
 title: "[2026 Ultimate Guide] Dental Implant Surgery in San Diego: Real Costs, Side Effects & 5 Trusted Providers"
 description: "Titanium posts surgically placed in jawbone to replace missing tooth roots. Expert guide with real 2026 pricing ($3000-4000-$5000-8000), side effects, recovery time, and verified provider recommendations in San Diego."
-date: "2026-04-04"
+date: "2026-04-07"
 tags: ["Dental Implants", "San Diego", "Best Dental Implants San Diego", "2026 Guide"]
 author: "StackMatrices Team"
 categories: ["dental"]
@@ -71,10 +71,10 @@ When choosing a provider, consider:
 
 ## Related Articles
 
+- [Teeth Whitening in Los Angeles](/blog/teeth_whitening-in-los-angeles-complete-guide-2026/)
 - [Root Canal in Fresno](/blog/root_canal-in-fresno-complete-guide-2026/)
-- [Teeth Whitening in San Diego](/blog/teeth_whitening-in-san-diego-complete-guide-2026/)
-- [Veneers in Sacramento](/blog/veneers-in-sacramento-complete-guide-2026/)
-- [Invisalign in Fresno](/blog/invisalign-in-fresno-complete-guide-2026/)
+- [Veneers in Los Angeles](/blog/veneers-in-los-angeles-complete-guide-2026/)
+- [Invisalign in Los Angeles](/blog/invisalign-in-los-angeles-complete-guide-2026/)
 
 
 ## Conclusion
