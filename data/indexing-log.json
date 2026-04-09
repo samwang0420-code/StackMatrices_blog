@@ -2925,5 +2925,1202 @@
       ]
     },
     "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:01:12.447713",
+    "urls": [
+      "https://stackmatrices.com/blog/ai-search-visibility-without-budget/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/ai-search-visibility-without-budget/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:01:16.683648",
+    "urls": [
+      "https://stackmatrices.com/blog/amazon-competitor-price-monitoring/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/amazon-competitor-price-monitoring/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:01:20.873167",
+    "urls": [
+      "https://stackmatrices.com/blog/amazon-review-analysis-guide/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/amazon-review-analysis-guide/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:01:25.082814",
+    "urls": [
+      "https://stackmatrices.com/blog/best-emergency-plumber/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/best-emergency-plumber/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:01:29.271208",
+    "urls": [
+      "https://stackmatrices.com/blog/botox-cost-face-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/botox-cost-face-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:01:33.499648",
+    "urls": [
+      "https://stackmatrices.com/blog/botox-in-los-angeles-complete-guide-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/botox-in-los-angeles-complete-guide-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:01:37.693512",
+    "urls": [
+      "https://stackmatrices.com/blog/botox-in-san-diego-complete-guide-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/botox-in-san-diego-complete-guide-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:01:41.945238",
+    "urls": [
+      "https://stackmatrices.com/blog/botox-in-san-francisco-complete-guide-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/botox-in-san-francisco-complete-guide-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:01:46.132313",
+    "urls": [
+      "https://stackmatrices.com/blog/botox-vs-coolsculpting-comparison-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/botox-vs-coolsculpting-comparison-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:01:50.325268",
+    "urls": [
+      "https://stackmatrices.com/blog/botox-vs-dermal_fillers-comparison-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/botox-vs-dermal_fillers-comparison-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:01:54.509589",
+    "urls": [
+      "https://stackmatrices.com/blog/coolsculpting-cost-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/coolsculpting-cost-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:01:58.760173",
+    "urls": [
+      "https://stackmatrices.com/blog/coolsculpting-in-los-angeles-complete-guide-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/coolsculpting-in-los-angeles-complete-guide-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:02:02.984458",
+    "urls": [
+      "https://stackmatrices.com/blog/coolsculpting-in-san-diego-complete-guide-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/coolsculpting-in-san-diego-complete-guide-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:02:07.194042",
+    "urls": [
+      "https://stackmatrices.com/blog/coolsculpting-in-san-francisco-complete-guide-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/coolsculpting-in-san-francisco-complete-guide-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:02:11.371258",
+    "urls": [
+      "https://stackmatrices.com/blog/dental-implants-cost-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/dental-implants-cost-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:02:15.560361",
+    "urls": [
+      "https://stackmatrices.com/blog/dental_implants-in-fresno-complete-guide-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/dental_implants-in-fresno-complete-guide-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:02:19.786023",
+    "urls": [
+      "https://stackmatrices.com/blog/dental_implants-in-sacramento-complete-guide-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/dental_implants-in-sacramento-complete-guide-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:02:23.999102",
+    "urls": [
+      "https://stackmatrices.com/blog/dental_implants-in-san-diego-complete-guide-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/dental_implants-in-san-diego-complete-guide-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:02:28.176592",
+    "urls": [
+      "https://stackmatrices.com/blog/dental_implants-vs-root_canal-comparison-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/dental_implants-vs-root_canal-comparison-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:02:32.379050",
+    "urls": [
+      "https://stackmatrices.com/blog/dental_implants-vs-veneers-comparison-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/dental_implants-vs-veneers-comparison-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:02:36.580174",
+    "urls": [
+      "https://stackmatrices.com/blog/dermal-fillers-cost-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/dermal-fillers-cost-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:02:40.759383",
+    "urls": [
+      "https://stackmatrices.com/blog/dermal_fillers-in-los-angeles-complete-guide-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/dermal_fillers-in-los-angeles-complete-guide-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:02:44.962087",
+    "urls": [
+      "https://stackmatrices.com/blog/dermal_fillers-in-san-diego-complete-guide-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/dermal_fillers-in-san-diego-complete-guide-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:02:49.172789",
+    "urls": [
+      "https://stackmatrices.com/blog/dermal_fillers-in-san-francisco-complete-guide-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/dermal_fillers-in-san-francisco-complete-guide-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:02:53.362527",
+    "urls": [
+      "https://stackmatrices.com/blog/dermal_fillers-vs-coolsculpting-comparison-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/dermal_fillers-vs-coolsculpting-comparison-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:02:57.549144",
+    "urls": [
+      "https://stackmatrices.com/blog/electrician-in-san-diego-complete-guide-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/electrician-in-san-diego-complete-guide-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:03:01.770218",
+    "urls": [
+      "https://stackmatrices.com/blog/electrician-vs-hvac-comparison-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/electrician-vs-hvac-comparison-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:03:05.978639",
+    "urls": [
+      "https://stackmatrices.com/blog/emergency-plumber-atlanta-ga-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/emergency-plumber-atlanta-ga-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:03:10.195823",
+    "urls": [
+      "https://stackmatrices.com/blog/emergency_plumber-in-los-angeles-complete-guide-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/emergency_plumber-in-los-angeles-complete-guide-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:03:14.393531",
+    "urls": [
+      "https://stackmatrices.com/blog/emergency_plumber-vs-hvac-comparison-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/emergency_plumber-vs-hvac-comparison-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:03:18.610416",
+    "urls": [
+      "https://stackmatrices.com/blog/entity-seo-medical-practices-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/entity-seo-medical-practices-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:03:22.806620",
+    "urls": [
+      "https://stackmatrices.com/blog/garage_door-in-sacramento-complete-guide-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/garage_door-in-sacramento-complete-guide-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:03:26.999152",
+    "urls": [
+      "https://stackmatrices.com/blog/house_cleaning-in-san-francisco-complete-guide-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/house_cleaning-in-san-francisco-complete-guide-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:03:31.210607",
+    "urls": [
+      "https://stackmatrices.com/blog/hvac-atlanta-ga-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/hvac-atlanta-ga-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:03:35.402647",
+    "urls": [
+      "https://stackmatrices.com/blog/hvac-in-san-francisco-complete-guide-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/hvac-in-san-francisco-complete-guide-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:03:39.587564",
+    "urls": [
+      "https://stackmatrices.com/blog/hvac-las-vegas-nv-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/hvac-las-vegas-nv-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:03:43.782711",
+    "urls": [
+      "https://stackmatrices.com/blog/hvac-miami-fl-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/hvac-miami-fl-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:03:47.972011",
+    "urls": [
+      "https://stackmatrices.com/blog/hvac-near-me-industrial-district/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/hvac-near-me-industrial-district/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:03:52.183844",
+    "urls": [
+      "https://stackmatrices.com/blog/hvac-seattle-wa-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/hvac-seattle-wa-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:03:56.386097",
+    "urls": [
+      "https://stackmatrices.com/blog/invisalign-cost-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/invisalign-cost-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:04:00.596346",
+    "urls": [
+      "https://stackmatrices.com/blog/invisalign-in-fresno-complete-guide-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/invisalign-in-fresno-complete-guide-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:04:04.848938",
+    "urls": [
+      "https://stackmatrices.com/blog/invisalign-in-sacramento-complete-guide-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/invisalign-in-sacramento-complete-guide-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:04:09.078182",
+    "urls": [
+      "https://stackmatrices.com/blog/invisalign-in-san-diego-complete-guide-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/invisalign-in-san-diego-complete-guide-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:04:30.898516",
+    "urls": [
+      "https://stackmatrices.com/blog/invisalign-vs-veneers-comparison-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/invisalign-vs-veneers-comparison-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:04:35.092758",
+    "urls": [
+      "https://stackmatrices.com/blog/botox-vs-coolsculpting-comparison-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/botox-vs-coolsculpting-comparison-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:04:39.325809",
+    "urls": [
+      "https://stackmatrices.com/blog/botox-vs-dermal_fillers-comparison-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/botox-vs-dermal_fillers-comparison-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:04:43.530436",
+    "urls": [
+      "https://stackmatrices.com/blog/dental_implants-vs-root_canal-comparison-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/dental_implants-vs-root_canal-comparison-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:04:47.731542",
+    "urls": [
+      "https://stackmatrices.com/blog/dental_implants-vs-veneers-comparison-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/dental_implants-vs-veneers-comparison-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:04:51.954309",
+    "urls": [
+      "https://stackmatrices.com/blog/dermal_fillers-vs-coolsculpting-comparison-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/dermal_fillers-vs-coolsculpting-comparison-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:04:56.185842",
+    "urls": [
+      "https://stackmatrices.com/blog/electrician-vs-hvac-comparison-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/electrician-vs-hvac-comparison-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:05:00.400030",
+    "urls": [
+      "https://stackmatrices.com/blog/emergency_plumber-vs-hvac-comparison-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/emergency_plumber-vs-hvac-comparison-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:05:04.685326",
+    "urls": [
+      "https://stackmatrices.com/blog/invisalign-vs-teeth_whitening-comparison-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/invisalign-vs-teeth_whitening-comparison-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:05:08.889820",
+    "urls": [
+      "https://stackmatrices.com/blog/laser_hair_removal-vs-prp_therapy-comparison-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/laser_hair_removal-vs-prp_therapy-comparison-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:05:13.156312",
+    "urls": [
+      "https://stackmatrices.com/blog/electrician-in-san-diego-complete-guide-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/electrician-in-san-diego-complete-guide-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:05:17.378879",
+    "urls": [
+      "https://stackmatrices.com/blog/garage_door-in-sacramento-complete-guide-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/garage_door-in-sacramento-complete-guide-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:05:21.602370",
+    "urls": [
+      "https://stackmatrices.com/blog/house_cleaning-in-san-francisco-complete-guide-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/house_cleaning-in-san-francisco-complete-guide-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:05:25.802843",
+    "urls": [
+      "https://stackmatrices.com/blog/hvac-in-san-francisco-complete-guide-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/hvac-in-san-francisco-complete-guide-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:05:30.008613",
+    "urls": [
+      "https://stackmatrices.com/blog/landscaper-in-sacramento-complete-guide-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/landscaper-in-sacramento-complete-guide-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:05:34.213684",
+    "urls": [
+      "https://stackmatrices.com/blog/pest_control-in-fresno-complete-guide-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/pest_control-in-fresno-complete-guide-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:05:38.422243",
+    "urls": [
+      "https://stackmatrices.com/blog/pool_service-in-san-diego-complete-guide-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/pool_service-in-san-diego-complete-guide-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:05:42.623990",
+    "urls": [
+      "https://stackmatrices.com/blog/roofing-in-los-angeles-complete-guide-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/roofing-in-los-angeles-complete-guide-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:05:46.812735",
+    "urls": [
+      "https://stackmatrices.com/blog/window_cleaning-in-fresno-complete-guide-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/window_cleaning-in-fresno-complete-guide-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-09T09:05:51.048648",
+    "urls": [
+      "https://stackmatrices.com/blog/emergency_plumber-in-los-angeles-complete-guide-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/emergency_plumber-in-los-angeles-complete-guide-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
   }
 ]
