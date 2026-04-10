@@ -1,106 +1,91 @@
-# SEO Health Report - April 9, 2026
-
-## Summary
-
-| Metric | Status | Details |
-|--------|--------|---------|
-| Total Blog Posts | ✅ 72 | All deployed |
-| FAQ Schema | ✅ 64/72 (89%) | Articles with FAQ structured data |
-| JSON-LD | ✅ Active | FAQPage, Organization, WebSite, AggregateRating |
-| Entity Optimization | ✅ 68/72 (94%) | Medical/dental/service keywords |
-| Index Status | ✅ Live | stackmatrices.com |
+# Daily SEO Health Report
+**Generated:** Friday, April 10th, 2026 - 8:00 AM UTC
 
 ---
 
-## 1. Experiment Tracker Results
+## 📊 Experiment Tracker Summary
 
-**Week 5 Report** (Mar 08 - Apr 09)
-- Posts published: 0
-- Schema markup added: 0
-
-**Status**: No new articles published this period.
-
----
-
-## 2. FAQ Schema Check
-
-| Metric | Value |
-|--------|-------|
-| Articles with FAQ frontmatter | 64 |
-| Total articles | 72 |
-| Coverage | 89% |
-
-**Verified**: JSON-LD FAQPage schema is correctly rendered on live pages.
-
-Example from `botox-cost-face-2026`:
-```json
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "How much does Botox cost?",
-      "acceptedAnswer": { "@type": "Answer", "text": "..." }
-    }
-  ]
-}
-```
+| Metric | Status |
+|--------|--------|
+| Period | Week 5 (Mar 08 - Apr 10) |
+| Posts Published | 0 |
+| Schema Markup Added | 0 |
 
 ---
 
-## 3. JSON-LD Structured Data
+## ✅ SEO Health Checklist
 
-**Active Schemas**:
-- ✅ FAQPage (per article)
-- ✅ Organization (site-wide)
-- ✅ WebSite (with SearchAction)
-- ✅ AggregateRating (4.8/127 reviews)
+### 1. Articles Inventory
+- **Total Articles:** ~70+ medical/dental GEO articles
+- **Categories:** Botox, Coolsculpting, Dermal Fillers, Dental Implants, Plumbers, Electricians
+- **Status:** ✅ Content exists
 
-**Location**: Rendered in `<head>` and article body
+### 2. FAQ Schema
+- **Content:** FAQ data exists in markdown frontmatter (`faq:` array)
+- **Rendering:** ❌ **NOT rendered as JSON-LD**
+- **Issue:** `[slug]/page.tsx` reads `post.faq` but doesn't generate FAQPage JSON-LD
 
----
+### 3. JSON-LD Structured Data
+- **Library:** ✅ `/src/lib/jsonld.ts` exists with functions:
+  - `generateArticleJsonLd()` - BlogPosting
+  - `generateToolJsonLd()` - SoftwareApplication
+  - `generateFaqJsonLd()` - FAQPage (ready but unused!)
+  - `generateOrganizationJsonLd()`
+  - `generateBreadcrumbList()`
+- **Integration:** ❌ **NOT imported or used in blog pages**
+- **Fix Needed:** Import and use in `[slug]/page.tsx`
 
-## 4. Entity Optimization
-
-| Category | Articles |
-|----------|----------|
-| Medical Aesthetics | 20+ (Botox, Dermal Fillers, Coolsculpting, PRP) |
-| Dental | 15+ (Implants, Invisalign, Veneers, Root Canal) |
-| Home Services | 25+ (HVAC, Plumber, Electrician, Roofing) |
-| Other | 10+ |
-
-**Keywords Targeted**:
-- Procedure names + cost/pricing
-- Location-based (California cities)
-- Comparison queries (vs. alternatives)
-- Provider verification terms
-
----
-
-## 5. Recommendations
-
-1. **Content Gap**: No new articles published in Week 5. Consider publishing 2-3 new articles to maintain momentum.
-
-2. **FAQ Coverage**: 89% is good, but 8 articles lack FAQ. Add FAQ sections to:
-   - Remaining 8 articles
-
-3. **Schema Enhancement**: Consider adding ReviewSchema for articles with specific product/service ratings.
-
-4. **GEO Performance**: Monitor AI search visibility (ChatGPT, Perplexity, Google AI Overviews).
+### 4. Entity Optimization (Medical/Dental)
+- **Medical Pages:** botox-cost-face-2026.md, botox-vs-dermal-fillers-2026.md
+- **Dental Pages:** dental-implants-cost-2026.md, dental_implants-in-*.md
+- **Schema Types:** ❌ No MedicalEntity/Physician/Dentist/LocalBusiness schema
+- **Gap:** Medical-specific schema markup not implemented
 
 ---
 
-## 6. Health Grade
+## 🚨 Priority Issues
 
-| Aspect | Grade |
-|--------|-------|
-| Technical SEO | A |
-| Schema Markup | A |
-| Entity Optimization | A- |
-| Content Freshness | C |
-| **Overall** | **A-** |
+| Priority | Issue | Fix |
+|----------|-------|-----|
+| **P0** | FAQ JSON-LD not rendering | Import `generateFaqJsonLd` in [slug]/page.tsx |
+| **P0** | Article JSON-LD not rendering | Import `generateArticleJsonLd` in [slug]/page.tsx |
+| **P1** | No Medical Entity schema | Add MedicalEntity/Dentist types for medical content |
+| **P1** | No local business schema | Add LocalBusiness for service-area articles |
 
 ---
 
-*Generated: 2026-04-09 08:00 UTC*
+## 📋 Action Items
+
+1. **Immediate:** Add JSON-LD to `[slug]/page.tsx`
+   ```tsx
+   import { generateArticleJsonLd, generateFaqJsonLd } from '@/lib/jsonld';
+   
+   // In page component:
+   const jsonLd = post.faq 
+     ? generateFaqJsonLd(post.faq, post.title)
+     : generateArticleJsonLd({...});
+   
+   return (
+     <>
+       <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}} />
+       ...
+     </>
+   );
+   ```
+
+2. **This Week:** Add medical entity schema for botox/dental articles
+
+3. **Next Week:** Consider schema for local service pages
+
+---
+
+## 📈 Overall SEO Health: 45/100 (Needs Work)
+
+| Area | Score |
+|------|-------|
+| Content | 85/100 |
+| Technical SEO | 40/100 |
+| Schema Markup | 25/100 |
+| Entity Optimization | 30/100 |
+
+**Recommendation:** Implement JSON-LD in blog pages this week to unlock rich snippets.
