@@ -1,5 +1,5 @@
 # Daily SEO Health Report
-**Generated:** Friday, April 10th, 2026 - 8:00 AM UTC
+**Generated:** Saturday, April 11th, 2026 - 8:00 AM UTC
 
 ---
 
@@ -7,7 +7,7 @@
 
 | Metric | Status |
 |--------|--------|
-| Period | Week 5 (Mar 08 - Apr 10) |
+| Period | Week 5 (Mar 08 - Apr 11) |
 | Posts Published | 0 |
 | Schema Markup Added | 0 |
 
@@ -21,7 +21,7 @@
 - **Status:** ✅ Content exists
 
 ### 2. FAQ Schema
-- **Content:** FAQ data exists in markdown frontmatter (`faq:` array)
+- **Content:** ✅ FAQ data exists in markdown frontmatter (`faq:` array)
 - **Rendering:** ❌ **NOT rendered as JSON-LD**
 - **Issue:** `[slug]/page.tsx` reads `post.faq` but doesn't generate FAQPage JSON-LD
 
@@ -62,8 +62,15 @@
    
    // In page component:
    const jsonLd = post.faq 
-     ? generateFaqJsonLd(post.faq, post.title)
-     : generateArticleJsonLd({...});
+     ? generateFaqJsonLd(post.faq)
+     : generateArticleJsonLd({
+         title: post.title,
+         excerpt: post.description,
+         date: post.date,
+         slug: slug,
+         author_name: post.author,
+         tags: post.tags
+       });
    
    return (
      <>
@@ -89,3 +96,9 @@
 | Entity Optimization | 30/100 |
 
 **Recommendation:** Implement JSON-LD in blog pages this week to unlock rich snippets.
+
+---
+
+## 📅 Previous Reports
+
+- [Apr 10, 2026](./seo-health-report-2026-04-10.md) - Same issues identified
