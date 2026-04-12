@@ -1,3 +1,11 @@
+---
+title: "Dental Implants Cost in 2026: A Real-Price Breakdown That Actually Helps"
+description: "A practical guide covering real dental implant costs in 2026, factors that affect pricing, and questions to ask your oral surgeon."
+date: "2026-04-12"
+tags: ["Dental Implants", "Cost Guide", "Oral Surgery", "2026"]
+author: "StackMatrices Team"
+---
+
 # Dental Implants Cost in 2026: A Real-Price Breakdown That Actually Helps
 
 Last month, a 58-year-old contractor from Raleigh called three oral surgeons and got three numbers: $3,200, $4,850, and $6,700 for a single front-tooth implant. He chose the middle quote because "$4,850 seemed fair." Three months later, he's dealing with peri-implantitis and a bone graft that could have been avoided if he'd known whatquestions to ask.
