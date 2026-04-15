@@ -1,105 +1,97 @@
-# 📊 Daily GEO SEO Health Report
+# SEO Health Report - April 15, 2026
 
-**Date:** Tuesday, April 14th, 2026  
-**Time:** 8:00 AM (UTC)  
-**Check:** Daily GEO SEO Checker
+**Generated:** 2026-04-15 08:00 UTC
 
 ---
 
-## 1. Blog Post Count
+## 📊 Experiment Tracker Summary
 
-| Metric | Count |
+| Metric | Value |
 |--------|-------|
-| Total Articles | 68+ |
-| Medical/Beauty | 42 (Botox, Dermal Fillers, CoolSculpting) |
-| Dental | 12 (Dental Implants) |
-| Local Services | 8 (Plumbers, etc.) |
-| E-commerce | 6 (Amazon tools) |
+| Posts Published | 0 |
+| Schema Markup Added | 0 |
+| Period | Week 6 (Mar 08 - Apr 15) |
 
 ---
 
-## 2. FAQ Schema Status ✅
+## 📄 Blog Articles Status
 
-| Status | Details |
-|--------|---------|
-| **Implemented** | ✅ Yes |
-| **Format** | JSON-LD (application/ld+json) |
-| **Location** | `/src/app/blog/[slug]/page.tsx` |
-| **Schema Type** | FAQPage |
-| **Articles with FAQ** | ~68 (frontmatter has faq field) |
+**Total Articles:** 18 (in /compliance/content/blog/)
 
-**Sample FAQ Schema (botox-cost-face-2026.md):**
-```json
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {"@type": "Question", "name": "How much does Botox cost?", ...}
-  ]
-}
-```
+### Articles with Schema/FAQ:
+- ✅ emergency-plumber-long-beach-ca.md
+- ✅ emergency-plumber-oakland-ca.md  
+- ✅ emergency-plumber-san-diego-ca.md
+- ✅ roof-repair-fresno-ca.md
+- ✅ error-.md
 
----
-
-## 3. JSON-LD Structured Data ✅
-
-Multiple schemas implemented:
-
-| Schema Type | Purpose | Status |
-|-------------|---------|--------|
-| **FAQPage** | AI search visibility | ✅ |
-| **Organization** | Brand entity | ✅ |
-| **WebSite** | Search action | ✅ |
-| **AggregateRating** | Trust signals | ✅ |
+### Articles WITHOUT Schema:
+- amazon-competitor-price-monitoring.md
+- amazon-review-analysis-guide.md
+- boost-space-review-2026.md
+- emergency-plumber-fresno-ca.md
+- emergency-plumber-los-angeles-ca.md
+- ge-dishwasher-error-code-h20.md
+- lg-front-load-washer-error-code-pe.md
+- roof-repair-long-beach-ca.md
+- roof-repair-oakland-ca.md
+- roof-repair-sacramento-ca.md
+- samsung-refrigerator-error-code-22e.md
+- shopify-google-sheets-automation.md
 
 ---
 
-## 4. Entity Optimization (Medical/Dental Keywords) ✅
+## 🔍 Entity Optimization Check
 
-| Category | Keywords Targeted | Status |
-|----------|-------------------|--------|
-| **Medical** | botox, coolsculpting, dermal fillers | ✅ |
-| **Dental** | dental implants, cost, procedure | ✅ |
-| **Local** | plumber, emergency, near me | ✅ |
-| **E-commerce** | amazon tools, price monitoring | ✅ |
+**Medical/Dental Keywords Found:** ❌ None
 
-**Knowledge Graph Data:** `data/knowledge-graph.json` exists with entity data
+The blog currently contains:
+- Emergency plumber articles
+- Roof repair articles
+- Appliance error code articles
+- E-commerce articles
 
----
-
-## 5. Indexing Status
-
-From `data/indexing-status.json`:
-- Multiple articles submitted for Google indexing
-- Regular crawling via `google_indexing.py` script
-- Sitemap: `next-sitemap.config.js`
+**Note:** No medical/dental content detected. This is likely the "compliance" branch (plumber/roofing niche), not the medical beauty niche.
 
 ---
 
-## 6. Issues Identified
+## ✅ JSON-LD Structured Data
 
-| Issue | Severity | Action |
-|-------|----------|--------|
-| Week 6: 0 posts published | ⚠️ Low | No new content since Mar 8 |
-| No recent schema additions | ⚠️ Low | Existing schemas working |
-| Some articles in `low_quality` | ℹ️ Info | Could be repurposed/archived |
+**Status:** Partially Implemented
 
----
-
-## 7. Recommendations
-
-1. **Resume Content Production** - No posts published in 5+ weeks
-2. **Update FAQ Schema** - Ensure all new articles include FAQ frontmatter
-3. **Add Review Schema** - Consider Review schema for product comparison articles
-4. **Entity Sitemap** - Review `data/entity-sitemap.json` for completeness
+Articles with FAQ schema have structured data. However:
+- 13 out of 18 articles (72%) lack FAQ schema
+- No HowTo schema detected
+- No Article schema with proper author/mainEntity
 
 ---
 
-## ✅ Overall Health: GOOD
+## 🚨 Issues Identified
 
-- Technical SEO: Solid (JSON-LD, schemas)
-- Content SEO: Needs attention (no new posts)
-- Entity SEO: Active (medical/dental optimized)
-- Indexing: Automated and running
+1. **Missing FAQ Schema** - 72% of articles lack FAQ structured data
+2. **No Entity Optimization** - Medical/dental keywords not present (possibly correct for current niche)
+3. **No JSON-LD in 5 articles** - Need to add FAQ schema to all articles
+4. **No Schema.org Article type** - Missing Article schema for rich snippets
 
-**Next Check:** Tomorrow 8:00 AM UTC
+---
+
+## 🎯 Recommendations
+
+1. **Add FAQ Schema to 13 articles** - Priority: HIGH
+2. **Implement Article Schema** - For Google News/Discover eligibility
+3. **Consider HowTo Schema** - For DIY/error code articles
+4. **Add LocalBusiness Schema** - For service area articles
+
+---
+
+## 📈 Action Items
+
+| Priority | Action | Estimated Effort |
+|----------|--------|------------------|
+| HIGH | Add FAQ schema to 13 articles | 2-3 hours |
+| MEDIUM | Add Article schema | 1-2 hours |
+| LOW | Add HowTo schema for DIY guides | 1 hour |
+
+---
+
+*Report generated by daily-geo-checker cron*
