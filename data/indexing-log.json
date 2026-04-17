@@ -4394,5 +4394,43 @@
       ]
     },
     "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-17T09:05:31.372114",
+    "urls": [
+      "https://stackmatrices.com/blog/coolsculpting-vs-liposuction-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/coolsculpting-vs-liposuction-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-04-17T09:05:36.356335",
+    "urls": [
+      "https://stackmatrices.com/blog/hvac-replacement-vs-repair-cost-analysis-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/hvac-replacement-vs-repair-cost-analysis-2026/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
   }
 ]
