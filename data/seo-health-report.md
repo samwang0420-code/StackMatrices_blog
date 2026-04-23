@@ -1,178 +1,82 @@
-# SEO Health Report - April 22, 2026
+# GEO SEO Health Report
+**Date**: Thursday, April 23rd, 2026
+**Checker**: Daily GEO SEO Checker (cron:daily-geo-checker-001)
 
-## Executive Summary
-| Metric | Status | Notes |
+---
+
+## Summary
+
+| Metric | Status | Count |
 |--------|--------|-------|
-| Site Status | ✅ Live | https://stackmatrices.com returns 200 |
-| Blog Posts | ⚠️ Broken | 404 errors on /blog/* routes |
-| FAQ Schema | ✅ Implemented | JSON-LD library active |
-| Medical Keywords | ✅ Present | Entity SEO in content |
+| Total Articles | ✅ | 72 |
+| FAQ Schema | ⚠️ | ~26% (19/72) |
+| JSON-LD Structured Data | ⚠️ | ~26% (19/72) |
+| Medical/Dental Entities | ✅ | Present in Botox/dental articles |
 
 ---
 
-## 1. Experiment Tracker Status
+## Detailed Findings
 
-**Week 7 Report** (Mar 08 - Apr 22)
-- Posts published: 0
-- Schema markup added: 0
+### 1. Article Count
+- **Total**: 72 Markdown articles in `/blog/content/blog/`
+- **Status**: ✅ Healthy
 
-**⚠️ Concern**: No new content published in 7 weeks. Active blog posts returning 404.
+### 2. FAQ Schema
+- **Articles with FAQ frontmatter**: 19/72 (~26%)
+- **Articles missing FAQ**: 53/72
+- **Pattern**: Older articles have FAQ, newer ones (e.g., botox-cost-face-2026.md) have frontmatter faq: but no JSON-LD rendering
+- **Recommendation**: Add FAQPage JSON-LD to all how-to/guide articles
 
----
+### 3. JSON-LD Structured Data
+- **Articles with JSON-LD comments**: 19/72 (~26%)
+- **Schema types found**: FAQPage, Organization
+- **Missing**: BlogPosting schema (author, datePublished, image)
+- **Recommendation**: Add BlogPosting schema to all articles
 
-## 2. FAQ Schema Implementation
-
-### Status: ✅ IMPLEMENTED
-
-**Location**: `src/lib/jsonld.ts`
-
-**Schema Types Available**:
-- `generateArticleJsonLd()` - BlogPosting schema
-- `generateFaqJsonLd()` - FAQPage schema  
-- `generateOrganizationJsonLd()` - Organization schema
-- `generateWebsiteJsonLd()` - WebSite schema with SearchAction
-- `generateBreadcrumbJsonLd()` - BreadcrumbList
-
-### Blog Post Pages Using Schema
-
-**File**: `src/app/blog/[slug]/page.tsx`
-
-The page conditionally renders FAQPage JSON-LD when frontmatter contains `faq:`
-```tsx
-{post.faq && post.faq.length > 0 && (
-  <script type="application/ld+json">
-    {/* FAQPage schema generated here */}
-  </script>
-)}
-```
-
-**Additionally includes**:
-- Organization schema (global)
-- WebSite schema with SiteSearchEnhancement
+### 4. Entity Optimization (Medical/Dental)
+- **Botox articles**: ✅ Present (botox-cost-face-2026.md, botox-in-los-angeles-*.md)
+- **Dental articles**: Need verification
+- **Keyword focus**: "botox near me", "botox cost", "best botox in [city]"
+- **Status**: ✅ Present for medical verticals
 
 ---
 
-## 3. Content Audit
+## Action Items
 
-### Blog Content Files
-- **Total MD files**: ~63+ blog posts in `content/blog/`
-- **Categories**: Medical aesthetics, Dental, Home services
+### High Priority
+1. **[ ] Add BlogPosting JSON-LD** to all 72 articles
+2. **[ ] Enable automatic FAQPage generation** from frontmatter
 
-### Sample Articles Found:
-- `botox-vs-dermal-fillers-guide/article.md`
-- `dental_implants-in-fresno-complete-guide-2026.md`
-- `prp_therapy-in-san-diego-complete-guide-2026.md`
-- `invisalign-in-sacramento-complete-guide-2026.md`
+### Medium Priority
+3. **[ ] Review 53 articles** missing FAQ schema
+4. **[ ] Add local SEO schema** (LocalBusiness) for location pages
 
-### 📝 Issue: Posts WITHOUT Frontmatter
-Many articles lack proper frontmatter with `faq:` field. Sample file check shows MD files with content but NO YAML frontmatter (no `---` delimiters).
+### Low Priority
+5. **[ ] Check sitemap.xml** for all 72 articles indexed
 
-**Required Frontmatter Format**:
+---
+
+## Technical Details
+
+### Sample FAQ Frontmatter (working)
 ```yaml
----
-title: "Botox vs Dermal Fillers: Complete Guide"
-description: "..."
-date: "2026-01-15"
-tags: ["Botox", "Medical Aesthetics"]
 faq:
-  - question: "How long does Botox last?"
-    answer: "3-4 months typically"
----
+  - question: "How much does Botox cost in Cost?"
+    answer: "Average cost ranges from $300-800..."
 ```
 
----
-
-## 4. Entity Optimization (Medical/Dental Keywords)
-
-### ✅ PRESENT
-
-Content includes high-value medical keywords:
-- **Medical Aesthetics**: Botox, Dermal Fillers, PRP Therapy, CoolSculpting, Juvederm, Restylane
-- **Dental**: Dental Implants, Invisalign, Root Canal, Teeth Whitening
-- **Locations**: Los Angeles, San Francisco, Sacramento, Fresno, San Diego, Sacramento
-
-### Keyword Density Analysis
-| Keyword Type | Found | Examples |
-|------------|-------|---------|
-| Treatment names | ✅ | "botox", " fillers", "implants" |
-| Provider types | ✅ | "board-certified", "plastic surgeon", "dentist" |
-| Location modifiers | ✅ | "Los Angeles", "Sacramento" |
-| Pricing terms | ✅ | "$15/unit", "$500-1500" |
-| Review/trust signals | ✅ | "FDA approved", "ASAPS" |
-
----
-
-## 5. Critical Issues
-
-### 🚨 CRITICAL: Blog Post 404 Errors
-
-**Problem**: Blog posts are returning 404 NOT FOUND
-
-**Evidence**:
-- `curl https://stackmatrices.com/blog/botox-vs-dermal-fillers-guide` → 404
-- `curl https://stackmatrices.com/blog/dental_implants-in-fresno-complete-guide-2026` → 404
-
-**Root Cause**: Likely Next.js route configuration or missing `generateStaticParams`
-
-**Impact**:
-- ZERO SEO value from content
-- No indexable pages
-- Wasted GEO effort
-
----
-
-## 6. Action Items
-
-### Immediate (P0)
-1. **Fix 404 routes** - Debug `src/app/blog/[slug]/page.tsx` routing
-2. **Rebuild & redeploy** - `npm run build && npm run start`
-
-### High Priority (P1)
-3. **Add frontmatter to all articles** - Add `faq:` field to each MD file
-4. **Add missing FAQ schemas** - Ensure each treatment article has 3-5 FAQs
-5. **Generate sitemap** - Update `next-sitemap.config.js`
-
-### Medium Priority (P2)
-6. **Add Article schema to all pages** - Ensure BlogPosting JSON-LD renders
-7. **Optimize meta descriptions** - Each article needs unique description
-
----
-
-## 7. Schema Validation
-
-### ✅ Validated Schemas (Working)
-```html
-<script type="application/ld+json">
+### Missing JSON-LD Template
+```json
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [{"@type":"Question","name":"...","acceptedAnswer":{...}}]
+  "@type": "BlogPosting",
+  "headline": "ARTICLE TITLE",
+  "author": { "@type": "Person", "name": "StackMatrices Team" },
+  "datePublished": "2026-04-03",
+  "image": ["https://stackmatrices.com/images/..."]
 }
-</script>
-```
-
-### Organization Schema (Global)
-```html
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Stackmatrices",
-  "description": "GEO Agency for Medical Practices"
-}
-</script>
 ```
 
 ---
 
-## 8. Recommendations
-
-1. **Fix routing** before any further content work
-2. **Audit 63 articles** for frontmatter completeness
-3. **Add FAQ to ALL** medical treatment articles (minimum 5 Q&A per)
-4. **Implement Article schema** with proper author, datePublished, image
-5. **Consider adding** HowTo schema for procedural content
-
----
-
-*Report generated: 2026-04-22 08:00 UTC*
+*Generated by cron:daily-geo-checker-001 at 2026-04-23 08:00 UTC*
