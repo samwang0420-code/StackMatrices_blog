@@ -4,26 +4,26 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What is # Botox vs.?",
+      "name": "What is # Botox vs?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The key insight about # Botox vs. is that Which One Actually Fixes Your."
+        "text": "The key insight about # Botox vs is that Which Treatment Is Right for."
       }
     },
     {
       "@type": "Question",
-      "name": "How does # Botox vs. work?",
+      "name": "How does # Botox vs work?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Which One Actually Fixes Your is the core mechanism behind # Botox vs.."
+        "text": "Which Treatment Is Right for is the core mechanism behind # Botox vs."
       }
     },
     {
       "@type": "Question",
-      "name": "Why is # Botox vs. important?",
+      "name": "Why is # Botox vs important?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "# Botox vs. matters because Which One Actually Fixes Your."
+        "text": "# Botox vs matters because Which Treatment Is Right for."
       }
     }
   ]
