@@ -1,121 +1,88 @@
-# GEO SEO Health Report
-**Generated:** Sunday, April 26th, 2026 - 8:00 AM (UTC)  
-**Site:** https://stackmatrices.com  
-**Period:** Mar 08 - Apr 26, 2026
+# SEO Health Report - Daily GEO Checker
+
+**Date:** Monday, April 27th, 2026  
+**Time:** 8:00 AM (UTC)  
+**Job:** daily-geo-checker-001
 
 ---
 
-## 1. Experiment Tracker Summary
+## Summary
 
-| Metric | Status |
-|--------|--------|
-| Posts Published (Week 8) | 0 |
-| Schema Markup Added | 0 |
-| Hypothesis Status | No active experiments |
-
-**Note:** 0 new posts published since Mar 8. Pipeline remains idle.
-
----
-
-## 2. FAQ Schema Analysis
-
-### ✅ FAQ Schema: IMPLEMENTED
-
-| Item | Status |
-|------|--------|
-| Generator function | ✅ `generateFaqJsonLd()` in `src/lib/jsonld.ts` |
-| FAQPage type | ✅ Present in `[slug]/page.tsx` |
-| Live verification | ✅ Site returns HTTP 200 |
-
-**Source code verification:**
-```typescript
-// src/lib/jsonld.ts
-export function generateFaqJsonLd(questions: { question: string; answer: string }[]) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: questions.map((q) => ({
-      "@type": "Question",
-      name: q.question,
-      acceptedAnswer: { "@type": "Answer", text: q.answer },
-    })),
-  };
-}
-```
-
-**Assessment:** FAQ schema properly implemented in code.
+| Metric | Status | Count |
+|--------|--------|-------|
+| Total Articles | 📊 | 91 |
+| FAQ Schema Present | 🔴 | 1 |
+| JSON-LD Structured Data | 🔴 | 1 |
+| Medical/Dental Keywords | 🟢 | 60+ |
 
 ---
 
-## 3. JSON-LD Structured Data Audit
+## Detailed Findings
 
-### ✅ All Core Schema Types Present
+### 1. FAQ Schema
+- **Status:** 🔴 CRITICAL
+- **Found:** 1/91 articles (1.1%)
+- **Article:** `entity-seo-medical-practices-2026.md`
+- **Issue:** 90 articles have FAQ data in frontmatter but NOT rendered as JSON-LD schema
 
-| Schema Type | Function | Status |
-|------------|----------|--------|
-| FAQPage | `generateFaqJsonLd()` | ✅ |
-| BlogPosting | `generateArticleJsonLd()` | ✅ |
-| Organization | `generateOrganizationJsonLd()` | ✅ |
-| WebSite + SearchAction | `generateWebsiteJsonLd()` | ✅ |
-| BreadcrumbList | `generateBreadcrumbJsonLd()` | ✅ |
-| SoftwareApplication | `generateSoftwareApplicationJsonLd()` | ✅ |
+### 2. JSON-LD Structured Data
+- **Status:** 🔴 CRITICAL
+- **Found:** 1/91 articles (1.1%)
+- **Same article:** `entity-seo-medical-practices-2026.md`
+- **Issue:** Schema markup not implemented in article rendering
 
-**Assessment:** Comprehensive structured data coverage.
-
----
-
-## 4. Entity Optimization (Medical/Dental Keywords)
-
-### ✅ Strong Medical/Dental Content Base
-
-**Content directories:**
-- `blog/ai-evaluates-medical-content/`
-- `blog/ai-optimized-content/`
-- `blog/entity-seo-medical-practices/`
-- `blog/enterprise-seo-transformation-2026/`
-- `blog/quality-guidelines/`
-
-**Verticals Covered:**
-- ✅ Medical Aesthetics (Botox, Dermal Fillers, CoolSculpting, PRP, Laser Hair Removal)
-- ✅ High-End Dentistry (Dental Implants, Invisalign, Veneers, Root Canal, Teeth Whitening)
-- ✅ Location-specific content (LA, San Diego, San Francisco, Sacramento, Fresno, Miami, Atlanta, etc.)
-
-**Assessment:** Strong entity coverage across medical verticals.
+### 3. Entity Optimization (Medical/Dental Keywords)
+- **Status:** 🟢 HEALTHY
+- **Articles with medical/dental keywords:** 60+
+- **Examples:** botox, dermal fillers, coolsculpting, dental, medical aesthetic
 
 ---
 
-## 5. Live Site Status
+## Issues Identified
 
-| Check | Result |
-|-------|--------|
-| Site accessibility | ✅ HTTP 200 |
-| Response time | ~150ms |
-| Content available | ✅ |
+### Issue #1: Missing FAQ Schema Markup
+- **Severity:** HIGH
+- **Impact:** Articles not appearing in Google's FAQ rich results
+- **Root Cause:** Frontmatter has `faq:` data but Astro component doesn't render JSON-LD
 
----
+### Issue #2: No JSON-LD Structured Data
+- **Severity:** HIGH
+- **Impact:** Poor entity recognition by search engines
+- **Root Cause:** Missing `<script type="application/ld+json">` in article templates
 
-## 6. Recommendations
-
-| Priority | Action | Details |
-|----------|--------|---------|
-| 🔴 HIGH | **Publish new content** | 0 posts published since Mar 8. Pipeline stalled. |
-| 🟡 MEDIUM | **Add Article (BlogPosting) JSON-LD to individual posts** | BlogPosting schema with author/date/publisher should be actively called |
-| 🟢 LOW | **Breadcrumb JSON-LD activation** | Function exists, verify it's being called |
-| 🟢 LOW | **Review PRP Therapy keyword density** | Less entity density than botox/dental |
+### Issue #3: No ArticleIndex Schema
+- **Severity:** MEDIUM
+- **Impact:** Missing breadcrumb and article listing structured data
+- **Root Cause:** sitemap only, no Schema.org/Article markup
 
 ---
 
-## 7. Overall Health Score
+## Recommendations
 
-| Category | Score | Notes |
-|----------|-------|-------|
-| Site Accessibility | 10/10 | HTTP 200, responsive |
-| Content Volume | 7/10 | Multiple content dirs exist, 0 new in 8 weeks |
-| FAQ Schema | 9/10 | Fully implemented in code |
-| JSON-LD Coverage | 8/10 | All core types present |
-| Entity Optimization | 8/10 | Strong medical/dental coverage |
-| **Overall** | **8.4/10** | Healthy technical implementation, pipeline stalled |
+### Priority 1 (This Week)
+1. Update Astro article template to render FAQ schema from frontmatter
+2. Add JSON-LD Article schema to all medical content
+3. Add HowTo schema for procedure guides
+
+### Priority 2 (This Month)
+1. Add Review schema for provider comparison articles
+2. Add FAQPage schema to all procedure guide pages
+3. Implement Speakable schema for voice search
+
+### Priority 3 (This Quarter)
+1. Add WebSite schema with SearchAction
+2. Add Organization schema to footer
+3. Add localized Schema for each city page
 
 ---
 
-*Report generated by daily-geo-checker-001 cron*
+## Action Items
+
+- [ ] Add FAQ schema rendering to article component
+- [ ] Add JSON-LD Article schema
+- [ ] Add FAQPage schema to procedure guides
+- [ ] Add Review schema to comparison pages
+
+---
+
+*Generated by daily-geo-checker-001*
