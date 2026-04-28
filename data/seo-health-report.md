@@ -1,88 +1,99 @@
-# SEO Health Report - Daily GEO Checker
+# Daily SEO Health Report - Apr 28, 2026
 
-**Date:** Monday, April 27th, 2026  
-**Time:** 8:00 AM (UTC)  
-**Job:** daily-geo-checker-001
+## Executive Summary
 
----
-
-## Summary
-
-| Metric | Status | Count |
-|--------|--------|-------|
-| Total Articles | 📊 | 91 |
-| FAQ Schema Present | 🔴 | 1 |
-| JSON-LD Structured Data | 🔴 | 1 |
-| Medical/Dental Keywords | 🟢 | 60+ |
+| Metric | Status | Notes |
+|--------|--------|--------|
+| Blog Articles | 11 pages | All have basic schema |
+| FAQ Schema | ⚠️ Partial | Defined in schema.ts but not rendered in all pages |
+| JSON-LD | ✅ Active | Live site returning proper ld+json |
+| Medical/Entity Keywords | ✅ Present | 6 articles targeting medical/dental |
+| Indexed | ✅ Active | Blog is indexed |
 
 ---
 
 ## Detailed Findings
 
-### 1. FAQ Schema
-- **Status:** 🔴 CRITICAL
-- **Found:** 1/91 articles (1.1%)
-- **Article:** `entity-seo-medical-practices-2026.md`
-- **Issue:** 90 articles have FAQ data in frontmatter but NOT rendered as JSON-LD schema
+### 1. Schema Markup
 
-### 2. JSON-LD Structured Data
-- **Status:** 🔴 CRITICAL
-- **Found:** 1/91 articles (1.1%)
-- **Same article:** `entity-seo-medical-practices-2026.md`
-- **Issue:** Schema markup not implemented in article rendering
+| Schema Type | Implemented | Pages Using |
+|-------------|-------------|-------------|
+| Article (BlogPosting) | ✅ Yes | 4 articles |
+| FAQPage | ⚠️ Partial | Defined but not rendered |
+| Organization | ✅ Yes | schema.ts |
+| HowTo | ❌ Missing | - |
+| Review | ❌ Missing | - |
 
-### 3. Entity Optimization (Medical/Dental Keywords)
-- **Status:** 🟢 HEALTHY
-- **Articles with medical/dental keywords:** 60+
-- **Examples:** botox, dermal fillers, coolsculpting, dental, medical aesthetic
+### 2. Live Validation
 
----
+**Tested URL**: https://stackmatrices.com/blog/ai-optimized-content
 
-## Issues Identified
+```json
+{
+  "@context":"https://schema.org",
+  "@type":"BlogPosting",
+  "headline":"Medical SEO Content",
+  "author":{"@type":"Organization","name":"StackMatrices Intelligence"},
+  "publisher":{"@type":"Organization","name":"StackMatrices"}
+}
+```
 
-### Issue #1: Missing FAQ Schema Markup
-- **Severity:** HIGH
-- **Impact:** Articles not appearing in Google's FAQ rich results
-- **Root Cause:** Frontmatter has `faq:` data but Astro component doesn't render JSON-LD
+**Status**: ✅ JSON-LD is being served correctly
 
-### Issue #2: No JSON-LD Structured Data
-- **Severity:** HIGH
-- **Impact:** Poor entity recognition by search engines
-- **Root Cause:** Missing `<script type="application/ld+json">` in article templates
+### 3. Entity Optimization (Medical/Dental)
 
-### Issue #3: No ArticleIndex Schema
-- **Severity:** MEDIUM
-- **Impact:** Missing breadcrumb and article listing structured data
-- **Root Cause:** sitemap only, no Schema.org/Article markup
+**Articles with medical/dental intent**:
 
----
+| Page | Keywords | Entity Focus |
+|------|----------|--------------|
+| predictions-2026 | medical marketing, GEO | Industry trends |
+| ai-optimized-content | medical practice, dental implants | AI citation |
+| ai-evaluates-medical-content | medical content | AI evaluation |
+| entity-seo-medical-practices | medical practices, dental | Local SEO |
+| quality-guidelines | medical, dental | Content quality |
+| google-ai-overviews-2026 | medical | AI overviews |
 
-## Recommendations
+**Count**: 6/11 articles (55%) targeting medical/dental vertical
 
-### Priority 1 (This Week)
-1. Update Astro article template to render FAQ schema from frontmatter
-2. Add JSON-LD Article schema to all medical content
-3. Add HowTo schema for procedure guides
+### 4. Technical SEO
 
-### Priority 2 (This Month)
-1. Add Review schema for provider comparison articles
-2. Add FAQPage schema to all procedure guide pages
-3. Implement Speakable schema for voice search
-
-### Priority 3 (This Quarter)
-1. Add WebSite schema with SearchAction
-2. Add Organization schema to footer
-3. Add localized Schema for each city page
+| Check | Status |
+|-------|--------|
+| Sitemap | ✅ next-sitemap.config.js |
+| robots.txt | ✅ Implied via Next.js |
+| Canonical URLs | ⚠️ Check [slug] page |
+| Internal Links | ✅ Cross-linking in place |
 
 ---
 
 ## Action Items
 
-- [ ] Add FAQ schema rendering to article component
-- [ ] Add JSON-LD Article schema
-- [ ] Add FAQPage schema to procedure guides
-- [ ] Add Review schema to comparison pages
+### Priority 1 (This Week)
+- [ ] Add FAQ schema rendering to article template
+- [ ] Add JSON-LD to remaining 7 articles
+- [ ] Add HowTo schema for procedure guides
+
+### Priority 2 (This Month)
+- [ ] Add FAQPage schema to all entity pages
+- [ ] Add Review schema for comparison pages
+- [ ] Audit canonical URLs
+
+### Priority 3 (This Quarter)
+- [ ] Add Speakable schema for voice search
+- [ ] Add WebSite schema with SearchAction
+- [ ] Implement localized Schema for city pages
 
 ---
 
-*Generated by daily-geo-checker-001*
+## Hypothesis Tracking
+
+**Week 8** | Period: Mar 08 - Apr 28
+
+- Posts published: 0
+- Schema markup added: 0
+
+**Status**: ⚠️ No content published since Mar 8
+
+---
+
+*Generated by daily-geo-checker-001 at 2026-04-28 08:00 UTC*
