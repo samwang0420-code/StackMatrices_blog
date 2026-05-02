@@ -1,6 +1,6 @@
 # 📊 Daily SEO Health Report
 
-**Generated:** Friday, May 1st, 2026 - 8:00 AM UTC
+**Generated:** Saturday, May 2nd, 2026 - 8:00 AM UTC
 
 ---
 
@@ -9,9 +9,9 @@
 | Metric | Status | Count |
 |--------|--------|-------|
 | Total Articles | 🟢 | 78 |
-| FAQ Schema | 🟡 | 10+ |
-| JSON-LD Structured Data | 🟡 | 10+ |
-| Medical/Dental Entities | 🟢 | 66 |
+| FAQ Schema | 🟡 | 10/78 (13%) |
+| JSON-LD Structured Data | 🟡 | 10/78 (13%) |
+| Medical/Dental Entities | 🟢 | 66 (85%) |
 | Posts Published (Week 8) | 🔴 | 0 |
 
 ---
@@ -46,6 +46,7 @@ emergency-plumber-atlanta-ga-2026.md
 entity-seo-medical-practices-2026.md
 hvac-atlanta-ga-2026.md
 ```
+**Coverage:** ~13% (10/78 articles)
 
 ---
 
@@ -57,6 +58,8 @@ Common entities:
 - botox, dermal fillers, coolsculpting
 - dental implants, wisdom teeth
 - medical spa, aesthetic clinic
+
+**Knowledge Graph:** ✅ Valid JSON-LD structure detected
 
 ---
 
@@ -72,7 +75,7 @@ Common entities:
 ## Recommended Fixes
 
 ```bash
-# Priority 1: Add FAQ Schema to high-traffic pages
+# Priority 1: Add FAQ Schema to high-traffic medical/dental pages
 # Priority 2: Add JSON-LD to all medical/dental articles  
 # Priority 3: Resume content publishing
 ```

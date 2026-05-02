@@ -4831,5 +4831,43 @@
       ]
     },
     "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-05-01T09:01:52.815321",
+    "urls": [
+      "https://stackmatrices.com/blog/botox-vs-dermal-fillers/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/botox-vs-dermal-fillers/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-05-01T09:01:52.830269",
+    "urls": [
+      "https://stackmatrices.com/blog/dental-implants-cost/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "url": "https://stackmatrices.com/blog/dental-implants-cost/",
+          "result": "Search query submitted - Google will crawl URL"
+        }
+      ]
+    },
+    "method": "search_simulation"
   }
 ]
