@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
+import { Metadata } from 'next';
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
@@ -13,6 +14,50 @@ interface BlogPost {
   image: string;
   faq?: { question: string; answer: string }[];
   content?: string;
+}
+
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const slug = params.slug;
+  const contentDir = path.join(process.cwd(), 'content/blog');
+  const filePath = path.join(contentDir, `${slug}.md`);
+
+  const defaults = {
+    title: slug.replace(/-/g, ' ').replace(/\b\w/g, (l: string) => l.toUpperCase()),
+    description: `Article about ${slug.replace(/-/g, ' ')} - GEO strategy guide`,
+  };
+
+  try {
+    if (fs.existsSync(filePath)) {
+      const fileContent = fs.readFileSync(filePath, 'utf-8');
+      const { data } = matter(fileContent);
+
+      const title = data.title || defaults.title;
+      const description = data.description || defaults.description;
+      const canonicalUrl = `https://stackmatrices.com/blog/${slug}`;
+
+      return {
+        title,
+        description,
+        openGraph: {
+          title,
+          description,
+          type: 'article',
+          url: canonicalUrl,
+          images: data.image ? [{ url: data.image }] : [],
+        },
+        alternates: {
+          canonical: canonicalUrl,
+        },
+      };
+    }
+  } catch (e) {
+    console.error('Error reading blog post for metadata:', e);
+  }
+
+  return {
+    title: defaults.title,
+    description: defaults.description,
+  };
 }
 
 export function generateStaticParams() {

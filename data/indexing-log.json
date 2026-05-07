@@ -5008,5 +5008,49 @@
       ]
     },
     "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-05-07T09:09:48.066809",
+    "urls": [
+      "https://stackmatrices.com/blog/teeth-whitening-guide-2026/",
+      "https://stackmatrices.com/blog/emergency-plumber-guide-2026/"
+    ],
+    "result": {
+      "total": 2,
+      "success": 0,
+      "failed": 2,
+      "results": [
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/teeth-whitening-guide-2026/",
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/emergency-plumber-guide-2026/",
+          "error": "HTTP Error 429: Too Many Requests"
+        }
+      ]
+    },
+    "method": "search_simulation"
+  },
+  {
+    "timestamp": "2026-05-07T09:10:26.384391",
+    "urls": [
+      "https://stackmatrices.com/blog/teeth-whitening-guide-2026/"
+    ],
+    "result": {
+      "total": 1,
+      "success": 0,
+      "failed": 1,
+      "results": [
+        {
+          "success": false,
+          "url": "https://stackmatrices.com/blog/teeth-whitening-guide-2026/",
+          "error": "HTTP Error 429: Too Many Requests"
+        }
+      ]
+    },
+    "method": "search_simulation"
   }
 ]
