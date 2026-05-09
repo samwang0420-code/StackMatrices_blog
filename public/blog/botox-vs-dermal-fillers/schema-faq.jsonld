@@ -4,26 +4,26 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What is --- title: \"Botox?",
+      "name": "What is --- title: Botox?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The key insight about --- title: \"Botox is that Fillers: Which Injectable Treatment Is."
+        "text": "The key insight about --- title: Botox is that Fillers: Which Injectable Treatment Is."
       }
     },
     {
       "@type": "Question",
-      "name": "How does --- title: \"Botox work?",
+      "name": "How does --- title: Botox work?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Fillers: Which Injectable Treatment Is is the core mechanism behind --- title: \"Botox."
+        "text": "Fillers: Which Injectable Treatment Is is the core mechanism behind --- title: Botox."
       }
     },
     {
       "@type": "Question",
-      "name": "Why is --- title: \"Botox important?",
+      "name": "Why is --- title: Botox important?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "--- title: \"Botox matters because Fillers: Which Injectable Treatment Is."
+        "text": "--- title: Botox matters because Fillers: Which Injectable Treatment Is."
       }
     }
   ]
