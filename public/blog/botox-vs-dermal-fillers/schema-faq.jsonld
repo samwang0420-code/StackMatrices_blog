@@ -4,26 +4,26 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What is --- title: Botox?",
+      "name": "What is # Botox vs?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The key insight about --- title: Botox is that Fillers: Which Injectable Treatment Is."
+        "text": "The key insight about # Botox vs is that A Data-Driven Comparison of Two."
       }
     },
     {
       "@type": "Question",
-      "name": "How does --- title: Botox work?",
+      "name": "How does # Botox vs work?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Fillers: Which Injectable Treatment Is is the core mechanism behind --- title: Botox."
+        "text": "A Data-Driven Comparison of Two is the core mechanism behind # Botox vs."
       }
     },
     {
       "@type": "Question",
-      "name": "Why is --- title: Botox important?",
+      "name": "Why is # Botox vs important?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "--- title: Botox matters because Fillers: Which Injectable Treatment Is."
+        "text": "# Botox vs matters because A Data-Driven Comparison of Two."
       }
     }
   ]

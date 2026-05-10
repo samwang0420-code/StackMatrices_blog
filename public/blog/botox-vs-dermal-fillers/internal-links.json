@@ -1,108 +1,108 @@
 {
-  "source_article": "Botox vs Dermal Fillers: Which Injectable Treatment Is Right for You?",
+  "source_article": "Botox vs Dermal Fillers: A Data-Driven Comparison of Two Leading Aesthetic Treatments",
   "source_url": "https://stackmatrices.com/blog/botox-vs-dermal-fillers/",
   "top_keywords": [
     {
+      "keyword": "treatment",
+      "frequency": 33
+    },
+    {
       "keyword": "botox",
-      "frequency": 21
+      "frequency": 24
     },
     {
       "keyword": "fillers",
-      "frequency": 20
+      "frequency": 19
     },
     {
-      "keyword": "treatment",
+      "keyword": "filler",
       "frequency": 19
     },
     {
       "keyword": "patients",
-      "frequency": 18
-    },
-    {
-      "keyword": "dermal",
-      "frequency": 12
-    },
-    {
-      "keyword": "cost",
-      "frequency": 9
-    },
-    {
-      "keyword": "facial",
-      "frequency": 9
+      "frequency": 19
     },
     {
       "keyword": "volume",
-      "frequency": 9
+      "frequency": 18
     },
     {
-      "keyword": "months",
-      "frequency": 9
+      "keyword": "treatments",
+      "frequency": 16
     },
     {
-      "keyword": "satisfaction",
-      "frequency": 9
+      "keyword": "lines",
+      "frequency": 15
     },
     {
-      "keyword": "data",
-      "frequency": 8
+      "keyword": "most",
+      "frequency": 14
     },
     {
-      "keyword": "results",
-      "frequency": 8
+      "keyword": "acid",
+      "frequency": 11
+    },
+    {
+      "keyword": "than",
+      "frequency": 11
     },
     {
       "keyword": "clinical",
-      "frequency": 7
+      "frequency": 10
     },
     {
-      "keyword": "wrinkles",
-      "frequency": 7
+      "keyword": "hyaluronic",
+      "frequency": 10
     },
     {
-      "keyword": "when",
-      "frequency": 7
+      "keyword": "dermal",
+      "frequency": 9
+    },
+    {
+      "keyword": "these",
+      "frequency": 9
     }
   ],
   "internal_link_opportunities": [
     {
+      "anchor_text": "treatment",
+      "suggested_target": "/blog/treatment/",
+      "reason": "\"treatment\" appears 33 times in this article"
+    },
+    {
       "anchor_text": "botox",
       "suggested_target": "/blog/botox/",
-      "reason": "\"botox\" appears 21 times in this article"
+      "reason": "\"botox\" appears 24 times in this article"
     },
     {
       "anchor_text": "fillers",
       "suggested_target": "/blog/fillers/",
-      "reason": "\"fillers\" appears 20 times in this article"
+      "reason": "\"fillers\" appears 19 times in this article"
     },
     {
-      "anchor_text": "treatment",
-      "suggested_target": "/blog/treatment/",
-      "reason": "\"treatment\" appears 19 times in this article"
+      "anchor_text": "filler",
+      "suggested_target": "/blog/filler/",
+      "reason": "\"filler\" appears 19 times in this article"
     },
     {
       "anchor_text": "patients",
       "suggested_target": "/blog/patients/",
-      "reason": "\"patients\" appears 18 times in this article"
-    },
-    {
-      "anchor_text": "dermal",
-      "suggested_target": "/blog/dermal/",
-      "reason": "\"dermal\" appears 12 times in this article"
-    },
-    {
-      "anchor_text": "cost",
-      "suggested_target": "/blog/cost/",
-      "reason": "\"cost\" appears 9 times in this article"
-    },
-    {
-      "anchor_text": "facial",
-      "suggested_target": "/blog/facial/",
-      "reason": "\"facial\" appears 9 times in this article"
+      "reason": "\"patients\" appears 19 times in this article"
     },
     {
       "anchor_text": "volume",
       "suggested_target": "/blog/volume/",
-      "reason": "\"volume\" appears 9 times in this article"
+      "reason": "\"volume\" appears 18 times in this article"
+    },
+    {
+      "anchor_text": "treatments",
+      "suggested_target": "/blog/treatments/",
+      "reason": "\"treatments\" appears 16 times in this article"
+    },
+    {
+      "anchor_text": "lines",
+      "suggested_target": "/blog/lines/",
+      "reason": "\"lines\" appears 15 times in this article"
     }
   ]
 }
