@@ -1,108 +1,108 @@
 {
-  "source_article": "Botox vs Dermal Fillers: A Data-Driven Comparison of Two Leading Aesthetic Treatments",
+  "source_article": "Botox vs Dermal Fillers: A Head-to-Head Comparison of Modern Facial Rejuvenation",
   "source_url": "https://stackmatrices.com/blog/botox-vs-dermal-fillers/",
   "top_keywords": [
     {
       "keyword": "treatment",
-      "frequency": 33
-    },
-    {
-      "keyword": "botox",
-      "frequency": 24
-    },
-    {
-      "keyword": "fillers",
-      "frequency": 19
-    },
-    {
-      "keyword": "filler",
-      "frequency": 19
+      "frequency": 31
     },
     {
       "keyword": "patients",
-      "frequency": 19
+      "frequency": 29
     },
     {
-      "keyword": "volume",
+      "keyword": "botox",
+      "frequency": 27
+    },
+    {
+      "keyword": "fillers",
+      "frequency": 23
+    },
+    {
+      "keyword": "filler",
       "frequency": 18
-    },
-    {
-      "keyword": "treatments",
-      "frequency": 16
-    },
-    {
-      "keyword": "lines",
-      "frequency": 15
     },
     {
       "keyword": "most",
       "frequency": 14
     },
     {
-      "keyword": "acid",
-      "frequency": 11
+      "keyword": "treatments",
+      "frequency": 14
     },
     {
-      "keyword": "than",
-      "frequency": 11
-    },
-    {
-      "keyword": "clinical",
-      "frequency": 10
-    },
-    {
-      "keyword": "hyaluronic",
-      "frequency": 10
+      "keyword": "volume",
+      "frequency": 14
     },
     {
       "keyword": "dermal",
-      "frequency": 9
+      "frequency": 11
     },
     {
-      "keyword": "these",
-      "frequency": 9
+      "keyword": "facial",
+      "frequency": 10
+    },
+    {
+      "keyword": "typically",
+      "frequency": 10
+    },
+    {
+      "keyword": "more",
+      "frequency": 8
+    },
+    {
+      "keyword": "results",
+      "frequency": 8
+    },
+    {
+      "keyword": "than",
+      "frequency": 8
+    },
+    {
+      "keyword": "when",
+      "frequency": 8
     }
   ],
   "internal_link_opportunities": [
     {
       "anchor_text": "treatment",
       "suggested_target": "/blog/treatment/",
-      "reason": "\"treatment\" appears 33 times in this article"
-    },
-    {
-      "anchor_text": "botox",
-      "suggested_target": "/blog/botox/",
-      "reason": "\"botox\" appears 24 times in this article"
-    },
-    {
-      "anchor_text": "fillers",
-      "suggested_target": "/blog/fillers/",
-      "reason": "\"fillers\" appears 19 times in this article"
-    },
-    {
-      "anchor_text": "filler",
-      "suggested_target": "/blog/filler/",
-      "reason": "\"filler\" appears 19 times in this article"
+      "reason": "\"treatment\" appears 31 times in this article"
     },
     {
       "anchor_text": "patients",
       "suggested_target": "/blog/patients/",
-      "reason": "\"patients\" appears 19 times in this article"
+      "reason": "\"patients\" appears 29 times in this article"
     },
     {
-      "anchor_text": "volume",
-      "suggested_target": "/blog/volume/",
-      "reason": "\"volume\" appears 18 times in this article"
+      "anchor_text": "botox",
+      "suggested_target": "/blog/botox/",
+      "reason": "\"botox\" appears 27 times in this article"
+    },
+    {
+      "anchor_text": "fillers",
+      "suggested_target": "/blog/fillers/",
+      "reason": "\"fillers\" appears 23 times in this article"
+    },
+    {
+      "anchor_text": "filler",
+      "suggested_target": "/blog/filler/",
+      "reason": "\"filler\" appears 18 times in this article"
+    },
+    {
+      "anchor_text": "most",
+      "suggested_target": "/blog/most/",
+      "reason": "\"most\" appears 14 times in this article"
     },
     {
       "anchor_text": "treatments",
       "suggested_target": "/blog/treatments/",
-      "reason": "\"treatments\" appears 16 times in this article"
+      "reason": "\"treatments\" appears 14 times in this article"
     },
     {
-      "anchor_text": "lines",
-      "suggested_target": "/blog/lines/",
-      "reason": "\"lines\" appears 15 times in this article"
+      "anchor_text": "volume",
+      "suggested_target": "/blog/volume/",
+      "reason": "\"volume\" appears 14 times in this article"
     }
   ]
 }
