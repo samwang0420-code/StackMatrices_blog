@@ -4,26 +4,26 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What is # Botox vs?",
+      "name": "What is --- title: Botox?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The key insight about # Botox vs is that A Comparative Guide for Medical."
+        "text": "The key insight about --- title: Botox is that Fillers: A Comprehensive Guide to."
       }
     },
     {
       "@type": "Question",
-      "name": "How does # Botox vs work?",
+      "name": "How does --- title: Botox work?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A Comparative Guide for Medical is the core mechanism behind # Botox vs."
+        "text": "Fillers: A Comprehensive Guide to is the core mechanism behind --- title: Botox."
       }
     },
     {
       "@type": "Question",
-      "name": "Why is # Botox vs important?",
+      "name": "Why is --- title: Botox important?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "# Botox vs matters because A Comparative Guide for Medical."
+        "text": "--- title: Botox matters because Fillers: A Comprehensive Guide to."
       }
     }
   ]

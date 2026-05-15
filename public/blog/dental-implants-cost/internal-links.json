@@ -1,108 +1,108 @@
 {
-  "source_article": "Dental Implants Cost: What Patients Actually Pay",
+  "source_article": "Dental Implants Cost in 2026: What You Need to Know Before Getting Started",
   "source_url": "https://stackmatrices.com/blog/dental-implants-cost/",
   "top_keywords": [
     {
       "keyword": "implant",
-      "frequency": 31
-    },
-    {
-      "keyword": "treatment",
-      "frequency": 19
-    },
-    {
-      "keyword": "dental",
-      "frequency": 18
+      "frequency": 41
     },
     {
       "keyword": "implants",
-      "frequency": 13
+      "frequency": 26
+    },
+    {
+      "keyword": "dental",
+      "frequency": 23
     },
     {
       "keyword": "cost",
-      "frequency": 12
-    },
-    {
-      "keyword": "patients",
-      "frequency": 8
-    },
-    {
-      "keyword": "replacement",
-      "frequency": 8
-    },
-    {
-      "keyword": "teeth",
-      "frequency": 8
-    },
-    {
-      "keyword": "bone",
-      "frequency": 7
+      "frequency": 20
     },
     {
       "keyword": "costs",
-      "frequency": 7
+      "frequency": 14
     },
     {
-      "keyword": "offer",
-      "frequency": 7
+      "keyword": "patients",
+      "frequency": 13
+    },
+    {
+      "keyword": "tooth",
+      "frequency": 12
+    },
+    {
+      "keyword": "treatment",
+      "frequency": 11
+    },
+    {
+      "keyword": "require",
+      "frequency": 11
+    },
+    {
+      "keyword": "bone",
+      "frequency": 11
     },
     {
       "keyword": "before",
-      "frequency": 6
+      "frequency": 10
     },
     {
-      "keyword": "typically",
-      "frequency": 6
+      "keyword": "teeth",
+      "frequency": 10
     },
     {
-      "keyword": "including",
-      "frequency": 6
+      "keyword": "arch",
+      "frequency": 9
     },
     {
-      "keyword": "crown",
-      "frequency": 6
+      "keyword": "might",
+      "frequency": 9
+    },
+    {
+      "keyword": "your",
+      "frequency": 8
     }
   ],
   "internal_link_opportunities": [
     {
       "anchor_text": "implant",
       "suggested_target": "/blog/implant/",
-      "reason": "\"implant\" appears 31 times in this article"
-    },
-    {
-      "anchor_text": "treatment",
-      "suggested_target": "/blog/treatment/",
-      "reason": "\"treatment\" appears 19 times in this article"
-    },
-    {
-      "anchor_text": "dental",
-      "suggested_target": "/blog/dental/",
-      "reason": "\"dental\" appears 18 times in this article"
+      "reason": "\"implant\" appears 41 times in this article"
     },
     {
       "anchor_text": "implants",
       "suggested_target": "/blog/implants/",
-      "reason": "\"implants\" appears 13 times in this article"
+      "reason": "\"implants\" appears 26 times in this article"
+    },
+    {
+      "anchor_text": "dental",
+      "suggested_target": "/blog/dental/",
+      "reason": "\"dental\" appears 23 times in this article"
     },
     {
       "anchor_text": "cost",
       "suggested_target": "/blog/cost/",
-      "reason": "\"cost\" appears 12 times in this article"
+      "reason": "\"cost\" appears 20 times in this article"
+    },
+    {
+      "anchor_text": "costs",
+      "suggested_target": "/blog/costs/",
+      "reason": "\"costs\" appears 14 times in this article"
     },
     {
       "anchor_text": "patients",
       "suggested_target": "/blog/patients/",
-      "reason": "\"patients\" appears 8 times in this article"
+      "reason": "\"patients\" appears 13 times in this article"
     },
     {
-      "anchor_text": "replacement",
-      "suggested_target": "/blog/replacement/",
-      "reason": "\"replacement\" appears 8 times in this article"
+      "anchor_text": "tooth",
+      "suggested_target": "/blog/tooth/",
+      "reason": "\"tooth\" appears 12 times in this article"
     },
     {
-      "anchor_text": "teeth",
-      "suggested_target": "/blog/teeth/",
-      "reason": "\"teeth\" appears 8 times in this article"
+      "anchor_text": "treatment",
+      "suggested_target": "/blog/treatment/",
+      "reason": "\"treatment\" appears 11 times in this article"
     }
   ]
 }

@@ -4,26 +4,26 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What is # Dental Implants?",
+      "name": "What is --- title: Dental?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The key insight about # Dental Implants is that Patients Actually Pay in 2025."
+        "text": "The key insight about --- title: Dental is that in 2026: What You Need."
       }
     },
     {
       "@type": "Question",
-      "name": "How does # Dental Implants work?",
+      "name": "How does --- title: Dental work?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Patients Actually Pay in 2025 is the core mechanism behind # Dental Implants."
+        "text": "in 2026: What You Need is the core mechanism behind --- title: Dental."
       }
     },
     {
       "@type": "Question",
-      "name": "Why is # Dental Implants important?",
+      "name": "Why is --- title: Dental important?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "# Dental Implants matters because Patients Actually Pay in 2025."
+        "text": "--- title: Dental matters because in 2026: What You Need."
       }
     }
   ]
