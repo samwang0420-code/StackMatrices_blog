@@ -1,108 +1,108 @@
 {
-  "source_article": "Botox vs Dermal Fillers: A Comprehensive Guide to Aesthetic Injectables",
+  "source_article": "Botox vs Dermal Fillers: Cost, Results, and Which Treatment Is Right for You",
   "source_url": "https://stackmatrices.com/blog/botox-vs-dermal-fillers/",
   "top_keywords": [
     {
       "keyword": "botox",
-      "frequency": 23
-    },
-    {
-      "keyword": "fillers",
-      "frequency": 20
-    },
-    {
-      "keyword": "dermal",
-      "frequency": 15
+      "frequency": 21
     },
     {
       "keyword": "treatment",
-      "frequency": 15
+      "frequency": 20
     },
     {
-      "keyword": "your",
+      "keyword": "fillers",
+      "frequency": 17
+    },
+    {
+      "keyword": "patients",
+      "frequency": 16
+    },
+    {
+      "keyword": "between",
       "frequency": 14
+    },
+    {
+      "keyword": "cost",
+      "frequency": 11
+    },
+    {
+      "keyword": "dermal",
+      "frequency": 10
     },
     {
       "keyword": "results",
       "frequency": 10
     },
     {
-      "keyword": "treatments",
-      "frequency": 10
-    },
-    {
-      "keyword": "aesthetic",
+      "keyword": "most",
       "frequency": 9
     },
     {
-      "keyword": "areas",
+      "keyword": "typically",
       "frequency": 9
     },
     {
-      "keyword": "these",
-      "frequency": 9
+      "keyword": "facial",
+      "frequency": 8
+    },
+    {
+      "keyword": "when",
+      "frequency": 8
     },
     {
       "keyword": "volume",
       "frequency": 8
     },
     {
-      "keyword": "filler",
+      "keyword": "while",
       "frequency": 8
     },
     {
-      "keyword": "patients",
-      "frequency": 7
-    },
-    {
-      "keyword": "most",
-      "frequency": 7
-    },
-    {
-      "keyword": "lines",
-      "frequency": 7
+      "keyword": "filler",
+      "frequency": 8
     }
   ],
   "internal_link_opportunities": [
     {
       "anchor_text": "botox",
       "suggested_target": "/blog/botox/",
-      "reason": "\"botox\" appears 23 times in this article"
-    },
-    {
-      "anchor_text": "fillers",
-      "suggested_target": "/blog/fillers/",
-      "reason": "\"fillers\" appears 20 times in this article"
-    },
-    {
-      "anchor_text": "dermal",
-      "suggested_target": "/blog/dermal/",
-      "reason": "\"dermal\" appears 15 times in this article"
+      "reason": "\"botox\" appears 21 times in this article"
     },
     {
       "anchor_text": "treatment",
       "suggested_target": "/blog/treatment/",
-      "reason": "\"treatment\" appears 15 times in this article"
+      "reason": "\"treatment\" appears 20 times in this article"
     },
     {
-      "anchor_text": "your",
-      "suggested_target": "/blog/your/",
-      "reason": "\"your\" appears 14 times in this article"
+      "anchor_text": "fillers",
+      "suggested_target": "/blog/fillers/",
+      "reason": "\"fillers\" appears 17 times in this article"
+    },
+    {
+      "anchor_text": "patients",
+      "suggested_target": "/blog/patients/",
+      "reason": "\"patients\" appears 16 times in this article"
+    },
+    {
+      "anchor_text": "between",
+      "suggested_target": "/blog/between/",
+      "reason": "\"between\" appears 14 times in this article"
+    },
+    {
+      "anchor_text": "cost",
+      "suggested_target": "/blog/cost/",
+      "reason": "\"cost\" appears 11 times in this article"
+    },
+    {
+      "anchor_text": "dermal",
+      "suggested_target": "/blog/dermal/",
+      "reason": "\"dermal\" appears 10 times in this article"
     },
     {
       "anchor_text": "results",
       "suggested_target": "/blog/results/",
       "reason": "\"results\" appears 10 times in this article"
-    },
-    {
-      "anchor_text": "treatments",
-      "suggested_target": "/blog/treatments/",
-      "reason": "\"treatments\" appears 10 times in this article"
-    },
-    {
-      "anchor_text": "aesthetic",
-      "suggested_target": "/blog/aesthetic/",
-      "reason": "\"aesthetic\" appears 9 times in this article"
     }
   ]
 }
