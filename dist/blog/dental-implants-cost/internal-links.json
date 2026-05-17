@@ -1,108 +1,108 @@
 {
-  "source_article": "Dental Implants Cost: A Real-World Breakdown from 3 Cities",
+  "source_article": "Dental Implants Cost in 2026: Full Breakdown of Expenses by Procedure Type",
   "source_url": "https://stackmatrices.com/blog/dental-implants-cost/",
   "top_keywords": [
     {
       "keyword": "implant",
-      "frequency": 27
-    },
-    {
-      "keyword": "tooth",
-      "frequency": 18
+      "frequency": 22
     },
     {
       "keyword": "cost",
-      "frequency": 15
+      "frequency": 21
     },
     {
-      "keyword": "crown",
-      "frequency": 13
+      "keyword": "treatment",
+      "frequency": 19
     },
     {
-      "keyword": "more",
-      "frequency": 11
-    },
-    {
-      "keyword": "implants",
-      "frequency": 10
-    },
-    {
-      "keyword": "dental",
-      "frequency": 8
-    },
-    {
-      "keyword": "when",
-      "frequency": 7
-    },
-    {
-      "keyword": "costs",
-      "frequency": 7
-    },
-    {
-      "keyword": "your",
-      "frequency": 7
+      "keyword": "patients",
+      "frequency": 16
     },
     {
       "keyword": "bone",
-      "frequency": 7
+      "frequency": 15
     },
     {
-      "keyword": "years",
-      "frequency": 6
+      "keyword": "dental",
+      "frequency": 14
     },
     {
-      "keyword": "price",
-      "frequency": 6
+      "keyword": "implants",
+      "frequency": 14
     },
     {
-      "keyword": "missing",
-      "frequency": 6
+      "keyword": "arch",
+      "frequency": 12
     },
     {
-      "keyword": "real",
-      "frequency": 5
+      "keyword": "costs",
+      "frequency": 10
+    },
+    {
+      "keyword": "teeth",
+      "frequency": 9
+    },
+    {
+      "keyword": "procedures",
+      "frequency": 9
+    },
+    {
+      "keyword": "full",
+      "frequency": 8
+    },
+    {
+      "keyword": "tooth",
+      "frequency": 8
+    },
+    {
+      "keyword": "replacement",
+      "frequency": 8
+    },
+    {
+      "keyword": "percent",
+      "frequency": 8
     }
   ],
   "internal_link_opportunities": [
     {
       "anchor_text": "implant",
       "suggested_target": "/blog/implant/",
-      "reason": "\"implant\" appears 27 times in this article"
-    },
-    {
-      "anchor_text": "tooth",
-      "suggested_target": "/blog/tooth/",
-      "reason": "\"tooth\" appears 18 times in this article"
+      "reason": "\"implant\" appears 22 times in this article"
     },
     {
       "anchor_text": "cost",
       "suggested_target": "/blog/cost/",
-      "reason": "\"cost\" appears 15 times in this article"
+      "reason": "\"cost\" appears 21 times in this article"
     },
     {
-      "anchor_text": "crown",
-      "suggested_target": "/blog/crown/",
-      "reason": "\"crown\" appears 13 times in this article"
+      "anchor_text": "treatment",
+      "suggested_target": "/blog/treatment/",
+      "reason": "\"treatment\" appears 19 times in this article"
     },
     {
-      "anchor_text": "more",
-      "suggested_target": "/blog/more/",
-      "reason": "\"more\" appears 11 times in this article"
+      "anchor_text": "patients",
+      "suggested_target": "/blog/patients/",
+      "reason": "\"patients\" appears 16 times in this article"
     },
     {
-      "anchor_text": "implants",
-      "suggested_target": "/blog/implants/",
-      "reason": "\"implants\" appears 10 times in this article"
+      "anchor_text": "bone",
+      "suggested_target": "/blog/bone/",
+      "reason": "\"bone\" appears 15 times in this article"
     },
     {
       "anchor_text": "dental",
       "suggested_target": "/blog/dental/",
-      "reason": "\"dental\" appears 8 times in this article"
+      "reason": "\"dental\" appears 14 times in this article"
     },
     {
-      "anchor_text": "when",
-      "suggested_target": "/blog/when/",
-      "reason": "\"when\" appears 7 times in this article"
+      "anchor_text": "implants",
+      "suggested_target": "/blog/implants/",
+      "reason": "\"implants\" appears 14 times in this article"
+    },
+    {
+      "anchor_text": "arch",
+      "suggested_target": "/blog/arch/",
+      "reason": "\"arch\" appears 12 times in this article"
     }
   ]
 }

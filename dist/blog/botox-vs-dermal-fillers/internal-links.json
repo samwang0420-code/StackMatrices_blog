@@ -1,33 +1,49 @@
 {
-  "source_article": "Botox vs Dermal Fillers: Making the Right Choice for Your Face",
+  "source_article": "Botox vs Dermal Fillers: Cost, Results, and Which Treatment Is Right for You",
   "source_url": "https://stackmatrices.com/blog/botox-vs-dermal-fillers/",
   "top_keywords": [
     {
       "keyword": "botox",
-      "frequency": 22
-    },
-    {
-      "keyword": "fillers",
-      "frequency": 20
-    },
-    {
-      "keyword": "your",
-      "frequency": 18
-    },
-    {
-      "keyword": "face",
-      "frequency": 14
+      "frequency": 21
     },
     {
       "keyword": "treatment",
-      "frequency": 13
+      "frequency": 20
     },
     {
-      "keyword": "volume",
+      "keyword": "fillers",
+      "frequency": 17
+    },
+    {
+      "keyword": "patients",
+      "frequency": 16
+    },
+    {
+      "keyword": "between",
+      "frequency": 14
+    },
+    {
+      "keyword": "cost",
+      "frequency": 11
+    },
+    {
+      "keyword": "dermal",
       "frequency": 10
     },
     {
-      "keyword": "year",
+      "keyword": "results",
+      "frequency": 10
+    },
+    {
+      "keyword": "most",
+      "frequency": 9
+    },
+    {
+      "keyword": "typically",
+      "frequency": 9
+    },
+    {
+      "keyword": "facial",
       "frequency": 8
     },
     {
@@ -35,74 +51,58 @@
       "frequency": 8
     },
     {
-      "keyword": "wrinkles",
+      "keyword": "volume",
       "frequency": 8
     },
     {
-      "keyword": "lines",
-      "frequency": 7
+      "keyword": "while",
+      "frequency": 8
     },
     {
-      "keyword": "dermal",
-      "frequency": 6
-    },
-    {
-      "keyword": "three",
-      "frequency": 6
-    },
-    {
-      "keyword": "jawline",
-      "frequency": 6
-    },
-    {
-      "keyword": "look",
-      "frequency": 6
-    },
-    {
-      "keyword": "treatments",
-      "frequency": 6
+      "keyword": "filler",
+      "frequency": 8
     }
   ],
   "internal_link_opportunities": [
     {
       "anchor_text": "botox",
       "suggested_target": "/blog/botox/",
-      "reason": "\"botox\" appears 22 times in this article"
-    },
-    {
-      "anchor_text": "fillers",
-      "suggested_target": "/blog/fillers/",
-      "reason": "\"fillers\" appears 20 times in this article"
-    },
-    {
-      "anchor_text": "your",
-      "suggested_target": "/blog/your/",
-      "reason": "\"your\" appears 18 times in this article"
-    },
-    {
-      "anchor_text": "face",
-      "suggested_target": "/blog/face/",
-      "reason": "\"face\" appears 14 times in this article"
+      "reason": "\"botox\" appears 21 times in this article"
     },
     {
       "anchor_text": "treatment",
       "suggested_target": "/blog/treatment/",
-      "reason": "\"treatment\" appears 13 times in this article"
+      "reason": "\"treatment\" appears 20 times in this article"
     },
     {
-      "anchor_text": "volume",
-      "suggested_target": "/blog/volume/",
-      "reason": "\"volume\" appears 10 times in this article"
+      "anchor_text": "fillers",
+      "suggested_target": "/blog/fillers/",
+      "reason": "\"fillers\" appears 17 times in this article"
     },
     {
-      "anchor_text": "year",
-      "suggested_target": "/blog/year/",
-      "reason": "\"year\" appears 8 times in this article"
+      "anchor_text": "patients",
+      "suggested_target": "/blog/patients/",
+      "reason": "\"patients\" appears 16 times in this article"
     },
     {
-      "anchor_text": "when",
-      "suggested_target": "/blog/when/",
-      "reason": "\"when\" appears 8 times in this article"
+      "anchor_text": "between",
+      "suggested_target": "/blog/between/",
+      "reason": "\"between\" appears 14 times in this article"
+    },
+    {
+      "anchor_text": "cost",
+      "suggested_target": "/blog/cost/",
+      "reason": "\"cost\" appears 11 times in this article"
+    },
+    {
+      "anchor_text": "dermal",
+      "suggested_target": "/blog/dermal/",
+      "reason": "\"dermal\" appears 10 times in this article"
+    },
+    {
+      "anchor_text": "results",
+      "suggested_target": "/blog/results/",
+      "reason": "\"results\" appears 10 times in this article"
     }
   ]
 }
